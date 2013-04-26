@@ -5,12 +5,12 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <list>
+#include <set>
 #include <map>
 #include <algorithm>
 #include <hash_map>
 #include <unordered_map> //c++0x
-
-using namespace std;
 
 //socket dependencies
 #if defined(_WIN32)
