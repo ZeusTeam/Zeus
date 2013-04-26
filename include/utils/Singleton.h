@@ -29,7 +29,7 @@ public:
         m_pInst = NULL;
     }
 
-    virtual bool Initialize() = 0;
+    virtual bool Initialize() { return true; }
 
 private:
     Singleton(const Singleton &s);
