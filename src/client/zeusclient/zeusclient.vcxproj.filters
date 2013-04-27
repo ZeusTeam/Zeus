@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\scene">
+      <UniqueIdentifier>{cba56fb2-4b7f-4032-8687-7151337857b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gameobject">
+      <UniqueIdentifier>{9a94c6bf-71c9-4491-b952-45d52dd67648}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gameobject\map">
+      <UniqueIdentifier>{f9279223-ab6d-4e8a-bcbb-b8ac73edff06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gameobject\people">
+      <UniqueIdentifier>{a3fbafcd-3a5f-4bc5-a83b-1edf9b2772b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gameobject\item">
+      <UniqueIdentifier>{106c2b70-b07e-45bc-88f6-ffed500cceb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engine">
+      <UniqueIdentifier>{80aaa9b7-fd3d-4fc7-819b-1eab798610d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\control">
+      <UniqueIdentifier>{eb4e6322-b19a-4a2d-a3e9-8707d14640b7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="zeusclient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\menuscene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\playscene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobject\map\gamemap.cpp">
+      <Filter>Source Files\gameobject\map</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobject\people\people.cpp">
+      <Filter>Source Files\gameobject\people</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobject\people\playerrole.cpp">
+      <Filter>Source Files\gameobject\people</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\inputengine.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\sceneengine.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="control\controlobject\texture.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="control\gamecontroler.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="scene\menuscene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\playscene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\scene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobject\sprite.h">
+      <Filter>Source Files\gameobject</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobject\map\gamemap.h">
+      <Filter>Source Files\gameobject\map</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobject\people\people.h">
+      <Filter>Source Files\gameobject\people</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobject\people\playerrole.h">
+      <Filter>Source Files\gameobject\people</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\inputengine.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\sceneengine.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="control\controlobject\texture.h">
+      <Filter>Source Files\control</Filter>
+    </ClInclude>
+    <ClInclude Include="control\gamecontroler.h">
+      <Filter>Source Files\control</Filter>
+    </ClInclude>
+    <ClInclude Include="globaldef.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
