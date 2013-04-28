@@ -28,6 +28,8 @@ public:
     virtual int GetAreaRadins();
 
     virtual void Stop();
+
+    virtual roleVector GetPos();
 protected:
     PeopleDirection m_Direction;
     int m_nPresentFrame;

@@ -80,10 +80,19 @@ bool Texture::LoadFrame(const std::string& strPath,
     return true;
 }
 
-void Texture::Render(float x, float y)
+void Texture::Render(float x, float y, float tx, float ty, float width, float height)
 {
+    if (width == 0)
+    {
+        width = m_TextureWidth;
+    }
+    if (height == 0)
+    {
+        height = m_TextureHeight;
+    }
     if (m_Sprite_ptr)
     {
+        m_Sprite_ptr->SetTextureRect(tx, ty, width, height, true);
         m_Sprite_ptr->Render(x, y);
     }
 }

@@ -157,3 +157,9 @@ void PlayerRole::Stop()
 {
     m_bMoving = false;
 }
+
+roleVector PlayerRole::GetPos()
+{
+    roleVector v(m_nPosX, m_nPosY);
+    return v;
+}

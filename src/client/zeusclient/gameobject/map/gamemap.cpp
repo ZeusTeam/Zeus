@@ -3,7 +3,11 @@
 
 GameMap::GameMap()
 {
-
+    m_font = new hgeFont("res\\font1.fnt");
+    m_viewportPos.x = 0;
+    m_viewportPos.y = 0;
+    m_previousPos.x = 0;
+    m_previousPos.y = 0;
 }
 bool GameMap::Load(string mapTex, string collisionMapTex)
 {
@@ -24,16 +28,44 @@ GameMap::~GameMap()
         delete m_coveringTex[i];
     }
 }
-
+bool GameMap::SetViewport(float x, float y, float width, float height, roleVector rolePos)
+{
+    if (x < 0 || y < 0 || width < 0 || height < 0 || x + width > m_mapTex.GetWidth() || y + height > m_mapTex.GetHeight() || 
+        rolePos.x < 0 || rolePos.y < 0 || rolePos.x > width || rolePos.y > height)
+    {
+        return false;
+    }
+    m_previousPos = rolePos;
+    m_viewportPos.x = x;
+    m_viewportPos.y = y;
+    m_viewportWidth = width;
+    m_viewportHeight = height;
+}
 ///绘制地图
 void GameMap::Render()
 {
     m_mapTex.Render(0, 0);
 }
 
-void GameMap::Render(float x, float y)
+void GameMap::Render(roleVector rolePos)
 {
-    m_mapTex.Render(x, y);
+    m_viewportPos.x = rolePos.x - m_viewportWidth / 2;
+    if (m_viewportPos.x <  0)
+        m_viewportPos.x = 0;
+
+    if (m_viewportPos.x > m_mapTex.GetWidth() - m_viewportWidth)
+        m_viewportPos.x =  m_mapTex.GetWidth() - m_viewportWidth;
+
+    m_viewportPos.y = rolePos.y - m_viewportHeight / 2;
+    if (m_viewportPos.y <  0)
+        m_viewportPos.y = 0;
+
+    if (m_viewportPos.y > m_mapTex.GetHeight() - m_viewportHeight)
+        m_viewportPos.y = m_mapTex.GetHeight() - m_viewportHeight;
+    
+    m_mapTex.Render(0, 0, m_viewportPos.x, m_viewportPos.y, m_viewportWidth, m_viewportHeight);
+    m_font->printf(0, 0, HGETEXT_LEFT, "viewportPos.x : %f", m_viewportPos.x);
+    m_font->printf(0, 30, HGETEXT_LEFT, "viewportPos.y : %f", m_viewportPos.y);
 }
 
 ///绘制遮盖角色的部分 应该在角色绘制之后调用
