@@ -8,7 +8,7 @@ MenuScene::MenuScene()
 }
 
 MenuScene::~MenuScene()
-{　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+{
 }
 
 void MenuScene::Reset()
