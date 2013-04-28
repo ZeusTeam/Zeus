@@ -68,6 +68,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxml.cpp" />
+    <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlerror.cpp" />
+    <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlparser.cpp" />
+    <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp" />
+    <ClCompile Include="..\..\..\include\xmessage\cmessage.cpp" />
+    <ClCompile Include="..\..\..\include\xmessage\message2pack.cpp" />
+    <ClCompile Include="..\..\..\include\xmessage\message2parser.cpp" />
+    <ClCompile Include="..\..\..\include\xmessage\msgdatavalue\arraydata.cpp" />
+    <ClCompile Include="..\..\..\include\xmessage\msgdatavalue\msgdatavalue.cpp" />
+    <ClCompile Include="..\..\..\include\xmessage\msgdatavalue\stringdata.cpp" />
+    <ClCompile Include="..\..\..\include\xmessage\parsermessageXML.cpp" />
+    <ClCompile Include="..\..\..\include\xmessage\xmlobject.cpp" />
     <ClCompile Include="control\controlobject\texture.cpp" />
     <ClCompile Include="control\gamecontroler.cpp" />
     <ClCompile Include="engine\inputengine.cpp" />
@@ -80,6 +92,21 @@
     <ClCompile Include="zeusclient.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h" />
+    <ClInclude Include="..\..\..\include\xmessage\buffermessage.h" />
+    <ClInclude Include="..\..\..\include\xmessage\cmessage.h" />
+    <ClInclude Include="..\..\..\include\xmessage\ibasemessage.h" />
+    <ClInclude Include="..\..\..\include\xmessage\ireadmessage.h" />
+    <ClInclude Include="..\..\..\include\xmessage\iwritemessage.h" />
+    <ClInclude Include="..\..\..\include\xmessage\message2pack.h" />
+    <ClInclude Include="..\..\..\include\xmessage\message2parser.h" />
+    <ClInclude Include="..\..\..\include\xmessage\messagedef.h" />
+    <ClInclude Include="..\..\..\include\xmessage\msgdatavalue\arraydata.h" />
+    <ClInclude Include="..\..\..\include\xmessage\msgdatavalue\msgdatavalue.h" />
+    <ClInclude Include="..\..\..\include\xmessage\msgdatavalue\numdata.hpp" />
+    <ClInclude Include="..\..\..\include\xmessage\msgdatavalue\stringdata.h" />
+    <ClInclude Include="..\..\..\include\xmessage\parsermessageXML.h" />
+    <ClInclude Include="..\..\..\include\xmessage\xmlobject.h" />
     <ClInclude Include="control\controlobject\texture.h" />
     <ClInclude Include="control\gamecontroler.h" />
     <ClInclude Include="engine\inputengine.h" />

@@ -1,0 +1,5 @@
+﻿#ifndef VNOC_D_MESSSAGE_UNION
+#define VNOC_D_MESSSAGE_UNION
+
+
+#endif
