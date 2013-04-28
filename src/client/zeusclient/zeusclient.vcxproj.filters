@@ -45,6 +45,9 @@
     <Filter Include="include\xmessage\msgdatavalue">
       <UniqueIdentifier>{5441e325-0548-4a59-b6c0-327f0f2898a8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\control\controlobject">
+      <UniqueIdentifier>{29405668-ccd4-43d7-9fa4-8baa9540e771}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="zeusclient.cpp">
@@ -70,9 +73,6 @@
     </ClCompile>
     <ClCompile Include="engine\sceneengine.cpp">
       <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="control\controlobject\texture.cpp">
-      <Filter>Source Files\control</Filter>
     </ClCompile>
     <ClCompile Include="control\gamecontroler.cpp">
       <Filter>Source Files\control</Filter>
@@ -113,6 +113,9 @@
     <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlparser.cpp">
       <Filter>import\tinyxml2.6</Filter>
     </ClCompile>
+    <ClCompile Include="control\controlobject\texture.cpp">
+      <Filter>Source Files\control\controlobject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scene\menuscene.h">
@@ -141,9 +144,6 @@
     </ClInclude>
     <ClInclude Include="engine\sceneengine.h">
       <Filter>Source Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="control\controlobject\texture.h">
-      <Filter>Source Files\control</Filter>
     </ClInclude>
     <ClInclude Include="control\gamecontroler.h">
       <Filter>Source Files\control</Filter>
@@ -195,6 +195,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h">
       <Filter>import\tinyxml2.6</Filter>
+    </ClInclude>
+    <ClInclude Include="control\controlobject\texture.h">
+      <Filter>Source Files\control\controlobject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
