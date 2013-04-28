@@ -17,6 +17,13 @@ public:
     void Output();
     void Reset();
 private:
+
+    void _RollMap(roleVector& nextPos);
+
+    float m_MapX;
+    float m_MapY;
+    int m_ViewPosX;
+    int m_ViewPosY;
     GameMap* m_Map;
     PlayerRole* m_PlayerRole;
 };
