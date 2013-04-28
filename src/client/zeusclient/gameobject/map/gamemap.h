@@ -43,7 +43,7 @@ public:
 
     void Render()
     {
-        Texture::Render(m_x, m_y);
+        Texture::Render(m_x, m_y, 0, 0, 0, 0);
     }
 
     CoveringTex(){}
