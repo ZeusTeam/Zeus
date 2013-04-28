@@ -40,6 +40,7 @@ bool GameMap::SetViewport(float x, float y, float width, float height, roleVecto
     m_viewportPos.y = y;
     m_viewportWidth = width;
     m_viewportHeight = height;
+    return true;
 }
 ///ªÊ÷∆µÿÕº
 void GameMap::Render()
