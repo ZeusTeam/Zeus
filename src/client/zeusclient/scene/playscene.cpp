@@ -7,12 +7,13 @@ PlayScene::PlayScene()
     m_MapY = 0.0f;
     m_Map = new GameMap;
     m_Map->Load("res\\img\\map1.png",
-        "res\\img\\mapcollision.png");
+        "res\\img\\mapcollision1.png");
     m_ViewPosX = (int)m_Map->GetWidth() - 1;
     m_ViewPosX = ~m_ViewPosX;
     m_ViewPosY = (int)m_Map->GetHeight() - 1;
     m_ViewPosY = ~m_ViewPosY;
     m_PlayerRole = new PlayerRole(400, 300);
+    m_Map->SetViewport(0, 0, 800, 600, m_PlayerRole->GetPos());
 }
 
 
@@ -29,7 +30,8 @@ void PlayScene::Reset()
 
 void PlayScene::Output()
 {
-    m_Map->Render(m_MapX, m_MapY);
+    m_Map->Render(m_PlayerRole->GetPos());
+    //m_Map->Render();
     m_PlayerRole->Render();
 }
 
@@ -39,7 +41,6 @@ void PlayScene::Update()
     if (!m_Map->isCollision(nextPos, m_PlayerRole->GetAreaRadins(), ARGB(255,255,255,255))) ///不碰撞白色 可移动
     {
         m_PlayerRole->MoveTo(nextPos);
-        _RollMap(nextPos);
     }
     else
     {
