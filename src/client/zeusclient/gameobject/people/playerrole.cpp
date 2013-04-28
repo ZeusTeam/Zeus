@@ -113,6 +113,27 @@ roleVector PlayerRole::GetNextPos()
     return nextPos;
 }
 
+RollBorder PlayerRole::IsRollBorder()
+{
+    if ((WINDOW_WIDTH - ROLLBODERSPACE) <= m_nPosX)
+    {
+        return Border_Right;
+    }
+    else if ((WINDOW_HEIGHT - ROLLBODERSPACE) <= m_nPosY)
+    {
+        return Border_Bottom;
+    }
+    else if (m_nPosX <= ROLLBODERSPACE)
+    {
+        return Border_Left;
+    }
+    else if (m_nPosY <= ROLLBODERSPACE)
+    {
+        return Border_Top;
+    }
+    return Border_NULL;
+}
+
 void PlayerRole::MoveTo(roleVector v)
 {
     m_nPosX = v.x;
