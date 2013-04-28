@@ -5,14 +5,10 @@
 MenuScene::MenuScene()
 {
     m_bgTexture.Load("res\\img\\menubg.png", 0, 0);
-    m_bgMusic = hge->Effect_Load("res\\music\\bg.mp3");
-    hge->Effect_PlayEx(m_bgMusic, 100, 0, 1.0, true);
 }
 
 MenuScene::~MenuScene()
 {
-    hge->Channel_Stop(m_bgMusic);
-    hge->Effect_Free(m_bgMusic);
 }
 
 void MenuScene::Reset()
