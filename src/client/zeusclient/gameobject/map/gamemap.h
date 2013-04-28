@@ -12,7 +12,7 @@ typedef hgeVector roleVector;
 typedef unsigned long DWORD;
 
 class CoveringTex
-    :public Texture
+    : public Texture
 {
 public:
 

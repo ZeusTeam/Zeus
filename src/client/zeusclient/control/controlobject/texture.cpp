@@ -81,7 +81,10 @@ bool Texture::LoadFrame(const std::string& strPath,
 
 void Texture::Render(float x, float y)
 {
-    m_Sprite_ptr->Render(x, y);
+    if (m_Sprite_ptr)
+    {
+        m_Sprite_ptr->Render(x, y);
+    }
 }
 
 void Texture::RenderFrame(int nFramePos, float x, float y)

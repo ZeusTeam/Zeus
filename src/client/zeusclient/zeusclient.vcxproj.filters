@@ -30,17 +30,20 @@
     <Filter Include="Source Files\control">
       <UniqueIdentifier>{eb4e6322-b19a-4a2d-a3e9-8707d14640b7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\xmessage">
-      <UniqueIdentifier>{4b742a6c-2253-429d-806c-73cbb46ae83d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\xmessage\msgdatavalue">
-      <UniqueIdentifier>{5441e325-0548-4a59-b6c0-327f0f2898a8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="import">
       <UniqueIdentifier>{f027cff5-4f6c-41a9-b902-0d8a003b5a73}</UniqueIdentifier>
     </Filter>
     <Filter Include="import\tinyxml2.6">
       <UniqueIdentifier>{3e206562-bd67-454f-8214-b07703034a05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{43fb8e2b-ad22-418e-a039-3ac370241175}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xmessage">
+      <UniqueIdentifier>{4b742a6c-2253-429d-806c-73cbb46ae83d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xmessage\msgdatavalue">
+      <UniqueIdentifier>{5441e325-0548-4a59-b6c0-327f0f2898a8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -75,31 +78,31 @@
       <Filter>Source Files\control</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\include\xmessage\cmessage.cpp">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\include\xmessage\message2pack.cpp">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\include\xmessage\message2parser.cpp">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\include\xmessage\parsermessageXML.cpp">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\include\xmessage\xmlobject.cpp">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\include\xmessage\msgdatavalue\arraydata.cpp">
-      <Filter>Source Files\xmessage\msgdatavalue</Filter>
+      <Filter>include\xmessage\msgdatavalue</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\include\xmessage\msgdatavalue\stringdata.cpp">
-      <Filter>Source Files\xmessage\msgdatavalue</Filter>
+      <Filter>include\xmessage\msgdatavalue</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\include\xmessage\msgdatavalue\msgdatavalue.cpp">
-      <Filter>Source Files\xmessage\msgdatavalue</Filter>
+      <Filter>include\xmessage\msgdatavalue</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxml.cpp">
       <Filter>import\tinyxml2.6</Filter>
@@ -149,46 +152,46 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\xmessage\buffermessage.h">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\xmessage\cmessage.h">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\xmessage\ibasemessage.h">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\xmessage\ireadmessage.h">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\xmessage\iwritemessage.h">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\xmessage\message2pack.h">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\xmessage\message2parser.h">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\xmessage\messagedef.h">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\xmessage\parsermessageXML.h">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\xmessage\xmlobject.h">
-      <Filter>Source Files\xmessage</Filter>
+      <Filter>include\xmessage</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\xmessage\msgdatavalue\arraydata.h">
-      <Filter>Source Files\xmessage\msgdatavalue</Filter>
+      <Filter>include\xmessage\msgdatavalue</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\xmessage\msgdatavalue\stringdata.h">
-      <Filter>Source Files\xmessage\msgdatavalue</Filter>
+      <Filter>include\xmessage\msgdatavalue</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\xmessage\msgdatavalue\numdata.hpp">
-      <Filter>Source Files\xmessage\msgdatavalue</Filter>
+      <Filter>include\xmessage\msgdatavalue</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\xmessage\msgdatavalue\msgdatavalue.h">
-      <Filter>Source Files\xmessage\msgdatavalue</Filter>
+      <Filter>include\xmessage\msgdatavalue</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h">
       <Filter>import\tinyxml2.6</Filter>
