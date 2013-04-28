@@ -43,7 +43,7 @@ public:
 
     void Render()
     {
-        Texture::Render(m_x, m_y);
+        Texture::Render(m_x, m_y, 0, 0, 0, 0);
     }
 
     CoveringTex(){}
@@ -90,6 +90,8 @@ public:
 
     //判断是否会碰撞到地图
     bool isCollision(roleVector v, int r, DWORD color);
+
+    viewportVector GetViewportPos() { return m_viewportPos ;}
 private:
 
     Texture m_mapTex;

@@ -15,12 +15,17 @@ PlayerRole::~PlayerRole()
 {
 }
 
+void PlayerRole::SetViewport(roleVector v)
+{
+    m_viewportPos = v;
+}
+
 void PlayerRole::Render()
 {
     m_DirectionTex[m_Direction].RenderFrame(
         m_nPresentFrame,
-        (float)m_nPosX - m_nWidth / 2,
-        (float)m_nPosY - m_nHeight * 3 / 4); /// 绘制在左上角 坐标表示中偏下4/3处
+        (float)m_nPosX - m_viewportPos.x - m_nWidth / 2,
+        (float)m_nPosY - m_viewportPos.y - m_nHeight * 3 / 4); /// 世界坐标转换为窗口坐标 同时将坐标运算为左上角
 }
 
 

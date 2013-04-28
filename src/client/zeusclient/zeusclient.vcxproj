@@ -80,6 +80,7 @@
     <ClCompile Include="..\..\..\include\xmessage\msgdatavalue\stringdata.cpp" />
     <ClCompile Include="..\..\..\include\xmessage\parsermessageXML.cpp" />
     <ClCompile Include="..\..\..\include\xmessage\xmlobject.cpp" />
+    <ClCompile Include="control\controlobject\out_text.cpp" />
     <ClCompile Include="control\controlobject\texture.cpp" />
     <ClCompile Include="control\gamecontroler.cpp" />
     <ClCompile Include="engine\inputengine.cpp" />
@@ -107,6 +108,7 @@
     <ClInclude Include="..\..\..\include\xmessage\msgdatavalue\stringdata.h" />
     <ClInclude Include="..\..\..\include\xmessage\parsermessageXML.h" />
     <ClInclude Include="..\..\..\include\xmessage\xmlobject.h" />
+    <ClInclude Include="control\controlobject\out_text.h" />
     <ClInclude Include="control\controlobject\texture.h" />
     <ClInclude Include="control\gamecontroler.h" />
     <ClInclude Include="engine\inputengine.h" />

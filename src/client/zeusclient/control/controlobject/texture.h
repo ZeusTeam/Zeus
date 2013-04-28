@@ -18,8 +18,8 @@ public:
     virtual bool LoadFrame(const std::string& strPath,
         float y, float width, float height);
 
-    virtual void Render(float x, float y, float tx = 0, float ty = 0,
-        float width = 0, float height = 0);
+    virtual void Render(float x, float y, float tx, float ty,
+        float width, float height);
 
     virtual void RenderFrame(int nFramePos, float x, float y);
 
@@ -31,7 +31,11 @@ public:
 
     float GetHeight() const { return m_TextureHeight; }
 
-    DWORD* CheckColor(float x, float y, float cx, float cy);
+    void Render(float x, float y);
+
+    DWORD* CheckColor(float x, float y, int cx, int cy);
+
+
     virtual void Release();
 
 private:
