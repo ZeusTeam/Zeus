@@ -16,7 +16,6 @@ public:
     void Reset();
 private:
     Texture m_bgTexture;
-    HEFFECT m_bgMusic;
 };
 
 #endif

@@ -133,3 +133,5 @@ extern InputEngine* InputEngine_;
 #define KEY_F10		0x79
 #define KEY_F11		0x7A
 #define KEY_F12		0x7B
+
+#define PI                  3.141592f

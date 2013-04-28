@@ -30,9 +30,13 @@ void PlayScene::Output()
 void PlayScene::Update()
 {
     roleVector nextPos = m_PlayerRole->GetNextPos();
-    if (!m_Map->isCollision(nextPos, ARGB(255,255,255,255))) ///不碰撞白色 可移动
+    if (!m_Map->isCollision(nextPos, m_PlayerRole->GetAreaRadins(), ARGB(255,255,255,255))) ///不碰撞白色 可移动
     {
         m_PlayerRole->MoveTo(nextPos);
+    }
+    else
+    {
+        m_PlayerRole->Stop();
     }
     m_PlayerRole->Update();
 }

@@ -1,4 +1,5 @@
 #include "gamemap.h"
+#include <math.h>
 
 GameMap::GameMap()
 {
@@ -72,18 +73,23 @@ void GameMap::PopCoveringAll()
 }
 
 bool GameMap::isCollision(roleVector nextPos, 
-                          ///int roleSpeed, ///每帧移动的像素数
+                          int r, ///单位所占面积的半径
                           DWORD color ///碰撞的颜色
                           )
 {
-    DWORD* pClr = m_collisionMapTex.CheckColor(nextPos.x , nextPos.y, 1, 1);
-    if (!pClr)
+    for (int i = 0; i < ACCURACY; i++)
     {
-        return true;
-    }
-    if (*pClr == color)
-    {
-        return true;
+        DWORD* pClr = m_collisionMapTex.CheckColor(\
+            nextPos.x + sin(2 * PI * i / ACCURACY) * r, 
+            nextPos.y + cos(2 * PI * i / ACCURACY) * r, 1, 1);
+        if (!pClr)
+        {
+            return true;
+        }
+        if (*pClr == color)
+        {
+            return true;
+        }
     }
     return false;
 }

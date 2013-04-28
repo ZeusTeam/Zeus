@@ -10,6 +10,7 @@ using namespace std;
 
 typedef hgeVector roleVector;
 typedef unsigned long DWORD;
+#define ACCURACY 8              ///通过n个点来判断碰撞
 
 class CoveringTex
     : public Texture
@@ -76,7 +77,7 @@ public:
     void PopCoveringAll();
 
     //判断是否会碰撞到地图
-    bool isCollision(roleVector v, DWORD color);    ///int roleSpeed, DWORD color);
+    bool isCollision(roleVector v, int r, DWORD color);
 private:
 
     Texture m_mapTex;
