@@ -30,6 +30,11 @@ void GameMap::Render()
     m_mapTex.Render(0, 0);
 }
 
+void GameMap::Render(float x, float y)
+{
+    m_mapTex.Render(x, y);
+}
+
 ///绘制遮盖角色的部分 应该在角色绘制之后调用
 void GameMap::RenderCovering()
 {

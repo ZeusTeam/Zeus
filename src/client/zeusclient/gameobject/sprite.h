@@ -16,6 +16,15 @@ typedef enum _PeopleDirection
     Direction_Tail,
 }PeopleDirection;
 
+typedef enum _RollBorder
+{
+    Border_NULL,
+    Border_Top,
+    Border_Left,
+    Border_Bottom,
+    Border_Right,
+}RollBorder;
+
 class ISprite
 {
 public:

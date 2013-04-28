@@ -64,6 +64,8 @@ public:
     ///绘制地图
     void Render();
 
+    void Render(float x, float y);
+
     ///绘制遮盖角色的部分 应该在角色绘制之后调用
     void RenderCovering();
 
@@ -74,6 +76,12 @@ public:
     void PopCovering();
     
     void PopCoveringAll();
+
+    ///地图宽度
+    float GetWidth() { return m_mapTex.GetWidth();}
+    
+    ///地图高度
+    float GetHeight() { return m_mapTex.GetHeight();}
 
     //判断是否会碰撞到地图
     bool isCollision(roleVector v, DWORD color);    ///int roleSpeed, DWORD color);
