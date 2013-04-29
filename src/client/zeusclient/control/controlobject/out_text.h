@@ -21,7 +21,7 @@ public:
     ~PrintText();
 
     static bool Print(int x, int y,
-        TextRect rect, char*strText, ...);
+        TextRect rect, char* strText, ...);
 
 private:
     static int m_Pos;
