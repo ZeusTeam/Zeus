@@ -17,6 +17,7 @@ bool PrintText::Print(int x, int y,
     va_list argptr;  //参数列表
     va_start(argptr,strText);
     vsprintf_s(szBuffer , nBufferLen, strText, argptr);
+
     m_Font->printf(x, y, rect, szBuffer);
     va_end(argptr);
     delete m_Font;
