@@ -116,6 +116,9 @@
     <ClCompile Include="control\controlobject\texture.cpp">
       <Filter>Source Files\control\controlobject</Filter>
     </ClCompile>
+    <ClCompile Include="control\controlobject\out_text.cpp">
+      <Filter>Source Files\control</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scene\menuscene.h">
@@ -198,6 +201,9 @@
     </ClInclude>
     <ClInclude Include="control\controlobject\texture.h">
       <Filter>Source Files\control\controlobject</Filter>
+    </ClInclude>
+    <ClInclude Include="control\controlobject\out_text.h">
+      <Filter>Source Files\control</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

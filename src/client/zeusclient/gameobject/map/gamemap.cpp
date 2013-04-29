@@ -3,7 +3,6 @@
 
 GameMap::GameMap()
 {
-    m_font = new hgeFont("res\\font1.fnt");
     m_viewportPos.x = 0;
     m_viewportPos.y = 0;
     m_previousPos.x = 0;
@@ -40,6 +39,7 @@ bool GameMap::SetViewport(float x, float y, float width, float height, roleVecto
     m_viewportPos.y = y;
     m_viewportWidth = width;
     m_viewportHeight = height;
+    return true;
 }
 ///绘制地图
 void GameMap::Render()
@@ -64,8 +64,6 @@ void GameMap::Render(roleVector rolePos)
         m_viewportPos.y = m_mapTex.GetHeight() - m_viewportHeight;
     
     m_mapTex.Render(0, 0, m_viewportPos.x, m_viewportPos.y, m_viewportWidth, m_viewportHeight);
-    m_font->printf(0, 0, HGETEXT_LEFT, "viewportPos.x : %f", m_viewportPos.x);
-    m_font->printf(0, 30, HGETEXT_LEFT, "viewportPos.y : %f", m_viewportPos.y);
 }
 
 ///绘制遮盖角色的部分 应该在角色绘制之后调用
