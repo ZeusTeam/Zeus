@@ -4,6 +4,7 @@
 #include "people.h"
 
 #define MOVEFRAMEMAX 5
+#define ROLLBODERSPACE 100
 typedef hgeVector roleVector;
 
 class PlayerRole : public People
@@ -18,14 +19,26 @@ public:
 
     virtual bool IsVaild();
 
+    virtual RollBorder IsRollBorder();
+
     virtual roleVector GetNextPos();
 
     virtual void MoveTo(roleVector);
+
+    virtual int GetAreaRadins();
+
+    virtual void Stop();
+
+    virtual roleVector GetPos();
+
+    virtual void SetViewport(roleVector v);
 
 protected:
     PeopleDirection m_Direction;
     int m_nPresentFrame;
     int m_nTimeFrame;
+    bool m_bMoving;
+    roleVector m_viewportPos;
 };
 
 #endif

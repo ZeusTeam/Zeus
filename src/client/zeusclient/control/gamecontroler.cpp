@@ -19,7 +19,7 @@ void GameControler::Start()
 
 bool GameControler::Update()
 {
-    return SceneEngine_->Update();
+    return SceneEngine_->Update(); 
 }
 
 bool GameControler::Render()

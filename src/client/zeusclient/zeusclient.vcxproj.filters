@@ -30,8 +30,26 @@
     <Filter Include="Source Files\control">
       <UniqueIdentifier>{eb4e6322-b19a-4a2d-a3e9-8707d14640b7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="import">
+      <UniqueIdentifier>{f027cff5-4f6c-41a9-b902-0d8a003b5a73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="import\tinyxml2.6">
+      <UniqueIdentifier>{3e206562-bd67-454f-8214-b07703034a05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{43fb8e2b-ad22-418e-a039-3ac370241175}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xmessage">
+      <UniqueIdentifier>{4b742a6c-2253-429d-806c-73cbb46ae83d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xmessage\msgdatavalue">
+      <UniqueIdentifier>{5441e325-0548-4a59-b6c0-327f0f2898a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\control\controlobject">
+      <UniqueIdentifier>{29405668-ccd4-43d7-9fa4-8baa9540e771}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\resource">
-      <UniqueIdentifier>{e29ab99f-1351-42ff-a9ed-f7742a332c7f}</UniqueIdentifier>
+      <UniqueIdentifier>{90e4ed34-f12c-4f04-8a23-1e8cb881362e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -59,16 +77,55 @@
     <ClCompile Include="engine\sceneengine.cpp">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="control\controlobject\texture.cpp">
-      <Filter>Source Files\control</Filter>
-    </ClCompile>
     <ClCompile Include="control\gamecontroler.cpp">
       <Filter>Source Files\control</Filter>
     </ClCompile>
-    <ClCompile Include="xml_list.cpp">
-      <Filter>Source Files\resource</Filter>
+    <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp">
+      <Filter>include\xmessage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\xmessage\cmessage.cpp">
+      <Filter>include\xmessage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\xmessage\message2pack.cpp">
+      <Filter>include\xmessage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\xmessage\message2parser.cpp">
+      <Filter>include\xmessage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\xmessage\parsermessageXML.cpp">
+      <Filter>include\xmessage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\xmessage\xmlobject.cpp">
+      <Filter>include\xmessage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\xmessage\msgdatavalue\arraydata.cpp">
+      <Filter>include\xmessage\msgdatavalue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\xmessage\msgdatavalue\stringdata.cpp">
+      <Filter>include\xmessage\msgdatavalue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\xmessage\msgdatavalue\msgdatavalue.cpp">
+      <Filter>include\xmessage\msgdatavalue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxml.cpp">
+      <Filter>import\tinyxml2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlerror.cpp">
+      <Filter>import\tinyxml2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlparser.cpp">
+      <Filter>import\tinyxml2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="control\controlobject\texture.cpp">
+      <Filter>Source Files\control\controlobject</Filter>
+    </ClCompile>
+    <ClCompile Include="control\controlobject\out_text.cpp">
+      <Filter>Source Files\control</Filter>
     </ClCompile>
     <ClCompile Include="CPictureXMLParse.cpp">
+      <Filter>Source Files\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_list.cpp">
       <Filter>Source Files\resource</Filter>
     </ClCompile>
   </ItemGroup>
@@ -100,32 +157,77 @@
     <ClInclude Include="engine\sceneengine.h">
       <Filter>Source Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="control\controlobject\texture.h">
-      <Filter>Source Files\control</Filter>
-    </ClInclude>
     <ClInclude Include="control\gamecontroler.h">
       <Filter>Source Files\control</Filter>
     </ClInclude>
     <ClInclude Include="globaldef.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="xml_list.h">
-      <Filter>Source Files\resource</Filter>
+    <ClInclude Include="..\..\..\include\xmessage\buffermessage.h">
+      <Filter>include\xmessage</Filter>
     </ClInclude>
-    <ClInclude Include="Parse_def.h">
+    <ClInclude Include="..\..\..\include\xmessage\cmessage.h">
+      <Filter>include\xmessage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\xmessage\ibasemessage.h">
+      <Filter>include\xmessage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\xmessage\ireadmessage.h">
+      <Filter>include\xmessage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\xmessage\iwritemessage.h">
+      <Filter>include\xmessage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\xmessage\message2pack.h">
+      <Filter>include\xmessage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\xmessage\message2parser.h">
+      <Filter>include\xmessage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\xmessage\messagedef.h">
+      <Filter>include\xmessage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\xmessage\parsermessageXML.h">
+      <Filter>include\xmessage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\xmessage\xmlobject.h">
+      <Filter>include\xmessage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\xmessage\msgdatavalue\arraydata.h">
+      <Filter>include\xmessage\msgdatavalue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\xmessage\msgdatavalue\stringdata.h">
+      <Filter>include\xmessage\msgdatavalue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\xmessage\msgdatavalue\numdata.hpp">
+      <Filter>include\xmessage\msgdatavalue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\xmessage\msgdatavalue\msgdatavalue.h">
+      <Filter>include\xmessage\msgdatavalue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h">
+      <Filter>import\tinyxml2.6</Filter>
+    </ClInclude>
+    <ClInclude Include="control\controlobject\texture.h">
+      <Filter>Source Files\control\controlobject</Filter>
+    </ClInclude>
+    <ClInclude Include="control\controlobject\out_text.h">
+      <Filter>Source Files\control</Filter>
+    </ClInclude>
+    <ClInclude Include="CPictureXML.h">
       <Filter>Source Files\resource</Filter>
     </ClInclude>
     <ClInclude Include="CPictureXMLParse.h">
       <Filter>Source Files\resource</Filter>
     </ClInclude>
-    <ClInclude Include="CPictureXML.h">
+    <ClInclude Include="Parse_def.h">
       <Filter>Source Files\resource</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="zeusclient.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
+    <ClInclude Include="resource.h">
+      <Filter>Source Files\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_list.h">
+      <Filter>Source Files\resource</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
