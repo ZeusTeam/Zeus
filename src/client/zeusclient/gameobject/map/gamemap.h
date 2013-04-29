@@ -24,16 +24,9 @@ public:
     {
         if (Texture::Load(texPath, 0, 0))
         {
-            if ( x <= GetWidth() && x > 0 && y <= GetHeight() && y > 0)
-            {
                 m_x = x;
                 m_y = y;
                 return true;
-            }
-            else
-            {
-                return false;
-            }
         }
         else //Load失败
         {
@@ -41,9 +34,9 @@ public:
         }
     }
 
-    void Render()
+    void Render(viewportVector viewportPos)
     {
-        Texture::Render(m_x, m_y, 0, 0, 0, 0);
+        Texture::Render(m_x - viewportPos.x, m_y - viewportPos.y, 0, 0, 0, 0);
     }
 
     CoveringTex(){}
@@ -52,7 +45,7 @@ public:
 
     }
 private:
-    float m_x;          ///视口坐标
+    float m_x;          ///相对于地图的坐标
     float m_y;          
 };
 
@@ -101,6 +94,7 @@ private:
     roleVector m_previousPos;
     float m_viewportWidth;
     float m_viewportHeight;
+    hgeFont* m_font;
 };
 
 
