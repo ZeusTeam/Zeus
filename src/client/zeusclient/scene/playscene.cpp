@@ -45,7 +45,7 @@ void PlayScene::Output()
 void PlayScene::Update()
 {
     roleVector nextPos = m_PlayerRole->GetNextPos();
-    if (!m_Map->isCollision(nextPos, m_PlayerRole->GetAreaRadins(), ARGB(255,255,255,255))) ///2???б┴2буб┴иж? ?ижи░??бе
+    if (!m_Map->isCollision(nextPos, m_PlayerRole->GetAreaRadins(), ARGB(255,255,255,255)))
     {
         m_PlayerRole->MoveTo(nextPos);
     }
