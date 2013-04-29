@@ -1,5 +1,6 @@
 #include "globaldef.h"
 #include "playscene.h"
+#include "control\controlobject\out_text.h"
 
 PlayScene::PlayScene()
 {
@@ -31,6 +32,9 @@ void PlayScene::Reset()
 void PlayScene::Output()
 {
     m_Map->Render(m_PlayerRole->GetPos());
+    float a = m_PlayerRole->GetPos().x + 1;
+    PrintText::Print(0, 60, Text_Left, "people x: %f", a);
+    PrintText::Print(0, 90, Text_Left, "people y: %f", 10.0f);
     m_PlayerRole->SetViewport(m_Map->GetViewportPos());
     m_PlayerRole->Render();
 }
