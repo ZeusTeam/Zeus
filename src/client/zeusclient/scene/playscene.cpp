@@ -33,6 +33,7 @@ void PlayScene::Reset()
 void PlayScene::Output()
 {
     m_Map->Render(m_PlayerRole->GetPos());
+<<<<<<< HEAD
 
     m_PlayerRole->SetViewport(m_Map->GetViewportPos());
     m_PlayerRole->Render();
