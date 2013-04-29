@@ -30,6 +30,9 @@
     <Filter Include="Source Files\control">
       <UniqueIdentifier>{eb4e6322-b19a-4a2d-a3e9-8707d14640b7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\resource">
+      <UniqueIdentifier>{e29ab99f-1351-42ff-a9ed-f7742a332c7f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="zeusclient.cpp">
@@ -61,6 +64,12 @@
     </ClCompile>
     <ClCompile Include="control\gamecontroler.cpp">
       <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_list.cpp">
+      <Filter>Source Files\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="CPictureXMLParse.cpp">
+      <Filter>Source Files\resource</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -100,5 +109,23 @@
     <ClInclude Include="globaldef.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="xml_list.h">
+      <Filter>Source Files\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Parse_def.h">
+      <Filter>Source Files\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="CPictureXMLParse.h">
+      <Filter>Source Files\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="CPictureXML.h">
+      <Filter>Source Files\resource</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="zeusclient.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

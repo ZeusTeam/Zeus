@@ -1,0 +1,105 @@
+#include "CPictureXML.h"
+#include "CPictureXMLParse.h"
+
+
+CPictureXMLParse::CPictureXMLParse()
+{
+}
+
+CPictureXMLParse::~CPictureXMLParse()
+{
+    _Close();
+}
+
+void CPictureXMLParse::_Close()
+{
+	if (!m_mapPiture.empty())
+    {
+        for (auto it = m_mapPiture.begin(); it != m_mapPiture.end(); it++)
+        {
+            delete it->second;
+        }
+    }
+}
+
+int CPictureXMLParse::Size() const
+{
+    return m_mapPiture.size();
+}
+
+bool CPictureXMLParse::Empty() const
+{
+    return m_mapPiture.empty();
+}
+
+bool CPictureXMLParse::LoadXML(const std::string& strPath)
+{
+    TiXmlDocument XmlParse;
+
+    if (strPath.empty())
+    {
+        return false;
+    }
+
+    if (XmlParse.LoadFile(strPath.c_str()))
+    {
+        return _Parse(XmlParse);
+    }
+    return true;
+}
+
+bool CPictureXMLParse::_Parse(TiXmlDocument& TinyXML)
+{
+    TiXmlElement* tiRoot = TinyXML.RootElement();
+    if (!tiRoot)
+    {
+        return false;
+    }
+    std::string sRootName = tiRoot->Value();
+    if (sRootName != PICTURE_ROOT_GAME)
+    {
+        return false;
+    }
+    TiXmlNode* tiFirst = tiRoot->FirstChild(PICTURE_GAME);
+    if (tiFirst == NULL)
+    {
+        return false;
+    }
+
+	 for (TiXmlElement* tiPicture = tiFirst->ToElement();
+        tiPicture != NULL;
+        tiPicture = tiPicture->NextSiblingElement())//读取当下元素中的所有属性
+	 {
+		 CPictureXML* pPicture = new CPictureXML;
+		if (tiPicture->Attribute(ID_OBJECT) != NULL)
+        {
+			pPicture->PictureId = tiPicture->Attribute(ID_OBJECT);//设置Id
+        }
+		if (tiPicture->Attribute(PICTURE_PATH) != NULL)
+        {
+			pPicture->PicturePath = tiPicture->Attribute(PICTURE_PATH);//设置Path
+        }
+		m_mapPiture[pPicture->PictureId] = pPicture;
+	 }
+	 return true;
+}
+
+CPictureXML* CPictureXMLParse::Get(std::string nId) const
+{
+	auto it = m_mapPiture.find(nId);
+    if (it == m_mapPiture.end())
+    {
+        return NULL;
+    }
+    return it->second;
+}
+
+const MapPitureList::const_iterator CPictureXMLParse::Begin() const
+{
+    return m_mapPiture.begin();
+}
+
+const MapPitureList::const_iterator CPictureXMLParse::End() const
+{
+    return m_mapPiture.end();
+}
