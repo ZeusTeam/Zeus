@@ -1,0 +1,9 @@
+/bin/server/*.pdb
+/bin/server/service_components/*.pdb
+/bin/server/service_components/*.ilk
+/bin/server/service_components/*.lib
+/bin/server/service_components/*.dll
+/bin/server/*.exe
+/bin/server/*.ilk
+/bin/server/service_components/*.exp
+/src/server/ipch

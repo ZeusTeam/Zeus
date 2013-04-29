@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="service_box.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -13,6 +10,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="service.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="ShareLibrary.hpp">
       <Filter>common</Filter>
     </ClInclude>
   </ItemGroup>
