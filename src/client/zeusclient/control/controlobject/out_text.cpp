@@ -14,12 +14,16 @@ bool PrintText::Print(int x, int y,
     memset(szBuffer, 0, nBufferLen);
 
     m_Font = new PrintTextFont("res\\font1.fnt");
+
     va_list argptr;  //参数列表
     va_start(argptr,strText);
     vsprintf_s(szBuffer , nBufferLen, strText, argptr);
     m_Font->printf(x, y, rect, szBuffer);
     va_end(argptr);
-    delete m_Font;
+    if (m_Font)
+    {
+        delete m_Font;
+    }
     if (szBuffer)
     {
         delete[] szBuffer;
