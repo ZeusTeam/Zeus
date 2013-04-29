@@ -41,7 +41,6 @@ void PlayScene::Output()
     PrintText::Print(0, 30, Text_Left, "viewportPos.y : %d", (int)m_Map->GetViewportPos().y);
     PrintText::Print(0, 60, Text_Left, "people x: %d", (int)m_PlayerRole->GetPos().x);
     PrintText::Print(0, 90, Text_Left, "people y: %d", (int)m_PlayerRole->GetPos().y);
-
 }
 
 void PlayScene::Update()

@@ -14,6 +14,7 @@ bool PrintText::Print(int x, int y,
     vsprintf_s(szBuffer , nBufferLen, strText, argptr);
 
     m_Font->printf(x, y, rect, szBuffer);
+
     va_end(argptr);
     delete m_Font;
     return true;
