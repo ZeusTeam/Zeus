@@ -1,8 +1,9 @@
 #include "service.h"
-#include "ShareLibrary.hpp"
+#include "share_library.hpp"
 
 int main(int argc, char* argv[])
 {
 
+    system("pause");
 	return 0;
 }

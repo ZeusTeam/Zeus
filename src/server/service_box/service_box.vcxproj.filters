@@ -12,7 +12,7 @@
     <ClInclude Include="service.h">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="ShareLibrary.hpp">
+    <ClInclude Include="share_library.hpp">
       <Filter>common</Filter>
     </ClInclude>
   </ItemGroup>
