@@ -33,6 +33,7 @@ void PlayScene::Reset()
 void PlayScene::Output()
 {
     m_Map->Render(m_PlayerRole->GetPos());
+
     m_PlayerRole->SetViewport(m_Map->GetViewportPos());
     m_PlayerRole->Render();
     m_Map->RenderCovering();
@@ -40,6 +41,7 @@ void PlayScene::Output()
     PrintText::Print(0, 30, Text_Left, "viewportPos.y : %d", (int)m_Map->GetViewportPos().y);
     PrintText::Print(0, 60, Text_Left, "people x: %d", (int)m_PlayerRole->GetPos().x);
     PrintText::Print(0, 90, Text_Left, "people y: %d", (int)m_PlayerRole->GetPos().y);
+
 }
 
 void PlayScene::Update()
