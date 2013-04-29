@@ -4,10 +4,6 @@
 GameMap::GameMap()
 {
 
-    m_viewportPos.x = 0;
-    m_viewportPos.y = 0;
-    m_previousPos.x = 0;
-    m_previousPos.y = 0;
 }
 bool GameMap::Load(string mapTex, string collisionMapTex)
 {

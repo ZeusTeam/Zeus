@@ -33,12 +33,12 @@ void PlayScene::Reset()
 void PlayScene::Output()
 {
     m_Map->Render(m_PlayerRole->GetPos());
-    float a = m_PlayerRole->GetPos().x + 1;
-    m_PlayerRole->SetViewport(m_Map->GetViewportPos());
     m_PlayerRole->Render();
     m_Map->RenderCovering();
-    PrintText::Print(0, 60, Text_Left, "people x: %f", a);
-    PrintText::Print(0, 90, Text_Left, "people y: %f", 10.0f);
+    PrintText::Print(0, 0, Text_Left, "viewportPos.x : %f", m_Map->GetViewportPos().x);
+    PrintText::Print(0, 30, Text_Left, "viewportPos.y : %f", m_Map->GetViewportPos().y);
+    PrintText::Print(0, 60, Text_Left, "people x: %f", m_PlayerRole->GetPos().x);
+    PrintText::Print(0, 90, Text_Left, "people y: %f", m_PlayerRole->GetPos().y);
 }
 
 void PlayScene::Update()
