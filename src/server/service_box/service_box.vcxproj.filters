@@ -15,5 +15,6 @@
     <ClInclude Include="share_library.hpp">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="service_manager.h" />
   </ItemGroup>
 </Project>
