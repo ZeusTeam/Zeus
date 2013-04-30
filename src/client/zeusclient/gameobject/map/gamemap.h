@@ -37,9 +37,12 @@ public:
     void Render(viewportVector viewportPos)
     {
         ///这通过计算裁剪遮盖图片到屏幕上
-        float x,y,tx,ty,w,h;
-        x = m_x - viewportPos.x;        //在屏幕上的坐标
-        y = m_y - viewportPos.y;
+        float x = 0,y = 0;
+        float tx = 0,ty = 0;
+        float w = 0,h = 0;
+
+        x = m_x - (int)viewportPos.x;        //在屏幕上的坐标
+        y = m_y - (int)viewportPos.y;
         tx = -x;                        //相对于纹理的坐标
         ty = -y;
         if (x < 0)
