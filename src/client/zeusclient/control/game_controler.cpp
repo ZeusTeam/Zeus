@@ -1,6 +1,6 @@
 #include "globaldef.h"
-#include "gamecontroler.h"
-#include "scene/menuscene.h"
+#include "game_controler.h"
+#include "scene/menu_scene.h"
 
 GameControler* Singleton<GameControler>::m_pInst = 0;
 

@@ -1,6 +1,6 @@
 #include "globaldef.h"
-#include "playscene.h"
-#include "control\controlobject\out_text.h"
+#include "play_scene.h"
+#include "control\control_object\out_text.h"
 
 PlayScene::PlayScene()
 {

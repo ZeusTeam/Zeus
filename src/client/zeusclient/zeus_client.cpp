@@ -1,6 +1,6 @@
 #include "globaldef.h"
 #include "import\hge\include\hge.h"
-#include "control\gamecontroler.h"
+#include "control\game_controler.h"
 
 #pragma comment(lib, "../../../import/hge/lib/hge.lib")
 #pragma comment(lib, "../../../import/hge/lib/hgehelp.lib")

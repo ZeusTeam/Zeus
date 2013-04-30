@@ -1,5 +1,5 @@
 #include "globaldef.h"
-#include "sceneengine.h"
+#include "scene_engine.h"
 
 template<> SceneEngine* Singleton<SceneEngine>::m_pInst = NULL;
 

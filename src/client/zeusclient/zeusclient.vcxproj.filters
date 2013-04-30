@@ -12,18 +12,6 @@
     <Filter Include="Source Files\scene">
       <UniqueIdentifier>{cba56fb2-4b7f-4032-8687-7151337857b2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gameobject">
-      <UniqueIdentifier>{9a94c6bf-71c9-4491-b952-45d52dd67648}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gameobject\map">
-      <UniqueIdentifier>{f9279223-ab6d-4e8a-bcbb-b8ac73edff06}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gameobject\people">
-      <UniqueIdentifier>{a3fbafcd-3a5f-4bc5-a83b-1edf9b2772b9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gameobject\item">
-      <UniqueIdentifier>{106c2b70-b07e-45bc-88f6-ffed500cceb2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\engine">
       <UniqueIdentifier>{80aaa9b7-fd3d-4fc7-819b-1eab798610d6}</UniqueIdentifier>
     </Filter>
@@ -45,38 +33,23 @@
     <Filter Include="include\xmessage\msgdatavalue">
       <UniqueIdentifier>{5441e325-0548-4a59-b6c0-327f0f2898a8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\control\controlobject">
+    <Filter Include="Source Files\control\control_object">
       <UniqueIdentifier>{29405668-ccd4-43d7-9fa4-8baa9540e771}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game_object">
+      <UniqueIdentifier>{9a94c6bf-71c9-4491-b952-45d52dd67648}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game_object\map">
+      <UniqueIdentifier>{f9279223-ab6d-4e8a-bcbb-b8ac73edff06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game_object\people">
+      <UniqueIdentifier>{a3fbafcd-3a5f-4bc5-a83b-1edf9b2772b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game_object\item">
+      <UniqueIdentifier>{106c2b70-b07e-45bc-88f6-ffed500cceb2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="zeusclient.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="scene\menuscene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="scene\playscene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="gameobject\map\gamemap.cpp">
-      <Filter>Source Files\gameobject\map</Filter>
-    </ClCompile>
-    <ClCompile Include="gameobject\people\people.cpp">
-      <Filter>Source Files\gameobject\people</Filter>
-    </ClCompile>
-    <ClCompile Include="gameobject\people\playerrole.cpp">
-      <Filter>Source Files\gameobject\people</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\inputengine.cpp">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\sceneengine.cpp">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="control\gamecontroler.cpp">
-      <Filter>Source Files\control</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp">
       <Filter>include\xmessage</Filter>
     </ClCompile>
@@ -113,43 +86,43 @@
     <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlparser.cpp">
       <Filter>import\tinyxml2.6</Filter>
     </ClCompile>
-    <ClCompile Include="control\controlobject\texture.cpp">
-      <Filter>Source Files\control\controlobject</Filter>
-    </ClCompile>
-    <ClCompile Include="control\controlobject\out_text.cpp">
+    <ClCompile Include="control\game_controler.cpp">
       <Filter>Source Files\control</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\input_engine.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\scene_engine.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\menu_scene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\play_scene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="zeus_client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="control\control_object\out_text.cpp">
+      <Filter>Source Files\control\control_object</Filter>
+    </ClCompile>
+    <ClCompile Include="control\control_object\texture.cpp">
+      <Filter>Source Files\control\control_object</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\people\people.cpp">
+      <Filter>Source Files\game_object\people</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\people\player_role.cpp">
+      <Filter>Source Files\game_object\people</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\map\game_map.cpp">
+      <Filter>Source Files\game_object\map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="scene\menuscene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="scene\playscene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
     <ClInclude Include="scene\scene.h">
       <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobject\sprite.h">
-      <Filter>Source Files\gameobject</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobject\map\gamemap.h">
-      <Filter>Source Files\gameobject\map</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobject\people\people.h">
-      <Filter>Source Files\gameobject\people</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobject\people\playerrole.h">
-      <Filter>Source Files\gameobject\people</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\inputengine.h">
-      <Filter>Source Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\sceneengine.h">
-      <Filter>Source Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="control\gamecontroler.h">
-      <Filter>Source Files\control</Filter>
     </ClInclude>
     <ClInclude Include="globaldef.h">
       <Filter>Source Files</Filter>
@@ -199,11 +172,38 @@
     <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h">
       <Filter>import\tinyxml2.6</Filter>
     </ClInclude>
-    <ClInclude Include="control\controlobject\texture.h">
-      <Filter>Source Files\control\controlobject</Filter>
-    </ClInclude>
-    <ClInclude Include="control\controlobject\out_text.h">
+    <ClInclude Include="control\game_controler.h">
       <Filter>Source Files\control</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\input_engine.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\scene_engine.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\menu_scene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\play_scene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="control\control_object\out_text.h">
+      <Filter>Source Files\control\control_object</Filter>
+    </ClInclude>
+    <ClInclude Include="control\control_object\texture.h">
+      <Filter>Source Files\control\control_object</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\sprite.h">
+      <Filter>Source Files\game_object</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\people\people.h">
+      <Filter>Source Files\game_object\people</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\people\player_role.h">
+      <Filter>Source Files\game_object\people</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\map\game_map.h">
+      <Filter>Source Files\game_object\map</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

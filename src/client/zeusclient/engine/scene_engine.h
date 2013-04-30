@@ -1,6 +1,6 @@
 #ifndef SCENE_ENGINE
 #define SCENE_ENGINE
-#include "control/gamecontroler.h"
+#include "control/game_controler.h"
 #include "scene/scene.h"
 
 

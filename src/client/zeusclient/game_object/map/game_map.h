@@ -1,6 +1,6 @@
 #ifndef GAME_MAP
 #define GAME_MAP
-#include "control/controlobject/texture.h"
+#include "control/control_object/texture.h"
 #include "globaldef.h"
 #include "import\hge\include\hgeVector.h"
 #include "import\hge\include\hgefont.h"
