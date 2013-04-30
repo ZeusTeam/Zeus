@@ -19,8 +19,7 @@ class PrintText
 public:
     PrintText();
     ~PrintText();
-
-    static bool Print(int x, int y,
+    static bool Print(float x, float y,
         TextRect rect, char* strText, ...);
 
 private:
