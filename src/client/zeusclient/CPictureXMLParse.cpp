@@ -1,10 +1,6 @@
 #include "CPictureXML.h"
 #include "CPictureXMLParse.h"
 
-CPictureXMLParse& CPictureXMLParse::GetInstance()
-{
-    return m_XMLParse;
-}
 
 CPictureXMLParse::CPictureXMLParse()
 {

@@ -3,8 +3,6 @@
 
 #include <map>
 #include <Parse_def.h>
-#include <windows.h>
-#include <shlwapi.h>
 #include "include\utils\singleton.h"
 #include "import\tinyxml-2.6.2\tinyxml.h"
 
@@ -18,16 +16,16 @@ class CXMLResource : public Singleton<CXMLResource>
 public:
 		virtual ~CXMLResource();
 
-		bool loadXML(const std::string& strPath);
+		//bool loadXML(const std::string& strPath);
 
 		virtual bool Initialize();
 
 private:
 		CXMLResource();
 
-		bool _Parse(TiXmlDocument& tiDoc);
+		mapXMLList* _Parse(TiXmlDocument& tiDoc);
 
-		bool _LoadGameXML(mapXMLList& mapXMLList);
+		//bool _LoadGameXML(mapXMLList& mapXMLList);
 
 		mapXMLList m_mapXMLList;
 };
