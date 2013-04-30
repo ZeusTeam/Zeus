@@ -9,7 +9,7 @@ PlayScene::PlayScene()
     m_Map = new GameMap;
     m_Map->Load("res\\img\\map1.png",
         "res\\img\\mapcollision1.png");
-    m_Map->PushCovering("res\\img\\covering1.png", 240.0f, 0.0f);
+    m_Map->PushCovering("res\\img\\covering1.png", 238.0f, 0.0f);
     m_ViewPosX = (int)m_Map->GetWidth() - 1;
     m_ViewPosX = ~m_ViewPosX;
     m_ViewPosY = (int)m_Map->GetHeight() - 1;

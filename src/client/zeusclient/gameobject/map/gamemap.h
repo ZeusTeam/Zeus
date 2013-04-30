@@ -36,7 +36,29 @@ public:
 
     void Render(viewportVector viewportPos)
     {
-        Texture::Render(m_x - viewportPos.x, m_y - viewportPos.y, 0, 0, 0, 0);
+        ///这通过计算裁剪遮盖图片到屏幕上
+        float x,y,tx,ty,w,h;
+        x = m_x - viewportPos.x;        //在屏幕上的坐标
+        y = m_y - viewportPos.y;
+        tx = -x;                        //相对于纹理的坐标
+        ty = -y;
+        if (x < 0)
+            x = 0;
+        if (y < 0)
+            y = 0;
+        if (tx < 0)
+            tx = 0;
+        if (ty < 0)
+            ty = 0;
+        w = GetWidth() - tx;
+        h = GetHeight() - ty;
+        if (tx > GetWidth())
+            w = 0;
+        if (ty > GetHeight())
+            h = 0;
+
+        if (w > 0 && h > 0)
+            Texture::Render(x, y, tx, ty, w, h);
     }
 
     CoveringTex(){}
