@@ -1,4 +1,5 @@
 #include "xml_list.h"
+#include "CPictureXMLParse.h"
 
 CXMLResource* Singleton<CXMLResource>::m_pInst = NULL;
 
@@ -41,7 +42,7 @@ bool CXMLResource::_LoadGameXML(mapXMLList& mapXMLList)
         ::PathAppendA(filePath, it->second.c_str());
 		if (it->first == PICTURE_ROOT_GAME)
         {
-           // CPictureXMLParse::GetInstance().LoadXML(filePath);
+            CPictureXMLParse::Instance()->LoadXML(filePath);
         }
         ::memset(filePath, 0, MAX_PATH);
     }
