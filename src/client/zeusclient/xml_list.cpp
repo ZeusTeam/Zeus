@@ -15,7 +15,7 @@ bool CXMLResource::Initialize()
 {
 		return true;
 }
-/*
+
 bool CXMLResource::loadXML(const std::string& strPath)
 {
 	TiXmlDocument XmlParse;
@@ -31,7 +31,7 @@ bool CXMLResource::loadXML(const std::string& strPath)
 	}
 	return true;
 }
-*/
+
 /*
 bool CXMLResource::_LoadGameXML(mapXMLList& mapXMLList)
 {
@@ -50,23 +50,23 @@ bool CXMLResource::_LoadGameXML(mapXMLList& mapXMLList)
     return true;
 }
 */
-mapXMLList* CXMLResource::_Parse(TiXmlDocument& tiDoc)
+bool CXMLResource::_Parse(TiXmlDocument& tiDoc)
 {
 	TiXmlElement* tiRoot = tiDoc.RootElement();
 	if (!tiRoot)
 	{
-		return NULL;
+		return false;
 	}
 	std::string sRootName = tiRoot->Value();
 	if (sRootName != XMLLIST_ROOT )
 	{
-		return NULL;
+		return false;
 	}
 
 	TiXmlNode * tiFirst = tiRoot->FirstChild(XMLLIST_XML);
 	if(tiFirst == NULL)
 	{
-		return NULL;
+		return false;
 	}
 	for (TiXmlElement* indexElement = tiFirst->ToElement();
 		  indexElement != NULL;
@@ -77,9 +77,25 @@ mapXMLList* CXMLResource::_Parse(TiXmlDocument& tiDoc)
 		  strPath = indexElement->Attribute(XMLLIST_PATH);
 		  strType = indexElement->Attribute(TYPE_OBJECT);
 		  if (strPath.empty()==0&& strType.empty()==0)
-        {
-            m_mapXMLList[strType] = strPath;
-        }
+		  {
+				m_mapXMLList[strType] = strPath;
+          }
 	}	 
-	return &m_mapXMLList;
+	return true;
+}
+
+
+const mapXMLList::const_iterator CXMLResource::Begin() const
+{
+	return m_mapXMLList.begin();
+}
+
+const mapXMLList::const_iterator CXMLResource::End() const
+{
+	return m_mapXMLList.end();
+}
+
+int CXMLResource::Size() const
+{
+	return m_mapXMLList.size();
 }

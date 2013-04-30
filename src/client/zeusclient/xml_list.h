@@ -16,16 +16,21 @@ class CXMLResource : public Singleton<CXMLResource>
 public:
 		virtual ~CXMLResource();
 
-		//bool loadXML(const std::string& strPath);
+		bool loadXML(const std::string& strPath);
 
 		virtual bool Initialize();
+		
+
+		const mapXMLList::const_iterator Begin() const;
+
+		const mapXMLList::const_iterator End() const;
+
+		int Size() const;
 
 private:
 		CXMLResource();
 
-		mapXMLList* _Parse(TiXmlDocument& tiDoc);
-
-		//bool _LoadGameXML(mapXMLList& mapXMLList);
+		bool  _Parse(TiXmlDocument& tiDoc);
 
 		mapXMLList m_mapXMLList;
 };
