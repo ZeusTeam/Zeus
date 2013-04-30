@@ -1,4 +1,4 @@
-#include "gamemap.h"
+#include "game_map.h"
 #include <math.h>
 
 GameMap::GameMap()

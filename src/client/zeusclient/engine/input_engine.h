@@ -3,7 +3,7 @@
 
 #include "include\utils\singleton.h"
 #include "import\hge\include\hge.h"
-#include "gameobject\sprite.h"
+#include "game_object\sprite.h"
 #include <vector>
 
 typedef enum _KeyState

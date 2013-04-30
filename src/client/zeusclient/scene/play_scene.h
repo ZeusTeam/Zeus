@@ -2,10 +2,10 @@
 #define PLAY_SCENE
 
 #include "import\hge\include\hgesprite.h"
-#include "control/controlobject/texture.h"
-#include "gameobject/people/playerrole.h"
+#include "control/control_object/texture.h"
+#include "game_object/people/player_role.h"
 #include "scene.h"
-#include "gameobject/map/gamemap.h"
+#include "game_object/map/game_map.h"
 class PlayScene
     :public Scene
 {
