@@ -1,6 +1,6 @@
 #include "globaldef.h"
-#include "menuscene.h"
-#include "playscene.h"
+#include "menu_scene.h"
+#include "play_scene.h"
 
 MenuScene::MenuScene()
 {

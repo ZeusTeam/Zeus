@@ -1,5 +1,5 @@
 #include "globaldef.h"
-#include "inputEngine.h"
+#include "input_Engine.h"
 
 template<> InputEngine* Singleton<InputEngine>::m_pInst = NULL;
 

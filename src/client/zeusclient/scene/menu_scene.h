@@ -2,7 +2,7 @@
 #define MENU_SCENE
 
 #include "import\hge\include\hgesprite.h"
-#include "control/controlobject/texture.h"
+#include "control/control_object/texture.h"
 #include "scene.h"
 
 class MenuScene

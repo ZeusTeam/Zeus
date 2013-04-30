@@ -1,5 +1,5 @@
 #include "globaldef.h"
-#include "playerrole.h"
+#include "player_role.h"
 
 PlayerRole::PlayerRole(float x, float y)
     : People(x, y)
