@@ -1,5 +1,5 @@
 #include "xml_list.h"
-#include "CPictureXMLParse.h"
+#include "cpicturexml_parse.h"
 
 CXMLResource* Singleton<CXMLResource>::m_pInst = NULL;
 
@@ -16,7 +16,7 @@ bool CXMLResource::Initialize()
 		return true;
 }
 
-bool CXMLResource::loadXML(const std::string& strPath)
+bool CXMLResource::LoadXML(const std::string& strPath)
 {
 	TiXmlDocument XmlParse;
 
@@ -55,18 +55,18 @@ bool CXMLResource::_Parse(TiXmlDocument& tiDoc)
 	TiXmlElement* tiRoot = tiDoc.RootElement();
 	if (!tiRoot)
 	{
-		return false;
+		  return false;
 	}
 	std::string sRootName = tiRoot->Value();
 	if (sRootName != XMLLIST_ROOT )
 	{
-		return false;
+		  return false;
 	}
 
 	TiXmlNode * tiFirst = tiRoot->FirstChild(XMLLIST_XML);
 	if(tiFirst == NULL)
 	{
-		return false;
+		  return false;
 	}
 	for (TiXmlElement* indexElement = tiFirst->ToElement();
 		  indexElement != NULL;
@@ -76,7 +76,7 @@ bool CXMLResource::_Parse(TiXmlDocument& tiDoc)
 		  std::string strType;
 		  strPath = indexElement->Attribute(XMLLIST_PATH);
 		  strType = indexElement->Attribute(TYPE_OBJECT);
-		  if (strPath.empty()==0&& strType.empty()==0)
+		  if (strPath.empty() == 0&& strType.empty() == 0)
 		  {
 				m_mapXMLList[strType] = strPath;
           }

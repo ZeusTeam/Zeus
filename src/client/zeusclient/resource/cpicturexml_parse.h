@@ -1,10 +1,11 @@
 #ifndef PICTURE_PARSERXML_
 #define PICTURE_PARSERXML_
 
-#include <Parse_def.h>
+#include "parse_def.h"
 #include <map>
-#include <CPictureXML.h>
+#include "cpicturexml.h"
 #include "include\utils\Singleton.h"
+#include "include\utils\utils.h"
 #include "import\tinyxml-2.6.2\tinyxml.h"
 
 typedef std::map<std::string, CPictureXML*> MapPitureList;
@@ -15,7 +16,6 @@ class CPictureXMLParse  : public Singleton<CPictureXMLParse>
 public:
 		~CPictureXMLParse();
 
-		//static CPictureXMLParse& GetInstance();
 		bool LoadXML(const std::string& strPath);
 		CPictureXML* Get(std::string nId) const;
 
@@ -28,15 +28,15 @@ public:
 private:
     void _Close();
     bool _Parse(TiXmlDocument& TinyXML);
+ 
+private:
+        CPictureXMLParse();
+        CPictureXMLParse( CPictureXMLParse& );
+        CPictureXMLParse& operator = (CPictureXMLParse&);
+
 
 private:
-    CPictureXMLParse();
-    CPictureXMLParse(CPictureXMLParse&);
-    CPictureXMLParse& operator = (CPictureXMLParse&);
-
-	//static CPictureXMLParse m_XMLParse;
-private:
-    MapPitureList m_mapPiture;
+        MapPitureList m_mapPiture;
 };
 
 #endif

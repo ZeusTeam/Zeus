@@ -1,5 +1,5 @@
-#include "CPictureXML.h"
-#include "CPictureXMLParse.h"
+#include "cpicturexml.h"
+#include "cpicturexml_parse.h"
 
 
 CPictureXMLParse::CPictureXMLParse()
@@ -71,18 +71,14 @@ bool CPictureXMLParse::_Parse(TiXmlDocument& TinyXML)
         tiPicture = tiPicture->NextSiblingElement())//读取当下元素中的所有属性
 	 {
 		 CPictureXML* pPicture = new CPictureXML;
-		if (tiPicture->Attribute(ID_OBJECT) != NULL)
-        {
-			pPicture->PictureId = tiPicture->Attribute(ID_OBJECT);//设置Id
-        }
-		if (tiPicture->Attribute(PICTURE_PATH) != NULL)
-        {
-			pPicture->PicturePath = tiPicture->Attribute(PICTURE_PATH);//设置Path
-        }
+         if(utils::GetXmlStrAttributeA(tiPicture, ID_OBJECT, pPicture->PictureId)
+             && utils::GetXmlStrAttributeA(tiPicture, PICTURE_PATH, pPicture->PicturePath))
+		
 		m_mapPiture[pPicture->PictureId] = pPicture;
 	 }
 	 return true;
 }
+
 
 CPictureXML* CPictureXMLParse::Get(std::string nId) const
 {

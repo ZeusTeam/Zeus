@@ -71,6 +71,7 @@
     <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxml.cpp" />
     <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlerror.cpp" />
     <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlparser.cpp" />
+    <ClCompile Include="..\..\..\include\utils\utils.cpp" />
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp" />
     <ClCompile Include="..\..\..\include\xmessage\cmessage.cpp" />
     <ClCompile Include="..\..\..\include\xmessage\message2pack.cpp" />
@@ -83,19 +84,20 @@
     <ClCompile Include="control\controlobject\out_text.cpp" />
     <ClCompile Include="control\controlobject\texture.cpp" />
     <ClCompile Include="control\gamecontroler.cpp" />
-    <ClCompile Include="CPictureXMLParse.cpp" />
     <ClCompile Include="engine\inputengine.cpp" />
     <ClCompile Include="engine\sceneengine.cpp" />
     <ClCompile Include="gameobject\map\gamemap.cpp" />
     <ClCompile Include="gameobject\people\people.cpp" />
     <ClCompile Include="gameobject\people\playerrole.cpp" />
+    <ClCompile Include="resource\cpicturexml_parse.cpp" />
+    <ClCompile Include="resource\xml_list.cpp" />
     <ClCompile Include="scene\menuscene.cpp" />
     <ClCompile Include="scene\playscene.cpp" />
-    <ClCompile Include="xml_list.cpp" />
     <ClCompile Include="zeusclient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h" />
+    <ClInclude Include="..\..\..\include\utils\utils.h" />
     <ClInclude Include="..\..\..\include\xmessage\buffermessage.h" />
     <ClInclude Include="..\..\..\include\xmessage\cmessage.h" />
     <ClInclude Include="..\..\..\include\xmessage\ibasemessage.h" />
@@ -113,8 +115,6 @@
     <ClInclude Include="control\controlobject\out_text.h" />
     <ClInclude Include="control\controlobject\texture.h" />
     <ClInclude Include="control\gamecontroler.h" />
-    <ClInclude Include="CPictureXML.h" />
-    <ClInclude Include="CPictureXMLParse.h" />
     <ClInclude Include="engine\inputengine.h" />
     <ClInclude Include="engine\sceneengine.h" />
     <ClInclude Include="gameobject\map\gamemap.h" />
@@ -122,12 +122,14 @@
     <ClInclude Include="gameobject\people\playerrole.h" />
     <ClInclude Include="gameobject\sprite.h" />
     <ClInclude Include="globaldef.h" />
-    <ClInclude Include="Parse_def.h" />
-    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource\cpicturexml.h" />
+    <ClInclude Include="resource\cpicturexml_parse.h" />
+    <ClInclude Include="resource\parse_def.h" />
+    <ClInclude Include="resource\resource.h" />
+    <ClInclude Include="resource\xml_list.h" />
     <ClInclude Include="scene\menuscene.h" />
     <ClInclude Include="scene\playscene.h" />
     <ClInclude Include="scene\scene.h" />
-    <ClInclude Include="xml_list.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

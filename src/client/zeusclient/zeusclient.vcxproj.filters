@@ -51,6 +51,9 @@
     <Filter Include="Source Files\resource">
       <UniqueIdentifier>{90e4ed34-f12c-4f04-8a23-1e8cb881362e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\utils">
+      <UniqueIdentifier>{6f0fc1da-5e06-41d1-bdc4-71fbb9d4ec3a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="zeusclient.cpp">
@@ -122,10 +125,13 @@
     <ClCompile Include="control\controlobject\out_text.cpp">
       <Filter>Source Files\control</Filter>
     </ClCompile>
-    <ClCompile Include="CPictureXMLParse.cpp">
+    <ClCompile Include="..\..\..\include\utils\utils.cpp">
+      <Filter>include\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="resource\cpicturexml_parse.cpp">
       <Filter>Source Files\resource</Filter>
     </ClCompile>
-    <ClCompile Include="xml_list.cpp">
+    <ClCompile Include="resource\xml_list.cpp">
       <Filter>Source Files\resource</Filter>
     </ClCompile>
   </ItemGroup>
@@ -214,19 +220,22 @@
     <ClInclude Include="control\controlobject\out_text.h">
       <Filter>Source Files\control</Filter>
     </ClInclude>
-    <ClInclude Include="CPictureXML.h">
+    <ClInclude Include="..\..\..\include\utils\utils.h">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\cpicturexml.h">
       <Filter>Source Files\resource</Filter>
     </ClInclude>
-    <ClInclude Include="CPictureXMLParse.h">
+    <ClInclude Include="resource\cpicturexml_parse.h">
       <Filter>Source Files\resource</Filter>
     </ClInclude>
-    <ClInclude Include="Parse_def.h">
+    <ClInclude Include="resource\parse_def.h">
       <Filter>Source Files\resource</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="resource\resource.h">
       <Filter>Source Files\resource</Filter>
     </ClInclude>
-    <ClInclude Include="xml_list.h">
+    <ClInclude Include="resource\xml_list.h">
       <Filter>Source Files\resource</Filter>
     </ClInclude>
   </ItemGroup>

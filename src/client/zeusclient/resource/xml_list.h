@@ -2,7 +2,7 @@
 #define XML_LIST_
 
 #include <map>
-#include <Parse_def.h>
+#include "parse_def.h"
 #include "include\utils\singleton.h"
 #include "import\tinyxml-2.6.2\tinyxml.h"
 
@@ -16,7 +16,7 @@ class CXMLResource : public Singleton<CXMLResource>
 public:
 		virtual ~CXMLResource();
 
-		bool loadXML(const std::string& strPath);
+		bool LoadXML(const std::string& strPath);
 
 		virtual bool Initialize();
 		
