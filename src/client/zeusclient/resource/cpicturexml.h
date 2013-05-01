@@ -9,6 +9,8 @@ struct CPictureXML
 {
 	std::string PictureId;
 	std::string PicturePath;
+    int Posx;
+    int Posy;
 };
 
 #endif

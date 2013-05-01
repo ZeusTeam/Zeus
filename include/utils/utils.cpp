@@ -1,5 +1,6 @@
 #include "utils.h"
 #include <cstdio>
+#include "src\client\zeusclient\resource\parse_def.h"
 
 bool utils::GetXmlStrAttributeA( TiXmlElement *pElement, char *pName, std::string &strData )
 {
@@ -19,10 +20,26 @@ bool utils::GetXmlIntAttribute( TiXmlElement *pElement, char *pName, int &nData 
     if (pElement)
     {
         const char *pStr = pElement->Attribute(pName);
-        if (pStr)
+        if(pName == PICTURE_POSX||pName == PICTURE_POSY)
         {
-            nData = atoi(pStr);
-            return true;
+            if (pStr)
+            {
+                  nData = atoi(pStr);
+                  return true;
+            }
+            else
+            {
+                   nData = 0;
+                   return true;
+            }
+        }
+        else
+        {
+            if (pStr)
+            {
+                nData = atoi(pStr);
+                return true;
+            }
         }
     }
     return false;

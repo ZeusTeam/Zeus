@@ -32,24 +32,7 @@ bool CXMLResource::LoadXML(const std::string& strPath)
 	return true;
 }
 
-/*
-bool CXMLResource::_LoadGameXML(mapXMLList& mapXMLList)
-{
-    for (auto it = mapXMLList.begin(); it != mapXMLList.end(); it++)
-    {
-        char filePath[MAX_PATH] = {0};
-        ::GetModuleFileNameA(0, filePath, MAX_PATH);
-        ::PathRemoveFileSpecA(filePath);
-        ::PathAppendA(filePath, it->second.c_str());
-		if (it->first == PICTURE_ROOT_GAME)
-        {
-            CPictureXMLParse::Instance()->LoadXML(filePath);
-        }
-        ::memset(filePath, 0, MAX_PATH);
-    }
-    return true;
-}
-*/
+
 bool CXMLResource::_Parse(TiXmlDocument& tiDoc)
 {
 	TiXmlElement* tiRoot = tiDoc.RootElement();

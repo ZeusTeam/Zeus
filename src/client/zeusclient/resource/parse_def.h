@@ -1,13 +1,8 @@
 #ifndef PARSE_DEF
 #define PARSE_DEF
 
-#define STAGE_ROOT_GAME "gamestage"
-#define PLANE_ROOT_GAME "gameplane"
-#define BULLET_ROOT_GAME "gamebullet"
-#define BLAST_ROOT_GAME "gameblast"
-#define WEAPON_ROOT_GAME "gameweapon"
-#define EMITTER_ROOT_GAME "gameemitter"
-#define PICTURE_ROOT_GAME "gamepicture"
+
+
 
 #define TRUE_GAME "true"
 #define FALSE_GAME "false"
@@ -22,8 +17,11 @@
 #define FRAMECOUNTOBJECT "framecount"
 
 ///> picture
+#define PICTURE_ROOT_GAME "gamepicture"
 #define PICTURE_GAME "img"
 #define PICTURE_PATH "path"
+#define PICTURE_POSX "posx"
+#define PICTURE_POSY "posy"
 ///> xmllist
 #define XMLLIST_ROOT "xmllist"
 #define XMLLIST_PATH "path"
