@@ -13,12 +13,16 @@ Role::~Role()
 {
 }
 
-AnimationObject* Role::LoadRoleImage(const std::string& strPath,
-        int frames, float FPS, float x, float y, float w, float h)
+bool Role::LoadRoleImage(const std::string& strPath,
+        int frames, float FPS, float x, float w, float h)
 {
     m_nWidth = (int)w;
     m_nHeight = (int)h;
-    if (m_roleAnimation.Load(strPath, frames, FPS, x, y, w, h))
-        return &m_roleAnimation;
+    for (int index = 0; index < Direction_Tail; index++)
+    {
+        m_animation[index].Load(
+            strPath, frames,
+            FPS, x, index * h, w, h);
+    }
     return NULL;
 }

@@ -4,10 +4,12 @@
 PlayerRole::PlayerRole(float x, float y)
     : Role(x, y)
     , m_Direction(Direction_Up)
-    , m_animation(NULL)
 {
-    m_animation = LoadRoleImage("res\\img\\self.png", 60, MOVEFRAMEMAX, 0, 0, 128, 128);
+    LoadRoleImage("res\\img\\self.png", 8, MOVEFRAMEMAX, 0, 128, 128);
     m_nSpeed = 3;
+    m_nPresentFrame = 0;
+    m_nTimeFrame = 0;
+    m_nFrameCount = 8 - 1;
 }
 
 PlayerRole::~PlayerRole()
@@ -21,12 +23,8 @@ void PlayerRole::SetViewport(roleVector v)
 
 void PlayerRole::Render()
 {
-    if (!m_animation)
-    {
-        return;
-    }
     /// 世界坐标转换为视口坐标 同时将坐标计算到左上角
-    m_animation->Render(
+    m_animation[m_Direction].Render(
         (float)m_nPosX - m_viewportPos.x - m_nWidth / 2,
         (float)m_nPosY - m_viewportPos.y - m_nHeight * 3 / 4);
 }
@@ -34,9 +32,19 @@ void PlayerRole::Render()
 
 void PlayerRole::Update()
 {
-    if (!m_bMoving)///不动的时候恢复脚的动作
-        m_animation->Play(int(m_Direction) * 8 + 1, int(m_Direction) * 8 + 1, true);
-
+    if (m_nPresentFrame != 0 || m_bMoving)///不动的时候恢复脚的动作
+    {
+        ++m_nTimeFrame;
+    }
+    if (m_nPresentFrame == m_nFrameCount)
+    {
+        m_nPresentFrame = 0;
+    }
+    if (m_nTimeFrame >= m_animation[m_Direction].GetFPS())
+    {
+        m_nPresentFrame++;
+        m_nTimeFrame = 0;
+    }
     m_bMoving  = false;
 }
 
@@ -105,12 +113,7 @@ roleVector PlayerRole::GetNextPos()
         nextPos.x = m_nPosX + 0.707f * m_nSpeed; /// cos45° = 0.707
         nextPos.y = m_nPosY + 0.707f * m_nSpeed;
     }
-    if (m_Direction != m_LastDir)
-    {
-        m_animation->Stop();
-        m_animation->Play(int(m_Direction) * 8 + 1, int(m_Direction) * 8 + 9, true);
-    }    
-    m_LastDir = m_Direction;
+    m_animation[m_Direction].PlayFrame(m_nPresentFrame);
     return nextPos;
 }
 

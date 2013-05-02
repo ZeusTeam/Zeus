@@ -34,10 +34,9 @@ public:
     virtual void SetViewport(roleVector v);
 
 protected:
-
-    AnimationObject* m_animation;
     PeopleDirection m_Direction;
-    PeopleDirection m_LastDir;
+    int m_nPresentFrame;
+    int m_nTimeFrame;
     bool m_bMoving;
     roleVector m_viewportPos;
 };

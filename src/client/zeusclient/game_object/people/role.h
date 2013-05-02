@@ -11,8 +11,8 @@ public:
     Role(float x = 0, float y = 0);
     virtual ~Role();
 
-    virtual AnimationObject* LoadRoleImage(const std::string& strPath,
-        int frames, float FPS, float x, float y, float w, float h);
+    virtual bool LoadRoleImage(const std::string& strPath,
+        int frames, float FPS, float x, float w, float h);
 
     virtual bool IsVaild() {return true;}
 
@@ -21,7 +21,7 @@ protected:
     int m_HPMax;
     int m_MP;
     int m_MPMax;
-    AnimationObject m_roleAnimation;
+    AnimationObject m_animation[Direction_Tail];
 };
 
 #endif

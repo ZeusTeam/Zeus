@@ -25,6 +25,7 @@ public:
 
     virtual void Release();
 
+    HTEXTURE& GetObject() { return m_hTex; }
 
 private:
     float m_texHeight;      //纹理的高度
