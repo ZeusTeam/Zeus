@@ -6,7 +6,7 @@ PlayerRole::PlayerRole(float x, float y)
     , m_Direction(Direction_Up)
     , m_animation(NULL)
 {
-    m_animation = LoadRoleImage("res\\img\\self.png", 64, MOVEFRAMEMAX, 0, 0, 128, 128);
+    m_animation = LoadRoleImage("res\\img\\self.png", 60, MOVEFRAMEMAX, 0, 0, 128, 128);
     m_nSpeed = 3;
 }
 
@@ -27,8 +27,8 @@ void PlayerRole::Render()
     }
     /// 世界坐标转换为视口坐标 同时将坐标计算到左上角
     m_animation->Render(
-        (float)m_nPosX - m_viewportPos.x - m_nWidth / 2, 
-        (float)m_nPosY - m_viewportPos.y - m_nHeight * 3 / 4); 
+        (float)m_nPosX - m_viewportPos.x - m_nWidth / 2,
+        (float)m_nPosY - m_viewportPos.y - m_nHeight * 3 / 4);
 }
 
 

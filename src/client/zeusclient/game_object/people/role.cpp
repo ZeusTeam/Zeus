@@ -16,6 +16,8 @@ Role::~Role()
 AnimationObject* Role::LoadRoleImage(const std::string& strPath,
         int frames, float FPS, float x, float y, float w, float h)
 {
+    m_nWidth = (int)w;
+    m_nHeight = (int)h;
     if (m_roleAnimation.Load(strPath, frames, FPS, x, y, w, h))
         return &m_roleAnimation;
     return NULL;

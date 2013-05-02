@@ -10,12 +10,12 @@ public:
     AnimationObject();
     virtual ~AnimationObject();
     bool Load(const std::string path
-        ,  int frames                   //总帧数
-        ,  float FPS                    //动画播放速度 帧/秒
-        ,  float x                      //第一帧坐标
-        ,  float y
-        ,  float w                      //每帧大小
-        ,  float h
+        , int frames                   //总帧数
+        , float FPS                    //动画播放速度 帧/秒
+        , float x                      //第一帧坐标
+        , float y
+        , float w                      //每帧大小
+        , float h
         );
 
     void SetFrame(int index);
