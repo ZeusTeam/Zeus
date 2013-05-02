@@ -2,7 +2,7 @@
 #define PLAY_SCENE
 
 #include "import\hge\include\hgesprite.h"
-#include "control/control_object/texture.h"
+#include "control/control_object/texture_object.h"
 #include "game_object/people/player_role.h"
 #include "scene.h"
 #include "game_object/map/game_map.h"

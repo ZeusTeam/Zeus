@@ -107,17 +107,20 @@
     <ClCompile Include="control\control_object\out_text.cpp">
       <Filter>Source Files\control\control_object</Filter>
     </ClCompile>
-    <ClCompile Include="control\control_object\texture.cpp">
-      <Filter>Source Files\control\control_object</Filter>
-    </ClCompile>
-    <ClCompile Include="game_object\people\people.cpp">
-      <Filter>Source Files\game_object\people</Filter>
-    </ClCompile>
     <ClCompile Include="game_object\people\player_role.cpp">
       <Filter>Source Files\game_object\people</Filter>
     </ClCompile>
     <ClCompile Include="game_object\map\game_map.cpp">
       <Filter>Source Files\game_object\map</Filter>
+    </ClCompile>
+    <ClCompile Include="control\control_object\texture_object.cpp">
+      <Filter>Source Files\control\control_object</Filter>
+    </ClCompile>
+    <ClCompile Include="control\control_object\animation_object.cpp">
+      <Filter>Source Files\control\control_object</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\people\role.cpp">
+      <Filter>Source Files\game_object\people</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -190,20 +193,23 @@
     <ClInclude Include="control\control_object\out_text.h">
       <Filter>Source Files\control\control_object</Filter>
     </ClInclude>
-    <ClInclude Include="control\control_object\texture.h">
-      <Filter>Source Files\control\control_object</Filter>
-    </ClInclude>
     <ClInclude Include="game_object\sprite.h">
       <Filter>Source Files\game_object</Filter>
-    </ClInclude>
-    <ClInclude Include="game_object\people\people.h">
-      <Filter>Source Files\game_object\people</Filter>
     </ClInclude>
     <ClInclude Include="game_object\people\player_role.h">
       <Filter>Source Files\game_object\people</Filter>
     </ClInclude>
     <ClInclude Include="game_object\map\game_map.h">
       <Filter>Source Files\game_object\map</Filter>
+    </ClInclude>
+    <ClInclude Include="control\control_object\texture_object.h">
+      <Filter>Source Files\control\control_object</Filter>
+    </ClInclude>
+    <ClInclude Include="control\control_object\animation_object.h">
+      <Filter>Source Files\control\control_object</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\people\role.h">
+      <Filter>Source Files\game_object\people</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
