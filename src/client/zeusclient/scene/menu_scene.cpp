@@ -4,7 +4,7 @@
 
 MenuScene::MenuScene()
 {
-    m_bgTexture.Load("res\\img\\menubg.png", 0, 0);
+    m_bgRenderer.Load("res\\img\\menubg.png");
 }
 
 MenuScene::~MenuScene()
@@ -17,7 +17,7 @@ void MenuScene::Reset()
 
 void MenuScene::Output()
 {
-    m_bgTexture.Render(0,0);
+    m_bgRenderer.Render(0,0);
 }
 
 void MenuScene::Update()

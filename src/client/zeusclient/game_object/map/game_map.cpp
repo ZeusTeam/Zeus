@@ -11,11 +11,11 @@ GameMap::GameMap()
 }
 bool GameMap::Load(string mapTex, string collisionMapTex)
 {
-    if (!m_mapTex.Load(mapTex, 0, 0))
+    if (!m_mapTex.Load(mapTex))
     {
         return false;
     }
-    if (!m_collisionMapTex.Load(collisionMapTex, 0, 0))
+    if (!m_collisionMapTex.Load(collisionMapTex))
     {
         return false;
     }
@@ -42,11 +42,6 @@ bool GameMap::SetViewport(float x, float y, float width, float height, roleVecto
     m_viewportHeight = height;
     return true;
 }
-///绘制地图
-void GameMap::Render()
-{
-    m_mapTex.Render(0, 0);
-}
 
 void GameMap::Render(roleVector rolePos)
 {
@@ -64,7 +59,8 @@ void GameMap::Render(roleVector rolePos)
     if (m_viewportPos.y > m_mapTex.GetHeight() - m_viewportHeight)
         m_viewportPos.y = m_mapTex.GetHeight() - m_viewportHeight;
     
-    m_mapTex.Render(0, 0, m_viewportPos.x, m_viewportPos.y, m_viewportWidth, m_viewportHeight);
+    m_mapTex.SetRenderRect(m_viewportPos.x, m_viewportPos.y, m_viewportWidth, m_viewportHeight);
+    m_mapTex.Render(0, 0);
 }
 
 ///绘制遮盖角色的部分 应该在角色绘制之后调用
