@@ -83,6 +83,7 @@
     <ClCompile Include="control\control_object\out_text.cpp" />
     <ClCompile Include="control\control_object\texture.cpp" />
     <ClCompile Include="control\game_controler.cpp" />
+    <ClCompile Include="engine\game_engine.cpp" />
     <ClCompile Include="engine\input_engine.cpp" />
     <ClCompile Include="engine\scene_engine.cpp" />
     <ClCompile Include="game_object\map\game_map.cpp" />
@@ -111,6 +112,8 @@
     <ClInclude Include="control\control_object\out_text.h" />
     <ClInclude Include="control\control_object\texture.h" />
     <ClInclude Include="control\game_controler.h" />
+    <ClInclude Include="engine\game_engine.h" />
+    <ClInclude Include="engine\iengine.h" />
     <ClInclude Include="engine\input_engine.h" />
     <ClInclude Include="engine\scene_engine.h" />
     <ClInclude Include="game_object\map\game_map.h" />

@@ -1,6 +1,9 @@
 #include "globaldef.h"
 #include "import\hge\include\hge.h"
+#include "engine\game_engine.h"
 #include "control\game_controler.h"
+
+#include <tchar.h>
 
 #pragma comment(lib, "../../../import/hge/lib/hge.lib")
 #pragma comment(lib, "../../../import/hge/lib/hgehelp.lib")
@@ -28,29 +31,26 @@ int WINAPI WinMain(          HINSTANCE hInstance,
     int nCmdShow
 )
 {
-    hge = hgeCreate(HGE_VERSION);
-    
-    hge->System_SetState(HGE_FRAMEFUNC, Update);
-    hge->System_SetState(HGE_RENDERFUNC, Render);
-    hge->System_SetState(HGE_FPS, 60);
-    hge->System_SetState(HGE_TITLE, "RPG Demo");
-    hge->System_SetState(HGE_SHOWSPLASH, false); //²»ÏÔÊ¾HGEµÄLOGO
-    hge->System_SetState(HGE_WINDOWED, true); 
-    hge->System_SetState(HGE_LOGFILE, "RPGDemo.log");
-    hge->System_SetState(HGE_SCREENWIDTH, WINDOW_WIDTH);
-    hge->System_SetState(HGE_SCREENHEIGHT, WINDOW_HEIGHT);
+    GameEngine engine;
+    engine.State(Func_Frame, Update);
+    engine.State(Func_Render, Render);
+    engine.State(Attribute_Width, WINDOW_WIDTH);
+    engine.State(Attribute_Height, WINDOW_HEIGHT);
+    engine.State(Attribute_Fps, 60);
+    engine.State(Attribute_Title, _T("RPG Demo"));
+    engine.State(Attribute_LogPath, _T("RPGDemo.log"));
 
     SceneEngine_ = SceneEngine::Instance();
     InputEngine_ = InputEngine::Instance();
-    InputEngine_->Initialize(hge);
+    InputEngine_->Initialize(engine.PresentEngine());
     SceneEngine_->Initialize();
+    hge = engine.PresentEngine();
 
-    if (hge->System_Initiate())
+    if (engine.Initialize())
     {
         game = GameControler::Instance();
         game->Start();
-        hge->System_Start();
-        hge->System_Shutdown();
+        engine.Start();
     }
     else
     {

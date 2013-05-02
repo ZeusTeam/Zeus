@@ -119,6 +119,9 @@
     <ClCompile Include="game_object\map\game_map.cpp">
       <Filter>Source Files\game_object\map</Filter>
     </ClCompile>
+    <ClCompile Include="engine\game_engine.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scene\scene.h">
@@ -204,6 +207,12 @@
     </ClInclude>
     <ClInclude Include="game_object\map\game_map.h">
       <Filter>Source Files\game_object\map</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\game_engine.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\iengine.h">
+      <Filter>Source Files\engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
