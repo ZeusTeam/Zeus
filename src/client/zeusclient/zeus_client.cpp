@@ -42,7 +42,7 @@ int WINAPI WinMain(          HINSTANCE hInstance,
 
     SceneEngine_ = SceneEngine::Instance();
     InputEngine_ = InputEngine::Instance();
-    InputEngine_->Initialize(engine.PresentEngine());
+    InputEngine_->Initialize(&engine);
     SceneEngine_->Initialize();
     hge = engine.PresentEngine();
 

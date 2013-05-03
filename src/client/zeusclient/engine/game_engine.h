@@ -29,6 +29,8 @@ typedef enum _EngineAttributeString
     Attribute_LogPath,
 }EngineAttributeString;
 
+typedef HGE* GameEnginePtr;
+
 typedef bool (*EngineCallbackFun) ();
 
 class GameEngine
@@ -38,23 +40,25 @@ public:
     virtual ~GameEngine();
 
 public:
-
     bool Initialize();
 
     bool State(EngineFunc funtype, EngineCallbackFun fun);
 
     bool State(EngineAttributeInt attrtype, int value);
 
-    bool State(EngineAttributeString attrtype, tstring value);
+    bool State(EngineAttributeString attrtype,const std::string& value);
 
     void Start();
 
     void Shutdown();
 
-    HGE* PresentEngine();
+    GameEnginePtr PresentEngine();
+
+public:
+    bool Input_GetKeyState(int nKey);
 
 private:
-    HGE* m_hge;
+    GameEnginePtr m_hge;
 };
 
 #endif

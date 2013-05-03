@@ -68,7 +68,7 @@ bool GameEngine::State(EngineAttributeInt attrtype, int value)
     return true;
 }
 
-bool GameEngine::State(EngineAttributeString attrtype, tstring value)
+bool GameEngine::State(EngineAttributeString attrtype, const std::string& value)
 {
     if (!m_hge)
     {
@@ -107,4 +107,9 @@ void GameEngine::Shutdown()
 HGE* GameEngine::PresentEngine()
 {
     return m_hge;
+}
+
+bool GameEngine::Input_GetKeyState(int nKey)
+{
+    return m_hge->Input_GetKeyState(nKey);
 }
