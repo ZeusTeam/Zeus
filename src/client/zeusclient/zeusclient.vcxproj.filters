@@ -36,11 +36,6 @@
     <Filter Include="Source Files\control\control_object">
       <UniqueIdentifier>{29405668-ccd4-43d7-9fa4-8baa9540e771}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\resource">
-      <UniqueIdentifier>{90e4ed34-f12c-4f04-8a23-1e8cb881362e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\utils">
-      <UniqueIdentifier>{6f0fc1da-5e06-41d1-bdc4-71fbb9d4ec3a}</UniqueIdentifier>
     <Filter Include="Source Files\game_object">
       <UniqueIdentifier>{9a94c6bf-71c9-4491-b952-45d52dd67648}</UniqueIdentifier>
     </Filter>
@@ -94,18 +89,6 @@
     <ClCompile Include="control\game_controler.cpp">
       <Filter>Source Files\control</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\include\utils\utils.cpp">
-      <Filter>include\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="resource\cpicturexml_parse.cpp">
-      <Filter>Source Files\resource</Filter>
-    </ClCompile>
-    <ClCompile Include="resource\xml_list.cpp">
-      <Filter>Source Files\resource</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="scene\menuscene.h">
     <ClCompile Include="engine\input_engine.cpp">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
@@ -124,17 +107,29 @@
     <ClCompile Include="control\control_object\out_text.cpp">
       <Filter>Source Files\control\control_object</Filter>
     </ClCompile>
-    <ClCompile Include="control\control_object\texture.cpp">
-      <Filter>Source Files\control\control_object</Filter>
-    </ClCompile>
-    <ClCompile Include="game_object\people\people.cpp">
-      <Filter>Source Files\game_object\people</Filter>
-    </ClCompile>
     <ClCompile Include="game_object\people\player_role.cpp">
       <Filter>Source Files\game_object\people</Filter>
     </ClCompile>
     <ClCompile Include="game_object\map\game_map.cpp">
       <Filter>Source Files\game_object\map</Filter>
+    </ClCompile>
+    <ClCompile Include="control\control_object\texture_object.cpp">
+      <Filter>Source Files\control\control_object</Filter>
+    </ClCompile>
+    <ClCompile Include="control\control_object\animation_object.cpp">
+      <Filter>Source Files\control\control_object</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\people\role.cpp">
+      <Filter>Source Files\game_object\people</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\game_engine.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\texture_engine.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\graphics_engine.cpp">
+      <Filter>Source Files\engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -192,23 +187,6 @@
     <ClInclude Include="control\game_controler.h">
       <Filter>Source Files\control</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\utils\utils.h">
-      <Filter>include\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="resource\cpicturexml.h">
-      <Filter>Source Files\resource</Filter>
-    </ClInclude>
-    <ClInclude Include="resource\cpicturexml_parse.h">
-      <Filter>Source Files\resource</Filter>
-    </ClInclude>
-    <ClInclude Include="resource\parse_def.h">
-      <Filter>Source Files\resource</Filter>
-    </ClInclude>
-    <ClInclude Include="resource\resource.h">
-      <Filter>Source Files\resource</Filter>
-    </ClInclude>
-    <ClInclude Include="resource\xml_list.h">
-      <Filter>Source Files\resource</Filter>
     <ClInclude Include="engine\input_engine.h">
       <Filter>Source Files\engine</Filter>
     </ClInclude>
@@ -224,20 +202,35 @@
     <ClInclude Include="control\control_object\out_text.h">
       <Filter>Source Files\control\control_object</Filter>
     </ClInclude>
-    <ClInclude Include="control\control_object\texture.h">
-      <Filter>Source Files\control\control_object</Filter>
-    </ClInclude>
     <ClInclude Include="game_object\sprite.h">
       <Filter>Source Files\game_object</Filter>
-    </ClInclude>
-    <ClInclude Include="game_object\people\people.h">
-      <Filter>Source Files\game_object\people</Filter>
     </ClInclude>
     <ClInclude Include="game_object\people\player_role.h">
       <Filter>Source Files\game_object\people</Filter>
     </ClInclude>
     <ClInclude Include="game_object\map\game_map.h">
       <Filter>Source Files\game_object\map</Filter>
+    </ClInclude>
+    <ClInclude Include="control\control_object\texture_object.h">
+      <Filter>Source Files\control\control_object</Filter>
+    </ClInclude>
+    <ClInclude Include="control\control_object\animation_object.h">
+      <Filter>Source Files\control\control_object</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\people\role.h">
+      <Filter>Source Files\game_object\people</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\game_engine.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\iengine.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\texture_engine.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\graphics_engine.h">
+      <Filter>Source Files\engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
