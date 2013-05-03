@@ -1,0 +1,26 @@
+
+<gamepicture>
+	<img id = "0046_1-2" path = "res\img\0046_1-2.png"> </img>
+
+	<img id = "0046_1-3" path = "res\img\0046_1-3.png"> </img>
+
+	<img id = "0046_1-4" path = "res\img\0046_1-4.png"> </img>
+
+	<img id = "0046_1-5" path = "res\img\0046_1-5.png"> </img>
+
+	<img id = "covering1" path = "res\img\covering1.png"> </img>	
+	
+	<img id = "map" path = "res\img\map.png"> </img>
+
+	<img id = "map1" path = "res\img\map1.png"> </img>
+
+	<img id = "mapcollision" path = "res\img\mapcollision.png"> </img>
+	
+	<img id = "mapcollision1" path = "res\img\mapcollision1.png"> </img>
+	
+	<img id = "menubg" path = "bres\img\menubg.png"> </img>
+	
+	<img id = "self" path = "bres\img\self.png"> </img>
+
+	<img id = "TileA2" path = "res\img\TileA2.png"> </img>
+</gamepicture> 
