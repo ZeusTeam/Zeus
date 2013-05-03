@@ -48,6 +48,12 @@
     <Filter Include="Source Files\game_object\item">
       <UniqueIdentifier>{106c2b70-b07e-45bc-88f6-ffed500cceb2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\resource">
+      <UniqueIdentifier>{af0173ef-fc53-478f-959b-9017cae6f38c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\utils">
+      <UniqueIdentifier>{d8139e6d-7c56-4f11-8f87-bb76995990c8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp">
@@ -130,6 +136,15 @@
     </ClCompile>
     <ClCompile Include="engine\graphics_engine.cpp">
       <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="resource\cpicturexml_parse.cpp">
+      <Filter>Source Files\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="resource\xml_list.cpp">
+      <Filter>Source Files\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\utils\utils.cpp">
+      <Filter>include\utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -231,6 +246,27 @@
     </ClInclude>
     <ClInclude Include="engine\graphics_engine.h">
       <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\cpicturexml.h">
+      <Filter>Source Files\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\cpicturexml_parse.h">
+      <Filter>Source Files\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\parse_def.h">
+      <Filter>Source Files\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\resource.h">
+      <Filter>Source Files\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\xml_list.h">
+      <Filter>Source Files\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_object.h">
+      <Filter>Source Files\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\utils\utils.h">
+      <Filter>include\utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

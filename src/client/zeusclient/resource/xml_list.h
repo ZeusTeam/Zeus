@@ -3,12 +3,14 @@
 
 #include <map>
 #include "parse_def.h"
+#include "xml_object.h"
 #include "include\utils\singleton.h"
+#include "include\utils\utils.h"
 #include "import\tinyxml-2.6.2\tinyxml.h"
 
 
 
-typedef std::map<std::string, std::string> mapXMLList;
+typedef std::map<std::string, XMLObject*> mapXMLList;
 
 class CXMLResource : public Singleton<CXMLResource>
 {

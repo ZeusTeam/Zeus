@@ -71,6 +71,7 @@
     <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxml.cpp" />
     <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlerror.cpp" />
     <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlparser.cpp" />
+    <ClCompile Include="..\..\..\include\utils\utils.cpp" />
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp" />
     <ClCompile Include="..\..\..\include\xmessage\cmessage.cpp" />
     <ClCompile Include="..\..\..\include\xmessage\message2pack.cpp" />
@@ -92,12 +93,15 @@
     <ClCompile Include="game_object\map\game_map.cpp" />
     <ClCompile Include="game_object\people\role.cpp" />
     <ClCompile Include="game_object\people\player_role.cpp" />
+    <ClCompile Include="resource\cpicturexml_parse.cpp" />
+    <ClCompile Include="resource\xml_list.cpp" />
     <ClCompile Include="scene\menu_scene.cpp" />
     <ClCompile Include="scene\play_scene.cpp" />
     <ClCompile Include="zeus_client.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h" />
+    <ClInclude Include="..\..\..\include\utils\utils.h" />
     <ClInclude Include="..\..\..\include\xmessage\buffermessage.h" />
     <ClInclude Include="..\..\..\include\xmessage\cmessage.h" />
     <ClInclude Include="..\..\..\include\xmessage\ibasemessage.h" />
@@ -127,9 +131,15 @@
     <ClInclude Include="game_object\people\player_role.h" />
     <ClInclude Include="game_object\sprite.h" />
     <ClInclude Include="globaldef.h" />
+    <ClInclude Include="resource\cpicturexml.h" />
+    <ClInclude Include="resource\cpicturexml_parse.h" />
+    <ClInclude Include="resource\parse_def.h" />
+    <ClInclude Include="resource\resource.h" />
+    <ClInclude Include="resource\xml_list.h" />
     <ClInclude Include="scene\menu_scene.h" />
     <ClInclude Include="scene\play_scene.h" />
     <ClInclude Include="scene\scene.h" />
+    <ClInclude Include="xml_object.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -8,7 +8,7 @@
 #include "include\utils\utils.h"
 #include "import\tinyxml-2.6.2\tinyxml.h"
 
-typedef std::map<std::string, CPictureXML*> MapPitureList;
+typedef std::map<std::string, CPictureXMLObject*> MapPitureList;
 
 class CPictureXMLParse  : public Singleton<CPictureXMLParse>
 {
@@ -17,7 +17,7 @@ public:
 		~CPictureXMLParse();
 
 		bool LoadXML(const std::string& strPath);
-		CPictureXML* Get(std::string nId) const;
+		CPictureXMLObject* Get(std::string nId) const;
 
 		const MapPitureList::const_iterator Begin() const;
 		const MapPitureList::const_iterator End() const;

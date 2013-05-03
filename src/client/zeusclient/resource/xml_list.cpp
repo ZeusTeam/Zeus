@@ -55,14 +55,12 @@ bool CXMLResource::_Parse(TiXmlDocument& tiDoc)
 		  indexElement != NULL;
 		  indexElement = indexElement->NextSiblingElement())
 	{
-		  std::string strPath;
-		  std::string strType;
-		  strPath = indexElement->Attribute(XMLLIST_PATH);
-		  strType = indexElement->Attribute(TYPE_OBJECT);
-		  if (strPath.empty() == 0&& strType.empty() == 0)
-		  {
-				m_mapXMLList[strType] = strPath;
-          }
+        XMLObject* pXML = new XMLObject;
+        if(utils::GetXmlStrAttributeA(indexElement, ID_OBJECT, pXML->Id)
+             && utils::GetXmlStrAttributeA(indexElement, TYPE_OBJECT, pXML->type))
+        {	  
+             m_mapXMLList[pXML->Id] = pXML;
+        } 
 	}	 
 	return true;
 }

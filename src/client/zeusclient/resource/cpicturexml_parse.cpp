@@ -70,7 +70,7 @@ bool CPictureXMLParse::_Parse(TiXmlDocument& TinyXML)
         tiPicture != NULL;
         tiPicture = tiPicture->NextSiblingElement())//读取当下元素中的所有属性
 	 {
-		 CPictureXML* pPicture = new CPictureXML;
+		 CPictureXMLObject* pPicture = new CPictureXMLObject;
          if(utils::GetXmlStrAttributeA(tiPicture, ID_OBJECT, pPicture->PictureId)
              && utils::GetXmlStrAttributeA(tiPicture, PICTURE_PATH, pPicture->PicturePath)
              && utils::GetXmlIntAttribute(tiPicture, PICTURE_POSX, pPicture->Posx)
@@ -82,7 +82,7 @@ bool CPictureXMLParse::_Parse(TiXmlDocument& TinyXML)
 }
 
 
-CPictureXML* CPictureXMLParse::Get(std::string nId) const
+CPictureXMLObject* CPictureXMLParse::Get(std::string nId) const
 {
 	auto it = m_mapPiture.find(nId);
     if (it == m_mapPiture.end())
