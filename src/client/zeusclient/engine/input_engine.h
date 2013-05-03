@@ -3,6 +3,7 @@
 
 #include "include\utils\singleton.h"
 #include "import\hge\include\hge.h"
+#include "iengine.h"
 #include "game_object\sprite.h"
 #include <vector>
 
@@ -13,16 +14,18 @@ typedef enum _KeyState
     Key_Fail,
 }KeyState;
 
-class InputEngine : public Singleton<InputEngine>
+class InputEngine
+    : public Singleton<InputEngine>
+    , public IEngine
 {
     friend class Singleton<Singleton>;
 public:
     InputEngine();
     virtual ~InputEngine();
 
-    virtual bool Initialize() {return true;};
+    virtual bool Initialize() {return false;};
 
-    virtual bool Initialize(HGE* pHGE);
+    virtual bool Initialize(GameEngine* pGameEngine);
 
     PeopleDirection Get() const;
 
@@ -34,7 +37,7 @@ public:
 
 private:
      PeopleDirection m_Key;
-     HGE* m_HGE;
+     GameEngine* m_GameEngine_Ptr;
 };
 
 #endif

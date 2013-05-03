@@ -65,7 +65,7 @@ void AnimationObject::Play(int start, int end, bool loop)
 
 void AnimationObject::PlayFrame(int frame)
 {
-    if (frame < 0 || frame > m_vecFrameSprite.size())
+    if (frame < 0 || frame > (int)m_vecFrameSprite.size())
     {
         return;
     }

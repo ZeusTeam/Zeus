@@ -68,7 +68,7 @@ bool GameEngine::State(EngineAttributeInt attrtype, int value)
     return true;
 }
 
-bool GameEngine::State(EngineAttributeString attrtype, tstring value)
+bool GameEngine::State(EngineAttributeString attrtype, const std::string& value)
 {
     if (!m_hge)
     {
@@ -107,4 +107,71 @@ void GameEngine::Shutdown()
 HGE* GameEngine::PresentEngine()
 {
     return m_hge;
+}
+
+///> Input
+bool GameEngine::Input_GetKeyState(int nKey)
+{
+    return m_hge->Input_GetKeyState(nKey);
+}
+
+///> Texture
+GameTexture GameEngine::Texture_Load(const std::string& path)
+{
+    if (!m_hge)
+    {
+        return 0;
+    }
+    return (GameTexture)m_hge->Texture_Load(path.c_str());
+}
+
+void GameEngine::Texture_Free(GameTexture tex)
+{
+    if (!m_hge)
+    {
+        return;
+    }
+    m_hge->Texture_Free((HEFFECT)tex);
+}
+
+DWORD* GameEngine::Texture_Lock(GameTexture tex,
+                      bool bReadOnly,
+                      int left,
+                      int top,
+                      int width,
+                      int height)
+{
+    if (!m_hge)
+    {
+        return 0;
+    }
+    return m_hge->Texture_Lock((HEFFECT)tex, bReadOnly,
+        left, top, width, height);
+}
+
+void GameEngine::Texture_UnLock(GameTexture tex)
+{
+    if (!m_hge)
+    {
+        return;
+    }
+    return m_hge->Texture_Unlock((HEFFECT)tex);
+}
+
+int GameEngine::Texture_GetWidth(GameTexture tex)
+{
+    if (!m_hge)
+    {
+        return 0;
+    }
+    return m_hge->Texture_GetWidth((HEFFECT)tex);
+}
+
+int GameEngine::Texture_GetHeight(GameTexture tex)
+{
+    if (!m_hge)
+    {
+        return 0;
+    }
+    return m_hge->Texture_GetHeight((HEFFECT)tex);
 }

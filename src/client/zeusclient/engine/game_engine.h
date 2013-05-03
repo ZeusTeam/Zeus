@@ -29,6 +29,8 @@ typedef enum _EngineAttributeString
     Attribute_LogPath,
 }EngineAttributeString;
 
+typedef HGE* GameEnginePtr;
+typedef HEFFECT GameTexture;
 typedef bool (*EngineCallbackFun) ();
 
 class GameEngine
@@ -38,23 +40,43 @@ public:
     virtual ~GameEngine();
 
 public:
-
     bool Initialize();
 
     bool State(EngineFunc funtype, EngineCallbackFun fun);
 
     bool State(EngineAttributeInt attrtype, int value);
 
-    bool State(EngineAttributeString attrtype, tstring value);
+    bool State(EngineAttributeString attrtype,const std::string& value);
 
     void Start();
 
     void Shutdown();
 
-    HGE* PresentEngine();
+    GameEnginePtr PresentEngine();
+
+public:
+    bool Input_GetKeyState(int nKey);
+
+public:
+    GameTexture Texture_Load(const std::string& path);
+
+    void Texture_Free(GameTexture tex);
+
+    DWORD* Texture_Lock(GameTexture tex,
+                      bool bReadOnly = true,
+                      int left = 0,
+                      int top = 0,
+                      int width = 0,
+                      int height = 0);
+
+    void Texture_UnLock(GameTexture tex);
+
+    int Texture_GetWidth(GameTexture tex);
+
+    int Texture_GetHeight(GameTexture tex);
 
 private:
-    HGE* m_hge;
+    GameEnginePtr m_hge;
 };
 
 #endif
