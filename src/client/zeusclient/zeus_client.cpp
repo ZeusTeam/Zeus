@@ -4,6 +4,7 @@
 #include "engine\texture_engine.h"
 #include "engine\graphics_engine.h"
 #include "control\game_controler.h"
+#include "resource\xml_list.h"
 
 #include <tchar.h>
 

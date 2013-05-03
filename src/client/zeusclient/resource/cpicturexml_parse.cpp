@@ -1,6 +1,6 @@
-#include "cpicturexml.h"
 #include "cpicturexml_parse.h"
 
+CPictureXMLParse* Singleton<CPictureXMLParse>::m_pInst = NULL;
 
 CPictureXMLParse::CPictureXMLParse()
 {
@@ -13,7 +13,7 @@ CPictureXMLParse::~CPictureXMLParse()
 
 void CPictureXMLParse::_Close()
 {
-	if (!m_mapPiture.empty())
+    if (!m_mapPiture.empty())
     {
         for (auto it = m_mapPiture.begin(); it != m_mapPiture.end(); it++)
         {
@@ -66,25 +66,26 @@ bool CPictureXMLParse::_Parse(TiXmlDocument& TinyXML)
         return false;
     }
 
-	 for (TiXmlElement* tiPicture = tiFirst->ToElement();
+     for (TiXmlElement* tiPicture = tiFirst->ToElement();
         tiPicture != NULL;
         tiPicture = tiPicture->NextSiblingElement())//读取当下元素中的所有属性
-	 {
-		 CPictureXMLObject* pPicture = new CPictureXMLObject;
+     {
+         CPictureXMLObject* pPicture = new CPictureXMLObject;
          if(utils::GetXmlStrAttributeA(tiPicture, ID_OBJECT, pPicture->PictureId)
-             && utils::GetXmlStrAttributeA(tiPicture, PICTURE_PATH, pPicture->PicturePath)
-             && utils::GetXmlIntAttribute(tiPicture, PICTURE_POSX, pPicture->Posx)
-             && utils::GetXmlIntAttribute(tiPicture, PICTURE_POSY, pPicture->Posy))
-		
-		m_mapPiture[pPicture->PictureId] = pPicture;
-	 }
-	 return true;
+             && utils::GetXmlStrAttributeA(tiPicture, PICTURE_PATH, pPicture->PicturePath))
+         {
+            utils::GetXmlIntAttribute(tiPicture, PICTURE_POSX, pPicture->Posx);
+            utils::GetXmlIntAttribute(tiPicture, PICTURE_POSY, pPicture->Posy);
+            m_mapPiture[pPicture->PictureId] = pPicture;
+         }
+     }
+     return true;
 }
 
 
 CPictureXMLObject* CPictureXMLParse::Get(std::string nId) const
 {
-	auto it = m_mapPiture.find(nId);
+    auto it = m_mapPiture.find(nId);
     if (it == m_mapPiture.end())
     {
         return NULL;

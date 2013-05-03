@@ -54,6 +54,12 @@
     <Filter Include="include\utils">
       <UniqueIdentifier>{d8139e6d-7c56-4f11-8f87-bb76995990c8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\resource\xml">
+      <UniqueIdentifier>{7cef44db-4be9-4752-ad74-aa35e1111519}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\control\pool">
+      <UniqueIdentifier>{b1c8ac01-118b-4d40-bdc0-f1066191712d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp">
@@ -137,14 +143,17 @@
     <ClCompile Include="engine\graphics_engine.cpp">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="resource\cpicturexml_parse.cpp">
-      <Filter>Source Files\resource</Filter>
-    </ClCompile>
-    <ClCompile Include="resource\xml_list.cpp">
-      <Filter>Source Files\resource</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\include\utils\utils.cpp">
       <Filter>include\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="resource\xml_list.cpp">
+      <Filter>Source Files\resource\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="resource\cpicturexml_parse.cpp">
+      <Filter>Source Files\resource\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="control\pool\picture_pool.cpp">
+      <Filter>Source Files\control\pool</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -247,26 +256,29 @@
     <ClInclude Include="engine\graphics_engine.h">
       <Filter>Source Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="resource\cpicturexml.h">
-      <Filter>Source Files\resource</Filter>
-    </ClInclude>
-    <ClInclude Include="resource\cpicturexml_parse.h">
-      <Filter>Source Files\resource</Filter>
-    </ClInclude>
-    <ClInclude Include="resource\parse_def.h">
-      <Filter>Source Files\resource</Filter>
-    </ClInclude>
-    <ClInclude Include="resource\resource.h">
-      <Filter>Source Files\resource</Filter>
-    </ClInclude>
-    <ClInclude Include="resource\xml_list.h">
-      <Filter>Source Files\resource</Filter>
-    </ClInclude>
-    <ClInclude Include="xml_object.h">
-      <Filter>Source Files\resource</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\include\utils\utils.h">
       <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\xml_list_object.h">
+      <Filter>Source Files\resource\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\xml_list.h">
+      <Filter>Source Files\resource\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\cpicturexml_parse.h">
+      <Filter>Source Files\resource\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\cpicturexml.h">
+      <Filter>Source Files\resource\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\parse_def.h">
+      <Filter>Source Files\resource\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\utils\singleton.h">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="control\pool\picture_pool.h">
+      <Filter>Source Files\control\pool</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

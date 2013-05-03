@@ -1,5 +1,5 @@
-#ifndef CPICTURE_XML_
-#define CPICTURE_XML_
+#ifndef CPICTURE_XML_OBJECT_
+#define CPICTURE_XML_OBJECT_
 
 #include "parse_def.h"
 #include <map>
@@ -12,8 +12,8 @@ struct CPictureXMLObject
         Posx = 0;
         Posy = 0;
     }
-	std::string PictureId;
-	std::string PicturePath;
+    std::string PictureId;
+    std::string PicturePath;
     int Posx;
     int Posy;
 };
