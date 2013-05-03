@@ -2,7 +2,7 @@
 #define MENU_SCENE
 
 #include "import\hge\include\hgesprite.h"
-#include "control/control_object/texture.h"
+#include "control/control_object/texture_object.h"
 #include "scene.h"
 
 class MenuScene
@@ -15,7 +15,7 @@ public:
     void Output();
     void Reset();
 private:
-    Texture m_bgTexture;
+    TextureObject m_bgRenderer;
 };
 
 #endif

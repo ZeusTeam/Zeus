@@ -1,6 +1,6 @@
 #ifndef GAME_MAP
 #define GAME_MAP
-#include "control/control_object/texture.h"
+#include "control/control_object/texture_object.h"
 #include "globaldef.h"
 #include "import\hge\include\hgeVector.h"
 #include "import\hge\include\hgefont.h"
@@ -16,13 +16,13 @@ typedef unsigned long DWORD;
 #define ACCURACY 8              ///通过n个点来判断碰撞
 
 class CoveringTex
-    : public Texture
+    : public TextureObject
 {
 public:
 
     bool Load(string texPath, float x, float y)
     {
-        if (Texture::Load(texPath, 0, 0))
+        if (TextureObject::Load(texPath))
         {
                 m_x = x;
                 m_y = y;
@@ -61,7 +61,10 @@ public:
             h = 0;
 
         if (w > 0 && h > 0)
-            Texture::Render(x, y, tx, ty, w, h);
+        {
+            TextureObject::SetRenderRect(tx, ty, w, h);
+            TextureObject::Render(x, y);
+        }
     }
 
     CoveringTex(){}
@@ -85,7 +88,6 @@ public:
 
     bool Load(string mapTex, string collisionMapTex);
     ///绘制地图
-    void Render();
 
     void Render(roleVector rolePos);
 
@@ -112,8 +114,8 @@ public:
     viewportVector GetViewportPos() { return m_viewportPos ;}
 private:
 
-    Texture m_mapTex;
-    Texture m_collisionMapTex;
+    TextureObject m_mapTex;
+    TextureObject m_collisionMapTex;
     vector<CoveringTex*> m_coveringTex;
     viewportVector m_viewportPos;
     roleVector m_previousPos;
