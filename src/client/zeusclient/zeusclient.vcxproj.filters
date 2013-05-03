@@ -128,6 +128,9 @@
     <ClCompile Include="engine\texture_engine.cpp">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
+    <ClCompile Include="engine\graphics_engine.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scene\scene.h">
@@ -224,6 +227,9 @@
       <Filter>Source Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="engine\texture_engine.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\graphics_engine.h">
       <Filter>Source Files\engine</Filter>
     </ClInclude>
   </ItemGroup>

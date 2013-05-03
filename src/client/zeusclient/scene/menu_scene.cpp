@@ -1,6 +1,7 @@
 #include "globaldef.h"
 #include "menu_scene.h"
 #include "play_scene.h"
+#include "engine\input_engine.h"
 
 MenuScene::MenuScene()
 {
@@ -22,11 +23,11 @@ void MenuScene::Output()
 
 void MenuScene::Update()
 {
-    if (hge->Input_GetKeyState(KEY_ESCAPE))
+    if (InputEngine::Instance()->IsKey(KEY_ESCAPE) == Key_Down)
     {
         SceneEngine_->Pop();
     }
-    if (hge->Input_GetKeyState(KEY_ENTER))
+    if (InputEngine::Instance()->IsKey(KEY_ENTER) == Key_Down)
     {
         SceneEngine_->Pop();
         SceneEngine_->Push(new PlayScene);

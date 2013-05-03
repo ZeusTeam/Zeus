@@ -1,6 +1,7 @@
 #include "globaldef.h"
 #include "play_scene.h"
 #include "control\control_object\out_text.h"
+#include "engine\graphics_engine.h"
 
 PlayScene::PlayScene()
 {
@@ -27,14 +28,12 @@ PlayScene::~PlayScene()
 
 void PlayScene::Reset()
 {
-    hge->Gfx_Clear(ARGB(1,0,0,0));
+    GraphicsEngine::Instance()->Clear(ARGB(1,0,0,0));
 }
 
 void PlayScene::Output()
 {
     m_Map->Render(m_PlayerRole->GetPos());
-
-
     m_PlayerRole->SetViewport(m_Map->GetViewportPos());
     m_PlayerRole->Render();
     m_Map->RenderCovering();

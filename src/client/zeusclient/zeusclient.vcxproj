@@ -85,6 +85,7 @@
     <ClCompile Include="control\control_object\texture_object.cpp" />
     <ClCompile Include="control\game_controler.cpp" />
     <ClCompile Include="engine\game_engine.cpp" />
+    <ClCompile Include="engine\graphics_engine.cpp" />
     <ClCompile Include="engine\input_engine.cpp" />
     <ClCompile Include="engine\scene_engine.cpp" />
     <ClCompile Include="engine\texture_engine.cpp" />
@@ -116,6 +117,7 @@
     <ClInclude Include="control\control_object\texture_object.h" />
     <ClInclude Include="control\game_controler.h" />
     <ClInclude Include="engine\game_engine.h" />
+    <ClInclude Include="engine\graphics_engine.h" />
     <ClInclude Include="engine\iengine.h" />
     <ClInclude Include="engine\input_engine.h" />
     <ClInclude Include="engine\scene_engine.h" />

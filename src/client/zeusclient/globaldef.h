@@ -8,9 +8,7 @@
 #include "engine\scene_engine.h"
 #include "engine\input_engine.h"
 
-extern HGE* hge;
 extern SceneEngine* SceneEngine_;
-extern InputEngine* InputEngine_;
 
 #define WINDOW_WIDTH  800
 #define WINDOW_HEIGHT 600

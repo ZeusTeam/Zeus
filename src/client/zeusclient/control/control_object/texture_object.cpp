@@ -12,14 +12,18 @@ TextureObject::TextureObject()
     , m_TexEngine(NULL)
 {
     m_TexEngine = TextureEngine::Instance();
+    m_GraphicsEngine = GraphicsEngine::Instance();
 }
 
 TextureObject::~TextureObject()
 {
     if (m_hTex)
     {
-        hge->Texture_Free(m_hTex);
-        m_hTex = NULL;
+        if (m_TexEngine)
+        {
+            m_TexEngine->Release(m_hTex);
+            m_hTex = NULL;
+        }
     }
 
 }
@@ -89,7 +93,7 @@ void TextureObject::Render(float x, float y)
     quad.v[3].x = x;
     quad.v[3].y = y + m_renderHeight;
 
-    hge->Gfx_RenderQuad(&quad);
+    m_GraphicsEngine->RenderQuad(&quad);
 }
 
 void TextureObject::SetRenderRect(float tx, float ty, float width, float height)
