@@ -26,5 +26,5 @@ Release
 _UpgradeReport_Files
 *.opensdf
 *.ipch
-/*.suo
+*.suo
 *.res
