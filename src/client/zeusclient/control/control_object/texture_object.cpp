@@ -9,7 +9,9 @@ TextureObject::TextureObject()
     , m_ty(0)
     , m_renderWidth(0)
     , m_renderHeight(0)
+    , m_TexEngine(NULL)
 {
+    m_TexEngine = TextureEngine::Instance();
 }
 
 TextureObject::~TextureObject()
@@ -25,13 +27,17 @@ TextureObject::~TextureObject()
 bool TextureObject::Load(const std::string& strPath)
 {
     //暂时这样，完成POOL之后再进行替换
-    m_hTex = hge->Texture_Load(strPath.c_str());
+    if (!m_TexEngine)
+    {
+        return false;
+    }
+    m_hTex = m_TexEngine->Load(strPath);
     if (!m_hTex)
     {
         return false;
     }
-    m_texWidth = (float)hge->Texture_GetWidth(m_hTex);
-    m_texHeight = (float)hge->Texture_GetHeight(m_hTex);
+    m_texWidth = (float)m_TexEngine->GetWidth(m_hTex);
+    m_texHeight = (float)m_TexEngine->GetHeight(m_hTex);
     m_tx = 0;
     m_ty = 0;
     m_renderWidth = m_texWidth;
@@ -98,20 +104,27 @@ void TextureObject::Release()
 {
     if (m_hTex)
     {
-        hge->Texture_Free(m_hTex);
-        m_hTex = NULL;
+        if (m_TexEngine)
+        {
+            m_TexEngine->Release(m_hTex);
+            m_hTex = NULL;
+        }
     }
 }
 
 
 DWORD* TextureObject::CheckColor(float x, float y, int cx, int cy)
 {
+    if (!m_TexEngine)
+    {
+        return false;
+    }
     if (x < 0 || y < 0 || x + cx > m_texWidth || y + cy > m_texHeight)
     {
         return NULL;
     }
     DWORD* pClr;
-    pClr = hge->Texture_Lock(m_hTex, true, (int)x, (int)y, cx, cy);
-    hge->Texture_Unlock(m_hTex);
+    pClr = m_TexEngine->Lock(m_hTex, true, (int)x, (int)y, cx, cy);
+    m_TexEngine->Unlock(m_hTex);
     return pClr;
 }

@@ -1,6 +1,7 @@
 #include "globaldef.h"
 #include "import\hge\include\hge.h"
 #include "engine\game_engine.h"
+#include "engine\texture_engine.h"
 #include "control\game_controler.h"
 
 #include <tchar.h>
@@ -13,6 +14,7 @@ GameControler* game;
 
 SceneEngine* SceneEngine_ = NULL;
 InputEngine* InputEngine_ = NULL;
+TextureEngine* TextureEngine_ = NULL;
 
 bool Update()
 {
@@ -42,7 +44,9 @@ int WINAPI WinMain(          HINSTANCE hInstance,
 
     SceneEngine_ = SceneEngine::Instance();
     InputEngine_ = InputEngine::Instance();
+    TextureEngine_ = TextureEngine::Instance();
     InputEngine_->Initialize(&engine);
+    TextureEngine_->Initialize(&engine);
     SceneEngine_->Initialize();
     hge = engine.PresentEngine();
 

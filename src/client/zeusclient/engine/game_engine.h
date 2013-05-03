@@ -30,7 +30,7 @@ typedef enum _EngineAttributeString
 }EngineAttributeString;
 
 typedef HGE* GameEnginePtr;
-
+typedef HEFFECT GameTexture;
 typedef bool (*EngineCallbackFun) ();
 
 class GameEngine
@@ -56,6 +56,24 @@ public:
 
 public:
     bool Input_GetKeyState(int nKey);
+
+public:
+    GameTexture Texture_Load(const std::string& path);
+
+    void Texture_Free(GameTexture tex);
+
+    DWORD* Texture_Lock(GameTexture tex,
+                      bool bReadOnly = true,
+                      int left = 0,
+                      int top = 0,
+                      int width = 0,
+                      int height = 0);
+
+    void Texture_UnLock(GameTexture tex);
+
+    int Texture_GetWidth(GameTexture tex);
+
+    int Texture_GetHeight(GameTexture tex);
 
 private:
     GameEnginePtr m_hge;
