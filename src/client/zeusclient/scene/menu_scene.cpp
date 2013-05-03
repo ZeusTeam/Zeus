@@ -18,15 +18,17 @@ void MenuScene::Reset()
 void MenuScene::Output()
 {
     m_bgRenderer.Render(0,0);
+    m_startMenu.Render();
 }
 
 void MenuScene::Update()
 {
-    if (hge->Input_GetKeyState(KEY_ESCAPE))
+    StartMenuState state = m_startMenu.Update();
+    if (state == StartMenu_Exit)
     {
         SceneEngine_->Pop();
     }
-    if (hge->Input_GetKeyState(KEY_ENTER))
+    if (state == StartMenu_Start)
     {
         SceneEngine_->Pop();
         SceneEngine_->Push(new PlayScene);

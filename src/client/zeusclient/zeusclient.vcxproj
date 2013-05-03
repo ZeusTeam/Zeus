@@ -87,6 +87,8 @@
     <ClCompile Include="engine\game_engine.cpp" />
     <ClCompile Include="engine\input_engine.cpp" />
     <ClCompile Include="engine\scene_engine.cpp" />
+    <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp" />
+    <ClCompile Include="game_object\gui\start_menu\start_menu.cpp" />
     <ClCompile Include="game_object\map\game_map.cpp" />
     <ClCompile Include="game_object\people\role.cpp" />
     <ClCompile Include="game_object\people\player_role.cpp" />
@@ -118,6 +120,9 @@
     <ClInclude Include="engine\iengine.h" />
     <ClInclude Include="engine\input_engine.h" />
     <ClInclude Include="engine\scene_engine.h" />
+    <ClInclude Include="game_object\gui\gui_item.h" />
+    <ClInclude Include="game_object\gui\start_menu\start_menu.h" />
+    <ClInclude Include="game_object\gui\start_menu\start_menu_item.h" />
     <ClInclude Include="game_object\map\game_map.h" />
     <ClInclude Include="game_object\people\role.h" />
     <ClInclude Include="game_object\people\player_role.h" />

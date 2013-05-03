@@ -12,6 +12,18 @@ TextureObject::TextureObject()
 {
 }
 
+TextureObject::TextureObject(const std::string& strPath, float tx, float ty, float width, float height)
+    : m_hTex(NULL)
+    , m_texHeight(width)
+    , m_texWidth(height)
+    , m_tx(tx)
+    , m_ty(ty)
+    , m_renderWidth(0)
+    , m_renderHeight(0)
+{
+    Load(strPath, tx, ty, width, height);
+}
+
 TextureObject::~TextureObject()
 {
     if (m_hTex)
@@ -22,7 +34,7 @@ TextureObject::~TextureObject()
 
 }
 
-bool TextureObject::Load(const std::string& strPath)
+bool TextureObject::Load(const std::string& strPath, float tx, float ty, float width, float height)
 {
     //暂时这样，完成POOL之后再进行替换
     m_hTex = hge->Texture_Load(strPath.c_str());
@@ -32,10 +44,16 @@ bool TextureObject::Load(const std::string& strPath)
     }
     m_texWidth = (float)hge->Texture_GetWidth(m_hTex);
     m_texHeight = (float)hge->Texture_GetHeight(m_hTex);
-    m_tx = 0;
-    m_ty = 0;
-    m_renderWidth = m_texWidth;
-    m_renderHeight = m_texHeight;
+    if (width == 0)
+        m_renderWidth = m_texWidth - tx;
+    else
+        m_renderWidth = width;
+    if (height == 0)
+        m_renderHeight = m_texHeight - ty;
+    else
+        m_renderHeight = height;
+    m_tx = tx;
+    m_ty = ty;
     return true;
 }
 

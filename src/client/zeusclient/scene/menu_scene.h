@@ -1,7 +1,7 @@
 #ifndef MENU_SCENE
 #define MENU_SCENE
 
-#include "import\hge\include\hgesprite.h"
+#include "game_object\gui\start_menu\start_menu.h"
 #include "control/control_object/texture_object.h"
 #include "scene.h"
 
@@ -16,6 +16,7 @@ public:
     void Reset();
 private:
     TextureObject m_bgRenderer;
+    StartMenu m_startMenu;
 };
 
 #endif

@@ -48,6 +48,12 @@
     <Filter Include="Source Files\game_object\item">
       <UniqueIdentifier>{106c2b70-b07e-45bc-88f6-ffed500cceb2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\game_object\gui">
+      <UniqueIdentifier>{29a642d0-95fa-45e4-ba23-28c6341fe75d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game_object\gui\start_menu">
+      <UniqueIdentifier>{48f484ec-01ce-43f0-b427-6ca76d94ddb2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp">
@@ -124,6 +130,12 @@
     </ClCompile>
     <ClCompile Include="engine\game_engine.cpp">
       <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\start_menu\start_menu.cpp">
+      <Filter>Source Files\game_object\gui\start_menu</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp">
+      <Filter>Source Files\game_object\gui\start_menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +231,15 @@
     </ClInclude>
     <ClInclude Include="engine\iengine.h">
       <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\start_menu\start_menu.h">
+      <Filter>Source Files\game_object\gui\start_menu</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\gui_item.h">
+      <Filter>Source Files\game_object\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\start_menu\start_menu_item.h">
+      <Filter>Source Files\game_object\gui\start_menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
