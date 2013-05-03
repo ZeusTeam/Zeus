@@ -20,26 +20,10 @@ bool utils::GetXmlIntAttribute( TiXmlElement *pElement, char *pName, int &nData 
     if (pElement)
     {
         const char *pStr = pElement->Attribute(pName);
-        if(pName == PICTURE_POSX||pName == PICTURE_POSY)
+        if (pStr)
         {
-            if (pStr)
-            {
-                  nData = atoi(pStr);
-                  return true;
-            }
-            else
-            {
-                   nData = 0;
-                   return true;
-            }
-        }
-        else
-        {
-            if (pStr)
-            {
                 nData = atoi(pStr);
                 return true;
-            }
         }
     }
     return false;

@@ -5,8 +5,13 @@
 #include <map>
 
 
-struct CPictureXML
+struct CPictureXMLObject
 {
+    CPictureXMLObject()
+    {
+        Posx = 0;
+        Posy = 0;
+    }
 	std::string PictureId;
 	std::string PicturePath;
     int Posx;
