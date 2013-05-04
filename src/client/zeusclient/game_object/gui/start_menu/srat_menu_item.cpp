@@ -8,10 +8,10 @@ StartMenuItem::StartMenuItem(int _id, float x, float y, TextureObject* texUsual,
     , m_texUsual(texUsual)
     , m_isFocused(false)
 {
-    id = _id;
-	bStatic = false;
-	bVisible = true;
-	bEnabled = true;
+    this->id = _id;
+    this->bStatic = false;
+    this->bVisible = true;
+    this->bEnabled = true;
 }
 
 StartMenuItem::~StartMenuItem()
