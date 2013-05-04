@@ -28,9 +28,13 @@ void MenuScene::Update()
     {
         SceneEngine_->Pop();
     }
-    if (state == StartMenu_Start)
+    else if (state == StartMenu_Start)
     {
         SceneEngine_->Pop();
         SceneEngine_->Push(new PlayScene);
+    }
+    esle if (state == StartMenu_About)
+    {
+
     }
 }

@@ -23,6 +23,7 @@ TextureObject::TextureObject(const std::string& strPath, float tx, float ty, flo
     , m_renderWidth(0)
     , m_renderHeight(0)
 {
+    m_TexEngine = TextureEngine::Instance();
     Load(strPath, tx, ty, width, height);
 }
 

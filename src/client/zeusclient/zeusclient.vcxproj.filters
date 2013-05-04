@@ -137,6 +137,12 @@
     <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp">
       <Filter>Source Files\game_object\gui\start_menu</Filter>
     </ClCompile>
+    <ClCompile Include="engine\texture_engine.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\about_scene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scene\scene.h">
@@ -240,6 +246,12 @@
     </ClInclude>
     <ClInclude Include="game_object\gui\start_menu\start_menu_item.h">
       <Filter>Source Files\game_object\gui\start_menu</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\texture_engine.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\about_scene.h">
+      <Filter>Source Files\scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

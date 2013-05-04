@@ -7,6 +7,7 @@ enum StartMenuState
 {
     StartMenu_Start,
     StartMenu_Exit,
+    StartMenu_About,
     StartMenu_None
 };
 class StartMenu
