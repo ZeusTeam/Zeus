@@ -24,17 +24,23 @@ void MenuScene::Output()
         return;
     }
     m_bgRenderer->Render(0,0);
+    m_startMenu.Render();
 }
 
 void MenuScene::Update()
 {
-    if (InputEngine::Instance()->IsKey(KEY_ESCAPE) == Key_Down)
+    StartMenuState state = m_startMenu.Update();
+    if (state == StartMenu_Exit)
     {
         SceneEngine_->Pop();
     }
-    if (InputEngine::Instance()->IsKey(KEY_ENTER) == Key_Down)
+    else if (state == StartMenu_Start)
     {
         SceneEngine_->Pop();
         SceneEngine_->Push(new PlayScene);
+    }
+    else if (state == StartMenu_About)
+    {
+
     }
 }

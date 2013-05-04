@@ -60,6 +60,9 @@
     <Filter Include="Source Files\control\pool">
       <UniqueIdentifier>{b1c8ac01-118b-4d40-bdc0-f1066191712d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\game_object\gui">
+      <UniqueIdentifier>{77b46ea3-aa20-4af8-a31d-723a21dee40d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp">
@@ -154,6 +157,15 @@
     </ClCompile>
     <ClCompile Include="control\pool\picture_pool.cpp">
       <Filter>Source Files\control\pool</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\start_menu\start_menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\about_scene.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +291,18 @@
     </ClInclude>
     <ClInclude Include="control\pool\picture_pool.h">
       <Filter>Source Files\control\pool</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\about_scene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\start_menu\start_menu_item.h">
+      <Filter>Source Files\game_object\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\gui_item.h">
+      <Filter>Source Files\game_object\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\start_menu\start_menu.h">
+      <Filter>Source Files\game_object\gui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
