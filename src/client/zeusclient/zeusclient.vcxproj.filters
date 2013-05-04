@@ -158,14 +158,14 @@
     <ClCompile Include="control\pool\picture_pool.cpp">
       <Filter>Source Files\control\pool</Filter>
     </ClCompile>
-    <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="game_object\gui\start_menu\start_menu.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\game_object\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp">
+      <Filter>Source Files\game_object\gui</Filter>
     </ClCompile>
     <ClCompile Include="scene\about_scene.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
