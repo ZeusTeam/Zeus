@@ -36,7 +36,7 @@ public:
                       int height = 0);
     void Unlock(GameTexture tex);
 
-public:
+private:
     GameEngine* m_GameEngine_Ptr;
 };
 

@@ -3,6 +3,7 @@
 
 #include "import\hge\include\hge.h"
 #include "engine\texture_engine.h"
+#include "engine\graphics_engine.h"
 
 #include <string>
 
@@ -39,6 +40,7 @@ private:
     float m_ty;
     GameTexture m_hTex;
     TextureEngine* m_TexEngine;
+    GraphicsEngine* m_GraphicsEngine;
 };
 
 #endif

@@ -48,11 +48,20 @@
     <Filter Include="Source Files\game_object\item">
       <UniqueIdentifier>{106c2b70-b07e-45bc-88f6-ffed500cceb2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\game_object\gui">
-      <UniqueIdentifier>{29a642d0-95fa-45e4-ba23-28c6341fe75d}</UniqueIdentifier>
+    <Filter Include="Source Files\resource">
+      <UniqueIdentifier>{af0173ef-fc53-478f-959b-9017cae6f38c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\game_object\gui\start_menu">
-      <UniqueIdentifier>{48f484ec-01ce-43f0-b427-6ca76d94ddb2}</UniqueIdentifier>
+    <Filter Include="include\utils">
+      <UniqueIdentifier>{d8139e6d-7c56-4f11-8f87-bb76995990c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\resource\xml">
+      <UniqueIdentifier>{7cef44db-4be9-4752-ad74-aa35e1111519}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\control\pool">
+      <UniqueIdentifier>{b1c8ac01-118b-4d40-bdc0-f1066191712d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game_object\gui">
+      <UniqueIdentifier>{77b46ea3-aa20-4af8-a31d-723a21dee40d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -131,17 +140,32 @@
     <ClCompile Include="engine\game_engine.cpp">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="game_object\gui\start_menu\start_menu.cpp">
-      <Filter>Source Files\game_object\gui\start_menu</Filter>
-    </ClCompile>
-    <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp">
-      <Filter>Source Files\game_object\gui\start_menu</Filter>
-    </ClCompile>
     <ClCompile Include="engine\texture_engine.cpp">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
+    <ClCompile Include="engine\graphics_engine.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\utils\utils.cpp">
+      <Filter>include\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="resource\xml_list.cpp">
+      <Filter>Source Files\resource\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="resource\cpicturexml_parse.cpp">
+      <Filter>Source Files\resource\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="control\pool\picture_pool.cpp">
+      <Filter>Source Files\control\pool</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\start_menu\start_menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="scene\about_scene.cpp">
-      <Filter>Source Files\scene</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -238,20 +262,47 @@
     <ClInclude Include="engine\iengine.h">
       <Filter>Source Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="game_object\gui\start_menu\start_menu.h">
-      <Filter>Source Files\game_object\gui\start_menu</Filter>
+    <ClInclude Include="engine\texture_engine.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\graphics_engine.h">
+      <Filter>Source Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\utils\utils.h">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\xml_list_object.h">
+      <Filter>Source Files\resource\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\xml_list.h">
+      <Filter>Source Files\resource\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\cpicturexml_parse.h">
+      <Filter>Source Files\resource\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\cpicturexml.h">
+      <Filter>Source Files\resource\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\parse_def.h">
+      <Filter>Source Files\resource\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\utils\singleton.h">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="control\pool\picture_pool.h">
+      <Filter>Source Files\control\pool</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\about_scene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\start_menu\start_menu_item.h">
+      <Filter>Source Files\game_object\gui</Filter>
     </ClInclude>
     <ClInclude Include="game_object\gui\gui_item.h">
       <Filter>Source Files\game_object\gui</Filter>
     </ClInclude>
-    <ClInclude Include="game_object\gui\start_menu\start_menu_item.h">
-      <Filter>Source Files\game_object\gui\start_menu</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\texture_engine.h">
-      <Filter>Source Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="scene\about_scene.h">
-      <Filter>Source Files\scene</Filter>
+    <ClInclude Include="game_object\gui\start_menu\start_menu.h">
+      <Filter>Source Files\game_object\gui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

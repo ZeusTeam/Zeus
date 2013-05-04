@@ -15,8 +15,8 @@ public:
     void Output();
     void Reset();
 private:
-    TextureObject m_bgRenderer;
     StartMenu m_startMenu;
+    TextureObject* m_bgRenderer;
 };
 
 #endif

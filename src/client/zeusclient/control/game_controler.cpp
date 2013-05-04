@@ -1,6 +1,7 @@
 #include "globaldef.h"
 #include "game_controler.h"
 #include "scene/menu_scene.h"
+#include "engine\graphics_engine.h"
 
 GameControler* Singleton<GameControler>::m_pInst = 0;
 
@@ -24,9 +25,9 @@ bool GameControler::Update()
 
 bool GameControler::Render()
 {
-    hge->Gfx_BeginScene();
+    GraphicsEngine::Instance()->BeginScene();
     SceneEngine_->Output();
-    hge->Gfx_EndScene();
+    GraphicsEngine::Instance()->EndScene();
     return true;
 }
 

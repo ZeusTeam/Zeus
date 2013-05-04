@@ -12,6 +12,7 @@ TextureObject::TextureObject()
     , m_TexEngine(NULL)
 {
     m_TexEngine = TextureEngine::Instance();
+    m_GraphicsEngine = GraphicsEngine::Instance();
 }
 
 TextureObject::TextureObject(const std::string& strPath, float tx, float ty, float width, float height)
@@ -24,6 +25,7 @@ TextureObject::TextureObject(const std::string& strPath, float tx, float ty, flo
     , m_renderHeight(0)
 {
     m_TexEngine = TextureEngine::Instance();
+    m_GraphicsEngine = GraphicsEngine::Instance();
     Load(strPath, tx, ty, width, height);
 }
 
@@ -31,8 +33,11 @@ TextureObject::~TextureObject()
 {
     if (m_hTex)
     {
-        hge->Texture_Free(m_hTex);
-        m_hTex = NULL;
+        if (m_TexEngine)
+        {
+            m_TexEngine->Release(m_hTex);
+            m_hTex = NULL;
+        }
     }
 
 }
@@ -49,8 +54,8 @@ bool TextureObject::Load(const std::string& strPath, float tx, float ty, float w
     {
         return false;
     }
-    m_texWidth = (float)hge->Texture_GetWidth(m_hTex);
-    m_texHeight = (float)hge->Texture_GetHeight(m_hTex);
+    m_texWidth = (float)m_TexEngine->GetWidth(m_hTex);
+    m_texHeight = (float)m_TexEngine->GetHeight(m_hTex);
     if (width == 0)
         m_renderWidth = m_texWidth - tx;
     else
@@ -109,7 +114,7 @@ void TextureObject::Render(float x, float y)
     quad.v[3].x = x;
     quad.v[3].y = y + m_renderHeight;
 
-    hge->Gfx_RenderQuad(&quad);
+    m_GraphicsEngine->RenderQuad(&quad);
 }
 
 void TextureObject::SetRenderRect(float tx, float ty, float width, float height)

@@ -34,7 +34,7 @@ bool StartMenu::Render()
 
 StartMenuState StartMenu::Update()
 {
-    int id = m_gui.Update(hge->Timer_GetDelta());
+    int id = m_gui.Update(hgeCreate(HGE_VERSION)->Timer_GetDelta());
     switch (id)
     {
     case 1:

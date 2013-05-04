@@ -1,14 +1,15 @@
 #include "globaldef.h"
 #include "play_scene.h"
 #include "control\control_object\out_text.h"
+#include "engine\graphics_engine.h"
+#include "control\pool\picture_pool.h"
 
 PlayScene::PlayScene()
 {
     m_MapX = 0.0f;
     m_MapY = 0.0f;
     m_Map = new GameMap;
-    m_Map->Load("res\\img\\map1.png",
-        "res\\img\\mapcollision1.png");
+    m_Map->Load("map1", "mapcollision1");
     m_Map->PushCovering("res\\img\\covering1.png", 238.0f, 0.0f);
     m_ViewPosX = (int)m_Map->GetWidth() - 1;
     m_ViewPosX = ~m_ViewPosX;
@@ -27,14 +28,12 @@ PlayScene::~PlayScene()
 
 void PlayScene::Reset()
 {
-    hge->Gfx_Clear(ARGB(1,0,0,0));
+    GraphicsEngine::Instance()->Clear(ARGB(1,0,0,0));
 }
 
 void PlayScene::Output()
 {
     m_Map->Render(m_PlayerRole->GetPos());
-
-
     m_PlayerRole->SetViewport(m_Map->GetViewportPos());
     m_PlayerRole->Render();
     m_Map->RenderCovering();
