@@ -4,9 +4,14 @@
 #include "engine\texture_engine.h"
 #include "engine\graphics_engine.h"
 #include "control\game_controler.h"
+#include "resource\xml_list.h"
+#include "resource\cpicturexml_parse.h"
+#include "resource\xml_list.h"
 
 #include <tchar.h>
+#include <Shlwapi.h>
 
+#pragma comment(lib,"shlwapi.lib")
 #pragma comment(lib, "../../../import/hge/lib/hge.lib")
 #pragma comment(lib, "../../../import/hge/lib/hgehelp.lib")
 
@@ -52,6 +57,25 @@ int WINAPI WinMain(          HINSTANCE hInstance,
     GraphicsEngine_->Initialize(&engine);
 
     SceneEngine_->Initialize();
+
+    char filePath[MAX_PATH] = {0};
+    ::GetModuleFileNameA(0, filePath, MAX_PATH);
+    ::PathRemoveFileSpecA(filePath);
+    ::PathAppendA(filePath, "res\\xml\\xmllist.xml");
+    CXMLResource::Instance()->LoadXML(filePath);
+    memset(filePath, 0, MAX_PATH);
+
+    for (auto it = CXMLResource::Instance()->Begin();
+        it != CXMLResource::Instance()->End(); it++)
+    {
+        ::GetModuleFileNameA(0, filePath, MAX_PATH);
+        ::PathRemoveFileSpecA(filePath);
+        ::PathAppendA(filePath, it->second->Path.c_str());
+        if (it->first == "picture_stage1")
+        {
+            CPictureXMLParse::Instance()->LoadXML(filePath);
+        }
+    }
 
     if (engine.Initialize())
     {

@@ -103,10 +103,10 @@ public:
     void PopCoveringAll();
 
     ///地图宽度
-    float GetWidth() { return m_mapTex.GetWidth();}
+    float GetWidth() { return m_mapTex->GetWidth();}
     
     ///地图高度
-    float GetHeight() { return m_mapTex.GetHeight();}
+    float GetHeight() { return m_mapTex->GetHeight();}
 
     //判断是否会碰撞到地图
     bool isCollision(roleVector v, int r, DWORD color);
@@ -114,8 +114,8 @@ public:
     viewportVector GetViewportPos() { return m_viewportPos ;}
 private:
 
-    TextureObject m_mapTex;
-    TextureObject m_collisionMapTex;
+    TextureObject* m_mapTex;
+    TextureObject* m_collisionMapTex;
     vector<CoveringTex*> m_coveringTex;
     viewportVector m_viewportPos;
     roleVector m_previousPos;
