@@ -7,7 +7,7 @@
 #include "scene.h"
 #include "game_object/map/game_map.h"
 class PlayScene
-    :public Scene
+    : public Scene
 {
 public:
     PlayScene();

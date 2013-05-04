@@ -1,5 +1,7 @@
 #include "picture_pool.h"
 
+PicturePool* Singleton<PicturePool>::m_pInst = NULL;
+
 PicturePool::PicturePool()
 {
     for (auto it = CPictureXMLParse::Instance()->Begin();
@@ -7,7 +9,7 @@ PicturePool::PicturePool()
         it++)
     {
         TextureObject* pObject = new TextureObject;
-        pObject->Load(it->second->PicturePath);
+        pObject->Load(it->second->PicturePath.c_str());
         m_Pool[it->first] = pObject;
     }
 }

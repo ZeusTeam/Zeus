@@ -18,9 +18,9 @@
 	
 	<img id = "mapcollision1" path = "res\img\mapcollision1.png"> </img>
 	
-	<img id = "menubg" path = "bres\img\menubg.png"> </img>
+	<img id = "menubg" path = "res\img\menubg.png"> </img>
 	
-	<img id = "self" path = "bres\img\self.png"> </img>
+	<img id = "self" path = "res\img\self.png"> </img>
 
 	<img id = "TileA2" path = "res\img\TileA2.png"> </img>
 </gamepicture> 
