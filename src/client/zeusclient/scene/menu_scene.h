@@ -15,7 +15,7 @@ public:
     void Output();
     void Reset();
 private:
-    TextureObject m_bgRenderer;
+    TextureObject* m_bgRenderer;
 };
 
 #endif

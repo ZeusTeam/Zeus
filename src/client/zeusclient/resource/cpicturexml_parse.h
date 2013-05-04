@@ -10,33 +10,32 @@
 
 typedef std::map<std::string, CPictureXMLObject*> MapPitureList;
 
-class CPictureXMLParse  : public Singleton<CPictureXMLParse>
+class CPictureXMLParse : public Singleton<CPictureXMLParse>
 {
-		 friend Singleton<CPictureXMLParse>;
+    friend class Singleton<CPictureXMLParse>;
 public:
-		~CPictureXMLParse();
+    ~CPictureXMLParse();
 
-		bool LoadXML(const std::string& strPath);
-		CPictureXMLObject* Get(std::string nId) const;
+    bool LoadXML(const std::string& strPath);
+    CPictureXMLObject* Get(std::string nId) const;
 
-		const MapPitureList::const_iterator Begin() const;
-		const MapPitureList::const_iterator End() const;
+    const MapPitureList::const_iterator Begin() const;
+    const MapPitureList::const_iterator End() const;
 
-		int Size() const;
-		bool Empty() const;
+    int Size() const;
+    bool Empty() const;
 
 private:
     void _Close();
     bool _Parse(TiXmlDocument& TinyXML);
  
 private:
-        CPictureXMLParse();
-        CPictureXMLParse( CPictureXMLParse& );
-        CPictureXMLParse& operator = (CPictureXMLParse&);
-
+    CPictureXMLParse();
+    CPictureXMLParse( CPictureXMLParse& );
+    CPictureXMLParse& operator = (CPictureXMLParse&);
 
 private:
-        MapPitureList m_mapPiture;
+    MapPitureList m_mapPiture;
 };
 
 #endif

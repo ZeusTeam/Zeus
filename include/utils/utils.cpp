@@ -1,6 +1,8 @@
 #include "utils.h"
 #include <cstdio>
-#include "src\client\zeusclient\resource\parse_def.h"
+
+namespace utils
+{
 
 bool utils::GetXmlStrAttributeA( TiXmlElement *pElement, char *pName, std::string &strData )
 {
@@ -27,4 +29,6 @@ bool utils::GetXmlIntAttribute( TiXmlElement *pElement, char *pName, int &nData 
         }
     }
     return false;
+}
+
 }

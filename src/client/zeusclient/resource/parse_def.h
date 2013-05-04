@@ -1,9 +1,6 @@
 #ifndef PARSE_DEF
 #define PARSE_DEF
 
-
-
-
 #define TRUE_GAME "true"
 #define FALSE_GAME "false"
 

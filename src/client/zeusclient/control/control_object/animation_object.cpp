@@ -1,5 +1,6 @@
 #include "globaldef.h"
 #include "animation_object.h"
+
 AnimationObject::AnimationObject()
     : m_start(0)
     , m_end(0)

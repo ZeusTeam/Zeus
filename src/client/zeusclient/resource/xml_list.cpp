@@ -13,70 +13,71 @@ CXMLResource::~CXMLResource()
 
 bool CXMLResource::Initialize()
 {
-		return true;
+    return true;
 }
 
 bool CXMLResource::LoadXML(const std::string& strPath)
 {
-	TiXmlDocument XmlParse;
+    TiXmlDocument XmlParse;
 
-	if (strPath.empty())
-	{
-			return false;
-	}
+    if (strPath.empty())
+    {
+        return false;
+    }
 
-	if (XmlParse.LoadFile(strPath.c_str()))
-	{
-			return _Parse(XmlParse);
-	}
-	return true;
+    if (XmlParse.LoadFile(strPath.c_str()))
+    {
+        return _Parse(XmlParse);
+    }
+    return true;
 }
 
 
 bool CXMLResource::_Parse(TiXmlDocument& tiDoc)
 {
-	TiXmlElement* tiRoot = tiDoc.RootElement();
-	if (!tiRoot)
-	{
-		  return false;
-	}
-	std::string sRootName = tiRoot->Value();
-	if (sRootName != XMLLIST_ROOT )
-	{
-		  return false;
-	}
+    TiXmlElement* tiRoot = tiDoc.RootElement();
+    if (!tiRoot)
+    {
+        return false;
+    }
+    std::string sRootName = tiRoot->Value();
+    if (sRootName != XMLLIST_ROOT )
+    {
+        return false;
+    }
 
-	TiXmlNode * tiFirst = tiRoot->FirstChild(XMLLIST_XML);
-	if(tiFirst == NULL)
-	{
-		  return false;
-	}
-	for (TiXmlElement* indexElement = tiFirst->ToElement();
-		  indexElement != NULL;
-		  indexElement = indexElement->NextSiblingElement())
-	{
-        XMLObject* pXML = new XMLObject;
+    TiXmlNode * tiFirst = tiRoot->FirstChild(XMLLIST_XML);
+    if(tiFirst == NULL)
+    {
+        return false;
+    }
+    for (TiXmlElement* indexElement = tiFirst->ToElement();
+        indexElement != NULL;
+        indexElement = indexElement->NextSiblingElement())
+    {
+        XMLFileObject* pXML = new XMLFileObject;
         if(utils::GetXmlStrAttributeA(indexElement, ID_OBJECT, pXML->Id)
-             && utils::GetXmlStrAttributeA(indexElement, TYPE_OBJECT, pXML->type))
-        {	  
-             m_mapXMLList[pXML->Id] = pXML;
-        } 
-	}	 
-	return true;
+            && utils::GetXmlStrAttributeA(indexElement, TYPE_OBJECT, pXML->Type)
+            && utils::GetXmlStrAttributeA(indexElement, TYPE_OBJECT, pXML->Path))
+        {
+            m_mapXMLList[pXML->Id] = pXML;
+        }
+    }
+    return true;
 }
 
 
 const mapXMLList::const_iterator CXMLResource::Begin() const
 {
-	return m_mapXMLList.begin();
+    return m_mapXMLList.begin();
 }
 
 const mapXMLList::const_iterator CXMLResource::End() const
 {
-	return m_mapXMLList.end();
+    return m_mapXMLList.end();
 }
 
 int CXMLResource::Size() const
 {
-	return m_mapXMLList.size();
+    return m_mapXMLList.size();
 }
