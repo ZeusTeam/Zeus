@@ -36,8 +36,8 @@ public:
     void Update();
 
 private:
-     PeopleDirection m_Key;
-     GameEngine* m_GameEngine_Ptr;
+    PeopleDirection m_Key;
+    GameEngine* m_GameEngine_Ptr;
 };
 
 #endif

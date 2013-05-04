@@ -10,6 +10,7 @@ PlayerRole::PlayerRole(float x, float y)
     m_nPresentFrame = 0;
     m_nTimeFrame = 0;
     m_nFrameCount = 8 - 1;
+    m_InputEngine = InputEngine::Instance();
 }
 
 PlayerRole::~PlayerRole()
@@ -57,57 +58,57 @@ roleVector PlayerRole::GetNextPos()
 {
     roleVector nextPos(m_nPosX, m_nPosY);
 
-    if (InputEngine_->IsKey(KEY_UP) == Key_Down && 
-        InputEngine_->IsKey(KEY_LEFT) != Key_Down &&
-        InputEngine_->IsKey(KEY_RIGHT) != Key_Down) ///向上走
+    if (m_InputEngine->IsKey(KEY_UP) == Key_Down && 
+        m_InputEngine->IsKey(KEY_LEFT) != Key_Down &&
+        m_InputEngine->IsKey(KEY_RIGHT) != Key_Down) ///向上走
     {
         m_Direction = Direction_Up;
         nextPos.y = m_nPosY - m_nSpeed;
     }
-    if (InputEngine_->IsKey(KEY_DOWN) == Key_Down && 
-        InputEngine_->IsKey(KEY_LEFT) != Key_Down &&
-        InputEngine_->IsKey(KEY_RIGHT) != Key_Down) ///向下走
+    if (m_InputEngine->IsKey(KEY_DOWN) == Key_Down && 
+        m_InputEngine->IsKey(KEY_LEFT) != Key_Down &&
+        m_InputEngine->IsKey(KEY_RIGHT) != Key_Down) ///向下走
     {
         m_Direction = Direction_Down;
         nextPos.y = m_nPosY + m_nSpeed;
     }
-    if (InputEngine_->IsKey(KEY_LEFT) == Key_Down && 
-        InputEngine_->IsKey(KEY_DOWN) != Key_Down &&
-        InputEngine_->IsKey(KEY_UP) != Key_Down) ///向左走
+    if (m_InputEngine->IsKey(KEY_LEFT) == Key_Down && 
+        m_InputEngine->IsKey(KEY_DOWN) != Key_Down &&
+        m_InputEngine->IsKey(KEY_UP) != Key_Down) ///向左走
     {
         m_Direction = Direction_Left;
         nextPos.x = m_nPosX - m_nSpeed;
     }
-    if (InputEngine_->IsKey(KEY_RIGHT) == Key_Down && 
-        InputEngine_->IsKey(KEY_DOWN) != Key_Down &&
-        InputEngine_->IsKey(KEY_UP) != Key_Down) ///向右走
+    if (m_InputEngine->IsKey(KEY_RIGHT) == Key_Down && 
+        m_InputEngine->IsKey(KEY_DOWN) != Key_Down &&
+        m_InputEngine->IsKey(KEY_UP) != Key_Down) ///向右走
     {
         m_Direction = Direction_Right;
         nextPos.x = m_nPosX + m_nSpeed;
     }
-    if (InputEngine_->IsKey(KEY_UP) == Key_Down && 
-        InputEngine_->IsKey(KEY_LEFT) == Key_Down) ///向左上走
+    if (m_InputEngine->IsKey(KEY_UP) == Key_Down && 
+        m_InputEngine->IsKey(KEY_LEFT) == Key_Down) ///向左上走
     {
         m_Direction = Direction_LeftUp;
         nextPos.x = m_nPosX - 0.707f * m_nSpeed; /// cos45° = 0.707
         nextPos.y = m_nPosY - 0.707f * m_nSpeed;
     }
-    if (InputEngine_->IsKey(KEY_UP) == Key_Down && 
-        InputEngine_->IsKey(KEY_RIGHT) == Key_Down) ///向右上走
+    if (m_InputEngine->IsKey(KEY_UP) == Key_Down && 
+        m_InputEngine->IsKey(KEY_RIGHT) == Key_Down) ///向右上走
     {
         m_Direction = Direction_RightUp;
         nextPos.x = m_nPosX + 0.707f * m_nSpeed; /// cos45° = 0.707
         nextPos.y = m_nPosY - 0.707f * m_nSpeed;
     }
-    if (InputEngine_->IsKey(KEY_DOWN) == Key_Down && 
-        InputEngine_->IsKey(KEY_LEFT) == Key_Down) ///向左下走
+    if (m_InputEngine->IsKey(KEY_DOWN) == Key_Down && 
+        m_InputEngine->IsKey(KEY_LEFT) == Key_Down) ///向左下走
     {
         m_Direction = Direction_LeftDown;
         nextPos.x = m_nPosX - 0.707f * m_nSpeed; /// cos45° = 0.707
         nextPos.y = m_nPosY + 0.707f * m_nSpeed;
     }
-    if (InputEngine_->IsKey(KEY_DOWN) == Key_Down && 
-        InputEngine_->IsKey(KEY_RIGHT) == Key_Down) ///向右下走
+    if (m_InputEngine->IsKey(KEY_DOWN) == Key_Down && 
+        m_InputEngine->IsKey(KEY_RIGHT) == Key_Down) ///向右下走
     {
         m_Direction = Direction_RightDown;
         nextPos.x = m_nPosX + 0.707f * m_nSpeed; /// cos45° = 0.707

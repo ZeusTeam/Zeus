@@ -1,6 +1,8 @@
 #ifndef PlayerRole_
 #define PlayerRole_
+
 #include "import\hge\include\hgevector.h"
+#include "engine\input_engine.h"
 #include "role.h"
 
 #define MOVEFRAMEMAX 5
@@ -39,6 +41,7 @@ protected:
     int m_nTimeFrame;
     bool m_bMoving;
     roleVector m_viewportPos;
+    InputEngine* m_InputEngine;
 };
 
 #endif

@@ -1,6 +1,7 @@
 #include "globaldef.h"
 #include "menu_scene.h"
 #include "play_scene.h"
+#include "engine\input_engine.h"
 
 MenuScene::MenuScene()
 {
@@ -23,6 +24,7 @@ void MenuScene::Output()
 
 void MenuScene::Update()
 {
+
     StartMenuState state = m_startMenu.Update();
     if (state == StartMenu_Exit)
     {
