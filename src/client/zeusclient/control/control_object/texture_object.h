@@ -11,9 +11,11 @@ class TextureObject
 {
 public:
     TextureObject();
+    TextureObject(const std::string& strPath, float tx = 0.0f, float ty = 0.0f, float width = 0.0f, float height = 0.0f);
+
     virtual ~TextureObject();
 
-    virtual bool Load(const std::string& strPath);
+    bool Load(const std::string& strPath, float tx = 0.0f, float ty = 0.0f, float width = 0.0f, float height = 0.0f);
 
     float GetWidth() const { return m_texWidth; }
 
