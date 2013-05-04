@@ -6,17 +6,17 @@ template<> InputEngine* Singleton<InputEngine>::m_pInst = NULL;
 InputEngine::InputEngine()
 {
     m_Key = Direction_Tail;
-    m_HGE = NULL;
+    m_GameEngine_Ptr = NULL;
 }
 
 InputEngine::~InputEngine()
 {
 }
 
-bool InputEngine::Initialize(HGE* pHGE)
+bool InputEngine::Initialize(GameEngine* pGameEngine)
 {
-    m_HGE = pHGE;
-    if (!m_HGE)
+    m_GameEngine_Ptr = pGameEngine;
+    if (!m_GameEngine_Ptr)
     {
         return false;
     }
@@ -25,11 +25,11 @@ bool InputEngine::Initialize(HGE* pHGE)
 
 KeyState InputEngine::IsKey(int nKey)
 {
-    if (!m_HGE)
+    if (!m_GameEngine_Ptr)
     {
         return Key_Fail;
     }
-    if (m_HGE->Input_GetKeyState(nKey))
+    if (m_GameEngine_Ptr->Input_GetKeyState(nKey))
     {
         return Key_Down;
     }
@@ -38,13 +38,13 @@ KeyState InputEngine::IsKey(int nKey)
 
 KeyState InputEngine::IsKey(int nFirstKey, int nSecondKey)
 {
-    if (!m_HGE)
+    if (!m_GameEngine_Ptr)
     {
         return Key_Fail;
     }
-    if (m_HGE->Input_GetKeyState(nFirstKey))
+    if (m_GameEngine_Ptr->Input_GetKeyState(nFirstKey))
     {
-        if (m_HGE->Input_GetKeyState(nSecondKey))
+        if (m_GameEngine_Ptr->Input_GetKeyState(nSecondKey))
         {
             return Key_Down;
         }

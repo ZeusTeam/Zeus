@@ -1,15 +1,26 @@
 #include "globaldef.h"
 #include "import\hge\include\hge.h"
+#include "engine\game_engine.h"
+#include "engine\texture_engine.h"
+#include "engine\graphics_engine.h"
 #include "control\game_controler.h"
+#include "resource\xml_list.h"
+#include "resource\cpicturexml_parse.h"
+#include "resource\xml_list.h"
 
+#include <tchar.h>
+#include <Shlwapi.h>
+
+#pragma comment(lib,"shlwapi.lib")
 #pragma comment(lib, "../../../import/hge/lib/hge.lib")
 #pragma comment(lib, "../../../import/hge/lib/hgehelp.lib")
 
-HGE* hge = NULL;
 GameControler* game;
 
 SceneEngine* SceneEngine_ = NULL;
 InputEngine* InputEngine_ = NULL;
+TextureEngine* TextureEngine_ = NULL;
+GraphicsEngine* GraphicsEngine_ = NULL;
 
 bool Update()
 {
@@ -28,29 +39,49 @@ int WINAPI WinMain(          HINSTANCE hInstance,
     int nCmdShow
 )
 {
-    hge = hgeCreate(HGE_VERSION);
-    
-    hge->System_SetState(HGE_FRAMEFUNC, Update);
-    hge->System_SetState(HGE_RENDERFUNC, Render);
-    hge->System_SetState(HGE_FPS, 60);
-    hge->System_SetState(HGE_TITLE, "RPG Demo");
-    hge->System_SetState(HGE_SHOWSPLASH, false); //²»ÏÔÊ¾HGEµÄLOGO
-    hge->System_SetState(HGE_WINDOWED, true); 
-    hge->System_SetState(HGE_LOGFILE, "RPGDemo.log");
-    hge->System_SetState(HGE_SCREENWIDTH, WINDOW_WIDTH);
-    hge->System_SetState(HGE_SCREENHEIGHT, WINDOW_HEIGHT);
+    GameEngine engine;
+    engine.State(Func_Frame, Update);
+    engine.State(Func_Render, Render);
+    engine.State(Attribute_Width, WINDOW_WIDTH);
+    engine.State(Attribute_Height, WINDOW_HEIGHT);
+    engine.State(Attribute_Fps, 60);
+    engine.State(Attribute_Title, _T("RPG Demo"));
+    engine.State(Attribute_LogPath, _T("RPGDemo.log"));
 
     SceneEngine_ = SceneEngine::Instance();
     InputEngine_ = InputEngine::Instance();
-    InputEngine_->Initialize(hge);
+    TextureEngine_ = TextureEngine::Instance();
+    GraphicsEngine_ = GraphicsEngine::Instance();
+    InputEngine_->Initialize(&engine);
+    TextureEngine_->Initialize(&engine);
+    GraphicsEngine_->Initialize(&engine);
+
     SceneEngine_->Initialize();
 
-    if (hge->System_Initiate())
+    char filePath[MAX_PATH] = {0};
+    ::GetModuleFileNameA(0, filePath, MAX_PATH);
+    ::PathRemoveFileSpecA(filePath);
+    ::PathAppendA(filePath, "res\\xml\\xmllist.xml");
+    CXMLResource::Instance()->LoadXML(filePath);
+    memset(filePath, 0, MAX_PATH);
+
+    for (auto it = CXMLResource::Instance()->Begin();
+        it != CXMLResource::Instance()->End(); it++)
+    {
+        ::GetModuleFileNameA(0, filePath, MAX_PATH);
+        ::PathRemoveFileSpecA(filePath);
+        ::PathAppendA(filePath, it->second->Path.c_str());
+        if (it->first == "picture_stage1")
+        {
+            CPictureXMLParse::Instance()->LoadXML(filePath);
+        }
+    }
+
+    if (engine.Initialize())
     {
         game = GameControler::Instance();
         game->Start();
-        hge->System_Start();
-        hge->System_Shutdown();
+        engine.Start();
     }
     else
     {

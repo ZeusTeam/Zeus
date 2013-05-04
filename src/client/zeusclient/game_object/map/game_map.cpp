@@ -1,5 +1,6 @@
 #include "game_map.h"
 #include <math.h>
+#include "control\pool\picture_pool.h"
 
 GameMap::GameMap()
 {
@@ -11,11 +12,13 @@ GameMap::GameMap()
 }
 bool GameMap::Load(string mapTex, string collisionMapTex)
 {
-    if (!m_mapTex.Load(mapTex, 0, 0))
+    m_mapTex = PicturePool::Instance()->Get(mapTex);
+    m_collisionMapTex = PicturePool::Instance()->Get(collisionMapTex);
+    if (!m_mapTex)
     {
         return false;
     }
-    if (!m_collisionMapTex.Load(collisionMapTex, 0, 0))
+    if (!m_collisionMapTex)
     {
         return false;
     }
@@ -30,7 +33,11 @@ GameMap::~GameMap()
 }
 bool GameMap::SetViewport(float x, float y, float width, float height, roleVector rolePos)
 {
-    if (x < 0 || y < 0 || width < 0 || height < 0 || x + width > m_mapTex.GetWidth() || y + height > m_mapTex.GetHeight() || 
+    if (!m_mapTex)
+    {
+        return false;
+    }
+    if (x < 0 || y < 0 || width < 0 || height < 0 || x + width > m_mapTex->GetWidth() || y + height > m_mapTex->GetHeight() || 
         rolePos.x < 0 || rolePos.y < 0 || rolePos.x > width || rolePos.y > height)
     {
         return false;
@@ -42,29 +49,29 @@ bool GameMap::SetViewport(float x, float y, float width, float height, roleVecto
     m_viewportHeight = height;
     return true;
 }
-///绘制地图
-void GameMap::Render()
-{
-    m_mapTex.Render(0, 0);
-}
 
 void GameMap::Render(roleVector rolePos)
 {
+    if (!m_mapTex)
+    {
+        return;
+    }
     m_viewportPos.x = rolePos.x - m_viewportWidth / 2;
     if (m_viewportPos.x <  0)
         m_viewportPos.x = 0;
 
-    if (m_viewportPos.x > m_mapTex.GetWidth() - m_viewportWidth)
-        m_viewportPos.x =  m_mapTex.GetWidth() - m_viewportWidth;
+    if (m_viewportPos.x > m_mapTex->GetWidth() - m_viewportWidth)
+        m_viewportPos.x =  m_mapTex->GetWidth() - m_viewportWidth;
 
     m_viewportPos.y = rolePos.y - m_viewportHeight / 2;
     if (m_viewportPos.y <  0)
         m_viewportPos.y = 0;
 
-    if (m_viewportPos.y > m_mapTex.GetHeight() - m_viewportHeight)
-        m_viewportPos.y = m_mapTex.GetHeight() - m_viewportHeight;
+    if (m_viewportPos.y > m_mapTex->GetHeight() - m_viewportHeight)
+        m_viewportPos.y = m_mapTex->GetHeight() - m_viewportHeight;
     
-    m_mapTex.Render(0, 0, m_viewportPos.x, m_viewportPos.y, m_viewportWidth, m_viewportHeight);
+    m_mapTex->SetRenderRect(m_viewportPos.x, m_viewportPos.y, m_viewportWidth, m_viewportHeight);
+    m_mapTex->Render(0, 0);
 }
 
 ///绘制遮盖角色的部分 应该在角色绘制之后调用
@@ -113,9 +120,17 @@ bool GameMap::isCollision(roleVector nextPos,
                           DWORD color ///碰撞的颜色
                           )
 {
+    if (!m_mapTex)
+    {
+        return false;
+    }
+    if (!m_collisionMapTex)
+    {
+        return false;
+    }
     for (int i = 0; i < ACCURACY; i++)
     {
-        DWORD* pClr = m_collisionMapTex.CheckColor(\
+        DWORD* pClr = m_collisionMapTex->CheckColor(
             nextPos.x + sin(2 * PI * i / ACCURACY) * r, 
             nextPos.y + cos(2 * PI * i / ACCURACY) * r, 1, 1);
         if (!pClr)
