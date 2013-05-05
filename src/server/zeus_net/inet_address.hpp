@@ -1,0 +1,55 @@
+#ifndef ZEUS_INET_ADDRESS_H_
+#define ZEUS_INET_ADDRESS_H_
+
+#include <common.h>
+#include <regex>
+#include <boost/asio.hpp>
+
+#ifdef _WIN32
+typedef uint32 in_addr_t;
+#define INADDR_ANY  ((in_addr_t) 0x00000000)
+#endif
+
+class InetAddress
+{
+public:
+    /// Constructs an endpoint with given port number.
+    /// Mostly used in TcpServer listening
+    explicit InetAddress(uint16 port)
+    {
+        _host = "0.0.0.0";
+        _port = port;
+    }
+
+    /// Constructs an endpoint with given ip and port.
+    /// @address - ip should be "1.2.3.4"
+    /// @port - host
+    InetAddress(const std::string& host, uint16 port)
+    {
+        _host = host;
+        _port = port;
+    }
+
+    std::string host() const
+    {
+        return _host;
+    }
+
+    uint16 port() const
+    {
+        return _port;
+    }
+
+    std::string toIpHost() const
+    {
+        char buff[32] = {0};
+        sprintf("%s:%s", _host.c_str(), _port);
+    }
+
+private:
+    std::string _host;
+    uint16 _port;
+};
+
+
+#endif //ZEUS_INET_ADDRESS_H_
