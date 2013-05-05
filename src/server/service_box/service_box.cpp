@@ -10,7 +10,7 @@ class ServiceBox
 {
 
 public:
-    int main(int argc, char* argv[])
+    int doMain(int argc, char* argv[])
     {
         using namespace boost::program_options;
 
@@ -60,5 +60,5 @@ private:
 int main(int argc, char* argv[])
 {
     ServiceBox serviceBox;
-    return serviceBox.main(argc, argv);
+    return serviceBox.doMain(argc, argv);
 }
