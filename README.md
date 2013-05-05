@@ -7,10 +7,10 @@
 
 - 客户端  
     [ 
-[**0.1**](https://github.com/ZeusTeam/Zeus#01) | 
-[**0.2**](https://github.com/ZeusTeam/Zeus#02) | 
-[**0.2.1**](https://github.com/ZeusTeam/Zeus#021) | 
-[**0.2.2**](https://github.com/ZeusTeam/Zeus#022) | 
+[**0.1**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#01) | 
+[**0.2**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#02) | 
+[**0.2.1**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#021) | 
+[**0.2.2**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#022) | 
 [0.2.3](https://github.com/ZeusTeam/Zeus#023) | 
 [0.2.4](https://github.com/ZeusTeam/Zeus#024) | 
 [0.2.5](https://github.com/ZeusTeam/Zeus#025)]
