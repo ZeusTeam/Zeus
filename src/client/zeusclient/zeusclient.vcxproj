@@ -68,6 +68,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\import\gfx_font\gfxfont.cpp" />
     <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxml.cpp" />
     <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlerror.cpp" />
     <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlparser.cpp" />
@@ -104,6 +105,7 @@
     <ClCompile Include="zeus_client.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\import\gfx_font\gfxfont.h" />
     <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h" />
     <ClInclude Include="..\..\..\include\utils\singleton.h" />
     <ClInclude Include="..\..\..\include\utils\utils.h" />
