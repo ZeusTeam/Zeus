@@ -19,7 +19,7 @@ class CoveringTex
     : public TextureObject
 {
 public:
-
+    ///> todo: 实现移到cpp去
     bool Load(string texPath, float x, float y)
     {
         if (TextureObject::Load(texPath))
@@ -113,7 +113,7 @@ public:
 
     viewportVector GetViewportPos() { return m_viewportPos ;}
 private:
-
+    ///> todo: 一堆成员变量没有初始化
     TextureObject* m_mapTex;
     TextureObject* m_collisionMapTex;
     vector<CoveringTex*> m_coveringTex;
