@@ -39,6 +39,12 @@ int WINAPI WinMain(          HINSTANCE hInstance,
     int nCmdShow
 )
 {
+    ///> todo:这里要提取函数
+    ///> 游戏引擎初始化
+
+    ///> 游戏资源加载
+
+    ///> 游戏引擎开始运作
     GameEngine engine;
     engine.State(Func_Frame, Update);
     engine.State(Func_Render, Render);
