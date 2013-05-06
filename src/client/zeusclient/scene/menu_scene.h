@@ -11,7 +11,9 @@ class MenuScene
 public:
     MenuScene();
     ~MenuScene();
-    void Update();
+
+    ///> todo: 重载或者实现父类的函数，前面的virtual不要丢
+    virtual void Update();
     void Output();
     void Reset();
 private:
