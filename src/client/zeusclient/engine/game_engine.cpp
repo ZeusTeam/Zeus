@@ -2,14 +2,15 @@
 
 GameEngine::GameEngine()
 {
+    m_hWnd = NULL;
     m_hge = hgeCreate(HGE_VERSION);
     if (m_hge)
     {
         m_hge->System_SetState(HGE_SHOWSPLASH, false);
-        m_hge->System_SetState(HGE_WINDOWED, true); 
+        m_hge->System_SetState(HGE_WINDOWED, true);
+        m_hWnd = m_hge->System_GetState(HGE_HWND);
     }
 }
-
 
 GameEngine::~GameEngine()
 {
@@ -23,6 +24,11 @@ bool GameEngine::Initialize()
         return false;
     }
     return m_hge->System_Initiate();
+}
+
+HWND GameEngine::GethWnd()
+{
+    return m_hWnd;
 }
 
 bool GameEngine::State(EngineFunc funtype, EngineCallbackFun fun)

@@ -82,6 +82,7 @@
     <ClCompile Include="..\..\..\include\xmessage\parsermessageXML.cpp" />
     <ClCompile Include="..\..\..\include\xmessage\xmlobject.cpp" />
     <ClCompile Include="control\control_object\animation_object.cpp" />
+    <ClCompile Include="control\control_object\font_object.cpp" />
     <ClCompile Include="control\control_object\out_text.cpp" />
     <ClCompile Include="control\control_object\texture_object.cpp" />
     <ClCompile Include="control\game_controler.cpp" />
@@ -122,6 +123,7 @@
     <ClInclude Include="..\..\..\include\xmessage\parsermessageXML.h" />
     <ClInclude Include="..\..\..\include\xmessage\xmlobject.h" />
     <ClInclude Include="control\control_object\animation_object.h" />
+    <ClInclude Include="control\control_object\font_object.h" />
     <ClInclude Include="control\control_object\out_text.h" />
     <ClInclude Include="control\control_object\texture_object.h" />
     <ClInclude Include="control\game_controler.h" />
