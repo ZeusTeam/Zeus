@@ -79,3 +79,12 @@ void TextureEngine::Unlock(GameTexture tex)
     }
     m_GameEngine_Ptr->Texture_UnLock(tex);
 }
+
+GameTexture TextureEngine::Create(float x, float y)
+{
+    if (!m_GameEngine_Ptr)
+    {
+        return 0;
+    }
+    return m_GameEngine_Ptr->PresentEngine()->Texture_Create(x, y);
+}
