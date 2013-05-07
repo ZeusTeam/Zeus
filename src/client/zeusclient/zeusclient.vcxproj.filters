@@ -63,9 +63,6 @@
     <Filter Include="Source Files\game_object\gui">
       <UniqueIdentifier>{77b46ea3-aa20-4af8-a31d-723a21dee40d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="import\gfxfont">
-      <UniqueIdentifier>{d01f790a-bc00-4e20-a2c1-769ecd78d921}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp">
@@ -172,9 +169,6 @@
     </ClCompile>
     <ClCompile Include="scene\about_scene.cpp">
       <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\import\gfx_font\gfxfont.cpp">
-      <Filter>import\gfxfont</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -316,5 +310,6 @@
     <ClInclude Include="control\control_object\font_object.h">
       <Filter>Source Files\control\control_object</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\import\gfx_font\gfxfont.h" />
   </ItemGroup>
 </Project>

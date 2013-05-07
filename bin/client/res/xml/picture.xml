@@ -1,4 +1,3 @@
-
 <gamepicture>
 	<img id = "0046_1-2" path = "res\img\0046_1-2.png"> </img>
 
@@ -23,4 +22,6 @@
 	<img id = "self" path = "res\img\self.png"> </img>
 
 	<img id = "TileA2" path = "res\img\TileA2.png"> </img>
+	
+	<img id = "aboutbg" path = "res\img\about.png"> </img>
 </gamepicture> 

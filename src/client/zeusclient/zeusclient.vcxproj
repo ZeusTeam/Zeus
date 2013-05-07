@@ -68,7 +68,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\import\gfx_font\gfxfont.cpp" />
     <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxml.cpp" />
     <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlerror.cpp" />
     <ClCompile Include="..\..\..\import\tinyxml-2.6.2\tinyxmlparser.cpp" />

@@ -41,7 +41,7 @@ void InitializeWindow(GameEngine* engine)
     engine->State(Attribute_Width, WINDOW_WIDTH);
     engine->State(Attribute_Height, WINDOW_HEIGHT);
     engine->State(Attribute_Fps, 60);
-    engine->State(Attribute_Title, _T("RPG Demo"));
+    engine->State(Attribute_Title, _T("ZEUS"));
     engine->State(Attribute_LogPath, _T("RPGDemo.log"));
 }
 
