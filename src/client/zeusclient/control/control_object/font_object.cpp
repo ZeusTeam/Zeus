@@ -187,7 +187,9 @@ inline void FontObject::_CacheCharacter(unsigned int idx, wchar_t c)
 
 FontObject::~FontObject()
 {
-    
+    if (m_hFont) ::DeleteObject(m_hFont);
+    if (m_Hdc) ::DeleteDC(m_Hdc);
+    if(m_pSprite) delete m_pSprite;
 }
 
 void FontObject::Render(float x, float y, const std::string& strText)
