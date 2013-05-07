@@ -29,6 +29,7 @@ FontObject::FontObject(const std::string& strFontName,
                        bool bAntialias)
 {
     m_Graphics = GraphicsEngine::Instance();
+    m_Hdc = 0;
     if (!m_Graphics)
     {
         return;
