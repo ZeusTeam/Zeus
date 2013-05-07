@@ -16,7 +16,6 @@ StartMenu::StartMenu()
         new TextureObject("Res\\img\\menu_item\\menu_texture.png", 0, 55, 155, 55), 
         new TextureObject("Res\\img\\menu_item\\menu_texture.png", 155, 60, 160, 55)));
 
-
     m_gui.SetNavMode(HGEGUI_UPDOWN | HGEGUI_CYCLED);
     m_gui.SetFocus(1);
     m_gui.Enter();
