@@ -22,6 +22,8 @@ public:
 
     void EndScene();
 
+    HDC WindowDC();
+
     void Clear(DWORD color);
 
     void RenderLine(float x1, float y1,
@@ -29,10 +31,12 @@ public:
         DWORD color = 0xFFFFFFFF,
         float z = 0.5f);
 
+
     void RenderQuad(const hgeQuad *quad);
 
 private:
     GameEngine* m_GameEngine_Ptr;
+    HDC m_HDC;
 };
 
 #endif

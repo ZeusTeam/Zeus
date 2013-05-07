@@ -158,6 +158,9 @@
     <ClCompile Include="control\pool\picture_pool.cpp">
       <Filter>Source Files\control\pool</Filter>
     </ClCompile>
+    <ClCompile Include="control\control_object\font_object.cpp">
+      <Filter>Source Files\control\control_object</Filter>
+    </ClCompile>
     <ClCompile Include="game_object\gui\start_menu\start_menu.cpp">
       <Filter>Source Files\game_object\gui</Filter>
     </ClCompile>
@@ -303,6 +306,9 @@
     </ClInclude>
     <ClInclude Include="game_object\gui\start_menu\start_menu.h">
       <Filter>Source Files\game_object\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="control\control_object\font_object.h">
+      <Filter>Source Files\control\control_object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

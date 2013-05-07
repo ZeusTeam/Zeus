@@ -22,6 +22,8 @@ public:
 public:
     GameTexture Load(const std::string& path);
 
+    GameTexture Create(float x, float y);
+
     int GetWidth(GameTexture tex);
 
     int GetHeight(GameTexture tex);

@@ -58,7 +58,7 @@ bool CXMLResource::_Parse(TiXmlDocument& tiDoc)
         XMLFileObject* pXML = new XMLFileObject;
         if(utils::GetXmlStrAttributeA(indexElement, ID_OBJECT, pXML->Id)
             && utils::GetXmlStrAttributeA(indexElement, TYPE_OBJECT, pXML->Type)
-            && utils::GetXmlStrAttributeA(indexElement, TYPE_OBJECT, pXML->Path))
+            && utils::GetXmlStrAttributeA(indexElement, XMLLIST_PATH, pXML->Path))
         {
             m_mapXMLList[pXML->Id] = pXML;
         }

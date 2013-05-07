@@ -54,6 +54,8 @@ public:
 
     GameEnginePtr PresentEngine();
 
+    HWND GethWnd();
+
 public:
     bool Input_GetKeyState(int nKey);
 
@@ -77,6 +79,7 @@ public:
 
 private:
     GameEnginePtr m_hge;
+    HWND m_hWnd;
 };
 
 #endif
