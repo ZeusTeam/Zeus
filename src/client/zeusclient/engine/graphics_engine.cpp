@@ -9,6 +9,16 @@ GraphicsEngine::GraphicsEngine()
 
 GraphicsEngine::~GraphicsEngine()
 {
+    if (m_HDC)
+    {
+        ::ReleaseDC(
+            m_GameEngine_Ptr->GethWnd(), m_HDC);
+    }
+}
+
+HDC GraphicsEngine::WindowDC()
+{
+    return m_HDC;
 }
 
 bool GraphicsEngine::Initialize(GameEngine* pGameEngine)
@@ -18,6 +28,7 @@ bool GraphicsEngine::Initialize(GameEngine* pGameEngine)
         return false;
     }
     m_GameEngine_Ptr = pGameEngine;
+    m_HDC = ::GetDC(m_GameEngine_Ptr->GethWnd());
     return true;
 }
 

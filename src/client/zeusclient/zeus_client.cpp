@@ -7,6 +7,7 @@
 #include "resource\xml_list.h"
 #include "resource\cpicturexml_parse.h"
 #include "resource\xml_list.h"
+#include "control\control_object\font_object.h"
 
 #include <tchar.h>
 #include <Shlwapi.h>
@@ -33,37 +34,32 @@ bool Render()
 }
 
 
-int WINAPI WinMain(          HINSTANCE hInstance,
-    HINSTANCE hPrevInstance,
-    LPSTR lpCmdLine,
-    int nCmdShow
-)
+void InitializeWindow(GameEngine* engine)
 {
-    ///> todo:这里要提取函数
-    ///> 游戏引擎初始化
+    engine->State(Func_Frame, Update);
+    engine->State(Func_Render, Render);
+    engine->State(Attribute_Width, WINDOW_WIDTH);
+    engine->State(Attribute_Height, WINDOW_HEIGHT);
+    engine->State(Attribute_Fps, 60);
+    engine->State(Attribute_Title, _T("RPG Demo"));
+    engine->State(Attribute_LogPath, _T("RPGDemo.log"));
+}
 
-    ///> 游戏资源加载
-
-    ///> 游戏引擎开始运作
-    GameEngine engine;
-    engine.State(Func_Frame, Update);
-    engine.State(Func_Render, Render);
-    engine.State(Attribute_Width, WINDOW_WIDTH);
-    engine.State(Attribute_Height, WINDOW_HEIGHT);
-    engine.State(Attribute_Fps, 60);
-    engine.State(Attribute_Title, _T("RPG Demo"));
-    engine.State(Attribute_LogPath, _T("RPGDemo.log"));
-
+void InitializeEngine(GameEngine* engine)
+{
     SceneEngine_ = SceneEngine::Instance();
     InputEngine_ = InputEngine::Instance();
     TextureEngine_ = TextureEngine::Instance();
     GraphicsEngine_ = GraphicsEngine::Instance();
-    InputEngine_->Initialize(&engine);
-    TextureEngine_->Initialize(&engine);
-    GraphicsEngine_->Initialize(&engine);
-
+    game = GameControler::Instance();
+    InputEngine_->Initialize(engine);
+    TextureEngine_->Initialize(engine);
+    GraphicsEngine_->Initialize(engine);
     SceneEngine_->Initialize();
+}
 
+void InitializeResource()
+{
     char filePath[MAX_PATH] = {0};
     ::GetModuleFileNameA(0, filePath, MAX_PATH);
     ::PathRemoveFileSpecA(filePath);
@@ -82,10 +78,21 @@ int WINAPI WinMain(          HINSTANCE hInstance,
             CPictureXMLParse::Instance()->LoadXML(filePath);
         }
     }
+}
+
+int WINAPI WinMain(          HINSTANCE hInstance,
+    HINSTANCE hPrevInstance,
+    LPSTR lpCmdLine,
+    int nCmdShow
+)
+{
+    GameEngine engine;
+    InitializeWindow(&engine);
+    InitializeEngine(&engine);
+    InitializeResource();
 
     if (engine.Initialize())
     {
-        game = GameControler::Instance();
         game->Start();
         engine.Start();
     }

@@ -10,16 +10,16 @@
 
 
 /*  以下是hgeGUIObject中的public成员
-	int				id;
-	bool			bStatic;
-	bool			bVisible;
-	bool			bEnabled;
-	hgeRect			rect;
-	DWORD			color;
+    int				id;
+    bool			bStatic;
+    bool			bVisible;
+    bool			bEnabled;
+    hgeRect			rect;
+    DWORD			color;
 
-	hgeGUI			*gui;
-	hgeGUIObject	*next;
-	hgeGUIObject	*prev;
+    hgeGUI			*gui;
+    hgeGUIObject	*next;
+    hgeGUIObject	*prev;
 */
 
 class StartMenuItem
