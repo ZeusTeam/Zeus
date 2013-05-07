@@ -9,7 +9,6 @@ StartMenu::StartMenu()
 
     m_gui.AddCtrl(new StartMenuItem(3, 60, 500, "ÍË³ö", NULL));
 
-
     m_gui.SetNavMode(HGEGUI_UPDOWN | HGEGUI_CYCLED);
     m_gui.SetFocus(1);
     m_gui.Enter();

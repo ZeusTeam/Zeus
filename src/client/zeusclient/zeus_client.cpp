@@ -23,6 +23,8 @@ InputEngine* InputEngine_ = NULL;
 TextureEngine* TextureEngine_ = NULL;
 GraphicsEngine* GraphicsEngine_ = NULL;
 
+HWND g_hWnd = NULL;
+
 bool Update()
 {
     return game->Update();
@@ -93,6 +95,7 @@ int WINAPI WinMain(          HINSTANCE hInstance,
 
     if (engine.Initialize())
     {
+        g_hWnd = engine.GethWnd();
         game->Start();
         engine.Start();
     }

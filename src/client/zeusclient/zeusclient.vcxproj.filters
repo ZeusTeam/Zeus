@@ -63,6 +63,12 @@
     <Filter Include="Source Files\game_object\gui">
       <UniqueIdentifier>{77b46ea3-aa20-4af8-a31d-723a21dee40d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\game_object\gui\start_menu">
+      <UniqueIdentifier>{cefd6fa6-efaa-4e6a-9c81-56e2b10072a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game_object\gui\edit_box">
+      <UniqueIdentifier>{6a11000c-bbdb-4ab1-be4d-472c55799c4e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp">
@@ -161,14 +167,17 @@
     <ClCompile Include="control\control_object\font_object.cpp">
       <Filter>Source Files\control\control_object</Filter>
     </ClCompile>
-    <ClCompile Include="game_object\gui\start_menu\start_menu.cpp">
-      <Filter>Source Files\game_object\gui</Filter>
-    </ClCompile>
-    <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp">
-      <Filter>Source Files\game_object\gui</Filter>
-    </ClCompile>
     <ClCompile Include="scene\about_scene.cpp">
       <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp">
+      <Filter>Source Files\game_object\gui\start_menu</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\start_menu\start_menu.cpp">
+      <Filter>Source Files\game_object\gui\start_menu</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\editbox\edit_box.cpp">
+      <Filter>Source Files\game_object\gui\edit_box</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -298,18 +307,20 @@
     <ClInclude Include="scene\about_scene.h">
       <Filter>Source Files\scene</Filter>
     </ClInclude>
-    <ClInclude Include="game_object\gui\start_menu\start_menu_item.h">
-      <Filter>Source Files\game_object\gui</Filter>
-    </ClInclude>
     <ClInclude Include="game_object\gui\gui_item.h">
-      <Filter>Source Files\game_object\gui</Filter>
-    </ClInclude>
-    <ClInclude Include="game_object\gui\start_menu\start_menu.h">
       <Filter>Source Files\game_object\gui</Filter>
     </ClInclude>
     <ClInclude Include="control\control_object\font_object.h">
       <Filter>Source Files\control\control_object</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\import\gfx_font\gfxfont.h" />
+    <ClInclude Include="game_object\gui\start_menu\start_menu.h">
+      <Filter>Source Files\game_object\gui\start_menu</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\start_menu\start_menu_item.h">
+      <Filter>Source Files\game_object\gui\start_menu</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\editbox\edit_box.h">
+      <Filter>Source Files\game_object\gui\edit_box</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

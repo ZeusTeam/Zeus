@@ -19,6 +19,14 @@ PlayScene::PlayScene()
     m_ViewPosY = ~m_ViewPosY;
     m_PlayerRole = new PlayerRole(400, 300);
     m_Map->SetViewport(0, 0, 800, 600, m_PlayerRole->GetPos());
+
+    m_Edit = new EditBox(1, WINDOW_WIDTH, 22, ARGB(255,255,0, 0),"微软雅黑", 22);
+    m_Edit->SetPos(0, WINDOW_HEIGHT - 24);
+
+    m_Gui.AddCtrl(m_Edit);
+    m_Gui.SetNavMode(HGEGUI_UPDOWN | HGEGUI_CYCLED);
+    m_Gui.SetFocus(1);
+    m_Gui.Enter();
 }
 
 
@@ -45,6 +53,8 @@ void PlayScene::Output()
     m_Font->Print(0, 30, "视图 y : %f", m_Map->GetViewportPos().y);
     m_Font->Print(0, 60, "人物 x: %f", m_PlayerRole->GetPos().x);
     m_Font->Print(0, 90, "人物 y: %f", m_PlayerRole->GetPos().y);
+
+    m_Gui.Render();
     //PrintText::Print(0, 0, Text_Left, "viewportPos.x : %f", m_Map->GetViewportPos().x);
     //PrintText::Print(0, 30, Text_Left, "viewportPos.y : %f", m_Map->GetViewportPos().y);
     //PrintText::Print(0, 60, Text_Left, "people x: %f", m_PlayerRole->GetPos().x);
@@ -53,6 +63,7 @@ void PlayScene::Output()
 
 void PlayScene::Update()
 {
+    m_Gui.Update(hgeCreate(HGE_VERSION)->Timer_GetDelta());
     roleVector nextPos = m_PlayerRole->GetNextPos();
     if (!m_Map->isCollision(nextPos, m_PlayerRole->GetAreaRadins(), ARGB(255,255,255,255)))
     {

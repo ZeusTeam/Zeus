@@ -84,22 +84,22 @@ void FontObject::Print( float x, float y, const char *format, ... )
     Render(x, y, sBuffer);
 }
 
-unsigned int FontObject::_GetGlyphByCharacter( wchar_t c )
+unsigned int FontObject::GetGlyphByCharacter( wchar_t c )
 {
     unsigned int idx = (unsigned int)c;
-    if (NULL == (m_Glyphs[idx].t)) _CacheCharacter(idx,c);
+    if (NULL == (m_Glyphs[idx].t)) CacheCharacter(idx,c);
     return idx;
 }
 
-inline float FontObject::_GetWidthFromCharacter( wchar_t c,
+inline float FontObject::GetWidthFromCharacter( wchar_t c,
                                                 bool original)
 {
-    unsigned int idx = _GetGlyphByCharacter(c);
+    unsigned int idx = GetGlyphByCharacter(c);
     if (original && idx > 0 && idx < Font_Count) return m_Glyphs[idx].c;
     return	(idx >= 0x2000) ? m_nFontSize : _floor(m_nFontSize / 2);
 }
 
-inline void FontObject::_CacheCharacter(unsigned int idx, wchar_t c)
+inline void FontObject::CacheCharacter(unsigned int idx, wchar_t c)
 {
     if (idx < Font_Count && NULL == m_Glyphs[idx].t)
     {
@@ -187,7 +187,9 @@ inline void FontObject::_CacheCharacter(unsigned int idx, wchar_t c)
 
 FontObject::~FontObject()
 {
-    
+    if (m_hFont) ::DeleteObject(m_hFont);
+    if (m_Hdc) ::DeleteDC(m_Hdc);
+    if(m_pSprite) delete m_pSprite;
 }
 
 void FontObject::Render(float x, float y, const std::string& strText)
@@ -206,17 +208,17 @@ void FontObject::Render(float x, float y, const std::string& strText)
         }
         else
         {
-            unsigned int idx = _GetGlyphByCharacter(*it);
+            unsigned int idx = GetGlyphByCharacter(*it);
             if (idx > 0)
             {
                 m_pSprite->SetTexture(m_Glyphs[idx].t);
                 m_pSprite->SetTextureRect(0, 0, m_Glyphs[idx].w, m_Glyphs[idx].h);
                 m_pSprite->Render(offsetX - m_Glyphs[idx].x, offsetY - m_Glyphs[idx].y);
-                offsetX += (_GetWidthFromCharacter(*it) + m_nKerningWidth);
+                offsetX += (GetWidthFromCharacter(*it) + m_nKerningWidth);
             }
             else
             {
-                offsetX += (_GetWidthFromCharacter(*it) + m_nKerningWidth);
+                offsetX += (GetWidthFromCharacter(*it) + m_nKerningWidth);
             }
         }
     }
