@@ -72,10 +72,14 @@ bool CPictureXMLParse::_Parse(TiXmlDocument& TinyXML)
      {
          CPictureXMLObject* pPicture = new CPictureXMLObject;
          if(utils::GetXmlStrAttributeA(tiPicture, ID_OBJECT, pPicture->PictureId)
-             && utils::GetXmlStrAttributeA(tiPicture, PICTURE_PATH, pPicture->PicturePath))
+             && utils::GetXmlStrAttributeA(tiPicture, PICTURE_PATH, pPicture->PicturePath)
+             && utils::GetXmlStrAttributeA(tiPicture, TYPE_OBJECT, pPicture->PictureType)
+            )
          {
             utils::GetXmlIntAttribute(tiPicture, PICTURE_POSX, pPicture->Posx);
             utils::GetXmlIntAttribute(tiPicture, PICTURE_POSY, pPicture->Posy);
+            utils::GetXmlIntAttribute(tiPicture, HEIGHT_OBJECT, pPicture->Hight);
+            utils::GetXmlIntAttribute(tiPicture, WIDTH_OBJECT, pPicture->Width);
             m_mapPiture[pPicture->PictureId] = pPicture;
          }
      }
