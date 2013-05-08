@@ -11,12 +11,22 @@ PlayScene::PlayScene()
     m_Map = new GameMap;
     m_Map->Load("map1", "mapcollision1");
     m_Map->PushCovering("res\\img\\covering1.png", 238.0f, 0.0f);
+    m_Font = new FontObject("宋体", 22);
+    m_Font->SetColor(ARGB(255,255,0,0));
     m_ViewPosX = (int)m_Map->GetWidth() - 1;
     m_ViewPosX = ~m_ViewPosX;
     m_ViewPosY = (int)m_Map->GetHeight() - 1;
     m_ViewPosY = ~m_ViewPosY;
     m_PlayerRole = new PlayerRole(400, 300);
     m_Map->SetViewport(0, 0, 800, 600, m_PlayerRole->GetPos());
+
+    m_Edit = new EditBox(1, WINDOW_WIDTH, 22, ARGB(255,255,0, 0),"宋体", 22);
+    m_Edit->SetPos(0, WINDOW_HEIGHT - 24);
+
+    m_Gui.AddCtrl(m_Edit);
+    m_Gui.SetNavMode(HGEGUI_UPDOWN | HGEGUI_CYCLED);
+    m_Gui.SetFocus(1);
+    m_Gui.Enter();
 }
 
 
@@ -24,6 +34,7 @@ PlayScene::~PlayScene()
 {
     delete m_Map;
     delete m_PlayerRole;
+    delete m_Font;
 }
 
 void PlayScene::Reset()
@@ -37,14 +48,22 @@ void PlayScene::Output()
     m_PlayerRole->SetViewport(m_Map->GetViewportPos());
     m_PlayerRole->Render();
     m_Map->RenderCovering();
-    PrintText::Print(0, 0, Text_Left, "viewportPos.x : %f", m_Map->GetViewportPos().x);
-    PrintText::Print(0, 30, Text_Left, "viewportPos.y : %f", m_Map->GetViewportPos().y);
-    PrintText::Print(0, 60, Text_Left, "people x: %f", m_PlayerRole->GetPos().x);
-    PrintText::Print(0, 90, Text_Left, "people y: %f", m_PlayerRole->GetPos().y);
+
+    m_Font->Print(0, 0, "视图 : %f", m_Map->GetViewportPos().x);
+    m_Font->Print(0, 30, "视图 y : %f", m_Map->GetViewportPos().y);
+    m_Font->Print(0, 60, "人物 x: %f", m_PlayerRole->GetPos().x);
+    m_Font->Print(0, 90, "人物 y: %f", m_PlayerRole->GetPos().y);
+
+    m_Gui.Render();
+    //PrintText::Print(0, 0, Text_Left, "viewportPos.x : %f", m_Map->GetViewportPos().x);
+    //PrintText::Print(0, 30, Text_Left, "viewportPos.y : %f", m_Map->GetViewportPos().y);
+    //PrintText::Print(0, 60, Text_Left, "people x: %f", m_PlayerRole->GetPos().x);
+    //PrintText::Print(0, 90, Text_Left, "people y: %f", m_PlayerRole->GetPos().y);
 }
 
 void PlayScene::Update()
 {
+    m_Gui.Update(hgeCreate(HGE_VERSION)->Timer_GetDelta());
     roleVector nextPos = m_PlayerRole->GetNextPos();
     if (!m_Map->isCollision(nextPos, m_PlayerRole->GetAreaRadins(), ARGB(255,255,255,255)))
     {

@@ -9,6 +9,34 @@ GraphicsEngine::GraphicsEngine()
 
 GraphicsEngine::~GraphicsEngine()
 {
+    if (m_HDC)
+    {
+        ::ReleaseDC(
+            m_GameEngine_Ptr->GethWnd(), m_HDC);
+    }
+}
+
+void GraphicsEngine::SetClipping(int x, int y, int w, int h)
+{
+    if (!m_GameEngine_Ptr)
+    {
+        return;
+    }
+    m_GameEngine_Ptr->PresentEngine()->Gfx_SetClipping(x, y, w, h);
+}
+
+void GraphicsEngine::SetClipping()
+{
+    if (!m_GameEngine_Ptr)
+    {
+        return;
+    }
+    m_GameEngine_Ptr->PresentEngine()->Gfx_SetClipping();
+}
+
+HDC GraphicsEngine::WindowDC()
+{
+    return m_HDC;
 }
 
 bool GraphicsEngine::Initialize(GameEngine* pGameEngine)
@@ -18,6 +46,7 @@ bool GraphicsEngine::Initialize(GameEngine* pGameEngine)
         return false;
     }
     m_GameEngine_Ptr = pGameEngine;
+    m_HDC = ::GetDC(m_GameEngine_Ptr->GethWnd());
     return true;
 }
 

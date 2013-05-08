@@ -39,7 +39,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>../../../bin/client</OutDir>
+    <OutDir>../../../bin/client\</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -82,6 +83,7 @@
     <ClCompile Include="..\..\..\include\xmessage\parsermessageXML.cpp" />
     <ClCompile Include="..\..\..\include\xmessage\xmlobject.cpp" />
     <ClCompile Include="control\control_object\animation_object.cpp" />
+    <ClCompile Include="control\control_object\font_object.cpp" />
     <ClCompile Include="control\control_object\out_text.cpp" />
     <ClCompile Include="control\control_object\texture_object.cpp" />
     <ClCompile Include="control\game_controler.cpp" />
@@ -91,6 +93,7 @@
     <ClCompile Include="engine\input_engine.cpp" />
     <ClCompile Include="engine\scene_engine.cpp" />
     <ClCompile Include="engine\texture_engine.cpp" />
+    <ClCompile Include="game_object\gui\editbox\edit_box.cpp" />
     <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp" />
     <ClCompile Include="game_object\gui\start_menu\start_menu.cpp" />
     <ClCompile Include="game_object\map\game_map.cpp" />
@@ -104,6 +107,7 @@
     <ClCompile Include="zeus_client.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\import\gfx_font\gfxfont.h" />
     <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h" />
     <ClInclude Include="..\..\..\include\utils\singleton.h" />
     <ClInclude Include="..\..\..\include\utils\utils.h" />
@@ -122,6 +126,7 @@
     <ClInclude Include="..\..\..\include\xmessage\parsermessageXML.h" />
     <ClInclude Include="..\..\..\include\xmessage\xmlobject.h" />
     <ClInclude Include="control\control_object\animation_object.h" />
+    <ClInclude Include="control\control_object\font_object.h" />
     <ClInclude Include="control\control_object\out_text.h" />
     <ClInclude Include="control\control_object\texture_object.h" />
     <ClInclude Include="control\game_controler.h" />
@@ -132,6 +137,7 @@
     <ClInclude Include="engine\input_engine.h" />
     <ClInclude Include="engine\scene_engine.h" />
     <ClInclude Include="engine\texture_engine.h" />
+    <ClInclude Include="game_object\gui\editbox\edit_box.h" />
     <ClInclude Include="game_object\gui\gui_item.h" />
     <ClInclude Include="game_object\gui\start_menu\start_menu.h" />
     <ClInclude Include="game_object\gui\start_menu\start_menu_item.h" />

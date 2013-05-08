@@ -6,6 +6,10 @@
 #include "game_object/people/player_role.h"
 #include "scene.h"
 #include "game_object/map/game_map.h"
+#include "control\control_object\font_object.h"
+#include "game_object\gui\editbox\edit_box.h"
+#include "import\hge\include\hgegui.h"
+
 class PlayScene
     : public Scene
 {
@@ -26,6 +30,9 @@ private:
     int m_ViewPosY;
     GameMap* m_Map;
     PlayerRole* m_PlayerRole;
+    FontObject* m_Font;
+    EditBox* m_Edit;
+    hgeGUI m_Gui;
 };
 
 #endif

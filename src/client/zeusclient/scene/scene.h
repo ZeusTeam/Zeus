@@ -6,7 +6,8 @@ class Scene
 {
 public:
     Scene() {}
-    ~Scene() {}
+    
+    virtual ~Scene() {}
 
     virtual void Update() = 0;
     virtual void Output() = 0;
