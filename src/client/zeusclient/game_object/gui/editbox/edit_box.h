@@ -6,6 +6,7 @@
 #include "engine\graphics_engine.h"
 #include "engine\input_engine.h"
 #include <string>
+#include <vector>
 
 class EditBox
     : public GUIItem
@@ -50,13 +51,18 @@ private:
 private:
     std::wstring m_Text;
     std::wstring m_ClipboardText;
+    std::vector<float> vecFontWidth;
     FontObject* m_Font;
     int m_Edit_w;
     int m_Edit_h;
     float m_Edit_Pos_x;
     float m_Edit_Pos_y;
     int m_FontSize;
-    int m_PresentFontWidth;
+    float m_PresentFontWidth;
+    float m_bgFontPos;
+    float m_LastCurrPos;
+    float m_CurrPos;
+    bool m_IsSelect;
     bool m_IsFocus; ///>是否是焦点
     bool m_IsOnlyNumber; ///>是否只允许数字输入
     float m_Border_x;

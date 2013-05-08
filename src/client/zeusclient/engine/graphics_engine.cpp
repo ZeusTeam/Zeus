@@ -16,6 +16,24 @@ GraphicsEngine::~GraphicsEngine()
     }
 }
 
+void GraphicsEngine::SetClipping(int x, int y, int w, int h)
+{
+    if (!m_GameEngine_Ptr)
+    {
+        return;
+    }
+    m_GameEngine_Ptr->PresentEngine()->Gfx_SetClipping(x, y, w, h);
+}
+
+void GraphicsEngine::SetClipping()
+{
+    if (!m_GameEngine_Ptr)
+    {
+        return;
+    }
+    m_GameEngine_Ptr->PresentEngine()->Gfx_SetClipping();
+}
+
 HDC GraphicsEngine::WindowDC()
 {
     return m_HDC;

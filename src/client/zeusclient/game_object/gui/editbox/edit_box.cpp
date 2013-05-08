@@ -79,6 +79,62 @@ bool EditBox::DiposeKey()
             m_Text.pop_back();
         }
     }
+    else if ((m_Input->IsKey(KEY_SHIFT) == Key_Down)
+        && (m_Input->IsKey(KEY_LEFT) == Key_Down))
+    {
+        if (m_CharPos <= vecFontWidth.size())
+        {
+            if ((int)m_bgFontPos != (int)m_PresentFontWidth)
+            {
+                if (!m_IsSelect)
+                {
+                    m_LastCurrPos = m_bgFontPos;
+                }
+                m_bgFontPos += vecFontWidth[m_CharPos - 1];
+                m_CurrPos = m_bgFontPos;
+                m_IsSelect = true;
+            }
+        }
+    }
+    else if ((m_Input->IsKey(KEY_SHIFT) == Key_Down)
+        && (m_Input->IsKey(KEY_RIGHT) == Key_Down))
+    {
+        if ((int)m_CharPos <= (int)vecFontWidth.size())
+        {
+            if (m_bgFontPos != 0)
+            {
+                if (!m_IsSelect)
+                {
+                    m_LastCurrPos = m_bgFontPos;
+                }
+                m_bgFontPos -= vecFontWidth[m_CharPos - 1];
+                m_CurrPos = m_bgFontPos;
+                m_IsSelect = true;
+            }
+        }
+    }
+    else if (m_Input->IsKey(KEY_LEFT) == Key_Down)
+    {
+        if (m_CharPos <= vecFontWidth.size())
+        {
+            if ((int)m_bgFontPos != (int)m_PresentFontWidth)
+            {
+                m_bgFontPos += vecFontWidth[m_CharPos - 1];
+                m_IsSelect = false;
+            }
+        }
+    }
+    else if (m_Input->IsKey(KEY_RIGHT) == Key_Down)
+    {
+        if ((int)m_CharPos <= (int)vecFontWidth.size())
+        {
+            if (m_bgFontPos != 0)
+            {
+                m_bgFontPos -= vecFontWidth[m_CharPos - 1];
+                m_IsSelect = false;
+            }
+        }
+    }
     else
     {
         return false;
@@ -124,15 +180,6 @@ void EditBox::OnChar( UINT nChar, UINT nRepCnt, UINT nFlags )
     }
 
     //LastDtTime=0.5f;
-
-//    if( m_pHGE->Input_GetKeyState(HGEK_CTRL) && m_pHGE->Input_GetKeyState(HGEK_A))
-//    {}
-//    else
-//    {
-//        MouseLDown=false;
-//        MouseL1CharPos=MouseL2CharPos=m_nCharPos;
-//        MouseL1x = MouseL1y = MouseL2x = MouseL2y = 0;
-//    }
 }
 
 void EditBox::CatStr(const std::string& strText)
@@ -166,10 +213,6 @@ void EditBox::OnCharHZ( UINT nChar, UINT nRepCnt, UINT nFlags )
     }
 
     //LastDtTime=0.5f;
-
-    //MouseLDown=false;
-    //MouseL1CharPos=MouseL2CharPos=m_nCharPos;
-    //MouseL1x = MouseL1y = MouseL2x = MouseL2y = 0;
 }
 
 EditBox::EditBox(int _Id, UINT nEditWidth, UINT nEditHeight, DWORD nFontColor,
@@ -182,15 +225,19 @@ EditBox::EditBox(int _Id, UINT nEditWidth, UINT nEditHeight, DWORD nFontColor,
     this->bEnabled = true;
 
     m_PresentFontWidth = 0;
+    m_IsSelect = false;
     m_Graphics = GraphicsEngine::Instance();
     m_Input = InputEngine::Instance();
     m_Edit_w = nEditWidth;
     m_Edit_h = nEditHeight;
     m_CharPos = 0;
+    m_bgFontPos = 0;
     m_Edit_Pos_x = 0;
     m_Edit_Pos_y = 0;
     m_Border_x = 0;
     m_Border_y = 0;
+    m_LastCurrPos = 0;
+    m_CurrPos = 0;
     m_IsOnlyNumber = false;
     m_Border_w = (float)nEditWidth;
     m_Border_h = (float)nEditHeight;
@@ -247,8 +294,21 @@ void EditBox::Render(float x, float y)
         m_Graphics->RenderLine(m_Border_x + m_Border_w, m_Border_y + m_Border_h,
             m_Border_x, m_Border_y + m_Border_h);
     }
-    m_Font->Render(x, y - 5, (LPCSTR)CW2A(m_Text.c_str()));
-    if (g_lpFocusEditPtr == this) m_pSprite->Render(m_PresentFontWidth, y);
+    m_Graphics->SetClipping(x, y, m_Border_w, m_Border_h);
+    if (g_lpFocusEditPtr == this)
+    {
+        m_pSprite->Render(m_PresentFontWidth - m_bgFontPos, y);
+    }
+    m_Font->Render(x, y, (LPCSTR)CW2A(m_Text.c_str()));
+    if (g_lpFocusEditPtr == this && m_IsSelect)
+    {
+        m_bgSprite->RenderStretch(
+                m_Edit_Pos_x + (m_PresentFontWidth - m_LastCurrPos),
+                m_Edit_Pos_y,
+                m_Edit_Pos_x + (m_PresentFontWidth - m_CurrPos),
+                m_Edit_Pos_y + (m_FontSize));
+    }
+    m_Graphics->SetClipping();
 }
 
 void EditBox::Render()
@@ -290,12 +350,14 @@ void EditBox::Focus(bool bFocused)
 void EditBox::Update(float dt)
 {
     m_PresentFontWidth = 0;
+    vecFontWidth.clear();
     for (auto it = m_Text.begin(); it != m_Text.end(); it++)
     {
         if (!m_Font)
         {
             break;
         }
+        vecFontWidth.push_back(m_Font->GetWidthFromCharacter(*it));
         m_PresentFontWidth += m_Font->GetWidthFromCharacter(*it);
     }
 }
