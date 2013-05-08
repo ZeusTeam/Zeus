@@ -1,16 +1,17 @@
 #include <boost/program_options.hpp> 
+#include <utils/zeus_logger.hpp>
 #include <common.h>
 #include "service.h"
 #include "share_library.hpp"
+
+using namespace ZLogger;
 
 class ServiceBox
 {
 
 public:
-    int main(int argc, char* argv[])
+    int doMain(int argc, char* argv[])
     {
-        const std::string arg_long_help = "help";
-
         using namespace boost::program_options;
 
         options_description desc("Options:");
@@ -31,7 +32,6 @@ public:
 
         if (vm.count("help") > 0) {
             std::cout << desc;
-            return 0;
         }
 
         if (vm.count("config") > 0)
@@ -52,6 +52,7 @@ public:
 private:
     int loadServerConfig(std::string filename)
     {
+        WD("Loading config [" << filename << "]");
         return 0;
     }
 };
@@ -59,5 +60,5 @@ private:
 int main(int argc, char* argv[])
 {
     ServiceBox serviceBox;
-    return serviceBox.main(argc, argv);
+    return serviceBox.doMain(argc, argv);
 }
