@@ -86,5 +86,5 @@ GameTexture TextureEngine::Create(float x, float y)
     {
         return 0;
     }
-    return m_GameEngine_Ptr->PresentEngine()->Texture_Create(x, y);
+    return m_GameEngine_Ptr->PresentEngine()->Texture_Create((int)x, (int)y);
 }

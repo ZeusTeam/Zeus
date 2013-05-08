@@ -34,7 +34,7 @@ public:
 
     virtual void SetText(const std::string& strText);
 
-    virtual const std::string& GetText() const;
+    virtual const std::wstring& GetText() const;
 
     virtual void OnChar( UINT nChar, UINT nRepCnt, UINT nFlags );
 

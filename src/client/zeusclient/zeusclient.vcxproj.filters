@@ -322,5 +322,6 @@
     <ClInclude Include="game_object\gui\editbox\edit_box.h">
       <Filter>Source Files\game_object\gui\edit_box</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\import\gfx_font\gfxfont.h" />
   </ItemGroup>
 </Project>
