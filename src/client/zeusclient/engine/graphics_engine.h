@@ -31,6 +31,9 @@ public:
         DWORD color = 0xFFFFFFFF,
         float z = 0.5f);
 
+    void SetClipping( int x, int y, int w, int h);
+
+    void SetClipping();
 
     void RenderQuad(const hgeQuad *quad);
 
