@@ -2,13 +2,61 @@
 #include <math.h>
 #include "control\pool\picture_pool.h"
 
-GameMap::GameMap()
+bool CoveringTex::Load(string texPath, float x, float y)
 {
+    if (TextureObject::Load(texPath))
+    {
+            m_x = x;
+            m_y = y;
+            return true;
+    }
+    else //Load失败
+    {
+        return false;
+    }
+}
+void CoveringTex::Render(viewportVector viewportPos)
+{
+    ///这通过计算裁剪遮盖图片到屏幕上
+    float x = 0,y = 0;
+    float tx = 0,ty = 0;
+    float w = 0,h = 0;
 
-    m_viewportPos.x = 0;
-    m_viewportPos.y = 0;
-    m_previousPos.x = 0;
-    m_previousPos.y = 0;
+    x = m_x - (int)viewportPos.x;        //在屏幕上的坐标
+    y = m_y - (int)viewportPos.y;
+    tx = -x;                        //相对于纹理的坐标
+    ty = -y;
+    if (x < 0)
+        x = 0;
+    if (y < 0)
+        y = 0;
+    if (tx < 0)
+        tx = 0;
+    if (ty < 0)
+        ty = 0;
+    w = GetWidth() - tx;
+    h = GetHeight() - ty;
+    if (tx > GetWidth())
+        w = 0;
+    if (ty > GetHeight())
+        h = 0;
+
+    if (w > 0 && h > 0)
+    {
+        TextureObject::SetRenderRect(tx, ty, w, h);
+        TextureObject::Render(x, y);
+    }
+}
+
+GameMap::GameMap()
+    : m_mapTex(NULL)
+    , m_collisionMapTex(NULL)
+    , m_viewportPos(0, 0)
+    , m_previousPos(0, 0)
+    , m_viewportWidth(0)
+    , m_viewportHeight(0)
+    , m_font(NULL)
+{
 }
 bool GameMap::Load(string mapTex, string collisionMapTex)
 {

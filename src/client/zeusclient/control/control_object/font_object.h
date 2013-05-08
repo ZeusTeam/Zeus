@@ -57,10 +57,12 @@ public:
 
     virtual float GetFontSize();
 
-private:
-    inline void _CacheCharacter(unsigned int idx, wchar_t c);
-    inline float _GetWidthFromCharacter( wchar_t c, bool original = false );
-    unsigned int _GetGlyphByCharacter( wchar_t c );
+public:
+    inline void CacheCharacter(unsigned int idx, wchar_t c);
+
+    inline float GetWidthFromCharacter( wchar_t c, bool original = false );
+
+    unsigned int GetGlyphByCharacter( wchar_t c );
 
 private:
     HDC m_Hdc;

@@ -8,7 +8,6 @@ GameEngine::GameEngine()
     {
         m_hge->System_SetState(HGE_SHOWSPLASH, false);
         m_hge->System_SetState(HGE_WINDOWED, true);
-        m_hWnd = m_hge->System_GetState(HGE_HWND);
     }
 }
 
@@ -28,7 +27,11 @@ bool GameEngine::Initialize()
 
 HWND GameEngine::GethWnd()
 {
-    return m_hWnd;
+    if (!m_hge)
+    {
+        return 0;
+    }
+    return m_hge->System_GetState(HGE_HWND);
 }
 
 bool GameEngine::State(EngineFunc funtype, EngineCallbackFun fun)

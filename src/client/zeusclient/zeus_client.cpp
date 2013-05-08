@@ -23,6 +23,8 @@ InputEngine* InputEngine_ = NULL;
 TextureEngine* TextureEngine_ = NULL;
 GraphicsEngine* GraphicsEngine_ = NULL;
 
+HWND g_hWnd = NULL;
+
 bool Update()
 {
     return game->Update();
@@ -41,7 +43,7 @@ void InitializeWindow(GameEngine* engine)
     engine->State(Attribute_Width, WINDOW_WIDTH);
     engine->State(Attribute_Height, WINDOW_HEIGHT);
     engine->State(Attribute_Fps, 60);
-    engine->State(Attribute_Title, _T("RPG Demo"));
+    engine->State(Attribute_Title, _T("ZEUS"));
     engine->State(Attribute_LogPath, _T("RPGDemo.log"));
 }
 
@@ -93,6 +95,7 @@ int WINAPI WinMain(          HINSTANCE hInstance,
 
     if (engine.Initialize())
     {
+        g_hWnd = engine.GethWnd();
         game->Start();
         engine.Start();
     }
