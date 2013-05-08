@@ -1,5 +1,5 @@
-#ifndef ZEUS_CONNECTION_H_
-#define ZEUS_CONNECTION_H_
+#ifndef ZEUS_NET_CONNECTOR_H_
+#define ZEUS_NET_CONNECTOR_H_
 
 #include <common.h>
 #include <boost/asio.hpp>
@@ -9,11 +9,11 @@
 using namespace boost;
 using namespace boost::asio::ip;
 
-class Connection 
-    : public boost::noncopyable, public boost::enable_shared_from_this<Connection>
+class Connector 
+    : public boost::noncopyable, public boost::enable_shared_from_this<Connector>
 {
 public:
-    Connection(asio::io_service io_service)
+    Connector(asio::io_service io_service)
        : _socket(io_service)
     {
     }
