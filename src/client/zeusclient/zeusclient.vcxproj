@@ -106,6 +106,7 @@
     <ClCompile Include="zeus_client.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\import\gfx_font\gfxfont.h" />
     <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h" />
     <ClInclude Include="..\..\..\include\utils\singleton.h" />
     <ClInclude Include="..\..\..\include\utils\utils.h" />

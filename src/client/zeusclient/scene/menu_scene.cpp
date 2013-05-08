@@ -41,6 +41,6 @@ void MenuScene::Update()
     }
     else if (state == StartMenu_About)
     {
-
+        SceneEngine_->Push(new AboutScene);
     }
 }
