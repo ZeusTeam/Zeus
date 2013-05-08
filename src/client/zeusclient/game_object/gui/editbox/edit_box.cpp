@@ -77,12 +77,13 @@ bool EditBox::DiposeKey()
         if (!m_Text.empty())
         {
             m_Text.pop_back();
+            m_CharPos--;
         }
     }
     else if ((m_Input->IsKey(KEY_SHIFT) == Key_Down)
         && (m_Input->IsKey(KEY_LEFT) == Key_Down))
     {
-        if (m_CharPos <= vecFontWidth.size())
+        if (m_CharPos <= vecFontWidth.size() && m_CharPos != 0)
         {
             if ((int)m_bgFontPos != (int)m_PresentFontWidth)
             {
@@ -99,7 +100,7 @@ bool EditBox::DiposeKey()
     else if ((m_Input->IsKey(KEY_SHIFT) == Key_Down)
         && (m_Input->IsKey(KEY_RIGHT) == Key_Down))
     {
-        if ((int)m_CharPos <= (int)vecFontWidth.size())
+        if ((int)m_CharPos <= (int)vecFontWidth.size() && m_CharPos != 0)
         {
             if (m_bgFontPos != 0)
             {
@@ -115,7 +116,7 @@ bool EditBox::DiposeKey()
     }
     else if (m_Input->IsKey(KEY_LEFT) == Key_Down)
     {
-        if (m_CharPos <= vecFontWidth.size())
+        if (m_CharPos <= vecFontWidth.size() && m_CharPos != 0)
         {
             if ((int)m_bgFontPos != (int)m_PresentFontWidth)
             {
@@ -126,7 +127,7 @@ bool EditBox::DiposeKey()
     }
     else if (m_Input->IsKey(KEY_RIGHT) == Key_Down)
     {
-        if ((int)m_CharPos <= (int)vecFontWidth.size())
+        if ((int)m_CharPos <= (int)vecFontWidth.size() && m_CharPos != 0)
         {
             if (m_bgFontPos != 0)
             {
@@ -372,7 +373,7 @@ void EditBox::SetText(const std::string& strText)
     m_Text = CA2W(strText.c_str());
 }
 
-const std::string& EditBox::GetText() const
+const std::wstring& EditBox::GetText() const
 {
-    return (LPCSTR)CW2A(m_Text.c_str());
+    return m_Text;
 }
