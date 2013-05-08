@@ -1,14 +1,9 @@
-#ifndef ZEUS_INET_ADDRESS_H_
-#define ZEUS_INET_ADDRESS_H_
+#ifndef ZEUS_NET_INET_ADDRESS_H_
+#define ZEUS_NET_INET_ADDRESS_H_
 
 #include <common.h>
 #include <regex>
 #include <boost/asio.hpp>
-
-#ifdef _WIN32
-typedef uint32 in_addr_t;
-#define INADDR_ANY  ((in_addr_t) 0x00000000)
-#endif
 
 class InetAddress
 {
@@ -43,7 +38,13 @@ public:
     std::string toIpHost() const
     {
         char buff[32] = {0};
-        sprintf("%s:%s", _host.c_str(), _port);
+#ifdef _WIN32
+        sprintf_s(buff, 32, "%s:%d", _host.c_str(), _port);
+#else
+        sprintf(buff, "%s:%d", _host.c_str(), _port);
+#endif
+
+        return buff;
     }
 
 private:
@@ -52,4 +53,4 @@ private:
 };
 
 
-#endif //ZEUS_INET_ADDRESS_H_
+#endif //ZEUS_NET_INET_ADDRESS_H_
