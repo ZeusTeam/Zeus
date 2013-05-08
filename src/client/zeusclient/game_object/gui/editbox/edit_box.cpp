@@ -90,7 +90,7 @@ bool EditBox::DiposeKey()
                 {
                     m_LastCurrPos = m_bgFontPos;
                 }
-                m_bgFontPos += vecFontWidth[m_CharPos - 1];
+                m_bgFontPos += vecFontWidth[(int)m_CharPos - 1];
                 m_CurrPos = m_bgFontPos;
                 m_IsSelect = true;
             }
@@ -107,7 +107,7 @@ bool EditBox::DiposeKey()
                 {
                     m_LastCurrPos = m_bgFontPos;
                 }
-                m_bgFontPos -= vecFontWidth[m_CharPos - 1];
+                m_bgFontPos -= vecFontWidth[(int)m_CharPos - 1];
                 m_CurrPos = m_bgFontPos;
                 m_IsSelect = true;
             }
@@ -119,7 +119,7 @@ bool EditBox::DiposeKey()
         {
             if ((int)m_bgFontPos != (int)m_PresentFontWidth)
             {
-                m_bgFontPos += vecFontWidth[m_CharPos - 1];
+                m_bgFontPos += vecFontWidth[(int)m_CharPos - 1];
                 m_IsSelect = false;
             }
         }
@@ -130,7 +130,7 @@ bool EditBox::DiposeKey()
         {
             if (m_bgFontPos != 0)
             {
-                m_bgFontPos -= vecFontWidth[m_CharPos - 1];
+                m_bgFontPos -= (float)vecFontWidth[(int)m_CharPos - 1];
                 m_IsSelect = false;
             }
         }
@@ -294,7 +294,7 @@ void EditBox::Render(float x, float y)
         m_Graphics->RenderLine(m_Border_x + m_Border_w, m_Border_y + m_Border_h,
             m_Border_x, m_Border_y + m_Border_h);
     }
-    m_Graphics->SetClipping(x, y, m_Border_w, m_Border_h);
+    m_Graphics->SetClipping((int)x, (int)y, (int)m_Border_w, (int)m_Border_h);
     if (g_lpFocusEditPtr == this)
     {
         m_pSprite->Render(m_PresentFontWidth - m_bgFontPos, y);
