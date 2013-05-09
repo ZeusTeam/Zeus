@@ -10,10 +10,18 @@ class TcpServer : boost::noncopyable
 {
 public:
     TcpServer(const InetAddress& listenAddress, boost::asio::io_service& io_service)
-        : _io_service(io_service),
-        _accptor(listenAddress, _io_service),
-        _started(false)
+        : _acceptor(listenAddress, io_service),
+        _started(false),
+        _signals(io_service)
     {
+        //Ìí¼Ó²¶×½ÐÅºÅ
+        _signals.add(SIGINT);
+        _signals.add(SIGTERM);
+
+#if defined(SIGQUIT)
+        _signals.add(SIGQUIT);
+#endif
+        _signals.async_wait(boost::bind(&TcpServer::stop, this));  
     }
 
     virtual ~TcpServer()
@@ -33,25 +41,30 @@ public:
             stop();
         }
 
-        _accptor.listen();
-        _accptor.startAccept();
+        _acceptor.listen();
+        _acceptor.startAccept();
     }
 
     void stop()
     {
+        //stop acceptor
+        _acceptor.stopAccept();
+
+        //close all alived connections
+        // ...
+
     }
 
 public:
     void setNewConnectCallback(const NewConnectionCallback& cb)
     {
-        _accptor.setNewConnectCallback(cb);
+        _acceptor.setNewConnectCallback(cb);
     }
 
 private:
-    boost::asio::io_service& _io_service;
-    Acceptor _accptor;
+    Acceptor _acceptor;
     bool _started;
-
+    boost::asio::signal_set _signals;
 };
 
 #endif
