@@ -109,6 +109,9 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\import\gfx_font\gfxfont.h" />
     <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h" />
+    <ClInclude Include="..\..\..\include\client_common\client_common.h" />
+    <ClInclude Include="..\..\..\include\client_common\zextension.h" />
+    <ClInclude Include="..\..\..\include\client_common\zgamemap.h" />
     <ClInclude Include="..\..\..\include\utils\singleton.h" />
     <ClInclude Include="..\..\..\include\utils\utils.h" />
     <ClInclude Include="..\..\..\include\xmessage\buffermessage.h" />
