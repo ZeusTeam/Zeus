@@ -6,14 +6,17 @@
 `*粗体版本号表示已完成版本。`
 
 - 客户端  
-    [ 
+    [
 [**c0.1**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#c01) | 
 [**c0.2**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#c02) | 
 [**c0.2.1**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#c021) | 
 [**c0.2.2**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#c022) | 
 [**c0.2.3**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#c023) | 
 [c0.2.4](https://github.com/ZeusTeam/Zeus#c024) | 
-[c0.2.5](https://github.com/ZeusTeam/Zeus#c025)]
+[c0.2.5](https://github.com/ZeusTeam/Zeus#c025) |
+[c0.3.0](https://github.com/ZeusTeam/Zeus#c030) |
+[c0.3.1](https://github.com/ZeusTeam/Zeus#c031) 
+]
     
 - 服务端  
     [
@@ -28,21 +31,21 @@
 
 ### **客户端 [`详细`](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md)**
 ----------
-####0.2.4
+####c0.2.4
 1.角色选择页面(able)  
 2.角色创建页面(sum)  
 3.可选角色头像图片列表  
 
-####0.2.5
+####c0.2.5
 1.游戏配置文件  
 2.提取地图接口  
 3.支持多地图切换   
 
-####0.3.0
+####c0.3.0
 1.支持扩展包  
 2.实现npc  
 
-####0.3.1
+####c0.3.1
 1.实现和npc对话  
 2.在扩展包里实现npc和对话  
 
