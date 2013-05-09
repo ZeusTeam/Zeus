@@ -17,18 +17,24 @@ public:
 
 int main()
 {
-    InetAddress inetAddress(36911);
+    try
+    {
+        InetAddress inetAddress(36911);
 
-    boost::asio::io_service _io_service;
-    TcpServer server(inetAddress, _io_service);
+        boost::asio::io_service _io_service;
+        TcpServer server(inetAddress, _io_service);
 
-    EventHandler eventHandler;
-    server.setNewConnectCallback(
-        boost::bind(&EventHandler::NewConnectionHandler, &eventHandler, _1, _2)
-        );
+        EventHandler eventHandler;
+        server.setNewConnectCallback(
+            boost::bind(&EventHandler::NewConnectionHandler, &eventHandler, _1, _2)
+            );
 
-    server.start();
+        server.start();
+    }
+    catch (...)
+    {
+        std::cout << "exception occurred" << std::endl;
+    }
 
-    system("pause");
     return 0;
 }

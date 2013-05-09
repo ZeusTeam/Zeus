@@ -31,6 +31,7 @@ public:
 
     void close()
     {
+        _socket.shutdown(socket_base::shutdown_both);
         _socket.close();
     }
 

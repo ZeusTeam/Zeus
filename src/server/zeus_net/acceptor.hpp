@@ -20,6 +20,7 @@ public:
         _listenning(false),
         _acceptor(io_service)
     {
+        //绑定地址
         boost::asio::ip::address address;
         address.from_string(_listenAddr.host());
         tcp::endpoint endpoint(address, _listenAddr.port());
@@ -47,8 +48,16 @@ public:
     void startAccept()
     {
         postAcceptEvent();
+
         std::thread t(&Acceptor::workerThread, this);
         t.join();
+    }
+
+    void stopAccept()
+    {
+        std::cout << "stopAccept." << std::endl;
+        _io_service.stop();
+        _acceptor.close();
     }
 
     bool listenning() const { return _listenning; }
@@ -90,7 +99,7 @@ private:
 
     void postAcceptEvent()
     {
-        //创建一个新的连接（事后添加连接池管理连接，避免开辟内存的开销）
+        //创建一个新的连接（事后增加连接池，避免开辟内存的开销）
         TcpConnectionPtr new_connection(new TcpConnection(_io_service)); 
 
         //投递一个accept请求到io队列，并回调到acceptHandler
