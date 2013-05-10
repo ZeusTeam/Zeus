@@ -179,6 +179,9 @@
     <ClCompile Include="game_object\gui\editbox\edit_box.cpp">
       <Filter>Source Files\game_object\gui\edit_box</Filter>
     </ClCompile>
+    <ClCompile Include="scene\create_player_scene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scene\scene.h">
@@ -322,6 +325,8 @@
     <ClInclude Include="game_object\gui\editbox\edit_box.h">
       <Filter>Source Files\game_object\gui\edit_box</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\import\gfx_font\gfxfont.h" />
+    <ClInclude Include="scene\create_player_scene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

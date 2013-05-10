@@ -15,7 +15,7 @@ class PlayScene
 {
 public:
     PlayScene();
-    ~PlayScene();
+    virtual ~PlayScene();
 
     void Update();
     void Output();

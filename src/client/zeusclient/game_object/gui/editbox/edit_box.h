@@ -46,6 +46,9 @@ private:
     static LRESULT CALLBACK EditWndProc(HWND hWnd,
         UINT nMsg, WPARAM wParam, LPARAM lParam);
 
+    static WNDPROC m_LastHgeWndProc;
+    static EditBox* m_FocusEditPtr;
+
     bool DiposeKey();
 
 private:
@@ -62,6 +65,8 @@ private:
     float m_bgFontPos;
     float m_LastCurrPos;
     float m_CurrPos;
+    float m_CurrTimer;
+    bool m_IsShowCurr;
     bool m_IsSelect;
     bool m_IsFocus; ///>是否是焦点
     bool m_IsOnlyNumber; ///>是否只允许数字输入

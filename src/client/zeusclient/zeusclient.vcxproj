@@ -102,12 +102,12 @@
     <ClCompile Include="scene\about_scene.cpp" />
     <ClCompile Include="resource\cpicturexml_parse.cpp" />
     <ClCompile Include="resource\xml_list.cpp" />
+    <ClCompile Include="scene\create_player_scene.cpp" />
     <ClCompile Include="scene\menu_scene.cpp" />
     <ClCompile Include="scene\play_scene.cpp" />
     <ClCompile Include="zeus_client.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\import\gfx_font\gfxfont.h" />
     <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h" />
     <ClInclude Include="..\..\..\include\utils\singleton.h" />
     <ClInclude Include="..\..\..\include\utils\utils.h" />
@@ -152,6 +152,7 @@
     <ClInclude Include="resource\parse_def.h" />
     <ClInclude Include="resource\xml_list.h" />
     <ClInclude Include="resource\xml_list_object.h" />
+    <ClInclude Include="scene\create_player_scene.h" />
     <ClInclude Include="scene\menu_scene.h" />
     <ClInclude Include="scene\play_scene.h" />
     <ClInclude Include="scene\scene.h" />
