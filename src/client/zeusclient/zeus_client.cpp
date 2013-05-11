@@ -16,21 +16,18 @@
 #pragma comment(lib, "../../../import/hge/lib/hge.lib")
 #pragma comment(lib, "../../../import/hge/lib/hgehelp.lib")
 
-GameControler* game;
+GameControler* g_GameControler = NULL;
 
 SceneEngine* SceneEngine_ = NULL;
-InputEngine* InputEngine_ = NULL;
-TextureEngine* TextureEngine_ = NULL;
-GraphicsEngine* GraphicsEngine_ = NULL;
 
 bool Update()
 {
-    return game->Update();
+    return g_GameControler->Update();
 }
 
 bool Render()
 {
-    return game->Render();
+    return g_GameControler->Render();
 }
 
 
@@ -49,10 +46,7 @@ void InitializeWindow(GameEngine* engine)
 void InitializeEngine()
 {
     SceneEngine_ = SceneEngine::Instance();
-    InputEngine_ = InputEngine::Instance();
-    TextureEngine_ = TextureEngine::Instance();
-    GraphicsEngine_ = GraphicsEngine::Instance();
-    game = GameControler::Instance();
+    g_GameControler = GameControler::Instance();
     SceneEngine_->Initialize();
 }
 
@@ -91,7 +85,7 @@ int WINAPI WinMain(          HINSTANCE hInstance,
 
     if (engine->Initialize())
     {
-        game->Start();
+        g_GameControler->Start();
         engine->Start();
     }
     else
