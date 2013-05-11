@@ -45,6 +45,7 @@ void InitializeWindow(GameEngine* engine)
     engine->State(Attribute_Fps, 60);
     engine->State(Attribute_Title, _T("ZEUS"));
     engine->State(Attribute_LogPath, _T("RPGDemo.log"));
+    engine->State(Attribute_HideCursor, false);
 }
 
 void InitializeEngine(GameEngine* engine)

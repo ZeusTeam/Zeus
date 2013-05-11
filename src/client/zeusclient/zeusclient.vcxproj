@@ -157,6 +157,9 @@
     <ClInclude Include="scene\play_scene.h" />
     <ClInclude Include="scene\scene.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="zeusclient.rc" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

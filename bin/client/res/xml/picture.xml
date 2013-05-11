@@ -24,4 +24,6 @@
 	<img id = "TileA2" path = "res\img\TileA2.png"> </img>
 	
 	<img id = "aboutbg" path = "res\img\about.png"> </img>
+
+        <img id = "cursor1" path = "res\img\cursor\cursor.png"> </img>
 </gamepicture> 

@@ -97,6 +97,22 @@ bool GameEngine::State(EngineAttributeString attrtype, const std::string& value)
     return true;
 }
 
+bool GameEngine::State(EngineAttributeBool attrtype, bool value)
+{
+    if (!m_hge)
+    {
+        return false;
+    }
+    switch (attrtype)
+    {
+    case Attribute_HideCursor:
+        m_hge->System_SetState(HGE_HIDEMOUSE, value);
+    default:
+        break;
+    }
+    return true;
+}
+
 void GameEngine::Start()
 {
     if (m_hge)

@@ -23,6 +23,11 @@ typedef enum _EngineAttributeInt
     Attribute_Fps,
 }EngineAttributeInt;
 
+typedef enum _EngineAttributeBool
+{
+    Attribute_HideCursor,
+}EngineAttributeBool;
+
 typedef enum _EngineAttributeString
 {
     Attribute_Title,
@@ -45,6 +50,8 @@ public:
     bool State(EngineFunc funtype, EngineCallbackFun fun);
 
     bool State(EngineAttributeInt attrtype, int value);
+
+    bool State(EngineAttributeBool attrtype, bool value);
 
     bool State(EngineAttributeString attrtype,const std::string& value);
 
