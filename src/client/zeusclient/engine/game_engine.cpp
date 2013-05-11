@@ -1,5 +1,7 @@
 #include "game_engine.h"
 
+template<> GameEngine* Singleton<GameEngine>::m_pInst = NULL;
+
 GameEngine::GameEngine()
 {
     m_hWnd = NULL;

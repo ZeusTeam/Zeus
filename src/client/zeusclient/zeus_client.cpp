@@ -23,8 +23,6 @@ InputEngine* InputEngine_ = NULL;
 TextureEngine* TextureEngine_ = NULL;
 GraphicsEngine* GraphicsEngine_ = NULL;
 
-HWND g_hWnd = NULL;
-
 bool Update()
 {
     return game->Update();
@@ -48,16 +46,13 @@ void InitializeWindow(GameEngine* engine)
     engine->State(Attribute_HideCursor, false);
 }
 
-void InitializeEngine(GameEngine* engine)
+void InitializeEngine()
 {
     SceneEngine_ = SceneEngine::Instance();
     InputEngine_ = InputEngine::Instance();
     TextureEngine_ = TextureEngine::Instance();
     GraphicsEngine_ = GraphicsEngine::Instance();
     game = GameControler::Instance();
-    InputEngine_->Initialize(engine);
-    TextureEngine_->Initialize(engine);
-    GraphicsEngine_->Initialize(engine);
     SceneEngine_->Initialize();
 }
 
@@ -89,16 +84,15 @@ int WINAPI WinMain(          HINSTANCE hInstance,
     int nCmdShow
 )
 {
-    GameEngine engine;
-    InitializeWindow(&engine);
-    InitializeEngine(&engine);
+    GameEngine* engine = GameEngine::Instance();
+    InitializeWindow(engine);
+    InitializeEngine();
     InitializeResource();
 
-    if (engine.Initialize())
+    if (engine->Initialize())
     {
-        g_hWnd = engine.GethWnd();
         game->Start();
-        engine.Start();
+        engine->Start();
     }
     else
     {

@@ -24,8 +24,9 @@ PlayScene::PlayScene()
     m_Edit->SetPos(0, WINDOW_HEIGHT - 24);
 
     m_Gui.AddCtrl(m_Edit);
+    //m_Gui.SetCursor();
     m_Gui.SetNavMode(HGEGUI_UPDOWN | HGEGUI_CYCLED);
-    m_Gui.SetFocus(1);
+    m_Gui.SetFocus(0);
     m_Gui.Enter();
 }
 

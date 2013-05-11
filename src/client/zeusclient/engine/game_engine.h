@@ -2,6 +2,7 @@
 #define GAMEENGINE_
 
 #include "import\hge\include\hge.h"
+#include "include\utils\singleton.h"
 #include <string>
 
 #ifndef UNICODE
@@ -39,13 +40,15 @@ typedef HEFFECT GameTexture;
 typedef bool (*EngineCallbackFun) ();
 
 class GameEngine
+    : public Singleton<GameEngine>
 {
+    friend class Singleton<GameEngine>;
 public:
     GameEngine();
     virtual ~GameEngine();
 
 public:
-    bool Initialize();
+    virtual bool Initialize();
 
     bool State(EngineFunc funtype, EngineCallbackFun fun);
 

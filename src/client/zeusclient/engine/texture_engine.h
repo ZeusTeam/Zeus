@@ -17,8 +17,6 @@ public:
 
     bool Initialize() { return false; }
 
-    bool Initialize(GameEngine* pGameEngine);
-
 public:
     GameTexture Load(const std::string& path);
 

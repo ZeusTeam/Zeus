@@ -29,12 +29,13 @@ LRESULT CALLBACK EditBox::EditWndProc(HWND hWnd, UINT nMsg,
             case VK_DELETE: //key delete
             case VK_LEFT: //key left
             case VK_RIGHT: //key right
+            case VK_UP:
+            case VK_DOWN:
             case VK_HOME: //key home
             case VK_END: //key end
                 m_FocusEditPtr->OnChar(static_cast<UINT>(wParam),
                     LOWORD(lParam), HIWORD(lParam));
                 break;
-
             }
         }
     }
@@ -136,6 +137,12 @@ bool EditBox::DiposeKey()
         }
         m_IsSelect = false;
     }
+    else if (m_Input->IsKey(KEY_UP) == Key_Down)
+    {
+    }
+    else if (m_Input->IsKey(KEY_DOWN) == Key_Down)
+    {
+    }
     else
     {
         return false;
@@ -145,6 +152,10 @@ bool EditBox::DiposeKey()
 
 void EditBox::OnChar( UINT nChar, UINT nRepCnt, UINT nFlags )
 {
+    if (m_FocusEditPtr != this)
+    {
+        return;
+    }
     if(DiposeKey())
     {
         return;
@@ -179,8 +190,6 @@ void EditBox::OnChar( UINT nChar, UINT nRepCnt, UINT nFlags )
                 m_CharPos++;
           }
     }
-
-    //LastDtTime=0.5f;
 }
 
 void EditBox::CatStr(const std::string& strText)
@@ -190,6 +199,10 @@ void EditBox::CatStr(const std::string& strText)
 
 void EditBox::OnCharHZ( UINT nChar, UINT nRepCnt, UINT nFlags )
 {
+    if (m_FocusEditPtr != this)
+    {
+        return;
+    }
     if(DiposeKey())
     {
         return;
@@ -212,8 +225,6 @@ void EditBox::OnCharHZ( UINT nChar, UINT nRepCnt, UINT nFlags )
         CatStr(szImeChar);
         m_CharPos++;
     }
-
-    //LastDtTime=0.5f;
 }
 
 EditBox::EditBox(int _Id, UINT nEditWidth, UINT nEditHeight, DWORD nFontColor,
@@ -269,8 +280,10 @@ EditBox::EditBox(int _Id, UINT nEditWidth, UINT nEditHeight, DWORD nFontColor,
 
     if (!m_LastHgeWndProc)
     {
-        m_LastHgeWndProc = (WNDPROC)::GetWindowLong(g_hWnd, GWL_WNDPROC);
-        ::SetWindowLong(g_hWnd, GWL_WNDPROC, (LONG)EditWndProc);
+        m_LastHgeWndProc = (WNDPROC)::GetWindowLong(
+            GameEngine::Instance()->GethWnd(), GWL_WNDPROC);
+        ::SetWindowLong(GameEngine::Instance()->GethWnd(),
+            GWL_WNDPROC, (LONG)EditWndProc);
     }
 }
 
@@ -329,11 +342,14 @@ bool EditBox::MouseLButton(bool bDown)
 {
     if (bDown)
     {
+        ::MessageBox(0,"!", 0, MB_OK);
         m_FocusEditPtr = this;
+        m_IsShowCurr = true;
     }
     else
     {
         m_FocusEditPtr = NULL;
+        m_IsShowCurr = false;
     }
     return true;
 }
@@ -343,15 +359,21 @@ void EditBox::Focus(bool bFocused)
     if (bFocused)
     {
         m_FocusEditPtr = this;
+        m_IsShowCurr = true;
     }
     else
     {
         m_FocusEditPtr = NULL;
+        m_IsShowCurr = false;
     }
 }
 
 void EditBox::Update(float dt)
 {
+    this->rect.x1 = m_Edit_Pos_x;
+    this->rect.y1 = m_Edit_Pos_y;
+    this->rect.x2 = m_Edit_Pos_x + m_Edit_w;
+    this->rect.y2 = m_Edit_Pos_y + m_Edit_h;
     m_CurrTimer += dt;
     if (m_CurrTimer >= 0.5f)
     {
@@ -380,6 +402,14 @@ void EditBox::Update(float dt)
 
 bool EditBox::KeyClick(int key, int chr)
 {
+    if (m_Input->IsKey(KEY_UP) == Key_Down)
+    {
+        return true;
+    }
+    else if (m_Input->IsKey(KEY_DOWN) == Key_Down)
+    {
+        return true;
+    }
     return false;
 }
 

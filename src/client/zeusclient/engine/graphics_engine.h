@@ -5,8 +5,8 @@
 #include "iengine.h"
 
 class GraphicsEngine
-    : public IEngine
-    , public Singleton<GraphicsEngine>
+    : public Singleton<GraphicsEngine>
+    , public IEngine
 {
     friend class Singleton<GraphicsEngine>;
 public:
@@ -14,8 +14,6 @@ public:
     virtual ~GraphicsEngine();
 
     bool Initialize() { return false;}
-
-    bool Initialize(GameEngine* pGameEngine);
 
 public:
     void BeginScene();
