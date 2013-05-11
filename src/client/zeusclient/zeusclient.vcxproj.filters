@@ -69,6 +69,9 @@
     <Filter Include="include\utils">
       <UniqueIdentifier>{d8139e6d-7c56-4f11-8f87-bb76995990c8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\game_object\gui\button">
+      <UniqueIdentifier>{5c69d984-30df-4cee-97f6-321a5cf7a02c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp">
@@ -181,6 +184,9 @@
     </ClCompile>
     <ClCompile Include="scene\create_player_scene.cpp">
       <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\button\button.cpp">
+      <Filter>Source Files\game_object\gui\button</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -327,6 +333,9 @@
     </ClInclude>
     <ClInclude Include="scene\create_player_scene.h">
       <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\button\button.h">
+      <Filter>Source Files\game_object\gui\button</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -93,6 +93,7 @@
     <ClCompile Include="engine\input_engine.cpp" />
     <ClCompile Include="engine\scene_engine.cpp" />
     <ClCompile Include="engine\texture_engine.cpp" />
+    <ClCompile Include="game_object\gui\button\button.cpp" />
     <ClCompile Include="game_object\gui\editbox\edit_box.cpp" />
     <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp" />
     <ClCompile Include="game_object\gui\start_menu\start_menu.cpp" />
@@ -137,6 +138,7 @@
     <ClInclude Include="engine\input_engine.h" />
     <ClInclude Include="engine\scene_engine.h" />
     <ClInclude Include="engine\texture_engine.h" />
+    <ClInclude Include="game_object\gui\button\button.h" />
     <ClInclude Include="game_object\gui\editbox\edit_box.h" />
     <ClInclude Include="game_object\gui\gui_item.h" />
     <ClInclude Include="game_object\gui\start_menu\start_menu.h" />
