@@ -4,20 +4,11 @@ template<> TextureEngine* Singleton<TextureEngine>::m_pInst = NULL;
 
 TextureEngine::TextureEngine()
 {
+    m_GameEngine_Ptr = GameEngine::Instance();
 }
 
 TextureEngine::~TextureEngine()
 {
-}
-
-bool TextureEngine::Initialize(GameEngine* pGameEngine)
-{
-    if (!pGameEngine)
-    {
-        return false;
-    }
-    m_GameEngine_Ptr = pGameEngine;
-    return true;
 }
 
 GameTexture TextureEngine::Load(const std::string& path)

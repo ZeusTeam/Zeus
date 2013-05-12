@@ -32,6 +32,7 @@ public:
     void PlayFrame(int frame);
     void Stop();
 
+    int GetFrames();
     void SetFPS(int FPS);
     int GetFPS();
     int PresentFPS();
@@ -45,7 +46,7 @@ private:
     int m_end;              //结束的帧
     int m_fps;
     int m_fps_present;
-    int m_frame;
+    int m_frame;            //总帧数
     bool m_is_play;
     bool m_is_loop;
     bool m_is_playframe;

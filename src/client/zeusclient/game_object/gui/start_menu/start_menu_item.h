@@ -30,7 +30,7 @@ class StartMenuItem
 public:
     StartMenuItem(int _id, float x, float y
         , std::string title         ///显示在组件上的标题
-        , TextureObject* texBg      ///组件的背景图 Item销毁时会释放这个TextureObject对象
+        , TextureObject* texBg      ///组件的背景图
         );
     virtual         ~StartMenuItem();
 

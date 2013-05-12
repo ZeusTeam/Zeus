@@ -11,7 +11,7 @@ public:
 
 public:
 
-    virtual bool Initialize(GameEngine* engine) = 0;
+    //virtual bool Initialize() = 0;
 
 };
 

@@ -25,10 +25,6 @@ StartMenuItem::StartMenuItem(int _id, float x, float y, std::string title, Textu
 
 StartMenuItem::~StartMenuItem()
 {
-    if (m_texBg)
-    {
-        delete m_texBg;
-    }
     if (m_font)
     {
         delete m_font;

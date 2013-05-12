@@ -3,8 +3,8 @@
 #include "globaldef.h"
 #include <atlbase.h>
 
-WNDPROC g_lpLastHgeWndProc = NULL; ///> 原有程序回调
-EditBox* g_lpFocusEditPtr = NULL; ///> 当前获得焦点的Edit
+WNDPROC EditBox::m_LastHgeWndProc = NULL; ///> 原有程序回调
+EditBox* EditBox::m_FocusEditPtr = NULL; ///> 当前获得焦点的Edit
 
 LRESULT CALLBACK EditBox::EditWndProc(HWND hWnd, UINT nMsg,
                                       WPARAM wParam, LPARAM lParam)
@@ -22,43 +22,44 @@ LRESULT CALLBACK EditBox::EditWndProc(HWND hWnd, UINT nMsg,
 
         TranslateMessage(&aMsg);
 
-        if (g_lpFocusEditPtr && WM_KEYDOWN == nMsg)
+        if (m_FocusEditPtr && WM_KEYDOWN == nMsg)
         {
             switch(wParam)
             {
             case VK_DELETE: //key delete
             case VK_LEFT: //key left
             case VK_RIGHT: //key right
+            case VK_UP:
+            case VK_DOWN:
             case VK_HOME: //key home
             case VK_END: //key end
-                g_lpFocusEditPtr->OnChar(static_cast<UINT>(wParam),
+                m_FocusEditPtr->OnChar(static_cast<UINT>(wParam),
                     LOWORD(lParam), HIWORD(lParam));
                 break;
-
             }
         }
     }
     else if (WM_CHAR == nMsg )
     {
-        if (g_lpFocusEditPtr)
+        if (m_FocusEditPtr)
         {
-            g_lpFocusEditPtr->OnChar(static_cast<UINT>(wParam),
+            m_FocusEditPtr->OnChar(static_cast<UINT>(wParam),
                 LOWORD(lParam), HIWORD(lParam));
             return TRUE;
         }
     }
     else if (WM_IME_CHAR == nMsg)
     {
-        if (g_lpFocusEditPtr)
+        if (m_FocusEditPtr)
         {
-            g_lpFocusEditPtr->OnCharHZ(static_cast<UINT>(wParam),
+            m_FocusEditPtr->OnCharHZ(static_cast<UINT>(wParam),
                 LOWORD(lParam), HIWORD(lParam));
             return TRUE;
         }
     }
 
-    return g_lpLastHgeWndProc
-        ? g_lpLastHgeWndProc(hWnd,nMsg,wParam,lParam)
+    return m_LastHgeWndProc
+        ? m_LastHgeWndProc(hWnd,nMsg,wParam,lParam)
         : TRUE;
 }
 
@@ -121,9 +122,9 @@ bool EditBox::DiposeKey()
             if ((int)m_bgFontPos != (int)m_PresentFontWidth)
             {
                 m_bgFontPos += vecFontWidth[(int)m_CharPos - 1];
-                m_IsSelect = false;
             }
         }
+        m_IsSelect = false;
     }
     else if (m_Input->IsKey(KEY_RIGHT) == Key_Down)
     {
@@ -132,9 +133,15 @@ bool EditBox::DiposeKey()
             if (m_bgFontPos != 0)
             {
                 m_bgFontPos -= (float)vecFontWidth[(int)m_CharPos - 1];
-                m_IsSelect = false;
             }
         }
+        m_IsSelect = false;
+    }
+    else if (m_Input->IsKey(KEY_UP) == Key_Down)
+    {
+    }
+    else if (m_Input->IsKey(KEY_DOWN) == Key_Down)
+    {
     }
     else
     {
@@ -145,6 +152,10 @@ bool EditBox::DiposeKey()
 
 void EditBox::OnChar( UINT nChar, UINT nRepCnt, UINT nFlags )
 {
+    if (m_FocusEditPtr != this)
+    {
+        return;
+    }
     if(DiposeKey())
     {
         return;
@@ -179,8 +190,6 @@ void EditBox::OnChar( UINT nChar, UINT nRepCnt, UINT nFlags )
                 m_CharPos++;
           }
     }
-
-    //LastDtTime=0.5f;
 }
 
 void EditBox::CatStr(const std::string& strText)
@@ -190,6 +199,10 @@ void EditBox::CatStr(const std::string& strText)
 
 void EditBox::OnCharHZ( UINT nChar, UINT nRepCnt, UINT nFlags )
 {
+    if (m_FocusEditPtr != this)
+    {
+        return;
+    }
     if(DiposeKey())
     {
         return;
@@ -212,8 +225,6 @@ void EditBox::OnCharHZ( UINT nChar, UINT nRepCnt, UINT nFlags )
         CatStr(szImeChar);
         m_CharPos++;
     }
-
-    //LastDtTime=0.5f;
 }
 
 EditBox::EditBox(int _Id, UINT nEditWidth, UINT nEditHeight, DWORD nFontColor,
@@ -239,6 +250,8 @@ EditBox::EditBox(int _Id, UINT nEditWidth, UINT nEditHeight, DWORD nFontColor,
     m_Border_y = 0;
     m_LastCurrPos = 0;
     m_CurrPos = 0;
+    m_CurrTimer = 0.0f;
+    m_IsShowCurr = false;
     m_IsOnlyNumber = false;
     m_Border_w = (float)nEditWidth;
     m_Border_h = (float)nEditHeight;
@@ -265,10 +278,12 @@ EditBox::EditBox(int _Id, UINT nEditWidth, UINT nEditHeight, DWORD nFontColor,
         return;
     }
 
-    if (!g_lpLastHgeWndProc)
+    if (!m_LastHgeWndProc)
     {
-        g_lpLastHgeWndProc = (WNDPROC)::GetWindowLong(g_hWnd, GWL_WNDPROC);
-        ::SetWindowLong(g_hWnd, GWL_WNDPROC, (LONG)EditWndProc);
+        m_LastHgeWndProc = (WNDPROC)::GetWindowLong(
+            GameEngine::Instance()->GethWnd(), GWL_WNDPROC);
+        ::SetWindowLong(GameEngine::Instance()->GethWnd(),
+            GWL_WNDPROC, (LONG)EditWndProc);
     }
 }
 
@@ -296,12 +311,12 @@ void EditBox::Render(float x, float y)
             m_Border_x, m_Border_y + m_Border_h);
     }
     m_Graphics->SetClipping((int)x, (int)y, (int)m_Border_w, (int)m_Border_h);
-    if (g_lpFocusEditPtr == this)
+    if (m_FocusEditPtr == this && m_IsShowCurr)
     {
         m_pSprite->Render(m_PresentFontWidth - m_bgFontPos, y);
     }
     m_Font->Render(x, y, (LPCSTR)CW2A(m_Text.c_str()));
-    if (g_lpFocusEditPtr == this && m_IsSelect)
+    if (m_FocusEditPtr == this && m_IsSelect)
     {
         m_bgSprite->RenderStretch(
                 m_Edit_Pos_x + (m_PresentFontWidth - m_LastCurrPos),
@@ -314,7 +329,22 @@ void EditBox::Render(float x, float y)
 
 void EditBox::Render()
 {
+    hgeSprite* ClearSprite = new hgeSprite(NULL, 0, 0,
+        (float)m_Edit_w, (float)m_Edit_h);
+    ClearSprite->SetColor(ARGB(1,0,0,0));
+    if (ClearSprite)
+    {
+        ClearSprite->RenderStretch(
+                m_Edit_Pos_x,
+                m_Edit_Pos_y,
+                m_Edit_Pos_x + m_Edit_w,
+                m_Edit_Pos_y + m_Edit_h);
+    }
     this->Render(m_Edit_Pos_x, m_Edit_Pos_y);
+    if (ClearSprite)
+    {
+        delete ClearSprite;
+    }
 }
 
 void EditBox::SetPos(float x, float y)
@@ -327,11 +357,14 @@ bool EditBox::MouseLButton(bool bDown)
 {
     if (bDown)
     {
-        g_lpFocusEditPtr = this;
+        ::MessageBox(0,"!", 0, MB_OK);
+        m_FocusEditPtr = this;
+        m_IsShowCurr = true;
     }
     else
     {
-        g_lpFocusEditPtr = NULL;
+        m_FocusEditPtr = NULL;
+        m_IsShowCurr = false;
     }
     return true;
 }
@@ -340,16 +373,35 @@ void EditBox::Focus(bool bFocused)
 {
     if (bFocused)
     {
-        g_lpFocusEditPtr = this;
+        m_FocusEditPtr = this;
+        m_IsShowCurr = true;
     }
     else
     {
-        g_lpFocusEditPtr = NULL;
+        m_FocusEditPtr = NULL;
+        m_IsShowCurr = false;
     }
 }
 
 void EditBox::Update(float dt)
 {
+    this->rect.x1 = m_Edit_Pos_x;
+    this->rect.y1 = m_Edit_Pos_y;
+    this->rect.x2 = m_Edit_Pos_x + m_Edit_w;
+    this->rect.y2 = m_Edit_Pos_y + m_Edit_h;
+    m_CurrTimer += dt;
+    if (m_CurrTimer >= 0.5f)
+    {
+        m_IsShowCurr = true;
+        if (m_CurrTimer >= 1.0f)
+        {
+            m_CurrTimer = 0;
+        }
+    }
+    else
+    {
+        m_IsShowCurr = false;
+    }
     m_PresentFontWidth = 0;
     vecFontWidth.clear();
     for (auto it = m_Text.begin(); it != m_Text.end(); it++)
@@ -363,8 +415,20 @@ void EditBox::Update(float dt)
     }
 }
 
+void EditBox::Reset()
+{
+}
+
 bool EditBox::KeyClick(int key, int chr)
 {
+    if (m_Input->IsKey(KEY_UP) == Key_Down)
+    {
+        return true;
+    }
+    else if (m_Input->IsKey(KEY_DOWN) == Key_Down)
+    {
+        return true;
+    }
     return false;
 }
 

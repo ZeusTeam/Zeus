@@ -123,3 +123,8 @@ int AnimationObject::PresentFPS()
 {
     return m_fps_present;
 }
+
+int AnimationObject::GetFrames()
+{
+    return m_frame;
+}

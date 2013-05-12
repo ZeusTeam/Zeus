@@ -1,6 +1,8 @@
 #ifndef SINGLETON
 #define SINGLETON
 
+#define NULL 0
+
 template<typename T>
 class Singleton
 {
