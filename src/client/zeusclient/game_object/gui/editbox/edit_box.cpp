@@ -331,7 +331,7 @@ void EditBox::Render()
 {
     hgeSprite* ClearSprite = new hgeSprite(NULL, 0, 0,
         (float)m_Edit_w, (float)m_Edit_h);
-    ClearSprite->SetColor(ARGB(255,0,0,0));
+    ClearSprite->SetColor(ARGB(1,0,0,0));
     if (ClearSprite)
     {
         ClearSprite->RenderStretch(

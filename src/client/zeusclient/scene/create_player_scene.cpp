@@ -37,6 +37,7 @@ void CreatePlayerScene::Update()
 
 void CreatePlayerScene::Output()
 {
+    GraphicsEngine::Instance()->Clear(ARGB(1,0,0,0));
     m_Gui.Render();
 }
 
