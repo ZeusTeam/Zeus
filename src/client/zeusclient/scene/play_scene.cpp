@@ -4,6 +4,11 @@
 #include "engine\graphics_engine.h"
 #include "control\pool\picture_pool.h"
 
+void ButtonOk()
+{
+    ::MessageBox(NULL, "ButtonOk", 0, MB_OK);
+}
+
 PlayScene::PlayScene()
 {
     m_MapX = 0.0f;
@@ -22,8 +27,12 @@ PlayScene::PlayScene()
 
     m_Edit = new EditBox(1, WINDOW_WIDTH, 22, ARGB(255,255,0, 0),"ËÎÌå", 22);
     m_Edit->SetPos(0, WINDOW_HEIGHT - 24);
+    m_ButtonOk = new Button(2, 100, 200, "ËÎÌå", ButtonOk);
+    m_ButtonOk->SetPos(0, WINDOW_HEIGHT - 400);
+    m_ButtonOk->SetText("°´Å¥1");
 
     m_Gui.AddCtrl(m_Edit);
+    m_Gui.AddCtrl(m_ButtonOk);
     //m_Gui.SetCursor();
     m_Gui.SetNavMode(HGEGUI_UPDOWN | HGEGUI_CYCLED);
     m_Gui.SetFocus(0);

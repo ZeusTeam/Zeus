@@ -84,6 +84,17 @@ void FontObject::Print( float x, float y, const char *format, ... )
     Render(x, y, sBuffer);
 }
 
+int FontObject::TextKerningWidth(const std::string& strText)
+{
+    std::wstring strTmp(CA2W(strText.c_str()));
+    int nWidth = 0;
+    for (auto it = strTmp.begin(); it != strTmp.end(); it++)
+    {
+        nWidth += (int)GetWidthFromCharacter((*it));
+    }
+    return nWidth;
+}
+
 unsigned int FontObject::GetGlyphByCharacter( wchar_t c )
 {
     unsigned int idx = (unsigned int)c;
