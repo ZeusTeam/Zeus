@@ -4,6 +4,7 @@
 #include <log4cplus/configurator.h>
 #include <log4cplus/loggingmacros.h>
 #include <utils/Singleton.h>
+#include <iosfwd>
 
 using namespace log4cplus;
 using namespace log4cplus::helpers;
@@ -28,8 +29,8 @@ public:
     {
         log4cplus::initialize();
         PropertyConfigurator::doConfigure(configFilename);
-        
         _logger = Logger::getInstance(instanceName);
+        _logger.isEnabledFor(ALL_LOG_LEVEL);
 
         return true;
     }
@@ -112,6 +113,5 @@ template<> ZeusLogger* Singleton<ZeusLogger>::m_pInst = NULL;
     DEFINE_OSTREAM(x)           \
     ZeusLogger::Instance()->fatal(os.str()); \
 }
-
 
 #endif
