@@ -22,7 +22,7 @@ int main()
         InetAddress inetAddress(36911);
 
         boost::asio::io_service _io_service;
-        TcpServer server(inetAddress, _io_service);
+        TcpServer server(inetAddress, _io_service, 4);
 
         EventHandler eventHandler;
         server.setNewConnectCallback(

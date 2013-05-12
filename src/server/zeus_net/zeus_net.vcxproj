@@ -80,7 +80,6 @@
   <ItemGroup>
     <ClInclude Include="acceptor.hpp" />
     <ClInclude Include="callbacks.h" />
-    <ClInclude Include="connection.hpp" />
     <ClInclude Include="tcp_connection.hpp" />
     <ClInclude Include="event_loop.hpp" />
     <ClInclude Include="inet_address.hpp" />

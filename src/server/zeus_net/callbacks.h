@@ -4,7 +4,7 @@
 #include <boost/function.hpp>
 
 class TcpConnection;
-typedef boost::shared_ptr<TcpConnection> TcpConnectionPtr;
+typedef std::shared_ptr<TcpConnection> TcpConnectionPtr;
 typedef boost::function<void (const TcpConnectionPtr&, const InetAddress& )> NewConnectionCallback;
 
 #endif

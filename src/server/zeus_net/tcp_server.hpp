@@ -9,8 +9,8 @@ class InetAddress;
 class TcpServer : boost::noncopyable
 {
 public:
-    TcpServer(const InetAddress& listenAddress, boost::asio::io_service& io_service)
-        : _acceptor(listenAddress, io_service),
+    TcpServer(const InetAddress& listenAddress, boost::asio::io_service& io_service, uint32 threadNums)
+        : _acceptor(listenAddress, io_service, threadNums),
         _started(false),
         _signals(io_service)
     {

@@ -8,12 +8,6 @@
     <ClInclude Include="callbacks.h">
       <Filter>net</Filter>
     </ClInclude>
-    <ClInclude Include="connection.hpp">
-      <Filter>net</Filter>
-    </ClInclude>
-    <ClInclude Include="tcp_connection.hpp">
-      <Filter>net</Filter>
-    </ClInclude>
     <ClInclude Include="event_loop.hpp">
       <Filter>net</Filter>
     </ClInclude>
@@ -25,6 +19,9 @@
     </ClInclude>
     <ClInclude Include="local_free_on_destruction.hpp">
       <Filter>error</Filter>
+    </ClInclude>
+    <ClInclude Include="tcp_connection.hpp">
+      <Filter>net</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

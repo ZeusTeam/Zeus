@@ -5,20 +5,23 @@
 #include <boost/asio.hpp>
 #include <thread>
 #include "inet_address.hpp"
-#include "connection.hpp"
+#include "tcp_connection.hpp"
 #include "callbacks.h"
 
 using namespace boost::asio;
 using namespace boost::asio::ip;
 
+typedef std::shared_ptr<std::thread> ThreadPtr;
 class Acceptor : boost::noncopyable
 {
 public:
-    Acceptor(const InetAddress& listenAddress, boost::asio::io_service& io_service)
+    Acceptor(const InetAddress& listenAddress, boost::asio::io_service& io_service, uint32 threadNums)
         : _io_service(io_service),
+        _strand(io_service),
         _listenAddr(listenAddress),
         _listenning(false),
-        _acceptor(io_service)
+        _acceptor(io_service),
+        _threadNums(threadNums)
     {
         //绑定地址
         boost::asio::ip::address address;
@@ -47,10 +50,20 @@ public:
 
     void startAccept()
     {
-        postAcceptEvent();
+        assert(_threadNums != 0);
 
-        std::thread t(&Acceptor::workerThread, this);
-        t.join();
+        //为IO队列创建线程
+        std::vector<ThreadPtr> threads;
+        for (std::size_t i = 0; i < _threadNums; ++i)
+        {
+            ThreadPtr t(new std::thread(boost::bind(&boost::asio::io_service::run, &_io_service)));
+            threads.push_back(t);
+        }
+
+        for(auto& thread : threads)
+        {
+            thread->join();
+        }
     }
 
     void stopAccept()
@@ -69,14 +82,12 @@ public:
     }
 
 private:
-    void workerThread()
-    {
-        _io_service.run();
-    }
-
     void acceptHandler(const TcpConnectionPtr& connection)
     {
+        std::cout << "thread id = " << std::this_thread::get_id() << std::endl;
+
         postAcceptEvent();
+
         if (connection->isOpen())
         {
             if (!_newConnectionCallback.empty())
@@ -109,7 +120,9 @@ private:
 
 private:
     boost::asio::io_service& _io_service;
+    boost::asio::strand _strand;
     bool _listenning;
+    uint32 _threadNums;
     InetAddress _listenAddr;
     tcp::acceptor _acceptor;
     NewConnectionCallback _newConnectionCallback;
