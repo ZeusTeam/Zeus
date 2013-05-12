@@ -72,6 +72,9 @@
     <Filter Include="Source Files\game_object\gui\button">
       <UniqueIdentifier>{5c69d984-30df-4cee-97f6-321a5cf7a02c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\game_object\gui\role_select">
+      <UniqueIdentifier>{413ce610-f290-4040-b5c7-c2c066d64dd0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp">
@@ -187,6 +190,15 @@
     </ClCompile>
     <ClCompile Include="game_object\gui\button\button.cpp">
       <Filter>Source Files\game_object\gui\button</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\role_select_scene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\role_select\role_select.cpp">
+      <Filter>Source Files\game_object\gui\role_select</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\role_select\role_select_item.cpp">
+      <Filter>Source Files\game_object\gui\role_select</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -337,10 +349,14 @@
     <ClInclude Include="game_object\gui\button\button.h">
       <Filter>Source Files\game_object\gui\button</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="zeusclient.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
+    <ClInclude Include="scene\role_select_scene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\role_select\role_select.h">
+      <Filter>Source Files\game_object\gui\role_select</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\role_select\role_select_item.h">
+      <Filter>Source Files\game_object\gui\role_select</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

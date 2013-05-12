@@ -55,7 +55,6 @@ GameMap::GameMap()
     , m_previousPos(0, 0)
     , m_viewportWidth(0)
     , m_viewportHeight(0)
-    , m_font(NULL)
 {
 }
 bool GameMap::Load(string mapTex, string collisionMapTex)

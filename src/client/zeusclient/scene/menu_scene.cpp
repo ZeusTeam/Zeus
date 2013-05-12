@@ -1,6 +1,6 @@
 #include "globaldef.h"
 #include "menu_scene.h"
-#include "play_scene.h"
+#include "role_select_scene.h"
 #include "engine\input_engine.h"
 #include "control\pool\picture_pool.h"
 
@@ -37,7 +37,7 @@ void MenuScene::Update()
     else if (state == StartMenu_Start)
     {
         SceneEngine_->Pop();
-        SceneEngine_->Push(new PlayScene);
+        SceneEngine_->Push(new RoleSelectScene);
     }
     else if (state == StartMenu_About)
     {
