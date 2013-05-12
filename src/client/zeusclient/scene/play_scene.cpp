@@ -1,8 +1,13 @@
 #include "globaldef.h"
-#include "play_scene.h"
+#include "role_select_scene.h"
 #include "control\control_object\out_text.h"
 #include "engine\graphics_engine.h"
 #include "control\pool\picture_pool.h"
+
+void ButtonOk()
+{
+    ::MessageBox(NULL, "ButtonOk", 0, MB_OK);
+}
 
 PlayScene::PlayScene()
 {
@@ -22,10 +27,15 @@ PlayScene::PlayScene()
 
     m_Edit = new EditBox(1, WINDOW_WIDTH, 22, ARGB(255,255,0, 0),"宋体", 22);
     m_Edit->SetPos(0, WINDOW_HEIGHT - 24);
+    m_ButtonOk = new Button(2, 100, 200, "宋体", ButtonOk);
+    m_ButtonOk->SetPos(0, WINDOW_HEIGHT - 400);
+    m_ButtonOk->SetText("按钮1");
 
     m_Gui.AddCtrl(m_Edit);
+    m_Gui.AddCtrl(m_ButtonOk);
+    //m_Gui.SetCursor();
     m_Gui.SetNavMode(HGEGUI_UPDOWN | HGEGUI_CYCLED);
-    m_Gui.SetFocus(1);
+    m_Gui.SetFocus(0);
     m_Gui.Enter();
 }
 
@@ -55,10 +65,6 @@ void PlayScene::Output()
     m_Font->Print(0, 90, "人物 y: %f", m_PlayerRole->GetPos().y);
 
     m_Gui.Render();
-    //PrintText::Print(0, 0, Text_Left, "viewportPos.x : %f", m_Map->GetViewportPos().x);
-    //PrintText::Print(0, 30, Text_Left, "viewportPos.y : %f", m_Map->GetViewportPos().y);
-    //PrintText::Print(0, 60, Text_Left, "people x: %f", m_PlayerRole->GetPos().x);
-    //PrintText::Print(0, 90, Text_Left, "people y: %f", m_PlayerRole->GetPos().y);
 }
 
 void PlayScene::Update()

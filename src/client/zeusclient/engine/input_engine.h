@@ -25,8 +25,6 @@ public:
 
     virtual bool Initialize() {return false;};
 
-    virtual bool Initialize(GameEngine* pGameEngine);
-
     PeopleDirection Get() const;
 
     KeyState IsKey(int nKey);

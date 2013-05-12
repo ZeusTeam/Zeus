@@ -24,4 +24,17 @@
 	<img id = "TileA2" path = "res\img\TileA2.png"> </img>
 	
 	<img id = "aboutbg" path = "res\img\about.png"> </img>
+
+	<img id = "RoleSelect-Role" path = "res\img\role_select_role.png"> </img>
+
+	<img id = "RoleSelect-RoleFocus" path = "res\img\role_select_role_focus.png"> </img>
+
+	<img id = "RoleSelect-CreateRole" path = "res\img\create_role_btn.png"> </img>
+
+	<img id = "RoleSelect-RetHomePage" path = "res\img\return_homepage_btn.png"> </img>
+
+	<img id = "RoleSelect-Bg" path = "res\img\role_select_bg.png"> </img>
+
+        <img id = "cursor1" path = "res\img\cursor\cursor.png"> </img>
+
 </gamepicture> 

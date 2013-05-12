@@ -16,23 +16,18 @@
 #pragma comment(lib, "../../../import/hge/lib/hge.lib")
 #pragma comment(lib, "../../../import/hge/lib/hgehelp.lib")
 
-GameControler* game;
+GameControler* g_GameControler = NULL;
 
 SceneEngine* SceneEngine_ = NULL;
-InputEngine* InputEngine_ = NULL;
-TextureEngine* TextureEngine_ = NULL;
-GraphicsEngine* GraphicsEngine_ = NULL;
-
-HWND g_hWnd = NULL;
 
 bool Update()
 {
-    return game->Update();
+    return g_GameControler->Update();
 }
 
 bool Render()
 {
-    return game->Render();
+    return g_GameControler->Render();
 }
 
 
@@ -45,18 +40,13 @@ void InitializeWindow(GameEngine* engine)
     engine->State(Attribute_Fps, 60);
     engine->State(Attribute_Title, _T("ZEUS"));
     engine->State(Attribute_LogPath, _T("RPGDemo.log"));
+    engine->State(Attribute_HideCursor, false);
 }
 
-void InitializeEngine(GameEngine* engine)
+void InitializeEngine()
 {
     SceneEngine_ = SceneEngine::Instance();
-    InputEngine_ = InputEngine::Instance();
-    TextureEngine_ = TextureEngine::Instance();
-    GraphicsEngine_ = GraphicsEngine::Instance();
-    game = GameControler::Instance();
-    InputEngine_->Initialize(engine);
-    TextureEngine_->Initialize(engine);
-    GraphicsEngine_->Initialize(engine);
+    g_GameControler = GameControler::Instance();
     SceneEngine_->Initialize();
 }
 
@@ -88,16 +78,15 @@ int WINAPI WinMain(          HINSTANCE hInstance,
     int nCmdShow
 )
 {
-    GameEngine engine;
-    InitializeWindow(&engine);
-    InitializeEngine(&engine);
+    GameEngine* engine = GameEngine::Instance();
+    InitializeWindow(engine);
+    InitializeEngine();
     InitializeResource();
 
-    if (engine.Initialize())
+    if (engine->Initialize())
     {
-        g_hWnd = engine.GethWnd();
-        game->Start();
-        engine.Start();
+        g_GameControler->Start();
+        engine->Start();
     }
     else
     {

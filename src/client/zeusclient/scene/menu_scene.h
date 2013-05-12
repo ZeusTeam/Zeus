@@ -11,7 +11,7 @@ class MenuScene
 {
 public:
     MenuScene();
-    ~MenuScene();
+    virtual ~MenuScene();
 
     virtual void Update();
     virtual void Output();
