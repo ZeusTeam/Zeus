@@ -5,9 +5,6 @@
     <ClInclude Include="acceptor.hpp">
       <Filter>net</Filter>
     </ClInclude>
-    <ClInclude Include="callbacks.h">
-      <Filter>net</Filter>
-    </ClInclude>
     <ClInclude Include="event_loop.hpp">
       <Filter>net</Filter>
     </ClInclude>
@@ -21,6 +18,9 @@
       <Filter>error</Filter>
     </ClInclude>
     <ClInclude Include="tcp_connection.hpp">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="zeus_net_def.h">
       <Filter>net</Filter>
     </ClInclude>
   </ItemGroup>

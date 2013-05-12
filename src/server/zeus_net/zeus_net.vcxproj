@@ -79,7 +79,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="acceptor.hpp" />
-    <ClInclude Include="callbacks.h" />
+    <ClInclude Include="zeus_net_def.h" />
     <ClInclude Include="tcp_connection.hpp" />
     <ClInclude Include="event_loop.hpp" />
     <ClInclude Include="inet_address.hpp" />

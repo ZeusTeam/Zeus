@@ -6,12 +6,11 @@
 #include <thread>
 #include "inet_address.hpp"
 #include "tcp_connection.hpp"
-#include "callbacks.h"
+#include "zeus_net_def.h"
 
 using namespace boost::asio;
 using namespace boost::asio::ip;
 
-typedef std::shared_ptr<std::thread> ThreadPtr;
 class Acceptor : boost::noncopyable
 {
 public:
@@ -51,6 +50,9 @@ public:
     void startAccept()
     {
         assert(_threadNums != 0);
+
+        //投递一个接受事件
+        postAcceptEvent();
 
         //为IO队列创建线程
         std::vector<ThreadPtr> threads;
