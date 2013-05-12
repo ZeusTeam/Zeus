@@ -1,5 +1,7 @@
 #include "game_engine.h"
 
+template<> GameEngine* Singleton<GameEngine>::m_pInst = NULL;
+
 GameEngine::GameEngine()
 {
     m_hWnd = NULL;
@@ -91,6 +93,22 @@ bool GameEngine::State(EngineAttributeString attrtype, const std::string& value)
     case Attribute_LogPath:
         m_hge->System_SetState(HGE_LOGFILE, value.c_str());
         break;
+    default:
+        break;
+    }
+    return true;
+}
+
+bool GameEngine::State(EngineAttributeBool attrtype, bool value)
+{
+    if (!m_hge)
+    {
+        return false;
+    }
+    switch (attrtype)
+    {
+    case Attribute_HideCursor:
+        m_hge->System_SetState(HGE_HIDEMOUSE, value);
     default:
         break;
     }

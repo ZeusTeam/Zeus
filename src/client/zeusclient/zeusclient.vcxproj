@@ -39,7 +39,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>../../../bin/client</OutDir>
+    <OutDir>../../../bin/client\</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -92,6 +93,7 @@
     <ClCompile Include="engine\input_engine.cpp" />
     <ClCompile Include="engine\scene_engine.cpp" />
     <ClCompile Include="engine\texture_engine.cpp" />
+    <ClCompile Include="game_object\gui\button\button.cpp" />
     <ClCompile Include="game_object\gui\editbox\edit_box.cpp" />
     <ClCompile Include="game_object\gui\role_select\role_select.cpp" />
     <ClCompile Include="game_object\gui\role_select\role_select_item.cpp" />
@@ -103,13 +105,13 @@
     <ClCompile Include="scene\about_scene.cpp" />
     <ClCompile Include="resource\cpicturexml_parse.cpp" />
     <ClCompile Include="resource\xml_list.cpp" />
+    <ClCompile Include="scene\create_player_scene.cpp" />
     <ClCompile Include="scene\menu_scene.cpp" />
     <ClCompile Include="scene\play_scene.cpp" />
     <ClCompile Include="scene\role_select_scene.cpp" />
     <ClCompile Include="zeus_client.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\import\gfx_font\gfxfont.h" />
     <ClInclude Include="..\..\..\import\tinyxml-2.6.2\tinyxml.h" />
     <ClInclude Include="..\..\..\include\utils\singleton.h" />
     <ClInclude Include="..\..\..\include\utils\utils.h" />
@@ -139,6 +141,7 @@
     <ClInclude Include="engine\input_engine.h" />
     <ClInclude Include="engine\scene_engine.h" />
     <ClInclude Include="engine\texture_engine.h" />
+    <ClInclude Include="game_object\gui\button\button.h" />
     <ClInclude Include="game_object\gui\editbox\edit_box.h" />
     <ClInclude Include="game_object\gui\gui_item.h" />
     <ClInclude Include="game_object\gui\role_select\role_select.h" />
@@ -156,6 +159,7 @@
     <ClInclude Include="resource\parse_def.h" />
     <ClInclude Include="resource\xml_list.h" />
     <ClInclude Include="resource\xml_list_object.h" />
+    <ClInclude Include="scene\create_player_scene.h" />
     <ClInclude Include="scene\menu_scene.h" />
     <ClInclude Include="scene\play_scene.h" />
     <ClInclude Include="scene\role_select_scene.h" />

@@ -24,15 +24,6 @@
     <Filter Include="import\tinyxml2.6">
       <UniqueIdentifier>{3e206562-bd67-454f-8214-b07703034a05}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include">
-      <UniqueIdentifier>{43fb8e2b-ad22-418e-a039-3ac370241175}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\xmessage">
-      <UniqueIdentifier>{4b742a6c-2253-429d-806c-73cbb46ae83d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\xmessage\msgdatavalue">
-      <UniqueIdentifier>{5441e325-0548-4a59-b6c0-327f0f2898a8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\control\control_object">
       <UniqueIdentifier>{29405668-ccd4-43d7-9fa4-8baa9540e771}</UniqueIdentifier>
     </Filter>
@@ -51,9 +42,6 @@
     <Filter Include="Source Files\resource">
       <UniqueIdentifier>{af0173ef-fc53-478f-959b-9017cae6f38c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\utils">
-      <UniqueIdentifier>{d8139e6d-7c56-4f11-8f87-bb76995990c8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\resource\xml">
       <UniqueIdentifier>{7cef44db-4be9-4752-ad74-aa35e1111519}</UniqueIdentifier>
     </Filter>
@@ -69,8 +57,23 @@
     <Filter Include="Source Files\game_object\gui\edit_box">
       <UniqueIdentifier>{6a11000c-bbdb-4ab1-be4d-472c55799c4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{43fb8e2b-ad22-418e-a039-3ac370241175}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xmessage">
+      <UniqueIdentifier>{4b742a6c-2253-429d-806c-73cbb46ae83d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xmessage\msgdatavalue">
+      <UniqueIdentifier>{5441e325-0548-4a59-b6c0-327f0f2898a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\utils">
+      <UniqueIdentifier>{d8139e6d-7c56-4f11-8f87-bb76995990c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game_object\gui\button">
+      <UniqueIdentifier>{5c69d984-30df-4cee-97f6-321a5cf7a02c}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\game_object\gui\role_select">
-      <UniqueIdentifier>{fd0a22ae-de03-4802-b9fa-8082d2a2bfa6}</UniqueIdentifier>
+      <UniqueIdentifier>{413ce610-f290-4040-b5c7-c2c066d64dd0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -182,14 +185,20 @@
     <ClCompile Include="game_object\gui\editbox\edit_box.cpp">
       <Filter>Source Files\game_object\gui\edit_box</Filter>
     </ClCompile>
+    <ClCompile Include="scene\create_player_scene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\button\button.cpp">
+      <Filter>Source Files\game_object\gui\button</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\role_select_scene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
     <ClCompile Include="game_object\gui\role_select\role_select.cpp">
       <Filter>Source Files\game_object\gui\role_select</Filter>
     </ClCompile>
     <ClCompile Include="game_object\gui\role_select\role_select_item.cpp">
       <Filter>Source Files\game_object\gui\role_select</Filter>
-    </ClCompile>
-    <ClCompile Include="scene\role_select_scene.cpp">
-      <Filter>Source Files\scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -334,15 +343,20 @@
     <ClInclude Include="game_object\gui\editbox\edit_box.h">
       <Filter>Source Files\game_object\gui\edit_box</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\import\gfx_font\gfxfont.h" />
+    <ClInclude Include="scene\create_player_scene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\button\button.h">
+      <Filter>Source Files\game_object\gui\button</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\role_select_scene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
     <ClInclude Include="game_object\gui\role_select\role_select.h">
       <Filter>Source Files\game_object\gui\role_select</Filter>
     </ClInclude>
     <ClInclude Include="game_object\gui\role_select\role_select_item.h">
       <Filter>Source Files\game_object\gui\role_select</Filter>
-    </ClInclude>
-    <ClInclude Include="scene\role_select_scene.h">
-      <Filter>Source Files\scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -4,7 +4,8 @@ template<> GraphicsEngine* Singleton<GraphicsEngine>::m_pInst = NULL;
 
 GraphicsEngine::GraphicsEngine()
 {
-    m_GameEngine_Ptr = NULL;
+    m_GameEngine_Ptr = GameEngine::Instance();
+    m_HDC = ::GetDC(m_GameEngine_Ptr->GethWnd());
 }
 
 GraphicsEngine::~GraphicsEngine()
@@ -16,20 +17,27 @@ GraphicsEngine::~GraphicsEngine()
     }
 }
 
+void GraphicsEngine::SetClipping(int x, int y, int w, int h)
+{
+    if (!m_GameEngine_Ptr)
+    {
+        return;
+    }
+    m_GameEngine_Ptr->PresentEngine()->Gfx_SetClipping(x, y, w, h);
+}
+
+void GraphicsEngine::SetClipping()
+{
+    if (!m_GameEngine_Ptr)
+    {
+        return;
+    }
+    m_GameEngine_Ptr->PresentEngine()->Gfx_SetClipping();
+}
+
 HDC GraphicsEngine::WindowDC()
 {
     return m_HDC;
-}
-
-bool GraphicsEngine::Initialize(GameEngine* pGameEngine)
-{
-    if (!pGameEngine)
-    {
-        return false;
-    }
-    m_GameEngine_Ptr = pGameEngine;
-    m_HDC = ::GetDC(m_GameEngine_Ptr->GethWnd());
-    return true;
 }
 
 void GraphicsEngine::BeginScene()

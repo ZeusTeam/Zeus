@@ -9,7 +9,7 @@ class AboutScene
 {
 public:
     AboutScene();
-    ~AboutScene();
+    virtual ~AboutScene();
 
     void Update();
     void Output();

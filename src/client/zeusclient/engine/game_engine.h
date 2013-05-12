@@ -2,6 +2,7 @@
 #define GAMEENGINE_
 
 #include "import\hge\include\hge.h"
+#include "include\utils\singleton.h"
 #include <string>
 
 #ifndef UNICODE
@@ -23,6 +24,11 @@ typedef enum _EngineAttributeInt
     Attribute_Fps,
 }EngineAttributeInt;
 
+typedef enum _EngineAttributeBool
+{
+    Attribute_HideCursor,
+}EngineAttributeBool;
+
 typedef enum _EngineAttributeString
 {
     Attribute_Title,
@@ -34,17 +40,21 @@ typedef HEFFECT GameTexture;
 typedef bool (*EngineCallbackFun) ();
 
 class GameEngine
+    : public Singleton<GameEngine>
 {
+    friend class Singleton<GameEngine>;
 public:
     GameEngine();
     virtual ~GameEngine();
 
 public:
-    bool Initialize();
+    virtual bool Initialize();
 
     bool State(EngineFunc funtype, EngineCallbackFun fun);
 
     bool State(EngineAttributeInt attrtype, int value);
+
+    bool State(EngineAttributeBool attrtype, bool value);
 
     bool State(EngineAttributeString attrtype,const std::string& value);
 

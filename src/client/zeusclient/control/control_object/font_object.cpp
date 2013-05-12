@@ -96,7 +96,9 @@ inline float FontObject::GetWidthFromCharacter( wchar_t c,
 {
     unsigned int idx = GetGlyphByCharacter(c);
     if (original && idx > 0 && idx < Font_Count) return m_Glyphs[idx].c;
-    return	(idx >= 0x2000) ? m_nFontSize : _floor(m_nFontSize / 2);
+    //英文计算宽度有问题
+    // _floor(m_nFontSize / 2
+    return (idx >= 0x2000) ? m_nFontSize : _floor(m_nFontSize / 2);
 }
 
 inline void FontObject::CacheCharacter(unsigned int idx, wchar_t c)

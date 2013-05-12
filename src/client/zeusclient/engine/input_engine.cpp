@@ -6,21 +6,11 @@ template<> InputEngine* Singleton<InputEngine>::m_pInst = NULL;
 InputEngine::InputEngine()
 {
     m_Key = Direction_Tail;
-    m_GameEngine_Ptr = NULL;
+    m_GameEngine_Ptr = GameEngine::Instance();
 }
 
 InputEngine::~InputEngine()
 {
-}
-
-bool InputEngine::Initialize(GameEngine* pGameEngine)
-{
-    m_GameEngine_Ptr = pGameEngine;
-    if (!m_GameEngine_Ptr)
-    {
-        return false;
-    }
-    return true;
 }
 
 KeyState InputEngine::IsKey(int nKey)
