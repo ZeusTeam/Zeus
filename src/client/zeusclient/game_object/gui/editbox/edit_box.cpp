@@ -329,7 +329,22 @@ void EditBox::Render(float x, float y)
 
 void EditBox::Render()
 {
+    hgeSprite* ClearSprite = new hgeSprite(NULL, 0, 0,
+        (float)m_Edit_w, (float)m_Edit_h);
+    ClearSprite->SetColor(ARGB(255,0,0,0));
+    if (ClearSprite)
+    {
+        ClearSprite->RenderStretch(
+                m_Edit_Pos_x,
+                m_Edit_Pos_y,
+                m_Edit_Pos_x + m_Edit_w,
+                m_Edit_Pos_y + m_Edit_h);
+    }
     this->Render(m_Edit_Pos_x, m_Edit_Pos_y);
+    if (ClearSprite)
+    {
+        delete ClearSprite;
+    }
 }
 
 void EditBox::SetPos(float x, float y)
@@ -398,6 +413,10 @@ void EditBox::Update(float dt)
         vecFontWidth.push_back(m_Font->GetWidthFromCharacter(*it));
         m_PresentFontWidth += m_Font->GetWidthFromCharacter(*it);
     }
+}
+
+void EditBox::Reset()
+{
 }
 
 bool EditBox::KeyClick(int key, int chr)

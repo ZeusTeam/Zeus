@@ -20,6 +20,8 @@ public:
 
     virtual void Render();
 
+    virtual void Reset();
+
     virtual void SetPos(float x, float y);
 
     virtual void Render(float x, float y);
