@@ -93,6 +93,8 @@
     <ClCompile Include="engine\scene_engine.cpp" />
     <ClCompile Include="engine\texture_engine.cpp" />
     <ClCompile Include="game_object\gui\editbox\edit_box.cpp" />
+    <ClCompile Include="game_object\gui\role_select\role_select.cpp" />
+    <ClCompile Include="game_object\gui\role_select\role_select_item.cpp" />
     <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp" />
     <ClCompile Include="game_object\gui\start_menu\start_menu.cpp" />
     <ClCompile Include="game_object\map\game_map.cpp" />
@@ -103,6 +105,7 @@
     <ClCompile Include="resource\xml_list.cpp" />
     <ClCompile Include="scene\menu_scene.cpp" />
     <ClCompile Include="scene\play_scene.cpp" />
+    <ClCompile Include="scene\role_select_scene.cpp" />
     <ClCompile Include="zeus_client.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +141,8 @@
     <ClInclude Include="engine\texture_engine.h" />
     <ClInclude Include="game_object\gui\editbox\edit_box.h" />
     <ClInclude Include="game_object\gui\gui_item.h" />
+    <ClInclude Include="game_object\gui\role_select\role_select.h" />
+    <ClInclude Include="game_object\gui\role_select\role_select_item.h" />
     <ClInclude Include="game_object\gui\start_menu\start_menu.h" />
     <ClInclude Include="game_object\gui\start_menu\start_menu_item.h" />
     <ClInclude Include="game_object\map\game_map.h" />
@@ -153,6 +158,7 @@
     <ClInclude Include="resource\xml_list_object.h" />
     <ClInclude Include="scene\menu_scene.h" />
     <ClInclude Include="scene\play_scene.h" />
+    <ClInclude Include="scene\role_select_scene.h" />
     <ClInclude Include="scene\scene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

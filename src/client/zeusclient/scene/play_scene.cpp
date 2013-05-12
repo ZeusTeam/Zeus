@@ -1,5 +1,5 @@
 #include "globaldef.h"
-#include "play_scene.h"
+#include "role_select_scene.h"
 #include "control\control_object\out_text.h"
 #include "engine\graphics_engine.h"
 #include "control\pool\picture_pool.h"

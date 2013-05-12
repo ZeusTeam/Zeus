@@ -69,6 +69,9 @@
     <Filter Include="Source Files\game_object\gui\edit_box">
       <UniqueIdentifier>{6a11000c-bbdb-4ab1-be4d-472c55799c4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\game_object\gui\role_select">
+      <UniqueIdentifier>{fd0a22ae-de03-4802-b9fa-8082d2a2bfa6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp">
@@ -178,6 +181,15 @@
     </ClCompile>
     <ClCompile Include="game_object\gui\editbox\edit_box.cpp">
       <Filter>Source Files\game_object\gui\edit_box</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\role_select\role_select.cpp">
+      <Filter>Source Files\game_object\gui\role_select</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\role_select\role_select_item.cpp">
+      <Filter>Source Files\game_object\gui\role_select</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\role_select_scene.cpp">
+      <Filter>Source Files\scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -321,6 +333,16 @@
     </ClInclude>
     <ClInclude Include="game_object\gui\editbox\edit_box.h">
       <Filter>Source Files\game_object\gui\edit_box</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\import\gfx_font\gfxfont.h" />
+    <ClInclude Include="game_object\gui\role_select\role_select.h">
+      <Filter>Source Files\game_object\gui\role_select</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\role_select\role_select_item.h">
+      <Filter>Source Files\game_object\gui\role_select</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\role_select_scene.h">
+      <Filter>Source Files\scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
