@@ -14,8 +14,6 @@
 [**c0.2.3**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#c023) | 
 [**c0.2.4**](https://github.com/ZeusTeam/Zeus#c024) | 
 [c0.2.5](https://github.com/ZeusTeam/Zeus#c025) |
-[c0.3.0](https://github.com/ZeusTeam/Zeus#c030) |
-[c0.3.1](https://github.com/ZeusTeam/Zeus#c031) 
 ]
     
 - 服务端  
