@@ -19,6 +19,10 @@ public:
 
     void SetPos(float x, float y);
     void SetText(const std::string& strText);
+    void SetBgLButton(const std::string& strId);
+    void SetBgMove(const std::string& strId);
+    void SetBg(const std::string& strId);
+
     const std::string& GetText();
 
     virtual void    Render();
@@ -44,6 +48,10 @@ private:
     float m_Button_x;
     float m_Button_y;
     std::string m_Text;
+    TextureObject* m_bgButtonLB;
+    TextureObject* m_bgButtonMove;
+    TextureObject* m_bgButton;
+    TextureObject* m_bgDarwButton;
     GraphicsEngine* m_Graphics;
     ButtonFun m_DisButton;
     FontObject* m_Font;

@@ -31,6 +31,10 @@
 
 	<img id = "RoleSelect-CreateRole" path = "res\img\create_role_btn.png"> </img>
 
+	<img id = "RoleSelect-CreateRole_LB" path = "res\img\create_role_btn_LB.png"> </img>
+
+	<img id = "RoleSelect-CreateRole_Move" path = "res\img\create_role_btn_Move.png"> </img>
+
 	<img id = "RoleSelect-RetHomePage" path = "res\img\return_homepage_btn.png"> </img>
 
 	<img id = "RoleSelect-Bg" path = "res\img\role_select_bg.png"> </img>

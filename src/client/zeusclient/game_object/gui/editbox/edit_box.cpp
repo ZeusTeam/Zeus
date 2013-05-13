@@ -357,14 +357,8 @@ bool EditBox::MouseLButton(bool bDown)
 {
     if (bDown)
     {
-        ::MessageBox(0,"!", 0, MB_OK);
         m_FocusEditPtr = this;
         m_IsShowCurr = true;
-    }
-    else
-    {
-        m_FocusEditPtr = NULL;
-        m_IsShowCurr = false;
     }
     return true;
 }
