@@ -12,10 +12,9 @@
 [**c0.2.1**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#c021) | 
 [**c0.2.2**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#c022) | 
 [**c0.2.3**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#c023) | 
-[c0.2.4](https://github.com/ZeusTeam/Zeus#c024) | 
+[**c0.2.4**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#c024) | 
 [c0.2.5](https://github.com/ZeusTeam/Zeus#c025) |
-[c0.3.0](https://github.com/ZeusTeam/Zeus#c030) |
-[c0.3.1](https://github.com/ZeusTeam/Zeus#c031) 
+[c0.2.6](https://github.com/ZeusTeam/Zeus#c026)
 ]
     
 - 服务端  
@@ -39,15 +38,11 @@
 ####c0.2.5
 1.游戏配置文件  
 2.提取地图接口  
-3.支持多地图切换   
+3.支持多地图切换  
 
-####c0.3.0
-1.支持扩展包  
-2.实现npc  
-
-####c0.3.1
-1.实现和npc对话  
-2.在扩展包里实现npc和对话  
+####c0.2.6
+1.鼠标走路  
+2.人物头顶显示名字  
 
 ### **服务端 [`详细`](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md)**
 ----------
