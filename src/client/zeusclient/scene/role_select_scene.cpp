@@ -1,6 +1,8 @@
 #include "role_select_scene.h"
 #include "play_scene.h"
 #include "menu_scene.h"
+#include "create_player_scene.h"
+
 RoleSelectScene::RoleSelectScene()
 {
 
@@ -24,6 +26,8 @@ void RoleSelectScene::Update()
         SceneEngine_->Push(new MenuScene);
         break;
     case RoleSelect_CreateRole:
+        SceneEngine_->Pop();
+        SceneEngine_->Push(new CreatePlayerScene);
         break;
     case RoleSelect_None:
         break;
