@@ -29,13 +29,13 @@ CreatePlayerScene::CreatePlayerScene()
     m_ButtonCreate->SetPos(WINDOW_WIDTH - 140, WINDOW_HEIGHT - 120);
     m_ButtonReturn->SetPos(WINDOW_WIDTH - 140 - 220 - 220, WINDOW_HEIGHT - 120);
 
-    m_ButtonReturn->SetBg("RoleSelect-CreateRole");
-    m_ButtonReturn->SetBgMove("RoleSelect-CreateRole_Move");
-    m_ButtonReturn->SetBgLButton("RoleSelect-CreateRole_LB");
+    m_ButtonReturn->SetBg("Btn_blue-Bg");
+    m_ButtonReturn->SetBgMove("Btn_blue-Move");
+    m_ButtonReturn->SetBgLButton("Btn_blue-LB");
 
-    m_ButtonCreate->SetBg("RoleSelect-CreateRole");
-    m_ButtonCreate->SetBgMove("RoleSelect-CreateRole_Move");
-    m_ButtonCreate->SetBgLButton("RoleSelect-CreateRole_LB");
+    m_ButtonCreate->SetBg("Btn_blue-Bg");
+    m_ButtonCreate->SetBgMove("Btn_blue-Move");
+    m_ButtonCreate->SetBgLButton("Btn_blue-LB");
     //m_ButtonCreate->SetText("创建人物");
 
     m_Gui.AddCtrl(m_EditPlayerName);
