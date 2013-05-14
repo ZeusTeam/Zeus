@@ -9,6 +9,7 @@
 #include "control\control_object\font_object.h"
 #include "game_object\gui\editbox\edit_box.h"
 #include "game_object\gui\button\button.h"
+#include "game_object\gui\scroll_bar\scroll_bar.h"
 #include "import\hge\include\hgegui.h"
 
 class PlayScene
@@ -34,6 +35,7 @@ private:
     FontObject* m_Font;
     EditBox* m_Edit;
     Button* m_ButtonOk;
+    ScrollBar* m_scrollBar;
     hgeGUI m_Gui;
 };
 
