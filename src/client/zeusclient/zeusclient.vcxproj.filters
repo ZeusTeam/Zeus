@@ -75,6 +75,9 @@
     <Filter Include="Source Files\game_object\gui\role_select">
       <UniqueIdentifier>{413ce610-f290-4040-b5c7-c2c066d64dd0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\game_object\gui\list_view">
+      <UniqueIdentifier>{73aa3319-e04c-4891-8b57-b6bf111a9e4e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp">
@@ -199,6 +202,9 @@
     </ClCompile>
     <ClCompile Include="game_object\gui\role_select\role_select_item.cpp">
       <Filter>Source Files\game_object\gui\role_select</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\list_view\list_view.cpp">
+      <Filter>Source Files\game_object\gui\list_view</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -357,6 +363,9 @@
     </ClInclude>
     <ClInclude Include="game_object\gui\role_select\role_select_item.h">
       <Filter>Source Files\game_object\gui\role_select</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\list_view\list_view.h">
+      <Filter>Source Files\game_object\gui\list_view</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

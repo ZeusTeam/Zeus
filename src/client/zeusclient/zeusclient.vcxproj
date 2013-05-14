@@ -95,6 +95,7 @@
     <ClCompile Include="engine\texture_engine.cpp" />
     <ClCompile Include="game_object\gui\button\button.cpp" />
     <ClCompile Include="game_object\gui\editbox\edit_box.cpp" />
+    <ClCompile Include="game_object\gui\list_view\list_view.cpp" />
     <ClCompile Include="game_object\gui\role_select\role_select.cpp" />
     <ClCompile Include="game_object\gui\role_select\role_select_item.cpp" />
     <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp" />
@@ -144,6 +145,7 @@
     <ClInclude Include="game_object\gui\button\button.h" />
     <ClInclude Include="game_object\gui\editbox\edit_box.h" />
     <ClInclude Include="game_object\gui\gui_item.h" />
+    <ClInclude Include="game_object\gui\list_view\list_view.h" />
     <ClInclude Include="game_object\gui\role_select\role_select.h" />
     <ClInclude Include="game_object\gui\role_select\role_select_item.h" />
     <ClInclude Include="game_object\gui\start_menu\start_menu.h" />
