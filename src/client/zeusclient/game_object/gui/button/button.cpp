@@ -2,7 +2,7 @@
 #include "control\pool\picture_pool.h"
 
 Button::Button(int _Id, float w, float h,
-               const std::string& strFont, ButtonFun dis)
+               const std::string& strFont)
 {
     this->id = _Id;
     this->bStatic = false;
@@ -17,7 +17,6 @@ Button::Button(int _Id, float w, float h,
     m_Border_h = h + 2;
     m_Border_x = 0.0f;
     m_Border_y = 0.0f;
-    m_DisButton = dis;
     m_Graphics = GraphicsEngine::Instance();
     m_Font = new FontObject(strFont, 22);
     m_bgButton = NULL;
@@ -27,7 +26,11 @@ Button::Button(int _Id, float w, float h,
 
 Button::~Button()
 {
-
+    if (m_Font)
+    {
+        delete m_Font;
+        m_Font = NULL;
+    }
 }
 
 void Button::SetBgLButton(const std::string& strId)
@@ -143,7 +146,6 @@ bool Button::MouseLButton(bool bDown)
     if (bDown)
     {
         m_bgDarwButton = m_bgButtonLB;
-        m_DisButton();
         return true;
     }
     else

@@ -6,13 +6,11 @@
 #include "control\control_object\font_object.h"
 #include <string>
 
-typedef void(*ButtonFun)();
-
 class Button
     : public GUIItem
 {
 public:
-    Button(int _Id, float w, float h,const std::string& strFont, ButtonFun dis);
+    Button(int _Id, float w, float h,const std::string& strFont);
     virtual ~Button();
 
 public:
@@ -53,7 +51,6 @@ private:
     TextureObject* m_bgButton;
     TextureObject* m_bgDarwButton;
     GraphicsEngine* m_Graphics;
-    ButtonFun m_DisButton;
     FontObject* m_Font;
 };
 

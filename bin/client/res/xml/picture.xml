@@ -41,4 +41,14 @@
 
         <img id = "cursor1" path = "res\img\cursor\cursor.png"> </img>
 
+	<img id = "Play1" path = "res\img\play\play1.jpg"> </img>
+
+	<img id = "Play2" path = "res\img\play\play2.jpg"> </img>
+
+	<img id = "Play3" path = "res\img\play\play3.jpg"> </img>
+
+	<img id = "Play4" path = "res\img\play\play4.jpg"> </img>
+
+	<img id = "Play5" path = "res\img\play\play5.jpg"> </img>
+
 </gamepicture> 

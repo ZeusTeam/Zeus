@@ -27,7 +27,7 @@ PlayScene::PlayScene()
 
     m_Edit = new EditBox(1, WINDOW_WIDTH, 22, ARGB(255,255,0, 0),"宋体", 22);
     m_Edit->SetPos(0, WINDOW_HEIGHT - 24);
-    m_ButtonOk = new Button(2, 100, 200, "宋体", ButtonOk);
+    m_ButtonOk = new Button(2, 100, 200, "宋体");
     m_ButtonOk->SetPos(0, WINDOW_HEIGHT - 400);
     m_ButtonOk->SetText("按钮1");
 
