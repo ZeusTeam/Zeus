@@ -84,7 +84,7 @@ void FontObject::Print( float x, float y, const char *format, ... )
     Render(x, y, sBuffer);
 }
 
-int FontObject::TextKerningWidth(const std::string& strText)
+int FontObject::TextWidth(const std::string& strText)
 {
     std::wstring strTmp(CA2W(strText.c_str()));
     int nWidth = 0;

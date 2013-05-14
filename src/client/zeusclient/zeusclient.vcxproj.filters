@@ -78,6 +78,9 @@
     <Filter Include="Source Files\game_object\gui\list_view">
       <UniqueIdentifier>{73aa3319-e04c-4891-8b57-b6bf111a9e4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\game_object\gui\static_box">
+      <UniqueIdentifier>{d4d60493-0e93-44ee-a0ec-6f294a62e6d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp">
@@ -205,6 +208,9 @@
     </ClCompile>
     <ClCompile Include="game_object\gui\list_view\list_view.cpp">
       <Filter>Source Files\game_object\gui\list_view</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\static_box\static_box.cpp">
+      <Filter>Source Files\game_object\gui\static_box</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -366,6 +372,9 @@
     </ClInclude>
     <ClInclude Include="game_object\gui\list_view\list_view.h">
       <Filter>Source Files\game_object\gui\list_view</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\static_box\static_box.h">
+      <Filter>Source Files\game_object\gui\static_box</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

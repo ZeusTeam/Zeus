@@ -100,6 +100,7 @@
     <ClCompile Include="game_object\gui\role_select\role_select_item.cpp" />
     <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp" />
     <ClCompile Include="game_object\gui\start_menu\start_menu.cpp" />
+    <ClCompile Include="game_object\gui\static_box\static_box.cpp" />
     <ClCompile Include="game_object\map\game_map.cpp" />
     <ClCompile Include="game_object\people\role.cpp" />
     <ClCompile Include="game_object\people\player_role.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="game_object\gui\role_select\role_select_item.h" />
     <ClInclude Include="game_object\gui\start_menu\start_menu.h" />
     <ClInclude Include="game_object\gui\start_menu\start_menu_item.h" />
+    <ClInclude Include="game_object\gui\static_box\static_box.h" />
     <ClInclude Include="game_object\map\game_map.h" />
     <ClInclude Include="game_object\people\role.h" />
     <ClInclude Include="game_object\people\player_role.h" />

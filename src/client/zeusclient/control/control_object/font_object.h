@@ -53,7 +53,7 @@ public:
 
     virtual float GetKerningWidth();
 
-    virtual int TextKerningWidth(const std::string& strText);
+    virtual int TextWidth(const std::string& strText);
 
     virtual float GetKerningHeight();
 
