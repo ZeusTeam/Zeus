@@ -69,26 +69,29 @@ const std::string& Button::GetText()
 
 void Button::Render()
 {
-    //»æÖÆ±ß¿ò
-    if (m_Graphics)
-    {
-        m_Graphics->RenderLine(m_Border_x, m_Border_y,
-            m_Border_x + m_Border_w, m_Border_y);
-        m_Graphics->RenderLine(m_Border_x, m_Border_y,
-            m_Border_x, m_Border_y + m_Border_h);
-        m_Graphics->RenderLine(m_Border_x + m_Border_w, m_Border_y + m_Border_h,
-            m_Border_x + m_Border_w, m_Border_y);
-        m_Graphics->RenderLine(m_Border_x + m_Border_w, m_Border_y + m_Border_h,
-            m_Border_x, m_Border_y + m_Border_h);
-    }
     if (m_bgDarwButton)
     {
         m_bgDarwButton->Render(m_Button_x, m_Button_y);
     }
+    else
+    {
+        //»æÖÆ±ß¿ò
+        if (m_Graphics)
+        {
+            m_Graphics->RenderLine(m_Border_x, m_Border_y,
+                m_Border_x + m_Border_w, m_Border_y);
+            m_Graphics->RenderLine(m_Border_x, m_Border_y,
+                m_Border_x, m_Border_y + m_Border_h);
+            m_Graphics->RenderLine(m_Border_x + m_Border_w, m_Border_y + m_Border_h,
+                m_Border_x + m_Border_w, m_Border_y);
+            m_Graphics->RenderLine(m_Border_x + m_Border_w, m_Border_y + m_Border_h,
+                m_Border_x, m_Border_y + m_Border_h);
+        }
+    }
     if (m_Font)
     {
         m_Font->Print(
-            m_Button_x + (m_Button_w / 2) - (float)((float)m_Font->TextKerningWidth(m_Text.c_str()) / 1.5),
+            m_Button_x + (m_Button_w / 2) - (float)((float)m_Font->TextKerningWidth(m_Text.c_str()) / 2),
             m_Button_y + (m_Button_h / 2) - (m_Font->GetFontSize() / 2), m_Text.c_str());
     }
 }

@@ -21,8 +21,8 @@ CreatePlayerScene::CreatePlayerScene()
     m_StaticName = new FontObject("宋体", 22);
 
     m_EditPlayerName = new EditBox(1, 200, 22, ARGB(255,255,0, 0),"宋体", 22);
-    m_ButtonCreate = new Button(Btn_Create, 110, 37, "宋体");
-    m_ButtonReturn = new Button(Btn_Return, 110, 37, "宋体");
+    m_ButtonCreate = new Button(Btn_Create, 114, 38, "宋体");
+    m_ButtonReturn = new Button(Btn_Return, 114, 38, "宋体");
 
     m_EditPlayerName->SetPos(WINDOW_WIDTH - 140 - 220,
         WINDOW_HEIGHT - 115);
@@ -32,11 +32,12 @@ CreatePlayerScene::CreatePlayerScene()
     m_ButtonReturn->SetBg("Btn_blue-Bg");
     m_ButtonReturn->SetBgMove("Btn_blue-Move");
     m_ButtonReturn->SetBgLButton("Btn_blue-LB");
+    m_ButtonReturn->SetText("返回菜单");
 
     m_ButtonCreate->SetBg("Btn_blue-Bg");
     m_ButtonCreate->SetBgMove("Btn_blue-Move");
     m_ButtonCreate->SetBgLButton("Btn_blue-LB");
-    //m_ButtonCreate->SetText("创建人物");
+    m_ButtonCreate->SetText("创建人物");
 
     m_Gui.AddCtrl(m_EditPlayerName);
     m_Gui.AddCtrl(m_ButtonCreate);
