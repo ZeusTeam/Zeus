@@ -9,7 +9,9 @@ PicturePool::PicturePool()
         it++)
     {
         TextureObject* pObject = new TextureObject;
-        pObject->Load(it->second->PicturePath.c_str());
+        pObject->Load(it->second->PicturePath.c_str(),
+            it->second->Posx, it->second->Posy,
+            it->second->Width, it->second->Hight);
         m_Pool[it->first] = pObject;
     }
 }

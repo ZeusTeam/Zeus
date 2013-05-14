@@ -360,7 +360,7 @@ bool EditBox::MouseLButton(bool bDown)
         m_FocusEditPtr = this;
         m_IsShowCurr = true;
     }
-    return true;
+    return false;
 }
 
 void EditBox::Focus(bool bFocused)

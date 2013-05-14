@@ -2,7 +2,7 @@
 #include "control\pool\picture_pool.h"
 
 Button::Button(int _Id, float w, float h,
-               const std::string& strFont, ButtonFun dis)
+               const std::string& strFont)
 {
     this->id = _Id;
     this->bStatic = false;
@@ -17,7 +17,6 @@ Button::Button(int _Id, float w, float h,
     m_Border_h = h + 2;
     m_Border_x = 0.0f;
     m_Border_y = 0.0f;
-    m_DisButton = dis;
     m_Graphics = GraphicsEngine::Instance();
     m_Font = new FontObject(strFont, 22);
     m_bgButton = NULL;
@@ -27,7 +26,11 @@ Button::Button(int _Id, float w, float h,
 
 Button::~Button()
 {
-
+    if (m_Font)
+    {
+        delete m_Font;
+        m_Font = NULL;
+    }
 }
 
 void Button::SetBgLButton(const std::string& strId)
@@ -66,26 +69,29 @@ const std::string& Button::GetText()
 
 void Button::Render()
 {
-    //»æÖÆ±ß¿ò
-    if (m_Graphics)
-    {
-        m_Graphics->RenderLine(m_Border_x, m_Border_y,
-            m_Border_x + m_Border_w, m_Border_y);
-        m_Graphics->RenderLine(m_Border_x, m_Border_y,
-            m_Border_x, m_Border_y + m_Border_h);
-        m_Graphics->RenderLine(m_Border_x + m_Border_w, m_Border_y + m_Border_h,
-            m_Border_x + m_Border_w, m_Border_y);
-        m_Graphics->RenderLine(m_Border_x + m_Border_w, m_Border_y + m_Border_h,
-            m_Border_x, m_Border_y + m_Border_h);
-    }
     if (m_bgDarwButton)
     {
         m_bgDarwButton->Render(m_Button_x, m_Button_y);
     }
+    else
+    {
+        //»æÖÆ±ß¿ò
+        if (m_Graphics)
+        {
+            m_Graphics->RenderLine(m_Border_x, m_Border_y,
+                m_Border_x + m_Border_w, m_Border_y);
+            m_Graphics->RenderLine(m_Border_x, m_Border_y,
+                m_Border_x, m_Border_y + m_Border_h);
+            m_Graphics->RenderLine(m_Border_x + m_Border_w, m_Border_y + m_Border_h,
+                m_Border_x + m_Border_w, m_Border_y);
+            m_Graphics->RenderLine(m_Border_x + m_Border_w, m_Border_y + m_Border_h,
+                m_Border_x, m_Border_y + m_Border_h);
+        }
+    }
     if (m_Font)
     {
         m_Font->Print(
-            m_Button_x + (m_Button_w / 2) - (float)((float)m_Font->TextKerningWidth(m_Text.c_str()) / 1.5),
+            m_Button_x + (m_Button_w / 2) - (float)((float)m_Font->TextKerningWidth(m_Text.c_str()) / 2),
             m_Button_y + (m_Button_h / 2) - (m_Font->GetFontSize() / 2), m_Text.c_str());
     }
 }
@@ -143,7 +149,6 @@ bool Button::MouseLButton(bool bDown)
     if (bDown)
     {
         m_bgDarwButton = m_bgButtonLB;
-        m_DisButton();
         return true;
     }
     else

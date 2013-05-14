@@ -18,11 +18,16 @@ public:
     virtual void Update();
     virtual void Output();
     virtual void Reset();
+    virtual void DisposeCtrl(int _Id);
+
+    void ButtonCreate();
 
 private:
     hgeGUI m_Gui;
     EditBox* m_EditPlayerName;
+    FontObject* m_StaticName;
     Button* m_ButtonCreate;
+    Button* m_ButtonReturn;
     TextureObject* m_PlayerImage;
     InputEngine* m_InputEngine;
 };

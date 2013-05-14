@@ -1,44 +1,60 @@
 <gamepicture>
-	<img id = "0046_1-2" path = "res\img\0046_1-2.png"> </img>
+	<img id = "0046_1-2" path = "res\img\0046_1-2.png" type = ""> </img>
 
-	<img id = "0046_1-3" path = "res\img\0046_1-3.png"> </img>
+	<img id = "0046_1-3" path = "res\img\0046_1-3.png" type = ""> </img>
 
-	<img id = "0046_1-4" path = "res\img\0046_1-4.png"> </img>
+	<img id = "0046_1-4" path = "res\img\0046_1-4.png" type = ""> </img>
 
-	<img id = "0046_1-5" path = "res\img\0046_1-5.png"> </img>
+	<img id = "0046_1-5" path = "res\img\0046_1-5.png" type = ""> </img>
 
-	<img id = "covering1" path = "res\img\covering1.png"> </img>	
+	<img id = "covering1" path = "res\img\covering1.png" type = ""> </img>	
 	
-	<img id = "map" path = "res\img\map.png"> </img>
+	<img id = "map" path = "res\img\map.png" type = ""> </img>
 
-	<img id = "map1" path = "res\img\map1.png"> </img>
+	<img id = "map1" path = "res\img\map1.png" type = ""> </img>
 
-	<img id = "mapcollision" path = "res\img\mapcollision.png"> </img>
+	<img id = "mapcollision" path = "res\img\mapcollision.png" type = ""> </img>
 	
-	<img id = "mapcollision1" path = "res\img\mapcollision1.png"> </img>
+	<img id = "mapcollision1" path = "res\img\mapcollision1.png" type = ""> </img>
 	
-	<img id = "menubg" path = "res\img\menubg.png"> </img>
+	<img id = "menubg" path = "res\img\menubg.png" type = ""> </img>
 	
-	<img id = "self" path = "res\img\self.png"> </img>
+	<img id = "self" path = "res\img\self.png" type = ""> </img>
 
-	<img id = "TileA2" path = "res\img\TileA2.png"> </img>
+	<img id = "TileA2" path = "res\img\TileA2.png" type = ""> </img>
 	
 	<img id = "aboutbg" path = "res\img\about.png"> </img>
 
-	<img id = "RoleSelect-Role" path = "res\img\role_select_role.png"> </img>
+	<img id = "RoleSelect-Role" path = "res\img\role_select_role.png" type = ""> </img>
 
-	<img id = "RoleSelect-RoleFocus" path = "res\img\role_select_role_focus.png"> </img>
+	<img id = "RoleSelect-RoleFocus" path = "res\img\role_select_role_focus.png" type = ""> </img>
 
-	<img id = "RoleSelect-CreateRole" path = "res\img\create_role_btn.png"> </img>
+	<img id = "RoleSelect-CreateRole" path = "res\img\create_role_btn.png" type = ""> </img>
 
-	<img id = "RoleSelect-CreateRole_LB" path = "res\img\create_role_btn_LB.png"> </img>
+	<img id = "RoleSelect-CreateRole_LB" path = "res\img\create_role_btn_LB.png" type = ""> </img>
 
-	<img id = "RoleSelect-CreateRole_Move" path = "res\img\create_role_btn_Move.png"> </img>
+	<img id = "RoleSelect-CreateRole_Move" path = "res\img\create_role_btn_Move.png" type = ""> </img>
 
-	<img id = "RoleSelect-RetHomePage" path = "res\img\return_homepage_btn.png"> </img>
+	<img id = "RoleSelect-RetHomePage" path = "res\img\return_homepage_btn.png" type = ""> </img>
 
-	<img id = "RoleSelect-Bg" path = "res\img\role_select_bg.png"> </img>
+	<img id = "RoleSelect-Bg" path = "res\img\role_select_bg.png" type = ""> </img>
 
-        <img id = "cursor1" path = "res\img\cursor\cursor.png"> </img>
+        <img id = "cursor1" path = "res\img\cursor\cursor.png" type = ""> </img>
+
+	<img id = "Btn_blue-Bg" path = "res\img\btn_style\btn_blue.png" type = "" posx = "0" width = "114"/>
+
+	<img id = "Btn_blue-Move" path = "res\img\btn_style\btn_blue.png" type = "" posx = "114" width = "114"/>
+
+	<img id = "Btn_blue-LB" path = "res\img\btn_style\btn_blue.png" type = "" posx = "228" width = "114"/>
+
+	<img id = "Play1" path = "res\img\play\play1.jpg" type = ""> </img>
+
+	<img id = "Play2" path = "res\img\play\play2.jpg" type = ""> </img>
+
+	<img id = "Play3" path = "res\img\play\play3.jpg" type = ""> </img>
+
+	<img id = "Play4" path = "res\img\play\play4.jpg" type = ""> </img>
+
+	<img id = "Play5" path = "res\img\play\play5.jpg" type = ""> </img>
 
 </gamepicture> 
