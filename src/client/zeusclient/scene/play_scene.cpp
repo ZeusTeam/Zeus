@@ -38,7 +38,7 @@ PlayScene::PlayScene()
     m_Gui.AddCtrl(m_ButtonOk);
     m_Gui.AddCtrl(m_scrollBar);
     //m_Gui.SetCursor();
-    m_Gui.SetNavMode(HGEGUI_UPDOWN | HGEGUI_CYCLED);
+    m_Gui.SetNavMode(HGEGUI_CYCLED);
     m_Gui.SetFocus(0);
     m_Gui.Enter();
 }
