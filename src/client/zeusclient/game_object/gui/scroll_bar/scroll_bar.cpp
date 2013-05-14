@@ -3,10 +3,10 @@
 #define BTN_PROPORTION 0.037f    //按钮与滑块条长度比例
 
 ScrollBar::ScrollBar(int _id, float x, float y, float width, float height, int length, bool horizontal, int minMove, bool focusRemain)
-    : m_x(x)
-    , m_y(y)
-    , m_w(width)
-    , m_h(height)
+    : x(_x)
+    , y(_y)
+    , w(_width)
+    , h(_height)
     , m_maxLen(length)
     , m_hor(horizontal)
     , m_minMove(minMove)
@@ -30,10 +30,6 @@ ScrollBar::ScrollBar(int _id, float x, float y, float width, float height, int l
 
     rect.Set(m_upBtnRect->x1, m_upBtnRect->y1, m_downBtnRect->x2, m_downBtnRect->y2);
     
-    m_sliderColor.SetHWColor(ARGB(155, 0, 0, 0));
-    m_upBtnColor.SetHWColor(ARGB(155, 0, 0, 0));
-    m_downBtnColor.SetHWColor(ARGB(155, 0, 0, 0));
-    m_prevAlpha = m_sliderColor.a;
 }
 
 ScrollBar::~ScrollBar()
@@ -51,6 +47,7 @@ void ScrollBar::Render()
     else // 纵向滚动条
     {
 
+    }
 }
 
 
