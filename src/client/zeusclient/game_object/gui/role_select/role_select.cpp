@@ -1,6 +1,7 @@
 #include "role_select.h"
 
 RoleSelect::RoleSelect()
+    : m_selectedRoleID(-1)
 {
     ///角色1
     m_gui.AddCtrl(new RoleSelectItem(1, false, 63, 66, "role1", 
@@ -46,8 +47,10 @@ RoleSelectState RoleSelect::Update()
     switch (id)
     {
     case 1:
+        m_selectedRoleID = 1;
         return RoleSelect_EnterGame; //选择角色
     case 2:
+        m_selectedRoleID = 2;
         return RoleSelect_EnterGame; //选择角色 开始游戏
     case 3:
         return RoleSelect_CreateRole; //进入创建角色页面
@@ -57,4 +60,9 @@ RoleSelectState RoleSelect::Update()
         break;
     }
     return RoleSelect_None;
+}
+
+int RoleSelect::GetSelectedRoleID()
+{
+    return m_selectedRoleID;
 }

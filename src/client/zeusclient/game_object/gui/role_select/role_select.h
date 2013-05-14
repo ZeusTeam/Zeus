@@ -24,6 +24,7 @@ private:
     hgeGUI m_gui;
     TextureObject* m_bgTex;
     hgeSprite* m_cursorMouse;
+    int m_selectedRoleID;
 };
 
 #endif
