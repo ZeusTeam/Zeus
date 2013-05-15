@@ -1,6 +1,7 @@
 ﻿> **关于宙斯**  
 > **[宙斯](https://github.com/ZeusTeam/Zeus "宙斯")**是一个开放源代码的mmorpg游戏。  
 > 代码：[https://github.com/ZeusTeam/Zeus](https://github.com/ZeusTeam/Zeus)
+> QQ群：321328884
 
 ## **版本开发计划**
 `*粗体版本号表示已完成版本。`
