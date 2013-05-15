@@ -34,6 +34,7 @@ typedef std::shared_ptr<TcpConnection> TcpConnectionPtr;
 typedef std::shared_ptr<std::thread> ThreadPtr;
 
 //callbacks
-typedef boost::function<void (const TcpConnectionPtr&, const InetAddress& )> NewConnectionCallback;
+typedef std::function<void (const TcpConnectionPtr& connection, const InetAddress& address)> NewConnectionCallback;
+typedef std::function<void (const TcpConnectionPtr& connection, uint32 bytes_transferred)> WriteCompletedCallback;
 
 #endif

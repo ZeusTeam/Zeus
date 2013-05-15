@@ -79,9 +79,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="acceptor.hpp" />
+    <ClInclude Include="buffer.hpp" />
     <ClInclude Include="zeus_net_def.h" />
     <ClInclude Include="tcp_connection.hpp" />
-    <ClInclude Include="event_loop.hpp" />
     <ClInclude Include="inet_address.hpp" />
     <ClInclude Include="local_free_on_destruction.hpp" />
     <ClInclude Include="net_utils.h" />

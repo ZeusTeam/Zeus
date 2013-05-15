@@ -5,9 +5,6 @@
     <ClInclude Include="acceptor.hpp">
       <Filter>net</Filter>
     </ClInclude>
-    <ClInclude Include="event_loop.hpp">
-      <Filter>net</Filter>
-    </ClInclude>
     <ClInclude Include="inet_address.hpp">
       <Filter>net</Filter>
     </ClInclude>
@@ -23,6 +20,9 @@
     <ClInclude Include="zeus_net_def.h">
       <Filter>net</Filter>
     </ClInclude>
+    <ClInclude Include="buffer.hpp">
+      <Filter>base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="zeus_net.cpp" />
@@ -36,6 +36,9 @@
     </Filter>
     <Filter Include="error">
       <UniqueIdentifier>{97998b92-d59f-424e-82e0-adf99df36696}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{467e1468-131f-4de7-a3db-b61673e0daa4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

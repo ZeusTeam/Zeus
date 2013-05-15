@@ -11,7 +11,7 @@
 using namespace boost::asio;
 using namespace boost::asio::ip;
 
-class Acceptor : boost::noncopyable
+class Acceptor : private boost::noncopyable
 {
 public:
     Acceptor(const InetAddress& listenAddress, boost::asio::io_service& io_service, uint32 threadNums)
@@ -92,7 +92,7 @@ private:
 
         if (connection->isOpen())
         {
-            if (!_newConnectionCallback.empty())
+            if (!_newConnectionCallback._Empty())
             {
                 //构造通信地址结构
                 tcp::socket& socket = connection->socket();
