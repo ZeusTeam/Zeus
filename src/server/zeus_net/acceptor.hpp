@@ -78,9 +78,14 @@ public:
     bool listenning() const { return _listenning; }
 
 public:
-    void setNewConnectCallback(const NewConnectionCallback& cb)
+    void setNewConnectionCallback(const NewConnectionCallback& cb)
     {
         _newConnectionCallback = cb;
+    }
+
+    void setWriteComplectedCallback(const WriteCompletedCallback& cb)
+    {
+        _writeComplectedCallback = cb;
     }
 
 private:
@@ -101,6 +106,7 @@ private:
                 InetAddress peerAddress(remote_address, remote_port);
 
                 //回调到新连接处理函数
+                connection->setWriteCompletedCallback(_writeComplectedCallback);
                 _newConnectionCallback(connection, peerAddress);
             }
             else
@@ -127,7 +133,10 @@ private:
     uint32 _threadNums;
     InetAddress _listenAddr;
     tcp::acceptor _acceptor;
+
+    //callbacks
     NewConnectionCallback _newConnectionCallback;
+    WriteCompletedCallback _writeComplectedCallback;
 };
 
 #endif

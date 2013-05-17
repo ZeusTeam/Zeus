@@ -56,9 +56,14 @@ public:
     }
 
 public:
-    void setNewConnectCallback(const NewConnectionCallback& cb)
+    void setNewConnectionCallback(const NewConnectionCallback& cb)
     {
-        _acceptor.setNewConnectCallback(cb);
+        _acceptor.setNewConnectionCallback(cb);
+    }
+
+    void setWriteComplectedCallback(const WriteCompletedCallback& cb)
+    {
+        _acceptor.setWriteComplectedCallback(cb);
     }
 
 private:

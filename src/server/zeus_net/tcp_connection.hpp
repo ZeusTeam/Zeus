@@ -11,7 +11,6 @@
 
 using namespace boost::asio;
 using namespace boost::asio::ip;
-std::mutex g_mutex;
 
 class TcpConnection 
     : private boost::noncopyable, public std::enable_shared_from_this<TcpConnection>
@@ -21,6 +20,7 @@ public:
         : _socket(io_service),
         _strand(io_service)
     {
+
     }
 
     virtual ~TcpConnection()
@@ -43,10 +43,9 @@ public:
             _strand.wrap(
                 boost::bind(
                     &TcpConnection::handleWrite, 
-                    this, 
+                    shared_from_this(), 
                     boost::asio::placeholders::error, 
-                    boost::asio::placeholders::bytes_transferred,
-                    boost::asio::buffer(data, size)
+                    boost::asio::placeholders::bytes_transferred
                 )
             )
         );
@@ -68,18 +67,23 @@ public:
         return _socket.is_open();
     }
 
+public:
+    void setWriteCompletedCallback(const WriteCompletedCallback& cb)
+    {
+        _writeCompletedCallback = cb;
+    }
+
 private:
     void handleWrite(
         const boost::system::error_code& error, // Result of operation.
-        std::size_t bytes_transferred,          // Number of bytes sent.
-        boost::asio::const_buffer buffer        // Sent buffer
+        std::size_t bytes_transferred           // Number of bytes sent.
     )
     {
         if (error)
         {
             //Initiate graceful connection closure.
             boost::system::error_code ignored_ec;
-            _socket.shutdown(boost::asio::ip::tcp::socket::shutdown_both, ignored_ec);
+            _socket.shutdown(tcp::socket::shutdown_both, ignored_ec);
 
             std::cout << error.value() << ":" << error.message() << std::endl;
             return;
@@ -87,9 +91,14 @@ private:
         else
         {
             std::cout << "bytes_transferred = " << bytes_transferred << std::endl;
-            if (!_writeCompletedCallback)
+            if (!_writeCompletedCallback._Empty())
             {
                 _writeCompletedCallback(shared_from_this(), bytes_transferred);
+                std::cout << "_writeCompletedCallback not NULL." << std::endl;
+            }
+            else
+            {
+                std::cout << "write complected." << std::endl;
             }
         }
     }
@@ -100,6 +109,7 @@ private:
     
     // Strand to ensure the connection's handlers are not called concurrently.
     boost::asio::io_service::strand _strand;
+    mutable std::mutex _mutex;
 };
 
 
