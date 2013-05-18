@@ -7,3 +7,5 @@
 /bin/server/*.ilk
 /bin/server/service_components/*.exp
 /src/server/ipch
+
+/bin/server/*.a

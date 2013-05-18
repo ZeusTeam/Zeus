@@ -10,20 +10,37 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\zeus_net\acceptor.h" />
+    <ClInclude Include="..\..\..\src\zeus_net\buffer.hpp" />
+    <ClInclude Include="..\..\..\src\zeus_net\callbacks.h" />
+    <ClInclude Include="..\..\..\src\zeus_net\inet_address.hpp" />
+    <ClInclude Include="..\..\..\src\zeus_net\local_free_on_destruction.hpp" />
+    <ClInclude Include="..\..\..\src\zeus_net\net_utils.h" />
+    <ClInclude Include="..\..\..\src\zeus_net\tcp_connection.h" />
+    <ClInclude Include="..\..\..\src\zeus_net\tcp_server.h" />
+    <ClInclude Include="..\..\..\src\zeus_net\zeus_net_def.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\zeus_net\acceptor.cpp" />
+    <ClCompile Include="..\..\..\src\zeus_net\error_code.cpp" />
+    <ClCompile Include="..\..\..\src\zeus_net\tcp_connection.cpp" />
+    <ClCompile Include="..\..\..\src\zeus_net\tcp_server.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{35FD5061-2EF2-457E-953D-12BBED866F59}</ProjectGuid>
+    <ProjectGuid>{18FE5457-E171-4E0C-9701-2D5DE4B110D5}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>zeus_net</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -40,57 +57,47 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-    <IncludePath>../../../include/;../../../import/;$(SolutionDir);$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>../../../../../import;../../../../../include;$(IncludePath)</IncludePath>
+    <TargetName>lib$(ProjectName)</TargetName>
+    <TargetExt>.a</TargetExt>
+    <OutDir>../../../../../bin/server/</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-    <IncludePath>../../../include/;../../../import/;$(SolutionDir);$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>../../../../../import;../../../../../include;$(IncludePath)</IncludePath>
+    <TargetName>lib$(ProjectName)</TargetName>
+    <TargetExt>.a</TargetExt>
+    <OutDir>../../../../../bin/server/</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);BOOST_ALL_NO_LIB</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions);BOOST_ALL_NO_LIB</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);BOOST_ALL_NO_LIB</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions);BOOST_ALL_NO_LIB</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="acceptor.hpp" />
-    <ClInclude Include="buffer.hpp" />
-    <ClInclude Include="zeus_net_def.h" />
-    <ClInclude Include="tcp_connection.hpp" />
-    <ClInclude Include="inet_address.hpp" />
-    <ClInclude Include="local_free_on_destruction.hpp" />
-    <ClInclude Include="net_utils.h" />
-    <ClInclude Include="tcp_server.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="error_code.cpp" />
-    <ClCompile Include="zeus_net.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

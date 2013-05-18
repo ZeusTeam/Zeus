@@ -1,5 +1,9 @@
-#include <boost/bind.hpp>
-#include "tcp_server.hpp"
+#include <functional>
+#include "tcp_server.h"
+#include "tcp_connection.h"
+#include "zeus_net_def.h"
+#include "callbacks.h"
+#include "inet_address.hpp"
 
 class EventHandler
 {
@@ -25,12 +29,12 @@ int main()
 {
     try
     {
+        EventHandler eventHandler;
         InetAddress inetAddress(36911);
 
         boost::asio::io_service _io_service;
-        TcpServer server(inetAddress, _io_service, 4/*zeus::net_params::smart_thread_nums()*/);
-
-        EventHandler eventHandler;
+        TcpServer server(inetAddress, _io_service, 4);
+        
         server.setNewConnectionCallback(
             std::bind(&EventHandler::NewConnectionHandler, &eventHandler, std::placeholders::_1, std::placeholders::_2)
             );
