@@ -1,6 +1,9 @@
 #ifndef GUI_ITEM_
 #define GUI_ITEM_
 #include "import\hge\include\hgegui.h"
+#include "control\control_object\animation_object.h"
+#include "control\control_object\texture_object.h"
+#include "control\control_object\font_object.h"
 
 class GUIItem
     : public hgeGUIObject

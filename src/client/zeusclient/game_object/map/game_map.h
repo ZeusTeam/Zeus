@@ -74,7 +74,6 @@ private:
     roleVector m_previousPos;
     float m_viewportWidth;
     float m_viewportHeight;
-    hgeFont* m_font;
 };
 
 
