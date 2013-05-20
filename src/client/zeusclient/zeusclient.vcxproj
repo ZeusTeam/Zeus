@@ -95,12 +95,13 @@
     <ClCompile Include="engine\texture_engine.cpp" />
     <ClCompile Include="game_object\gui\button\button.cpp" />
     <ClCompile Include="game_object\gui\editbox\edit_box.cpp" />
+    <ClCompile Include="game_object\gui\image_box\image_box.cpp" />
     <ClCompile Include="game_object\gui\list_view\list_view.cpp" />
-    <ClCompile Include="game_object\gui\role_select\role_select.cpp" />
-    <ClCompile Include="game_object\gui\role_select\role_select_item.cpp" />
     <ClCompile Include="game_object\gui\scroll_bar\scroll_bar.cpp" />
+    <ClCompile Include="game_object\gui\select_view\select_view.cpp" />
     <ClCompile Include="game_object\gui\start_menu\srat_menu_item.cpp" />
     <ClCompile Include="game_object\gui\start_menu\start_menu.cpp" />
+    <ClCompile Include="game_object\gui\static_box\static_box.cpp" />
     <ClCompile Include="game_object\map\game_map.cpp" />
     <ClCompile Include="game_object\people\role.cpp" />
     <ClCompile Include="game_object\people\player_role.cpp" />
@@ -146,12 +147,13 @@
     <ClInclude Include="game_object\gui\button\button.h" />
     <ClInclude Include="game_object\gui\editbox\edit_box.h" />
     <ClInclude Include="game_object\gui\gui_item.h" />
+    <ClInclude Include="game_object\gui\image_box\image_box.h" />
     <ClInclude Include="game_object\gui\list_view\list_view.h" />
-    <ClInclude Include="game_object\gui\role_select\role_select.h" />
-    <ClInclude Include="game_object\gui\role_select\role_select_item.h" />
     <ClInclude Include="game_object\gui\scroll_bar\scroll_bar.h" />
+    <ClInclude Include="game_object\gui\select_view\select_view.h" />
     <ClInclude Include="game_object\gui\start_menu\start_menu.h" />
     <ClInclude Include="game_object\gui\start_menu\start_menu_item.h" />
+    <ClInclude Include="game_object\gui\static_box\static_box.h" />
     <ClInclude Include="game_object\map\game_map.h" />
     <ClInclude Include="game_object\people\role.h" />
     <ClInclude Include="game_object\people\player_role.h" />
@@ -168,6 +170,9 @@
     <ClInclude Include="scene\play_scene.h" />
     <ClInclude Include="scene\role_select_scene.h" />
     <ClInclude Include="scene\scene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\..\..\bin\client\res\xml\picture.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

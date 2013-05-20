@@ -1,5 +1,6 @@
 #include "edit_box.h"
 #include "engine\game_engine.h"
+#include "scene\role_select_scene.h"
 #include "globaldef.h"
 #include <atlbase.h>
 
@@ -310,10 +311,10 @@ void EditBox::Render(float x, float y)
         m_Graphics->RenderLine(m_Border_x + m_Border_w, m_Border_y + m_Border_h,
             m_Border_x, m_Border_y + m_Border_h);
     }
-    m_Graphics->SetClipping((int)x, (int)y, (int)m_Border_w, (int)m_Border_h);
+    m_Graphics->SetClipping((int)x, (int)y, (int)m_Edit_w, (int)m_Edit_h);
     if (m_FocusEditPtr == this && m_IsShowCurr)
     {
-        m_pSprite->Render(m_PresentFontWidth - m_bgFontPos, y);
+        m_pSprite->Render(m_PresentFontWidth - m_bgFontPos + m_Edit_Pos_x, m_Edit_Pos_y);
     }
     m_Font->Render(x, y, (LPCSTR)CW2A(m_Text.c_str()));
     if (m_FocusEditPtr == this && m_IsSelect)

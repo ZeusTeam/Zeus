@@ -12,6 +12,7 @@ StartMenuItem::StartMenuItem(int _id, float x, float y, std::string title, Textu
     this->bStatic = false;
     this->bVisible = true;
     this->bEnabled = true;
+
     if (!utils::InstallFont("res\\fzfys.ttf"))
     {
         utils::ErrorMessage("StartMenuItem初始化:安装字体'fzwys.ttf'失败");

@@ -25,9 +25,11 @@
 	
 	<img id = "aboutbg" path = "res\img\about.png"> </img>
 
-	<img id = "RoleSelect-Role" path = "res\img\role_select_role.png" type = ""> </img>
+	<img id = "RoleSelect-Role" path = "res\img\role.png" type = ""> </img>
 
-	<img id = "RoleSelect-RoleFocus" path = "res\img\role_select_role_focus.png" type = ""> </img>
+	<img id = "RoleSelect-RoleBox" path = "res\img\role_select_normal.png" type = ""> </img>
+  
+  <img id = "RoleSelect-RoleBoxFocus" path = "res\img\role_select_focus.png" type = ""> </img>
 
 	<img id = "RoleSelect-CreateRole" path = "res\img\create_role_btn.png" type = ""> </img>
 

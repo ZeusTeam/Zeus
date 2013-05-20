@@ -20,7 +20,7 @@ public:
     void SetBgLButton(const std::string& strId);
     void SetBgMove(const std::string& strId);
     void SetBg(const std::string& strId);
-
+    
     const std::string& GetText();
 
     virtual void    Render();
@@ -52,6 +52,7 @@ private:
     TextureObject* m_bgDarwButton;
     GraphicsEngine* m_Graphics;
     FontObject* m_Font;
+    
 };
 
 #endif

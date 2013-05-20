@@ -31,12 +31,12 @@ PlayScene::PlayScene()
     m_ButtonOk->SetPos(0, WINDOW_HEIGHT - 400);
     m_ButtonOk->SetText("°´Å¥1");
 
-    m_scrollBar = new ScrollBar(3, 700, 100, 50, 400, 100);
-    m_scrollBar->SetSliderColor(ARGB(255,255,255,255));
+
+
 
     m_Gui.AddCtrl(m_Edit);
     m_Gui.AddCtrl(m_ButtonOk);
-    m_Gui.AddCtrl(m_scrollBar);
+
     //m_Gui.SetCursor();
     m_Gui.SetNavMode(HGEGUI_CYCLED);
     m_Gui.SetFocus(0);

@@ -91,7 +91,7 @@ void Button::Render()
     if (m_Font)
     {
         m_Font->Print(
-            m_Button_x + (m_Button_w / 2) - (float)((float)m_Font->TextKerningWidth(m_Text.c_str()) / 2),
+            m_Button_x + (m_Button_w / 2) - (float)((float)m_Font->TextWidth(m_Text.c_str()) / 2),
             m_Button_y + (m_Button_h / 2) - (m_Font->GetFontSize() / 2), m_Text.c_str());
     }
 }
@@ -118,6 +118,7 @@ void Button::Reset()
 
 void Button::Focus(bool bFocused)
 {
+
 }
 
 void Button::MouseOver(bool bOver)

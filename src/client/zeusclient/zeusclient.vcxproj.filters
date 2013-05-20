@@ -72,14 +72,20 @@
     <Filter Include="Source Files\game_object\gui\button">
       <UniqueIdentifier>{5c69d984-30df-4cee-97f6-321a5cf7a02c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\game_object\gui\role_select">
-      <UniqueIdentifier>{413ce610-f290-4040-b5c7-c2c066d64dd0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\game_object\gui\list_view">
       <UniqueIdentifier>{73aa3319-e04c-4891-8b57-b6bf111a9e4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\game_object\gui\static_box">
+      <UniqueIdentifier>{d4d60493-0e93-44ee-a0ec-6f294a62e6d3}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\game_object\gui\scroll_bar">
-      <UniqueIdentifier>{b8468408-b5af-4b37-a299-ee54aa877b49}</UniqueIdentifier>
+      <UniqueIdentifier>{39aaf4b9-cb2f-4a51-afd2-1c29d48180ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game_object\gui\image_box">
+      <UniqueIdentifier>{7fb101ce-5c3a-4bc2-99ac-376b4d709dd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game_object\gui\select_view">
+      <UniqueIdentifier>{be8ddbd9-b63c-4208-804f-bb8e7c2c3680}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -140,9 +146,6 @@
     <ClCompile Include="control\control_object\out_text.cpp">
       <Filter>Source Files\control\control_object</Filter>
     </ClCompile>
-    <ClCompile Include="game_object\people\player_role.cpp">
-      <Filter>Source Files\game_object\people</Filter>
-    </ClCompile>
     <ClCompile Include="game_object\map\game_map.cpp">
       <Filter>Source Files\game_object\map</Filter>
     </ClCompile>
@@ -200,17 +203,23 @@
     <ClCompile Include="scene\role_select_scene.cpp">
       <Filter>Source Files\scene</Filter>
     </ClCompile>
-    <ClCompile Include="game_object\gui\role_select\role_select.cpp">
-      <Filter>Source Files\game_object\gui\role_select</Filter>
-    </ClCompile>
-    <ClCompile Include="game_object\gui\role_select\role_select_item.cpp">
-      <Filter>Source Files\game_object\gui\role_select</Filter>
-    </ClCompile>
     <ClCompile Include="game_object\gui\list_view\list_view.cpp">
       <Filter>Source Files\game_object\gui\list_view</Filter>
     </ClCompile>
+    <ClCompile Include="game_object\gui\static_box\static_box.cpp">
+      <Filter>Source Files\game_object\gui\static_box</Filter>
+    </ClCompile>
     <ClCompile Include="game_object\gui\scroll_bar\scroll_bar.cpp">
       <Filter>Source Files\game_object\gui\scroll_bar</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\image_box\image_box.cpp">
+      <Filter>Source Files\game_object\gui\image_box</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\people\player_role.cpp">
+      <Filter>Source Files\game_object\map</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\gui\select_view\select_view.cpp">
+      <Filter>Source Files\game_object\gui\select_view</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -364,17 +373,25 @@
     <ClInclude Include="scene\role_select_scene.h">
       <Filter>Source Files\scene</Filter>
     </ClInclude>
-    <ClInclude Include="game_object\gui\role_select\role_select.h">
-      <Filter>Source Files\game_object\gui\role_select</Filter>
-    </ClInclude>
-    <ClInclude Include="game_object\gui\role_select\role_select_item.h">
-      <Filter>Source Files\game_object\gui\role_select</Filter>
-    </ClInclude>
     <ClInclude Include="game_object\gui\list_view\list_view.h">
       <Filter>Source Files\game_object\gui\list_view</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\static_box\static_box.h">
+      <Filter>Source Files\game_object\gui\static_box</Filter>
     </ClInclude>
     <ClInclude Include="game_object\gui\scroll_bar\scroll_bar.h">
       <Filter>Source Files\game_object\gui\scroll_bar</Filter>
     </ClInclude>
+    <ClInclude Include="game_object\gui\image_box\image_box.h">
+      <Filter>Source Files\game_object\gui\image_box</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\gui\select_view\select_view.h">
+      <Filter>Source Files\game_object\gui\select_view</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\..\..\bin\client\res\xml\picture.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
   </ItemGroup>
 </Project>
