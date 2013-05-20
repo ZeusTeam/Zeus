@@ -93,7 +93,7 @@ void Acceptor::acceptHandler(const TcpConnectionPtr& connection)
 
     if (connection->isOpen())
     {
-        if (!_newConnectionCallback._Empty())
+        if (!_newConnectionCallback)
         {
             //构造通信地址结构
             tcp::socket& socket = connection->socket();
