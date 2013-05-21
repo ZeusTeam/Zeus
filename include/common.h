@@ -9,7 +9,6 @@
 #include <set>
 #include <map>
 #include <algorithm>
-#include <hash_map>
 #include <unordered_map> //c++0x
 
 //socket dependencies

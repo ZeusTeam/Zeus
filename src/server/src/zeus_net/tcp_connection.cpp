@@ -74,7 +74,7 @@ void TcpConnection::handleWrite(
     else
     {
         std::cout << "bytes_transferred = " << bytes_transferred << std::endl;
-        if (!_writeCompletedCallback._Empty())
+        if (!_writeCompletedCallback)
         {
             _writeCompletedCallback(shared_from_this(), bytes_transferred);
             std::cout << "_writeCompletedCallback not NULL." << std::endl;
