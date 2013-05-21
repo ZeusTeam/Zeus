@@ -6,7 +6,7 @@
 #ifdef _WIN32
 #include <windows.h>
 #else
-#include <sysconf.h>
+#include <unistd.h>
 #endif
 
 namespace zeus

@@ -1,4 +1,4 @@
-#include <functional>
+ï»¿#include <functional>
 #include <thread>
 #include <boost/bind.hpp>
 #include "acceptor.h"
@@ -13,7 +13,7 @@ Acceptor::Acceptor(const InetAddress& listenAddress, boost::asio::io_service& io
     _acceptor(io_service),
     _threadNums(threadNums)
 {
-    //°ó¶¨µØÖ·
+    //ç»‘å®šåœ°å€
     boost::asio::ip::address address;
     address.from_string(_listenAddr.host());
     tcp::endpoint endpoint(address, _listenAddr.port());
@@ -45,24 +45,24 @@ void Acceptor::startAccept()
 {
     assert(_threadNums != 0);
 
-    //Í¶µİÒ»¸ö½ÓÊÜÊÂ¼ş
+    //æŠ•é€’ä¸€ä¸ªæ¥å—äº‹ä»¶
     postAcceptEvent();
 
-    //ÎªIO¶ÓÁĞ´´½¨Ïß³Ì
+    //ä¸ºIOé˜Ÿåˆ—åˆ›å»ºçº¿ç¨‹
     std::vector<ThreadPtr> threads;
     for (std::size_t i = 0; i < _threadNums; ++i)
     {
         ThreadPtr t(
             new std::thread(
-            boost::bind(&boost::asio::io_service::run, &_io_service)
+                boost::bind(&boost::asio::io_service::run, &_io_service)
             )
         );
         threads.push_back(t);
     }
 
-    for(auto& thread : threads)
+    for(std::size_t i = 0; i < threads.size(); ++i)
     {
-        thread->join();
+        threads[i]->join();
     }
 }
 
@@ -93,15 +93,15 @@ void Acceptor::acceptHandler(const TcpConnectionPtr& connection)
 
     if (connection->isOpen())
     {
-        if (!_newConnectionCallback._Empty())
+        if (!_newConnectionCallback)
         {
-            //¹¹ÔìÍ¨ĞÅµØÖ·½á¹¹
+            //æ„é€ é€šä¿¡åœ°å€ç»“æ„
             tcp::socket& socket = connection->socket();
             std::string remote_address = socket.remote_endpoint().address().to_string();
             uint16 remote_port = socket.remote_endpoint().port();
             InetAddress peerAddress(remote_address, remote_port);
 
-            //»Øµ÷µ½ĞÂÁ¬½Ó´¦Àíº¯Êı
+            //å›è°ƒåˆ°æ–°è¿æ¥å¤„ç†å‡½æ•°
             connection->setWriteCompletedCallback(_writeComplectedCallback);
             _newConnectionCallback(connection, peerAddress);
         }
@@ -114,10 +114,10 @@ void Acceptor::acceptHandler(const TcpConnectionPtr& connection)
 
 void Acceptor::postAcceptEvent()
 {
-    //´´½¨Ò»¸öĞÂµÄÁ¬½Ó£¨ÊÂºóÔö¼ÓÁ¬½Ó³Ø£¬±ÜÃâ¿ª±ÙÄÚ´æµÄ¿ªÏú£©
+    //åˆ›å»ºä¸€ä¸ªæ–°çš„è¿æ¥ï¼ˆäº‹åå¢åŠ è¿æ¥æ± ï¼Œé¿å…å¼€è¾Ÿå†…å­˜çš„å¼€é”€ï¼‰
     TcpConnectionPtr new_connection(new TcpConnection(_io_service)); 
 
-    //Í¶µİÒ»¸öacceptÇëÇóµ½io¶ÓÁĞ£¬²¢»Øµ÷µ½acceptHandler
+    //æŠ•é€’ä¸€ä¸ªacceptè¯·æ±‚åˆ°ioé˜Ÿåˆ—ï¼Œå¹¶å›è°ƒåˆ°acceptHandler
     _acceptor.async_accept(new_connection->socket(),
         std::bind(&Acceptor::acceptHandler, this, new_connection));
 }
