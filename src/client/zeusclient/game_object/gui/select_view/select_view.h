@@ -40,14 +40,14 @@ public:
 
     void SetItemTex(int index, const std::string normalTexID, const std::string focusTexID);
     //如果没有设置 width和height将为第一个item的Tex的width和height
-    void SetItemWidth(float w) { m_itemWidth = w; }
-    void SetItemHeight(float h) { m_itemHeight = h; }
-    void SetCurrentItem(int index);
-    void SetHorInterval(float interval) { m_intervalHor = interval; }
-    void SetVerInterval(float interval) { m_intervalVer = interval; }
+    inline  void SetItemWidth(float w) { m_itemWidth = w; }
+    inline  void SetItemHeight(float h) { m_itemHeight = h; }
+    inline  void SetCurrentItem(int index);
+    inline  void SetHorInterval(float interval) { m_intervalHor = interval; }
+    inline  void SetVerInterval(float interval) { m_intervalVer = interval; }
 
-    int GetSelect() const { return m_currentIndex; }
-    int GetCount() const { return m_itemCount; }
+    inline  int GetSelect() const { return m_currentIndex; }
+    inline  int GetCount() const { return m_itemCount; }
 
     SelectItem GetItem(int index) const;
 

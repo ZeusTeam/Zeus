@@ -215,11 +215,11 @@
     <ClCompile Include="game_object\gui\image_box\image_box.cpp">
       <Filter>Source Files\game_object\gui\image_box</Filter>
     </ClCompile>
-    <ClCompile Include="game_object\people\player_role.cpp">
-      <Filter>Source Files\game_object\map</Filter>
-    </ClCompile>
     <ClCompile Include="game_object\gui\select_view\select_view.cpp">
       <Filter>Source Files\game_object\gui\select_view</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\people\player_role.cpp">
+      <Filter>Source Files\game_object\people</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

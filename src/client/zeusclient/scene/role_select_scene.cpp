@@ -5,20 +5,13 @@
 #include "control\pool\picture_pool.h"
 
 #define SelectView_Role 1
-#define ImageBox_Role1 2
-#define ImageBox_Role2 3
-#define ImageBox_Role3 4
-#define Button_Return 5
-#define Button_CreateRole 6
-#define Button_DeleteRole 7
-#define Button_StartGame 8
+#define Button_Return 2
+#define Button_CreateRole 3
+#define Button_DeleteRole 4
+#define Button_StartGame 5
 
 RoleSelectScene::RoleSelectScene()
 {
-    m_roleBox1 = new ImageBox(ImageBox_Role1, 35, 60, "RoleSelect-Role");
-    m_roleBox2 = new ImageBox(ImageBox_Role2, 290, 60, "RoleSelect-Role");
-    m_roleBox3 = new ImageBox(ImageBox_Role3, 544, 60, "RoleSelect-Role");
-
     m_selectView = new SelectView(SelectView_Role, 10, 60, 780, 410);
     m_selectView->SetHorInterval(30);
     m_selectView->SetItemWidth(224);
@@ -57,9 +50,6 @@ RoleSelectScene::RoleSelectScene()
     m_startGameBtn->SetText("开始游戏");
     m_startGameBtn->SetPos(606, 468);
 
-    m_gui.AddCtrl(m_roleBox1);
-    m_gui.AddCtrl(m_roleBox2);
-    m_gui.AddCtrl(m_roleBox3);
     m_gui.AddCtrl(m_selectView);
     m_gui.AddCtrl(m_returnBtn);
     m_gui.AddCtrl(m_createRoleBtn);
@@ -95,7 +85,22 @@ void RoleSelectScene::Update()
     //按钮被单击了会返回他的id
     switch (m_gui.Update(hgeCreate(HGE_VERSION)->Timer_GetDelta()))
     {
-
+    case Button_CreateRole:
+        SceneEngine_->Pop();
+        SceneEngine_->Push(new CreatePlayerScene);
+        break;
+    case Button_DeleteRole:
+        break;
+    case Button_Return:
+        SceneEngine_->Pop();
+        SceneEngine_->Push(new MenuScene);
+        break;
+    case Button_StartGame:
+        SceneEngine_->Pop();
+        SceneEngine_->Push(new PlayScene);
+        break;
+    default:
+        break;
     }
 }
 void RoleSelectScene::Output()
