@@ -1,0 +1,25 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.63])
+AC_INIT(zeus_server, 1.0, 138001655@qq.com)
+AC_CONFIG_SRCDIR([src/zeus_net])
+AC_CONFIG_HEADERS([config.h])
+AM_INIT_AUTOMAKE(zeus_server, 1.0)
+
+CXXFLAGS="-std=c++0x"
+
+# Checks for programs.
+AC_PROG_CXX
+AC_PROG_RANLIB
+
+# Checks for libraries.
+
+# Checks for header files.
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+AC_OUTPUT([Makefile
+	src/zeus_net/Makefile
+	])
