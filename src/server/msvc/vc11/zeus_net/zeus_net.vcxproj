@@ -13,13 +13,15 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\src\zeus_net\acceptor.h" />
     <ClInclude Include="..\..\..\src\zeus_net\buffer.hpp" />
-    <ClInclude Include="..\..\..\src\zeus_net\callbacks.h" />
     <ClInclude Include="..\..\..\src\zeus_net\inet_address.hpp" />
+    <ClInclude Include="..\..\..\src\zeus_net\io_service.h" />
     <ClInclude Include="..\..\..\src\zeus_net\local_free_on_destruction.hpp" />
+    <ClInclude Include="..\..\..\src\zeus_net\network_packet_handler.h" />
     <ClInclude Include="..\..\..\src\zeus_net\net_utils.h" />
     <ClInclude Include="..\..\..\src\zeus_net\tcp_connection.h" />
     <ClInclude Include="..\..\..\src\zeus_net\tcp_server.h" />
     <ClInclude Include="..\..\..\src\zeus_net\zeus_net_def.h" />
+    <ClInclude Include="..\..\..\src\zeus_net\zeus_protocol.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\zeus_net\acceptor.cpp" />
@@ -60,13 +62,13 @@
     <IncludePath>../../../../../import;../../../../../include;$(IncludePath)</IncludePath>
     <TargetName>lib$(ProjectName)</TargetName>
     <TargetExt>.a</TargetExt>
-    <OutDir>../../../../../bin/server/</OutDir>
+    <OutDir>..\..\..\..\..\bin\server\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>../../../../../import;../../../../../include;$(IncludePath)</IncludePath>
     <TargetName>lib$(ProjectName)</TargetName>
     <TargetExt>.a</TargetExt>
-    <OutDir>../../../../../bin/server/</OutDir>
+    <OutDir>..\..\..\..\..\bin\server\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
