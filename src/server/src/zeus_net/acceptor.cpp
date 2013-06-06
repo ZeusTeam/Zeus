@@ -4,21 +4,28 @@
 #include "acceptor.h"
 #include "tcp_connection.h"
 #include "zeus_net_def.h"
+#include "io_service.h"
 
-Acceptor::Acceptor(const InetAddress& listenAddress, boost::asio::io_service& io_service, uint32 threadNums)
-    : _io_service(io_service),
-    _strand(io_service),
+Acceptor::Acceptor(const InetAddress& listenAddress, IOService& service, uint32 threadNums)
+    : _io_service(service),
+    _acceptor(service.service()),
+    _strand(service.service()),
     _listenAddr(listenAddress),
     _listenning(false),
-    _acceptor(io_service),
     _threadNums(threadNums)
 {
+    std::cout << "Acceptor starting ..." << std::endl;
+    std::cout << "  >> Listen Address = " << _listenAddr.toIpHost() << std::endl;
+    std::cout << "  >> I/O-Thread Numbers = " << threadNums << std::endl;
+
     //绑定地址
     boost::asio::ip::address address;
     address.from_string(_listenAddr.host());
     tcp::endpoint endpoint(address, _listenAddr.port());
     _acceptor.open(tcp::v4());
     _acceptor.bind(endpoint);
+
+    std::cout << "Acceptor started." << std::endl;
 }
 
 Acceptor::~Acceptor()
@@ -39,6 +46,8 @@ void Acceptor::listen(int32 backlog/* = socket_base::max_connections*/)
 {
     _acceptor.listen(backlog);
     _listenning = true;
+
+    std::cout << "Listenning ... " << std::endl;
 }
 
 void Acceptor::startAccept()
@@ -46,7 +55,7 @@ void Acceptor::startAccept()
     assert(_threadNums != 0);
 
     //投递一个接受事件
-    postAcceptEvent();
+    accept();
 
     //为IO队列创建线程
     std::vector<ThreadPtr> threads;
@@ -54,7 +63,7 @@ void Acceptor::startAccept()
     {
         ThreadPtr t(
             new std::thread(
-                boost::bind(&boost::asio::io_service::run, &_io_service)
+                boost::bind(&boost::asio::io_service::run, &_io_service.service())
             )
         );
         threads.push_back(t);
@@ -68,56 +77,34 @@ void Acceptor::startAccept()
 
 void Acceptor::stopAccept()
 {
-    std::cout << "stopAccept." << std::endl;
-    _io_service.stop();
+    _io_service.service().stop();
     _acceptor.close();
+    std::cout << "Acceptor stopped." << std::endl;
 }
 
 bool Acceptor::listenning() const { return _listenning; }
 
-void Acceptor::setNewConnectionCallback(const NewConnectionCallback& cb)
+void Acceptor::setAcceptedCallback(const AcceptedCallback& cb)
 {
-    _newConnectionCallback = cb;
+    _acceptedCallback = cb;
 }
 
-void Acceptor::setWriteComplectedCallback(const WriteCompletedCallback& cb)
-{
-    _writeComplectedCallback = cb;
-}
-
-void Acceptor::acceptHandler(const TcpConnectionPtr& connection)
-{
-    std::cout << "thread id = " << std::this_thread::get_id() << std::endl;
-
-    postAcceptEvent();
-
-    if (connection->isOpen())
-    {
-        if (!_newConnectionCallback._Empty())
-        {
-            //构造通信地址结构
-            tcp::socket& socket = connection->socket();
-            std::string remote_address = socket.remote_endpoint().address().to_string();
-            uint16 remote_port = socket.remote_endpoint().port();
-            InetAddress peerAddress(remote_address, remote_port);
-
-            //回调到新连接处理函数
-            connection->setWriteCompletedCallback(_writeComplectedCallback);
-            _newConnectionCallback(connection, peerAddress);
-        }
-        else
-        {
-            connection->close();
-        }
-    }
-}
-
-void Acceptor::postAcceptEvent()
+void Acceptor::accept()
 {
     //创建一个新的连接（事后增加连接池，避免开辟内存的开销）
     TcpConnectionPtr new_connection(new TcpConnection(_io_service)); 
 
     //投递一个accept请求到io队列，并回调到acceptHandler
-    _acceptor.async_accept(new_connection->socket(),
-        std::bind(&Acceptor::acceptHandler, this, new_connection));
+    _acceptor.async_accept(
+        new_connection->socket(),
+        _strand.wrap(
+            std::bind(&Acceptor::acceptHandler, this, new_connection)
+        )
+    );
+}
+
+void Acceptor::acceptHandler(const TcpConnectionPtr& connection)
+{
+    accept();
+    _acceptedCallback(connection);
 }
