@@ -4,16 +4,15 @@
 #include <boost/noncopyable.hpp>
 #include "inet_address.hpp"
 #include "zeus_net_def.h"
-#include "callbacks.h"
+#include "io_service.h"
 
 using namespace boost::asio;
-using namespace boost::asio::ip;
 
 class Acceptor 
     : private boost::noncopyable
 {
 public:
-    explicit Acceptor(const InetAddress& listenAddress, boost::asio::io_service& io_service, uint32 threadNums);
+    explicit Acceptor(const InetAddress& listenAddress, IOService& io_service, uint32 threadNums);
     virtual ~Acceptor();
 
 public:
@@ -25,24 +24,20 @@ public:
     bool listenning() const;
 
 public:
-    void setNewConnectionCallback(const NewConnectionCallback& cb);
-    void setWriteComplectedCallback(const WriteCompletedCallback& cb);
+    void setAcceptedCallback(const AcceptedCallback& cb);
 
 private:
+    void accept();
     void acceptHandler(const TcpConnectionPtr& connection);
-    void postAcceptEvent();
 
 private:
-    boost::asio::io_service& _io_service;
-    boost::asio::strand _strand;
     bool _listenning;
     uint32 _threadNums;
     InetAddress _listenAddr;
-    tcp::acceptor _acceptor;
-
-    //callbacks
-    NewConnectionCallback _newConnectionCallback;
-    WriteCompletedCallback _writeComplectedCallback;
+    AcceptedCallback _acceptedCallback;
+    IOService& _io_service;
+    boost::asio::strand _strand;
+    boost::asio::ip::tcp::acceptor _acceptor;
 };
 
 #endif
