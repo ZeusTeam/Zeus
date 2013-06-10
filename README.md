@@ -22,8 +22,8 @@
     [
 [**s0.1**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#s01) | 
 [**s0.2**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#s02) |
-[s0.3](https://github.com/ZeusTeam/Zeus#s03) | 
-[s0.4](https://github.com/ZeusTeam/Zeus#s04) | 
+[**s0.3**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#s03) | 
+[**s0.4**](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md#s04) | 
 [s0.5](https://github.com/ZeusTeam/Zeus#s05) | 
 [s0.6](https://github.com/ZeusTeam/Zeus#s06) | 
 [s0.7](https://github.com/ZeusTeam/Zeus#s07) ]
@@ -47,14 +47,6 @@
 
 ### **服务端 [`详细`](https://github.com/ZeusTeam/Zeus/blob/master/VERSION.md)**
 ----------
-####s0.3
-1.封装通信底层IO接口（send/recv, 包括事件回调）  
-2.整理server线程模型
-
-####s0.4
-1.完成Buffer，用于处理缓冲区数据  
-2.增加消息队列
-
 ####s0.5
 1.约定PDU格式  
 2.解析网络数据包
