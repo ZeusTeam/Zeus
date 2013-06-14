@@ -87,6 +87,9 @@
     <Filter Include="Source Files\game_object\gui\select_view">
       <UniqueIdentifier>{be8ddbd9-b63c-4208-804f-bb8e7c2c3680}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\game_object\viewport">
+      <UniqueIdentifier>{0cdb8a41-5ecb-4a5b-b780-b2744673c061}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\include\xmessage\buffermessage.cpp">
@@ -220,6 +223,12 @@
     </ClCompile>
     <ClCompile Include="game_object\people\player_role.cpp">
       <Filter>Source Files\game_object\people</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\map\world_map.cpp">
+      <Filter>Source Files\game_object\map</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object\viewport\viewport.cpp">
+      <Filter>Source Files\game_object\viewport</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -388,10 +397,19 @@
     <ClInclude Include="game_object\gui\select_view\select_view.h">
       <Filter>Source Files\game_object\gui\select_view</Filter>
     </ClInclude>
+    <ClInclude Include="game_object\map\world_map.h">
+      <Filter>Source Files\game_object\map</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object\viewport\viewport.h">
+      <Filter>Source Files\game_object\viewport</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\..\..\bin\client\res\xml\picture.xml">
       <Filter>Resource Files</Filter>
     </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

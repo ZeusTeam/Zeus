@@ -3,7 +3,7 @@
 #include "control\control_object\out_text.h"
 #include "engine\graphics_engine.h"
 #include "control\pool\picture_pool.h"
-
+#include "game_object\viewport\viewport.h"
 void ButtonOk()
 {
     ::MessageBox(NULL, "ButtonOk", 0, MB_OK);
@@ -23,7 +23,6 @@ PlayScene::PlayScene()
     m_ViewPosY = (int)m_Map->GetHeight() - 1;
     m_ViewPosY = ~m_ViewPosY;
     m_PlayerRole = new PlayerRole(400, 300);
-    m_Map->SetViewport(0, 0, 800, 600, m_PlayerRole->GetPos());
 
     m_Edit = new EditBox(1, WINDOW_WIDTH, 22, ARGB(255,255,0, 0),"宋体", 22);
     m_Edit->SetPos(0, WINDOW_HEIGHT - 24);
@@ -58,13 +57,12 @@ void PlayScene::Reset()
 
 void PlayScene::Output()
 {
-    m_Map->Render(m_PlayerRole->GetPos());
-    m_PlayerRole->SetViewport(m_Map->GetViewportPos());
+    m_Map->Render();
     m_PlayerRole->Render();
     m_Map->RenderCovering();
 
-    m_Font->Print(0, 0, "视图 : %f", m_Map->GetViewportPos().x);
-    m_Font->Print(0, 30, "视图 y : %f", m_Map->GetViewportPos().y);
+    m_Font->Print(0, 0, "视图 : %f", Viewport::Instance()->GetPos().x);
+    m_Font->Print(0, 30, "视图 y : %f", Viewport::Instance()->GetPos().y);
     m_Font->Print(0, 60, "人物 x: %f", m_PlayerRole->GetPos().x);
     m_Font->Print(0, 90, "人物 y: %f", m_PlayerRole->GetPos().y);
 

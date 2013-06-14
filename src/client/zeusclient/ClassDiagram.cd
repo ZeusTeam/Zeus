@@ -1,0 +1,865 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AboutScene" Collapsed="true">
+    <Position X="0.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAAAAAABAAAAAAIABAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>scene\about_scene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CreatePlayerScene" Collapsed="true">
+    <Position X="3" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAQAAAJAAABAAAAEAIEAAQAgAAAAIAABACAgAAAAA=</HashCode>
+      <FileName>scene\create_player_scene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuScene" Collapsed="true">
+    <Position X="5.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgAAAAAAAABAAAAAAIAAAAAAABAIAAAAAAAAAIAAA=</HashCode>
+      <FileName>scene\menu_scene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayScene" Collapsed="true">
+    <Position X="7.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAYAACAAIAAABAQAAAgIEwAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>scene\play_scene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoleSelectScene" Collapsed="true">
+    <Position X="9.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIQaAAAAEEAABAAAAAgIEAIgAAAAAAAAEAAACAAAAAI=</HashCode>
+      <FileName>scene\role_select_scene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scene" Collapsed="true">
+    <Position X="5.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAABAAAgAAIAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>scene\scene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameEngine" Collapsed="true">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEBAABACAAAQAACAAABQIgAAAAgAAAEADABAAAAAA=</HashCode>
+      <FileName>engine\game_engine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GraphicsEngine" Collapsed="true">
+    <Position X="9.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAEIAAAQwAAAAAAAAAAAAAAAEAABAAAAABSAAA=</HashCode>
+      <FileName>engine\graphics_engine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IEngine" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>engine\iengine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputEngine" Collapsed="true">
+    <Position X="15.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAIAAAARBAAAQAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>engine\input_engine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneEngine" Collapsed="true">
+    <Position X="27.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAAACAABQAAAAAIAEAAAACCAAAAAAAAACAACAg=</HashCode>
+      <FileName>engine\scene_engine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextureEngine" Collapsed="true">
+    <Position X="12.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAQgAAAIAAAAQAIAAAAAABAAAAAAEAAAgAAAFAAAAA=</HashCode>
+      <FileName>engine\texture_engine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameControler" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABCAAAQAAAIAAAAAAAAAAAAAAIBAAAAAAAAA=</HashCode>
+      <FileName>control\game_controler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnimationObject" Collapsed="true">
+    <Position X="30" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASgkACAAEAhAAAAIAAACEAAEAAgAAAUoBIgAAACAAE=</HashCode>
+      <FileName>control\control_object\animation_object.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FontObject" Collapsed="true">
+    <Position X="30" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAgACAAAACQgAAAgCCAAQAgAAKAABsCAAAGEAA=</HashCode>
+      <FileName>control\control_object\font_object.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrintText" Collapsed="true">
+    <Position X="35.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAIAAAAAAAAAEAAAAQAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>control\control_object\out_text.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextureObject" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAgAAAAIAAAAABAAABAAAAAcEAAABAAAPICAAQ=</HashCode>
+      <FileName>control\control_object\texture_object.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PicturePool" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAQBAAAAAAAAAQAAAAAAAAAABEBAAAAA=</HashCode>
+      <FileName>control\pool\picture_pool.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISprite" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAABAAAEAAAAAAAAABAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>game_object\sprite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpriteBase" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAACAAEAAAYAwAAEEAAAAAAAAMEAYAAAAAAAAAA=</HashCode>
+      <FileName>game_object\sprite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoveringTex" Collapsed="true">
+    <Position X="6.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAIAAAAAAAAAAAAAAAQAAAAAAAABAAAAAAAAE=</HashCode>
+      <FileName>game_object\map\game_map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameMap" Collapsed="true">
+    <Position X="31.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CpAAkEAgAAAAAAAAAAAAAABAAAAAAAAAQBRAAEAACAE=</HashCode>
+      <FileName>game_object\map\game_map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorldMap" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>game_object\map\world_map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Role" Collapsed="true">
+    <Position X="3.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAEAAAAAAAAgAAAAAAQAAoAAAAAAA=</HashCode>
+      <FileName>game_object\people\role.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerRole" Collapsed="true">
+    <Position X="3.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABAAAAGAAEAAAQAggAAIYAAAAIBABAAAAIAA=</HashCode>
+      <FileName>game_object\people\player_role.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUIItem" Collapsed="true">
+    <Position X="7.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKQAgCAAAAAABCAAAAAAAAAAAAEEAAAEAJAAAACAQAA=</HashCode>
+      <FileName>game_object\gui\gui_item.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StartMenu" Collapsed="true">
+    <Position X="37" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAEAAAAAAAAAABgBAAAAAAAAA=</HashCode>
+      <FileName>game_object\gui\start_menu\start_menu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StartMenuItem" Collapsed="true">
+    <Position X="3.25" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BKAAAAAAMAAAAAAAAQQAAAAAQAAAAAAAARAAAAAAAAA=</HashCode>
+      <FileName>game_object\gui\start_menu\start_menu_item.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditBox" Collapsed="true">
+    <Position X="5.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CKQAAAAQoHIgBhAJgJABCKAYIIEAAAAWAhEiBCAAQAA=</HashCode>
+      <FileName>game_object\gui\editbox\edit_box.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Button" Collapsed="true">
+    <Position X="7.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QOxgiAAQqDAABgAIAIAAACAAAAEEAAAAQBCBAAGAQAA=</HashCode>
+      <FileName>game_object\gui\button\button.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ListView" Collapsed="true">
+    <Position X="10" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>game_object\gui\list_view\list_view.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaticBox" Collapsed="true">
+    <Position X="12.25" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAAAAIIBhAIgCJAIAAAAAgAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>game_object\gui\static_box\static_box.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ImageBox" Collapsed="true">
+    <Position X="14.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAIAAAAAAAAAgAAAAAAAAAAUCAAAAAAYBAAAAAAAAA=</HashCode>
+      <FileName>game_object\gui\image_box\image_box.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SelectView" Collapsed="true">
+    <Position X="1" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AOQEAAAAQABBBEEBAQIAAEAMwAgQAACQABIAAABAQAA=</HashCode>
+      <FileName>game_object\gui\select_view\select_view.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CPictureXMLParse" Collapsed="true">
+    <Position X="20.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAIAAAAAAAAAgABAIQIAAAAAAAAEEAAAgAAkAAAAAAA=</HashCode>
+      <FileName>resource\cpicturexml_parse.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CXMLResource" Collapsed="true">
+    <Position X="23" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAIAAAAAAAAAgQAAIAAAAAAAAABAEAAAQAAAAAAEAAA=</HashCode>
+      <FileName>resource\xml_list.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlParsingData" Collapsed="true">
+    <Position X="33.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAQABAAEAAAAAAAAAAEEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxmlparser.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlVisitor" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAQAAAAAAAAAAAAAIAAAAAAAAAAAgAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlBase" Collapsed="true">
+    <Position X="7.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAgggBQAEAgEAAAQAgBhABASADAQAiAIAAAiAAAkAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlNode" Collapsed="true">
+    <Position X="6.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKAgAAAIAEAEiiBAhEAAYQAEAAqBgCECAYtgAAtAIDA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlAttribute" Collapsed="true">
+    <Position X="14.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQggAAAgAAQggAEAABAAQQAAAIEAGQAAABgQAIEEAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlAttributeSet" Collapsed="true">
+    <Position X="30" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAQAAQAAABAAAAAAJAAAAACAiQAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlElement" Collapsed="true">
+    <Position X="5.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAgAAAAACACQAAJAAAAIIEAgQSAAA0BCBAgAAAEIFE=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlComment" Collapsed="true">
+    <Position X="7.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAgAIAAAAAAAAAAAAAAAQAAAAAAAAEIAAAgAAAEIBA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlText" Collapsed="true">
+    <Position X="10" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKAgAAAABAAAAAAAAEAAAABAAAABgAEAAAAgAAAEIBQ=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlDeclaration" Collapsed="true">
+    <Position X="12.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IIAgACCAAAQAAAAAAAAAAAAAgAAAAIEAAAIoAAAEKBA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlUnknown" Collapsed="true">
+    <Position X="1" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAgAAAAAEAAAAAAAAAAAAACAAAAAAEAAAAgAIAEIBA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlDocument" Collapsed="true">
+    <Position X="3.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAgAAAABBAQAQABAgEICAAAAAEQBAEBFAAgAEgUJBA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlHandle" Collapsed="true">
+    <Position X="31.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAEAAAAEAAAIAAAEgAIAABAAAAAAAAAIEoCAEAABA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlPrinter" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAEABEhAQgBAAQAAAAMAAAAAAAAABQIBQAwAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Singleton&lt;T&gt;" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAQAAAACAAAAAAABAAAEAQAAgAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\utils\singleton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VNOC::Message::CBufferMessage" Collapsed="true">
+    <Position X="33.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAAAgAAAAAgKAAAIAAAgAAoAIAQAEAAAAQAJAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\buffermessage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VNOC::Message::CMessage" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAACAAAAIBAIAAAAAgBQAAgAgMAGAAAAAABAwEACAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\cmessage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VNOC::Message::IMessage" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAECAAAAABAAAAAAAiAAAAgAAAAEAAAAAAAAAEAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\ibasemessage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VNOC::Message::ArrayData" Collapsed="true">
+    <Position X="31.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAAAAAAAgAAAACIAAAAAAQQAEAAAAAAAAAAACAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\msgdatavalue\arraydata.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VNOC::Message::IReadMessage" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAABAAAQAAAAAAAAgEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\ireadmessage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VNOC::Message::IWriteMessage" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAEAAAAAAAAAEABAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\iwritemessage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VNOC::Message::CMessage2Pack" Collapsed="true">
+    <Position X="35.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAIgEgAAAAAAAAAIAAAAECAAAAgAAEAAAAACAAACAgA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\message2pack.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VNOC::Message::CMessage2Parser" Collapsed="true">
+    <Position X="37" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggCACCAAAAAAAEBAAQAAAAAAAIAAAAAABAAAAAQA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\message2parser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VNOC::Message::ParserMessageXML" Collapsed="true">
+    <Position X="33.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAACAEAgAAAAAAAAAAAAAAAIAAAAQAAAgACABAE=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\parsermessageXML.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VNOC::Message::XMLItem" Collapsed="true">
+    <Position X="35.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAIgBAAAAAAAAAAAAAEQAQAQQAAARAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\xmlobject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VNOC::Message::XMLObject" Collapsed="true">
+    <Position X="37" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAABEAAEAAACAAAAAAAAAQAAAAAEAIARAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\xmlobject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VNOC::Message::MsgDataValue" Collapsed="true">
+    <Position X="13" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAACAAAAAAAAgAAgQKgIAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\msgdatavalue\msgdatavalue.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VNOC::Message::NumData&lt;TUIntType&gt;" Collapsed="true">
+    <Position X="13" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAgAACAAAAAAAAAUAAAAgAAgQIgIAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\msgdatavalue\numdata.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VNOC::Message::StringData" Collapsed="true">
+    <Position X="16" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAIAgAAAAAAAAAAABQAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\msgdatavalue\stringdata.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="_FontGraphObject" Collapsed="true">
+    <Position X="20.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQQAxgAAAAAAA=</HashCode>
+      <FileName>control\control_object\font_object.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="SelectItem" Collapsed="true">
+    <Position X="31.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>game_object\gui\select_view\select_view.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="CPictureXMLObject" Collapsed="true">
+    <Position X="30" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAEEACAMAAABAAAAAAAAAAACA=</HashCode>
+      <FileName>resource\cpicturexml.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="XMLFileObject" Collapsed="true">
+    <Position X="35.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAIAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>resource\xml_list_object.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TiXmlCursor" Collapsed="true">
+    <Position X="33.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQACAAAAAAAAAAAABABAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="EngineFunc" Collapsed="true">
+    <Position X="1.5" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>engine\game_engine.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="EngineAttributeInt" Collapsed="true">
+    <Position X="22.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>engine\game_engine.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="EngineAttributeBool" Collapsed="true">
+    <Position X="22.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>engine\game_engine.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="EngineAttributeString" Collapsed="true">
+    <Position X="21.5" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>engine\game_engine.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="GameEnginePtr" Collapsed="true">
+    <Position X="35.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>engine\game_engine.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="GameTexture" Collapsed="true">
+    <Position X="37" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>engine\game_engine.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="EngineCallbackFun" Collapsed="true">
+    <Position X="33.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>engine\game_engine.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="KeyState" Collapsed="true">
+    <Position X="13.5" Y="23.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>engine\input_engine.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="AnimationFrame" Collapsed="true">
+    <Position X="30" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>control\control_object\animation_object.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FontGraphObject" Collapsed="true">
+    <Position X="20.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>control\control_object\font_object.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PrintTextFont" Collapsed="true">
+    <Position X="33.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>control\control_object\out_text.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="TextRect" Collapsed="true">
+    <Position X="17.5" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>control\control_object\out_text.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PicPutrePool" Collapsed="true">
+    <Position X="31.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>control\pool\picture_pool.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PeopleDirection" Collapsed="true">
+    <Position X="9.5" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>game_object\sprite.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="RollBorder" Collapsed="true">
+    <Position X="5.5" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>game_object\sprite.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="roleVector" Collapsed="true">
+    <Position X="35.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>game_object\map\game_map.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="DWORD" Collapsed="true">
+    <Position X="31.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>c:\users\administrator.pc-20130228heqz\documents\github\zeus\import\hge\include\hge.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="SelectItemList" Collapsed="true">
+    <Position X="37" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>game_object\gui\select_view\select_view.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="MapPitureList" Collapsed="true">
+    <Position X="35.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>resource\cpicturexml_parse.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="mapXMLList" Collapsed="true">
+    <Position X="37" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>resource\xml_list.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::MsgDataType" Collapsed="true">
+    <Position X="18.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\messagedef.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::MsgDataMType" Collapsed="true">
+    <Position X="13.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\messagedef.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::Define::MsgDataName" Collapsed="true">
+    <Position X="30" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\messagedef.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::Define::MsgMType" Collapsed="true">
+    <Position X="13.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\messagedef.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::Define::MsgType" Collapsed="true">
+    <Position X="18.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\messagedef.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::Define::uint8" Collapsed="true">
+    <Position X="33.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\messagedef.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::Define::uint16" Collapsed="true">
+    <Position X="30" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\messagedef.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::Define::uint32" Collapsed="true">
+    <Position X="31.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\messagedef.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::Define::int8" Collapsed="true">
+    <Position X="33.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\messagedef.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::Define::int16" Collapsed="true">
+    <Position X="30" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\messagedef.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::Define::int32" Collapsed="true">
+    <Position X="31.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\messagedef.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::MsgStatus" Collapsed="true">
+    <Position X="1.5" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\messagedef.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::Int8Data" Collapsed="true">
+    <Position X="12" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\msgdatavalue\numdata.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::Int16Data" Collapsed="true">
+    <Position X="10" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\msgdatavalue\numdata.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::Int32Data" Collapsed="true">
+    <Position X="18" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\msgdatavalue\numdata.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::UInt8Data" Collapsed="true">
+    <Position X="15" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\msgdatavalue\numdata.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::UInt16Data" Collapsed="true">
+    <Position X="16" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\msgdatavalue\numdata.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VNOC::Message::UInt32Data" Collapsed="true">
+    <Position X="10" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\msgdatavalue\numdata.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="viewportVector" Collapsed="true">
+    <Position X="35.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>game_object\viewport\viewport.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="_EngineFunc" Collapsed="true">
+    <Position X="1.5" Y="24.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>engine\game_engine.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="_EngineAttributeInt" Collapsed="true">
+    <Position X="22.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>engine\game_engine.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="_EngineAttributeBool" Collapsed="true">
+    <Position X="22.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>engine\game_engine.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="_EngineAttributeString" Collapsed="true">
+    <Position X="21.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAIAAAAA=</HashCode>
+      <FileName>engine\game_engine.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="_KeyState" Collapsed="true">
+    <Position X="13.5" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAEAAAAAQAA=</HashCode>
+      <FileName>engine\input_engine.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="_TextRect" Collapsed="true">
+    <Position X="17.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>control\control_object\out_text.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="_PeopleDirection" Collapsed="true">
+    <Position X="9.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAABAABAQAAYAACAAAAAAAAAAAAAAAAAAAACEAA=</HashCode>
+      <FileName>game_object\sprite.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="_RollBorder" Collapsed="true">
+    <Position X="5.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAgABIAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>game_object\sprite.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="StartMenuState" Collapsed="true">
+    <Position X="31.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAQAgAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>game_object\gui\start_menu\start_menu.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0002_1" Collapsed="true">
+    <Position X="30" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAACABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TiXmlEncoding" Collapsed="true">
+    <Position X="33.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAABAAAAAAAABAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\import\tinyxml-2.6.2\tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="VNOC::Message::_MsgDataType" Collapsed="true">
+    <Position X="18.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAgAAEAAAAAAAAAAAAAAAIAAQAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\messagedef.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="VNOC::Message::_MsgDataMType" Collapsed="true">
+    <Position X="16.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\messagedef.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="VNOC::Message::_MsgStatus" Collapsed="true">
+    <Position X="1.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAEAAAAAEAAAAAAAAQAAAAAAAACAAAAAA=</HashCode>
+      <FileName>C:\Users\Administrator.PC-20130228HEQZ\Documents\GitHub\Zeus\include\xmessage\messagedef.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

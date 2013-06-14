@@ -10,7 +10,6 @@
 using namespace std;
 
 typedef hgeVector roleVector;
-typedef hgeVector viewportVector;
 
 typedef unsigned long DWORD;
 #define ACCURACY 8              ///通过n个点来判断碰撞
@@ -22,7 +21,7 @@ public:
     
     bool Load(string texPath, float x, float y);
 
-    void Render(viewportVector viewportPos);
+    void Render();
 
     CoveringTex() {}
     virtual ~CoveringTex() {}
@@ -38,12 +37,13 @@ public:
     GameMap();
     virtual ~GameMap();
 
-    bool SetViewport(float x, float y, float width, float height, roleVector rolePos);
+    ///从ZeusMap文件中读取地图信息
+    bool LoadFromZMap(string zMap);
 
     bool Load(string mapTex, string collisionMapTex);
     ///绘制地图
 
-    void Render(roleVector rolePos);
+    void Render();
 
     ///绘制遮盖角色的部分 应该在角色绘制之后调用
     void RenderCovering();
@@ -65,15 +65,11 @@ public:
     //判断是否会碰撞到地图
     bool isCollision(roleVector v, int r, DWORD color);
 
-    viewportVector GetViewportPos() { return m_viewportPos ;}
 private:
     TextureObject* m_mapTex;
     TextureObject* m_collisionMapTex;
     vector<CoveringTex*> m_coveringTex;
-    viewportVector m_viewportPos;
     roleVector m_previousPos;
-    float m_viewportWidth;
-    float m_viewportHeight;
 };
 
 

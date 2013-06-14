@@ -103,8 +103,10 @@
     <ClCompile Include="game_object\gui\start_menu\start_menu.cpp" />
     <ClCompile Include="game_object\gui\static_box\static_box.cpp" />
     <ClCompile Include="game_object\map\game_map.cpp" />
+    <ClCompile Include="game_object\map\world_map.cpp" />
     <ClCompile Include="game_object\people\role.cpp" />
     <ClCompile Include="game_object\people\player_role.cpp" />
+    <ClCompile Include="game_object\viewport\viewport.cpp" />
     <ClCompile Include="scene\about_scene.cpp" />
     <ClCompile Include="resource\cpicturexml_parse.cpp" />
     <ClCompile Include="resource\xml_list.cpp" />
@@ -155,9 +157,11 @@
     <ClInclude Include="game_object\gui\start_menu\start_menu_item.h" />
     <ClInclude Include="game_object\gui\static_box\static_box.h" />
     <ClInclude Include="game_object\map\game_map.h" />
+    <ClInclude Include="game_object\map\world_map.h" />
     <ClInclude Include="game_object\people\role.h" />
     <ClInclude Include="game_object\people\player_role.h" />
     <ClInclude Include="game_object\sprite.h" />
+    <ClInclude Include="game_object\viewport\viewport.h" />
     <ClInclude Include="globaldef.h" />
     <ClInclude Include="scene\about_scene.h" />
     <ClInclude Include="resource\cpicturexml.h" />
@@ -172,7 +176,12 @@
     <ClInclude Include="scene\scene.h" />
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="..\..\..\bin\client\res\xml\picture.xml" />
+    <Xml Include="..\..\..\bin\client\res\xml\picture.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

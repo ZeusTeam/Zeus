@@ -1,6 +1,6 @@
 #include "globaldef.h"
 #include "player_role.h"
-
+#include "game_object\viewport\viewport.h"
 PlayerRole::PlayerRole(float x, float y)
     : Role(x, y)
     , m_Direction(Direction_Up)
@@ -17,17 +17,13 @@ PlayerRole::~PlayerRole()
 {
 }
 
-void PlayerRole::SetViewport(roleVector v)
-{
-    m_viewportPos = v;
-}
-
 void PlayerRole::Render()
 {
     /// 世界坐标转换为视口坐标 同时将坐标计算到左上角
+    viewportVector viewportPos = Viewport::Instance()->GetPos();
     m_animation[m_Direction].Render(
-        (float)m_nPosX - m_viewportPos.x - m_nWidth / 2,
-        (float)m_nPosY - m_viewportPos.y - m_nHeight * 3 / 4);
+        (float)m_nPosX - viewportPos.x - m_nWidth / 2,
+        (float)m_nPosY - viewportPos.y - m_nHeight * 3 / 4);
 }
 
 
@@ -146,6 +142,11 @@ void PlayerRole::MoveTo(roleVector v)
         m_nPosX = v.x;
         m_nPosY = v.y;
         m_bMoving  = true;
+        ///角色移动后 视口坐标跟着移动
+        viewportVector v = Viewport::Instance()->GetPos(); 
+        v.x = m_nPosX - WINDOW_WIDTH / 2;
+        v.y = m_nPosY - WINDOW_HEIGHT /2;
+        Viewport::Instance()->SetPos(v.x, v.y);
     }
 }
 

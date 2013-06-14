@@ -33,14 +33,12 @@ public:
 
     virtual roleVector GetPos();
 
-    virtual void SetViewport(roleVector v);
 
 protected:
     PeopleDirection m_Direction;
     int m_nPresentFrame;
     int m_nTimeFrame;
     bool m_bMoving;
-    roleVector m_viewportPos;
     InputEngine* m_InputEngine;
 };
 

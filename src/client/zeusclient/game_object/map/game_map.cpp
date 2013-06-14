@@ -1,7 +1,7 @@
 #include "game_map.h"
 #include <math.h>
 #include "control\pool\picture_pool.h"
-
+#include "game_object\viewport\viewport.h"
 bool CoveringTex::Load(string texPath, float x, float y)
 {
     if (TextureObject::Load(texPath))
@@ -15,15 +15,15 @@ bool CoveringTex::Load(string texPath, float x, float y)
         return false;
     }
 }
-void CoveringTex::Render(viewportVector viewportPos)
+void CoveringTex::Render()
 {
     ///这通过计算裁剪遮盖图片到屏幕上
     float x = 0,y = 0;
     float tx = 0,ty = 0;
     float w = 0,h = 0;
-
-    x = m_x - (int)viewportPos.x;        //在屏幕上的坐标
-    y = m_y - (int)viewportPos.y;
+    viewportVector v = Viewport::Instance()->GetPos();
+    x = m_x - (int)v.x;        //在屏幕上的坐标
+    y = m_y - (int)v.y;
     tx = -x;                        //相对于纹理的坐标
     ty = -y;
     if (x < 0)
@@ -51,10 +51,7 @@ void CoveringTex::Render(viewportVector viewportPos)
 GameMap::GameMap()
     : m_mapTex(NULL)
     , m_collisionMapTex(NULL)
-    , m_viewportPos(0, 0)
     , m_previousPos(0, 0)
-    , m_viewportWidth(0)
-    , m_viewportHeight(0)
 {
 }
 bool GameMap::Load(string mapTex, string collisionMapTex)
@@ -78,46 +75,27 @@ GameMap::~GameMap()
         delete m_coveringTex[i];
     }
 }
-bool GameMap::SetViewport(float x, float y, float width, float height, roleVector rolePos)
-{
-    if (!m_mapTex)
-    {
-        return false;
-    }
-    if (x < 0 || y < 0 || width < 0 || height < 0 || x + width > m_mapTex->GetWidth() || y + height > m_mapTex->GetHeight() || 
-        rolePos.x < 0 || rolePos.y < 0 || rolePos.x > width || rolePos.y > height)
-    {
-        return false;
-    }
-    m_previousPos = rolePos;
-    m_viewportPos.x = x;
-    m_viewportPos.y = y;
-    m_viewportWidth = width;
-    m_viewportHeight = height;
-    return true;
-}
 
-void GameMap::Render(roleVector rolePos)
+void GameMap::Render()
 {
     if (!m_mapTex)
     {
         return;
     }
-    m_viewportPos.x = rolePos.x - m_viewportWidth / 2;
-    if (m_viewportPos.x <  0)
-        m_viewportPos.x = 0;
+    viewportVector v = Viewport::Instance()->GetPos();
+    if (v.x <  0)
+        v.x = 0;
 
-    if (m_viewportPos.x > m_mapTex->GetWidth() - m_viewportWidth)
-        m_viewportPos.x =  m_mapTex->GetWidth() - m_viewportWidth;
+    if (v.x > m_mapTex->GetWidth() - WINDOW_WIDTH)
+        v.x =  m_mapTex->GetWidth() - WINDOW_WIDTH;
 
-    m_viewportPos.y = rolePos.y - m_viewportHeight / 2;
-    if (m_viewportPos.y <  0)
-        m_viewportPos.y = 0;
+    if (v.y <  0)
+        v.y = 0;
 
-    if (m_viewportPos.y > m_mapTex->GetHeight() - m_viewportHeight)
-        m_viewportPos.y = m_mapTex->GetHeight() - m_viewportHeight;
-    
-    m_mapTex->SetRenderRect(m_viewportPos.x, m_viewportPos.y, m_viewportWidth, m_viewportHeight);
+    if (v.y > m_mapTex->GetHeight() - WINDOW_HEIGHT)
+        v.y = m_mapTex->GetHeight() - WINDOW_HEIGHT;
+    Viewport::Instance()->SetPos(v.x, v.y);
+    m_mapTex->SetRenderRect(v.x, v.y, WINDOW_WIDTH, WINDOW_HEIGHT);
     m_mapTex->Render(0, 0);
 }
 
@@ -126,7 +104,7 @@ void GameMap::RenderCovering()
 {
     for (int i = 0; i < (int)m_coveringTex.size(); i++)
     {
-        m_coveringTex[i]->Render(m_viewportPos);
+        m_coveringTex[i]->Render();
     }
 }
 
