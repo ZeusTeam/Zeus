@@ -12,7 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\zeus_net\acceptor.h" />
-    <ClInclude Include="..\..\..\src\zeus_net\buffer.hpp" />
+    <ClInclude Include="..\..\..\src\zeus_net\byte_buffer.hpp" />
     <ClInclude Include="..\..\..\src\zeus_net\inet_address.hpp" />
     <ClInclude Include="..\..\..\src\zeus_net\io_service.h" />
     <ClInclude Include="..\..\..\src\zeus_net\local_free_on_destruction.hpp" />
