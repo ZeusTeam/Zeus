@@ -7,9 +7,6 @@
     <ClInclude Include="..\..\..\src\zeus_net\acceptor.h">
       <Filter>net</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\zeus_net\buffer.hpp">
-      <Filter>net</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\src\zeus_net\inet_address.hpp">
       <Filter>net</Filter>
     </ClInclude>
@@ -32,6 +29,9 @@
       <Filter>net</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\zeus_net\io_service.h" />
+    <ClInclude Include="..\..\..\src\zeus_net\byte_buffer.hpp">
+      <Filter>net</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\zeus_net\error_code.cpp">
