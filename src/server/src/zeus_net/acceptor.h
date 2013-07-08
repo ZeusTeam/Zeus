@@ -11,11 +11,12 @@ using namespace boost::asio;
 class Acceptor 
     : private boost::noncopyable
 {
-public:
+    friend class TcpServer;
+protected:
     explicit Acceptor(const InetAddress& listenAddress, IOService& io_service, uint32 threadNums);
     virtual ~Acceptor();
 
-public:
+protected:
     std::string host() const;
     uint16 port() const;
     void listen(int32 backlog = socket_base::max_connections);
@@ -23,7 +24,7 @@ public:
     void stopAccept();
     bool listenning() const;
 
-public:
+protected:
     void setAcceptedCallback(const AcceptedCallback& cb);
 
 private:
