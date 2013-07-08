@@ -10,6 +10,7 @@
 
 using namespace boost::asio::ip;
 
+class ByteBuffer;
 class TcpConnection
     : private boost::noncopyable, public std::enable_shared_from_this<TcpConnection>
 {
@@ -40,7 +41,7 @@ private:
     WriteCompletedCallback _writeCompletedCallback;
     ReadCompletedCallback _readComplectedCallback;
     ConnectionClosedCallback _connectionClosedCallback;
-    boost::array<char, MAX_RECV_LEN> _recvBuffer;
+    ByteBuffer* _recvBuffer;
     boost::asio::strand _strand;
     IOService& _io_service;
 };

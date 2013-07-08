@@ -2,16 +2,19 @@
 #include <boost/bind.hpp>
 #include "tcp_connection.h"
 #include "zeus_net_def.h"
+#include "byte_buffer.hpp"
 
 TcpConnection::TcpConnection(IOService& io_service)
     : _io_service(io_service),
     _strand(io_service.service()),
     _socket(io_service.service())
 {
+    _recvBuffer = new ByteBuffer(zeus::net_params::max_recv_length());
 }
 
 TcpConnection::~TcpConnection()
 {
+    delete _recvBuffer;
     close();
     std::cout << "connection destroyed." << std::endl;
 }
@@ -41,7 +44,7 @@ void TcpConnection::write(byte* data, size_t size)
 void TcpConnection::read()
 {
     _socket.async_read_some(
-        boost::asio::buffer(_recvBuffer),
+        boost::asio::buffer((void*)_recvBuffer->buffer(), _recvBuffer->size()),
         _strand.wrap(
             boost::bind(
                 &TcpConnection::handleRead, 
