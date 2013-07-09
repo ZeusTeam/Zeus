@@ -59,6 +59,55 @@ public:
 		_rpos = _wpos = 0;
 	}
 
+public:
+    template <typename TYPE> void append(TYPE value)
+    {
+        append((const byte*)&value, sizeof(value));
+    }
+
+    void append(const std::string& value)
+    {
+        append((byte*)value.c_str(), value.size() + 1);
+    }
+
+    void append(const char* value, size_t size)
+    {
+        append((byte*)value, size);
+    }
+
+    void append(const byte* value, size_t size)
+    {
+        if (size == 0) return;
+        int wsize = _wpos + size;
+
+        //buffer空间不够则扩大
+        if (this->size() < wsize)
+            _buffer.resize(wsize);
+
+        memcpy(&_buffer[_wpos], value, size);
+        _wpos += size;
+    }
+
+    void append(const ByteBuffer& value)
+    {
+        if (value.size() > 0)
+        {
+            append(value.buffer(), value.size());
+        }
+    }
+
+public:
+    template <typename TYPE> void put(size_t pos, TYPE value)
+    {
+        put(pos, (const byte*)&value, sizeof(value));
+    }
+
+    void put(size_t pos, const byte* src, size_t size)
+    {
+		assert(pos + size <= this->size());
+		memcpy(&_buffer[pos], src, size);
+	}
+
 protected:
     size_t _rpos, _wpos;
     std::vector<byte> _buffer;
