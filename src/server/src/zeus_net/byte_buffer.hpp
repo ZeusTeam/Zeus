@@ -3,22 +3,19 @@
 
 #include "common.h"
 
-namespace zeus{
-namespace base{
-
 class ByteBuffer
 {
     const static uint32 EMPTY_BUFFER = 0x0000;
     const static uint32 DEFAULT_SIZE = 0x1000;
 
 public:
-	ByteBuffer() 
+	ByteBuffer()
         : _rpos(0), _wpos(0)
     {
 		_buffer.reserve(EMPTY_BUFFER);
 	}
 
-	ByteBuffer(size_t size)
+	explicit ByteBuffer(size_t size)
         : _rpos(0), _wpos(0)
     {
 		_buffer.reserve(size);
@@ -113,6 +110,4 @@ protected:
     std::vector<byte> _buffer;
 };
 
-}
-}
 #endif
