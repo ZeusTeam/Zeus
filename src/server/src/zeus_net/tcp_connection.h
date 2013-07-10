@@ -19,7 +19,7 @@ public:
     virtual ~TcpConnection();
 
 public:
-    void write(byte* data, size_t size);
+    void write(const byte* data, size_t size);
     void read();
     void shutdown();
     void close();

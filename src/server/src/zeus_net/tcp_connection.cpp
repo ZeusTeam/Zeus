@@ -17,7 +17,7 @@ TcpConnection::~TcpConnection()
     std::cout << "connection destroyed." << std::endl;
 }
 
-void TcpConnection::write(byte* data, size_t size)
+void TcpConnection::write(const byte* data, size_t size)
 {
     if (!data)
     {

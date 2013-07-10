@@ -32,7 +32,11 @@ public:
     {
         //_buffer.reserve(size);
         //memcpy(&_buffer[0], src, size);
-        append(src, size);
+        //append(src, size);
+
+        _buffer.resize(size);
+        memcpy(&_buffer[0], src, size);
+        _wpos += size;
     }
 
 	ByteBuffer(const ByteBuffer& buf) 
