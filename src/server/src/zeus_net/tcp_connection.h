@@ -41,7 +41,7 @@ private:
     WriteCompletedCallback _writeCompletedCallback;
     ReadCompletedCallback _readComplectedCallback;
     ConnectionClosedCallback _connectionClosedCallback;
-    ByteBuffer* _recvBuffer;
+    boost::array<byte, MAX_RECV_LEN> _recvBuffer;
     boost::asio::strand _strand;
     IOService& _io_service;
 };

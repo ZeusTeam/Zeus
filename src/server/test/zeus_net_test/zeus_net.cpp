@@ -3,6 +3,7 @@
 #include "tcp_connection.h"
 #include "zeus_net_def.h"
 #include "inet_address.hpp"
+#include "byte_buffer.hpp"
 
 class EventHandler
 {
@@ -23,10 +24,9 @@ public:
         std::cout << "Write complected handler." << std::endl;
     }
 
-    void ReadCompletedHandler(const TcpConnectionPtr& connection, uint32 bytes_transferred)
+    void ReadCompletedHandler(const TcpConnectionPtr& connection, const ByteBufferPtr& buffer, uint32 bytes_transferred)
     {
         std::cout << "Read complected handler." << std::endl;
-        connection->read();
     }
 
     void ConnectionClosed(const TcpConnectionPtr& connection)
@@ -55,7 +55,7 @@ int main()
             );
 
         server.setReadCompletedCallback(
-            std::bind(&EventHandler::ReadCompletedHandler, &eventHandler, std::placeholders::_1, std::placeholders::_2)
+            std::bind(&EventHandler::ReadCompletedHandler, &eventHandler, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)
             );
 
         server.setConnectionClosedCallback(

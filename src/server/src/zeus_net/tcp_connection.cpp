@@ -9,12 +9,10 @@ TcpConnection::TcpConnection(IOService& io_service)
     _strand(io_service.service()),
     _socket(io_service.service())
 {
-    _recvBuffer = new ByteBuffer(zeus::net_params::max_recv_length());
 }
 
 TcpConnection::~TcpConnection()
 {
-    delete _recvBuffer;
     close();
     std::cout << "connection destroyed." << std::endl;
 }
@@ -44,7 +42,7 @@ void TcpConnection::write(byte* data, size_t size)
 void TcpConnection::read()
 {
     _socket.async_read_some(
-        boost::asio::buffer((void*)_recvBuffer->buffer(), _recvBuffer->size()),
+        boost::asio::buffer(_recvBuffer),
         _strand.wrap(
             boost::bind(
                 &TcpConnection::handleRead, 
@@ -129,9 +127,11 @@ void TcpConnection::handleRead(const boost::system::error_code& error, std::size
             return;
         }
 
+        this->read();
         if (_readComplectedCallback)
         {
-            _readComplectedCallback(shared_from_this(), bytes_transferred);
+            ByteBufferPtr read_buffer(new ByteBuffer(_recvBuffer.data(), bytes_transferred));
+            _readComplectedCallback(shared_from_this(), read_buffer, bytes_transferred);
         }
     }
 }

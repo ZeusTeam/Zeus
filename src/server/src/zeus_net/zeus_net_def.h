@@ -4,6 +4,7 @@
 #include <functional>
 #include <memory>
 #include <thread>
+#include "byte_buffer.hpp"
 #ifdef _WIN32
 #include <windows.h>
 #else
@@ -32,14 +33,16 @@ namespace net_params
 
 class TcpConnection;
 class InetAddress;
+class ByteBuffer;
 
 //smart ptr
 typedef std::shared_ptr<std::thread> ThreadPtr;
 typedef std::shared_ptr<TcpConnection> TcpConnectionPtr;
+typedef std::shared_ptr<ByteBuffer> ByteBufferPtr;
 
 //callbacks
 typedef std::function<void (const TcpConnectionPtr& connection, uint32 bytes_transferred)> WriteCompletedCallback;
-typedef std::function<void (const TcpConnectionPtr& connection, uint32 bytes_transferred)> ReadCompletedCallback;
+typedef std::function<void (const TcpConnectionPtr& connection, const ByteBufferPtr& buffer, uint32 bytes_transferred)> ReadCompletedCallback;
 typedef std::function<void (const TcpConnectionPtr& connection)> AcceptedCallback;
 typedef std::function<void (const TcpConnectionPtr& connection, const InetAddress& address)> NewConnectionCallback;
 typedef std::function<void (const TcpConnectionPtr& connection)> ConnectionClosedCallback;

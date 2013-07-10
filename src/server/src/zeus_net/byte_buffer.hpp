@@ -30,8 +30,9 @@ public:
     ByteBuffer(const byte* src, size_t size)
         : _rpos(0), _wpos(0)
     {
-        _buffer.reserve(size);
-        memcpy(&_buffer[0], src, size);
+        //_buffer.reserve(size);
+        //memcpy(&_buffer[0], src, size);
+        append(src, size);
     }
 
 	ByteBuffer(const ByteBuffer& buf) 
@@ -75,7 +76,7 @@ public:
     void append(const byte* value, size_t size)
     {
         if (size == 0) return;
-        int wsize = _wpos + size;
+        size_t wsize = _wpos + size;
 
         //buffer空间不够则扩大
         if (this->size() < wsize)
@@ -105,9 +106,52 @@ public:
 		memcpy(&_buffer[pos], src, size);
 	}
 
+public:
+	template <typename T> T read()
+    {
+		T r=read<T>(_rpos);
+		_rpos += sizeof(T);
+		return r;
+	}
+
+	template <typename T> T read(size_t pos) const
+    {
+		if(pos + sizeof(T) > size())
+		{
+			return (T)0;
+		} else {
+			return *((T*)&_buffer[pos]);
+		}
+	}
+
+	void read(uint8 *dest, size_t len)
+    {
+		if (_rpos + len <= size()) {
+			memcpy(dest, &_buffer[_rpos], len);
+		} else {
+			//throw error();
+			memset(dest, 0, len);
+		}
+		_rpos += len;
+	}
+
+public:
+    void resize(size_t new_size)
+    {
+	    _buffer.resize(new_size);
+	    _rpos = 0;
+	    _wpos = size();
+    }
+
+	void reserve(size_t reserve_size)
+    {
+		if (reserve_size > size())
+            _buffer.reserve(reserve_size);
+	};
+
 protected:
-    size_t _rpos, _wpos;
     std::vector<byte> _buffer;
+    size_t _rpos, _wpos;
 };
 
 #endif
