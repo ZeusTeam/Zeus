@@ -14,9 +14,7 @@ public:
 public:
     void NewConnectionHandler(const TcpConnectionPtr& connection, const InetAddress& peerAddress)
     {
-        ByteBuffer b("Hello World", 13);
         std::cout << "New connection : " << peerAddress.toIpHost() << std::endl;
-        connection->write((const byte*)"hi", 2);
     }
 
     void WriteCompletedHandler(const TcpConnectionPtr& connection, uint32 bytes_transferred)
@@ -26,7 +24,7 @@ public:
 
     void ReadCompletedHandler(const TcpConnectionPtr& connection, const ByteBufferPtr& buffer, uint32 bytes_transferred)
     {
-        std::cout << "Read complected handler. buffer = " << buffer->buffer() << std::endl;
+        std::cout << "Read complected handler." << std::endl;
     }
 
     void ConnectionClosed(const TcpConnectionPtr& connection)

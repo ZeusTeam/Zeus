@@ -24,19 +24,13 @@ public:
     ByteBuffer(const char* src, size_t size)
         : _rpos(0), _wpos(0)
     {
-        ByteBuffer((const byte*)src, size);
+        append(src, size);
     }
 
     ByteBuffer(const byte* src, size_t size)
         : _rpos(0), _wpos(0)
     {
-        //_buffer.reserve(size);
-        //memcpy(&_buffer[0], src, size);
-        //append(src, size);
-
-        _buffer.resize(size);
-        memcpy(&_buffer[0], src, size);
-        _wpos += size;
+        append(src, size);
     }
 
 	ByteBuffer(const ByteBuffer& buf) 
