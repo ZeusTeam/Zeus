@@ -2,6 +2,7 @@
 #include <boost/bind.hpp>
 #include "tcp_connection.h"
 #include "zeus_net_def.h"
+#include "byte_buffer.hpp"
 
 TcpConnection::TcpConnection(IOService& io_service)
     : _io_service(io_service),
@@ -16,7 +17,7 @@ TcpConnection::~TcpConnection()
     std::cout << "connection destroyed." << std::endl;
 }
 
-void TcpConnection::write(byte* data, size_t size)
+void TcpConnection::write(const byte* data, size_t size)
 {
     if (!data)
     {
@@ -126,9 +127,11 @@ void TcpConnection::handleRead(const boost::system::error_code& error, std::size
             return;
         }
 
+        this->read();
         if (_readComplectedCallback)
         {
-            _readComplectedCallback(shared_from_this(), bytes_transferred);
+            ByteBufferPtr read_buffer(new ByteBuffer(_recvBuffer.data(), bytes_transferred));
+            _readComplectedCallback(shared_from_this(), read_buffer, bytes_transferred);
         }
     }
 }

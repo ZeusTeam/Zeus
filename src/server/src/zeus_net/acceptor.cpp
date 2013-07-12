@@ -107,4 +107,7 @@ void Acceptor::acceptHandler(const TcpConnectionPtr& connection)
 {
     accept();
     _acceptedCallback(connection);
+
+    //投递一个读请求
+    connection->read();
 }
