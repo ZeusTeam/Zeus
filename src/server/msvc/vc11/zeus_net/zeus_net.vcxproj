@@ -21,7 +21,6 @@
     <ClInclude Include="..\..\..\src\zeus_net\tcp_connection.h" />
     <ClInclude Include="..\..\..\src\zeus_net\tcp_server.h" />
     <ClInclude Include="..\..\..\src\zeus_net\zeus_net_def.h" />
-    <ClInclude Include="..\..\..\src\zeus_net\zeus_protocol.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\zeus_net\acceptor.cpp" />

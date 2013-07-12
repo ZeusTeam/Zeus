@@ -5,32 +5,31 @@
       <Filter>asio_error</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\zeus_net\acceptor.h">
-      <Filter>net</Filter>
+      <Filter>network</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\zeus_net\inet_address.hpp">
-      <Filter>net</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\zeus_net\net_utils.h">
-      <Filter>net</Filter>
+      <Filter>network</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\zeus_net\network_packet_handler.h">
-      <Filter>net</Filter>
+      <Filter>network</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\zeus_net\tcp_connection.h">
-      <Filter>net</Filter>
+      <Filter>network</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\zeus_net\tcp_server.h">
-      <Filter>net</Filter>
+      <Filter>network</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\zeus_net\zeus_net_def.h">
-      <Filter>net</Filter>
+      <Filter>network</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\zeus_net\zeus_protocol.h">
-      <Filter>net</Filter>
+    <ClInclude Include="..\..\..\src\zeus_net\io_service.h">
+      <Filter>network</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\zeus_net\io_service.h" />
     <ClInclude Include="..\..\..\src\zeus_net\byte_buffer.hpp">
-      <Filter>net</Filter>
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\zeus_net\net_utils.h">
+      <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -38,21 +37,24 @@
       <Filter>asio_error</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\zeus_net\acceptor.cpp">
-      <Filter>net</Filter>
+      <Filter>network</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\zeus_net\tcp_connection.cpp">
-      <Filter>net</Filter>
+      <Filter>network</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\zeus_net\tcp_server.cpp">
-      <Filter>net</Filter>
+      <Filter>network</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="asio_error">
       <UniqueIdentifier>{098bc669-e909-462f-81fb-44d464170cd8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="net">
+    <Filter Include="network">
       <UniqueIdentifier>{4b1cd616-80e9-4f0e-b01c-b43df83e88d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{c2e0bbba-929f-4be8-a873-9607eb2add9c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

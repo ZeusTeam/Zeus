@@ -52,6 +52,51 @@ typedef unsigned int       uint32;
 typedef unsigned long long uint64;
 #endif
 
+//Endianness
+#define swap16(s) ((((s) & 0xff) << 8) | (((s) >> 8) & 0xff))
+#define swap32(l) (((l) >> 24) | \
+           (((l) & 0x00ff0000) >> 8)  | \
+           (((l) & 0x0000ff00) << 8)  | \
+           ((l) << 24)) 
+
+#define swap64(ll)(((ll) >> 56) | \
+                    (((ll) & 0x00ff000000000000) >> 40) | \
+                    (((ll) & 0x0000ff0000000000) >> 24) | \
+                    (((ll) & 0x000000ff00000000) >> 8)  | \
+                    (((ll) & 0x00000000ff000000) << 8)  | \
+                    (((ll) & 0x0000000000ff0000) << 24) | \
+                    (((ll) & 0x000000000000ff00) << 40) | \
+                    (((ll) << 56)))
+
+
+static float swapfloat(const float& p)
+{
+	union { float asfloat; byte asbytes[4]; } u1, u2;
+	u1.asfloat = p;
+	u2.asbytes[0] = u1.asbytes[3];
+	u2.asbytes[1] = u1.asbytes[2];
+	u2.asbytes[2] = u1.asbytes[1];
+	u2.asbytes[3] = u1.asbytes[0];
+	//*p = u2.asfloat;
+    return u2.asfloat;
+}
+
+static double swapdouble(const double& p)
+{
+	union { double asdouble; byte asbytes[8]; } u1, u2;
+	u1.asdouble = p;
+	u2.asbytes[0] = u1.asbytes[7];
+	u2.asbytes[1] = u1.asbytes[6];
+	u2.asbytes[2] = u1.asbytes[5];
+	u2.asbytes[3] = u1.asbytes[4];
+	u2.asbytes[4] = u1.asbytes[3];
+	u2.asbytes[5] = u1.asbytes[2];
+	u2.asbytes[6] = u1.asbytes[1];
+	u2.asbytes[7] = u1.asbytes[0];
+	//*p = u2.asfloat;
+    return u2.asdouble;
+}
+
 //Lines
 #if defined(_WIN32)
 #define NEWLINE "\r\n"
@@ -60,6 +105,6 @@ typedef unsigned long long uint64;
 #endif
 
 #ifndef SAFE_DELETE
-#define SAFE_DELETE(x)	if(NULL != (x)) { delete (x); (x)=NULL; }
+#define SAFE_DELETE(x)	if (NULL != (x)) { delete (x); (x) = NULL; }
 #endif
 #endif

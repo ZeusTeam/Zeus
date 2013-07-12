@@ -11,7 +11,7 @@
 #include <unistd.h>
 #endif
 
-#define MAX_RECV_LEN    1024 * 4
+#define MAX_RECV_LEN    (1024 * 4)
 namespace zeus
 {
 namespace net_params

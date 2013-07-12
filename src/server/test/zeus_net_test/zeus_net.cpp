@@ -37,7 +37,23 @@ int main()
 {
     try
     {
-        EventHandler eventHandler;
+        ByteBuffer buffer;
+        buffer << 10L;
+        buffer << 20;
+        buffer << "德玛西亚人永不退缩！";
+
+        int a, b;
+        std::string str;
+        buffer >> a;
+        buffer >> b;
+        buffer >> str;
+
+        std::cout << a << std::endl;
+        std::cout << b << std::endl;
+        std::cout << str << std::endl;
+
+        std::cout << buffer.size() << std::endl;
+        /*EventHandler eventHandler;
         InetAddress inetAddress(36911);
 
         //boost::asio::io_service io_service;
@@ -60,12 +76,15 @@ int main()
             std::bind(&EventHandler::ConnectionClosed, &eventHandler, std::placeholders::_1)
             );
 
-        server.start();
+        server.start();*/
     }
     catch (...)
     {
         std::cout << "exception occurred" << std::endl;
     }
 
+#if _WIN32
+    system("pause");
+#endif
     return 0;
 }
