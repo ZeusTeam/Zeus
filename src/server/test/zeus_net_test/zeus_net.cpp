@@ -38,11 +38,11 @@ int main()
     try
     {
         ByteBuffer buffer;
-        buffer << 10L;
+        buffer << 10;
         buffer << 20;
         buffer << "德玛西亚人永不退缩！";
 
-        int a, b;
+        int32 a, b;
         std::string str;
         buffer >> a;
         buffer >> b;
