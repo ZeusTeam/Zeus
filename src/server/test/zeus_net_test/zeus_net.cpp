@@ -40,16 +40,20 @@ int main()
         ByteBuffer buffer;
         buffer << 10;
         buffer << 20;
+        buffer << 60.38f;
         buffer << "德玛西亚人永不退缩！";
 
         int32 a, b;
+        float c;
         std::string str;
         buffer >> a;
         buffer >> b;
+        buffer >> c;
         buffer >> str;
 
         std::cout << a << std::endl;
         std::cout << b << std::endl;
+        std::cout << c << std::endl;
         std::cout << str << std::endl;
 
         std::cout << buffer.size() << std::endl;
